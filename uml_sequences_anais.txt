@@ -1,38 +1,45 @@
+title Authentification
+
 Actor Utilisateur
 participant EMarché
-
+activate EMarché
+Utilisateur -> EMarché: Authentification
+EMarché -> Utilisateur: Authentification réussie
+deactivate EMarché
+------------------------
 title Rechercher les ventes en cours par mots clés
+
+Actor Utilisateur
+participant EMarché
 Utilisateur -> EMarché: Envoi mots clés
 activate EMarché
     EMarché -> EMarché: Recherche des ventes en cours\ncorrespondantes aux mots clés
     EMarché -> Utilisateur: Liste des ventes en cours les moins chères d'abord correspondantes\n(référence, photo, prix, quantité, pseudoVendeur, dateLimite (si enchère))\n(20 max par page)
 deactivate EMarché
 -------------------------
+title Consulter les ventes en cours
+
 Actor Utilisateur
 participant EMarché
-
-title Consulter les ventes en cours
 activate EMarché
     EMarché -> EMarché: Recherche des ventes en cours 
     EMarché -> Utilisateur: Liste des ventes en cours les plus récentes\n(20 max par page)
-   
 deactivate EMarché
 -------------------------
+title Rechercher un profil par mots clés
+
 Actor Utilisateur
 participant EMarché
-
-    title Rechercher un profil par mots clés
     Utilisateur -> EMarché: Envoi mots clés
     activate EMarché
     EMarché -> EMarché: Recherche des pseudos correspondants\naux mots clés
     EMarché -> Utilisateur: Liste des pseudos correspondants\n(20 max par page)
-    deactivate EMarché
+deactivate EMarché
 -------------------------
+title Acheter un produit
 Actor Acheteur
 participant EMarché
-
-    title Acheter un produit
-    activate EMarché
+activate EMarché
     EMarché -> Acheteur: Formulaire coordonnées bancaires
     Acheteur -> EMarché: Envoi coordonnées bancaires
     EMarché -> EMarché: Vérification des coordonnées bancaires\navec celles du profil
@@ -41,13 +48,13 @@ participant EMarché
     EMarché -> EMarché: Statut de la vente "en cours" : non
     EMarché -> Vendeur: Notification de la vente\n(pseudo de l'acheteur, date, heure, délai)
     EMarché -> Acheteur: Confirmation de l'achat
-    deactivate EMarché
+deactivate EMarché
 -------------------------
+title Acheter un produit\ncas de coordonnées bancaires incorrectes avec le profil ou absentes
+
 Actor Acheteur
 participant EMarché
-
-    title Acheter un produit\ncas de coordonnées bancaires incorrectes avec le profil ou absentes
-    activate EMarché
+activate EMarché
     EMarché -> Acheteur: Formulaire coordonnées bancaires
     Acheteur -> EMarché: Envoi coordonnées bancaires
     EMarché -> EMarché: Vérification des coordonnées bancaires\navec celles du profil
@@ -63,6 +70,23 @@ participant EMarché
     EMarché -> EMarché: Statut de la vente "en cours" : non
     EMarché -> Vendeur: Notification de la vente\n(pseudo de l'acheteur, date, heure, délai)
     EMarché -> Acheteur: Confirmation de l'achat
-    deactivate EMarché
+deactivate EMarché
 -------------------------
+title Diagramme de cas d'utilisation de l'acheteur
 
+Actor Acheteur
+left to right direction
+Acheteur -- (Consulter les produits disponibles)
+(Consulter les produits disponibles) ..> (Authentification) : include
+Acheteur -- (Rechercher un produit par mots-clés)
+(Rechercher un produit par mots-clés) ..> (Authentification) : include
+Acheteur -- (Acheter un produit)
+(Acheter un produit) ..> (Authentification) : include
+Acheteur -- (Enchérir)
+(Enchérir) ..> (Authentification) : include
+Acheteur -- (Rechercher un profil)
+(Rechercher un profil) ..> (Authentification) : include
+Acheteur -- (Consulter un profil)
+(Consulter un profil) ..> (Authentification) : include
+Acheteur -- (Consulter son compte)
+(Consulter son compte) ..> (Authentification) : include
