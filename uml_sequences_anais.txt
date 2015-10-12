@@ -1,56 +1,57 @@
-title Authentification
+title Authentification\nAnaïs Decolle
 
-Actor Utilisateur
-participant EMarché
-activate EMarché
-Utilisateur -> EMarché: Authentification
-EMarché -> Utilisateur: Authentification réussie
-deactivate EMarché
-------------------------
-title Rechercher les ventes en cours par mots clés
-
-Actor Utilisateur
-participant EMarché
-Utilisateur -> EMarché: Envoi mots clés
-activate EMarché
-    EMarché -> EMarché: Recherche des ventes en cours\ncorrespondantes aux mots clés
-    EMarché -> Utilisateur: Liste des ventes en cours les moins chères d'abord correspondantes\n(référence, photo, prix, quantité, pseudoVendeur, dateLimite (si enchère))\n(20 max par page)
-deactivate EMarché
--------------------------
-title Consulter les ventes en cours
-
-Actor Utilisateur
-participant EMarché
-activate EMarché
-    EMarché -> EMarché: Recherche des ventes en cours 
-    EMarché -> Utilisateur: Liste des ventes en cours les plus récentes\n(20 max par page)
-deactivate EMarché
--------------------------
-title Rechercher un profil par mots clés
-
-Actor Utilisateur
-participant EMarché
-    Utilisateur -> EMarché: Envoi mots clés
-    activate EMarché
-    EMarché -> EMarché: Recherche des pseudos correspondants\naux mots clés
-    EMarché -> Utilisateur: Liste des pseudos correspondants\n(20 max par page)
-deactivate EMarché
--------------------------
-title Acheter un produit
 Actor Acheteur
 participant EMarché
-activate EMarché
+Acheteur -> EMarché: Authentification
+EMarché -> Acheteur: Authentification réussie
+------------------------
+title Rechercher les ventes en cours par mots clés\nAnaïs Decolle
+
+Actor Acheteur
+participant EMarché
+    Acheteur -> EMarché: Envoi mots clés
+    EMarché -> EMarché: Recherche des ventes en cours avec la référence\nou la catégorie correspondante aux mots clés
+    EMarché -> EMarché: Sélection des 20 premières ventes par prix croissant
+    EMarché -> Acheteur: Liste des ventes en cours correspondantes\n(référence, catégorie, photo, prix, quantité, pseudoVendeur, dateLimite (si enchère))\n(20 max par page)
+-------------------------
+title Consulter les ventes en cours\nAnaïs Decolle
+
+Actor Acheteur
+participant EMarché
+    EMarché -> EMarché: Recherche des ventes en cours 
+    EMarché -> EMarché: Sélection des 20 premières ventes correspondantes\npar ordre d'ancienneté (en partant du plus récent)
+    EMarché -> Acheteur: Liste des ventes en cours\n(référence, catégorie, photo, prix, quantité, pseudoVendeur, dateLimite (si enchère))\n(20 max par page)
+-------------------------
+title Rechercher un profil par mots clés\nAnaïs Decolle
+
+Actor Acheteur
+participant EMarché
+    Acheteur -> EMarché: Envoi mots clés
+    EMarché -> EMarché: Recherche des pseudos correspondants\naux mots clés
+    EMarché -> EMarché: Sélection des 20 premiers pseudos correspondants
+    EMarché -> Acheteur: Liste des profils correspondants\n(photo, pseudo, note)\n(20 max par page)
+-------------------------
+title Acheter un produit\nAnaïs Decolle
+Actor Acheteur
+participant EMarché
+    Acheteur -> EMarche: Envoi produit choisi et quantité
     EMarché -> Acheteur: Formulaire coordonnées bancaires
     Acheteur -> EMarché: Envoi coordonnées bancaires
     EMarché -> EMarché: Vérification des coordonnées bancaires\navec celles du profil
-    EMarché -> Acheteur: Demande de confirmation
-    Acheteur -> EMarché: Confirmation
-    EMarché -> EMarché: Statut de la vente "en cours" : non
-    EMarché -> Vendeur: Notification de la vente\n(pseudo de l'acheteur, date, heure, délai)
+    EMarché -> Acheteur: Demande de confirmation de l'achat
+    Acheteur -> EMarché: Confirmation de l'achat
+    alt Stock encore disponible après transaction
+    	EMarché -> EMarché: Ajustement de la quantité restante du produit
+    else Epuisement du stock
+    	EMarché -> EMarché: Ajout dans les produits vendus
+        EMarché -> Vendeur: Mise à jour des produits vendus dans le profil
+        EMarché -> EMarché: Suppression du produit dans les ventes en cours
+        EMarché -> Vendeur: Mise à jour des produits en vente dans le profil
+    end
+    EMarché -> Vendeur: Notification de la vente\n(pseudo de l'acheteur, produit, quantité, date, heure, délai pour envoyer)
     EMarché -> Acheteur: Confirmation de l'achat
-deactivate EMarché
 -------------------------
-title Acheter un produit\ncas de coordonnées bancaires incorrectes avec le profil ou absentes
+title Acheter un produit\ncas de coordonnées bancaires incorrectes avec le profil ou absentes\nAnaïs Decolle
 
 Actor Acheteur
 participant EMarché
@@ -72,7 +73,7 @@ activate EMarché
     EMarché -> Acheteur: Confirmation de l'achat
 deactivate EMarché
 -------------------------
-title Diagramme de cas d'utilisation de l'acheteur
+title Diagramme de cas d'utilisation de l'acheteur\nAnaïs Decolle
 
 Actor Acheteur
 left to right direction
@@ -90,3 +91,13 @@ Acheteur -- (Consulter un profil)
 (Consulter un profil) ..> (Authentification) : include
 Acheteur -- (Consulter son compte)
 (Consulter son compte) ..> (Authentification) : include
+Acheteur -- (Donner son avis sur un produit)
+(Donner son avis sur un produit) ..> (Authentification) : include
+Acheteur -- (Donner son avis sur un vendeur)
+(Donner son avis sur un vendeur) ..> (Authentification) : incldue
+Acheteur -- (Dialoguer avec un vendeur)
+(Dialoguer avec un vendeur) ..> (Authentification) : include
+Acheteur -- (Poser une réclamation)
+(Poser une réclamation) ..> (Authentification) : include
+Acheteur -- (Annuler un achat)
+(Annuler un achat) ..> (Authentification) : include
