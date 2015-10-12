@@ -1,0 +1,68 @@
+Actor Utilisateur
+participant EMarché
+
+title Rechercher les ventes en cours par mots clés
+Utilisateur -> EMarché: Envoi mots clés
+activate EMarché
+    EMarché -> EMarché: Recherche des ventes en cours\ncorrespondantes aux mots clés
+    EMarché -> Utilisateur: Liste des ventes en cours les moins chères d'abord correspondantes\n(référence, photo, prix, quantité, pseudoVendeur, dateLimite (si enchère))\n(20 max par page)
+deactivate EMarché
+-------------------------
+Actor Utilisateur
+participant EMarché
+
+title Consulter les ventes en cours
+activate EMarché
+    EMarché -> EMarché: Recherche des ventes en cours 
+    EMarché -> Utilisateur: Liste des ventes en cours les plus récentes\n(20 max par page)
+   
+deactivate EMarché
+-------------------------
+Actor Utilisateur
+participant EMarché
+
+    title Rechercher un profil par mots clés
+    Utilisateur -> EMarché: Envoi mots clés
+    activate EMarché
+    EMarché -> EMarché: Recherche des pseudos correspondants\naux mots clés
+    EMarché -> Utilisateur: Liste des pseudos correspondants\n(20 max par page)
+    deactivate EMarché
+-------------------------
+Actor Acheteur
+participant EMarché
+
+    title Acheter un produit
+    activate EMarché
+    EMarché -> Acheteur: Formulaire coordonnées bancaires
+    Acheteur -> EMarché: Envoi coordonnées bancaires
+    EMarché -> EMarché: Vérification des coordonnées bancaires\navec celles du profil
+    EMarché -> Acheteur: Demande de confirmation
+    Acheteur -> EMarché: Confirmation
+    EMarché -> EMarché: Statut de la vente "en cours" : non
+    EMarché -> Vendeur: Notification de la vente\n(pseudo de l'acheteur, date, heure, délai)
+    EMarché -> Acheteur: Confirmation de l'achat
+    deactivate EMarché
+-------------------------
+Actor Acheteur
+participant EMarché
+
+    title Acheter un produit\ncas de coordonnées bancaires incorrectes avec le profil ou absentes
+    activate EMarché
+    EMarché -> Acheteur: Formulaire coordonnées bancaires
+    Acheteur -> EMarché: Envoi coordonnées bancaires
+    EMarché -> EMarché: Vérification des coordonnées bancaires\navec celles du profil
+    EMarché -> Acheteur: Coordonnées bancaires non enregistrées/incorrectes\nDemande de confirmation
+    Acheteur -> EMarché: Confirmation
+    EMarché -> Acheteur: Proposition d'enregistrement des coordonnées bancaires
+    alt Enregistrement accepté
+    Acheteur -> EMarché: Confirmation de l'enregistrement
+    EMarché -> EMarché: Enregistrement des coordonnées\nbancaires dans le profil de l'acheteur
+    else Enregistrement refusé
+    Acheteur -> EMarché: Refus de l'enregistrement
+    end
+    EMarché -> EMarché: Statut de la vente "en cours" : non
+    EMarché -> Vendeur: Notification de la vente\n(pseudo de l'acheteur, date, heure, délai)
+    EMarché -> Acheteur: Confirmation de l'achat
+    deactivate EMarché
+-------------------------
+
