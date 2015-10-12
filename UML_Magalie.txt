@@ -1,0 +1,40 @@
+Projet CPOOA EMarché
+
+title Diagramme de contexte statique
+agent EMarché
+actor Médiateur
+actor UtilisateurAnonyme
+actor Acheteur
+actor Vendeur
+EMarché -- Médiateur
+EMarché -- UtilisateurAnonyme
+EMarché -- Acheteur
+EMarché -- Vendeur
+
+***
+
+title Diagramme de cas d'utilisation du Vendeur
+actor Vendeur
+left to right direction
+Vendeur -- (Consulter son compte)
+(Consulter son compte) ..> (Authentification) : include
+Vendeur -- (Déposer un article)
+(Déposer un article) ..> (Authentification) : include
+Vendeur -- (Prévenir si le bien est expédié)
+(Prévenir si le bien est expédié) ..> (Authentification) : include
+Vendeur -- (Retirer un article de la vente)
+(Retirer un article de la vente) ..> (Authentification) : include
+Vendeur -- (Consulter les produits disponibles)
+(Consulter les produits disponibles) ..> (Authentification) : include
+Vendeur -- (Rechercher un produit par mots-clés)
+(Rechercher un produit par mots-clés) ..> (Authentification) : include
+Vendeur -- (Consulter un profil)
+(Consulter un profil) ..> (Authentification) : include
+Vendeur -- (Rechercher un profil)
+(Rechercher un profil) ..> (Authentification) : include
+Vendeur -- (Dialoguer avec l'acheteur)
+(Dialoguer avec l'acheteur) ..> (Authentification) : include
+
+***
+
+
