@@ -34,12 +34,12 @@ participant EMarché
 title Acheter un produit\nAnaïs Decolle
 Actor Acheteur
 participant EMarché
-    Acheteur -> EMarche: Envoi produit choisi et quantité
-    EMarché -> Acheteur: Formulaire coordonnées bancaires
+    Acheteur -> EMarché: Envoi produit choisi et quantité
+    EMarché -> Acheteur: Formulaire coordonnées bancaires\n(nom, prénom, numéro de carte, type de carte : Visa ou Mastercard ou Paypal,\nnuméro secret, date de validité, adresse de livraison, adresse de facturation,\ntype de livraison : Colissimo ou envoi standard, confirmation de l'achat, acceptation des conditions générales de vente)
     Acheteur -> EMarché: Envoi coordonnées bancaires
+    EMarché -> EMarché: Vérification de la validité des champs
     EMarché -> EMarché: Vérification des coordonnées bancaires\navec celles du profil
-    EMarché -> Acheteur: Demande de confirmation de l'achat
-    Acheteur -> EMarché: Confirmation de l'achat
+    EMarché -> EMarché: Enregistrement des données du formulaire
     alt Stock encore disponible après transaction
     	EMarché -> EMarché: Ajustement de la quantité restante du produit
     else Epuisement du stock
@@ -48,7 +48,7 @@ participant EMarché
         EMarché -> EMarché: Suppression du produit dans les ventes en cours
         EMarché -> Vendeur: Mise à jour des produits en vente dans le profil
     end
-    EMarché -> Vendeur: Notification de la vente\n(pseudo de l'acheteur, produit, quantité, date, heure, délai pour envoyer)
+    EMarché -> Vendeur: Notification de la vente\n(pseudo de l'acheteur, adresse de livraison, adresse de facturation,\nproduit, quantité, date, heure, délai pour envoyer, type de livraison)
     EMarché -> Acheteur: Confirmation de l'achat
 -------------------------
 title Acheter un produit\ncas de coordonnées bancaires incorrectes avec le profil ou absentes\nAnaïs Decolle
@@ -56,11 +56,12 @@ title Acheter un produit\ncas de coordonnées bancaires incorrectes avec le profi
 Actor Acheteur
 participant EMarché
 activate EMarché
-    EMarché -> Acheteur: Formulaire coordonnées bancaires
+    EMarché -> Acheteur: Formulaire coordonnées bancaires\n(nom, prénom, numéro de carte, type de carte : Visa ou Mastercard ou Paypal,\nnuméro secret, date de validité, adresse de livraison, adresse de facturation,\ntype de livraison : Colissimo ou envoi standard, confirmation de l'achat, acceptation des conditions générales de vente)
     Acheteur -> EMarché: Envoi coordonnées bancaires
+    EMarché -> EMarché: Vérification de la validité des champs
     EMarché -> EMarché: Vérification des coordonnées bancaires\navec celles du profil
     EMarché -> Acheteur: Coordonnées bancaires non enregistrées/incorrectes\nDemande de confirmation
-    Acheteur -> EMarché: Confirmation
+    Acheteur -> EMarché: Confirmation de l'achat
     EMarché -> Acheteur: Proposition d'enregistrement des coordonnées bancaires
     alt Enregistrement accepté
     Acheteur -> EMarché: Confirmation de l'enregistrement
@@ -68,8 +69,44 @@ activate EMarché
     else Enregistrement refusé
     Acheteur -> EMarché: Refus de l'enregistrement
     end
-    EMarché -> EMarché: Statut de la vente "en cours" : non
-    EMarché -> Vendeur: Notification de la vente\n(pseudo de l'acheteur, date, heure, délai)
+    EMarché -> EMarché: Enregistrement des données du formulaire
+    alt Stock encore disponible après transaction
+    	EMarché -> EMarché: Ajustement de la quantité restante du produit
+    else Epuisement du stock
+    	EMarché -> EMarché: Ajout dans les produits vendus
+        EMarché -> Vendeur: Mise à jour des produits vendus dans le profil
+        EMarché -> EMarché: Suppression du produit dans les ventes en cours
+        EMarché -> Vendeur: Mise à jour des produits en vente dans le profil
+    end
+    EMarché -> Vendeur: Notification de la vente\n(pseudo de l'acheteur, adresse de livraison, adresse de facturation,\nproduit, quantité, date, heure, délai pour envoyer, type de livraison)
+    EMarché -> Acheteur: Confirmation de l'achat
+deactivate EMarché
+-------------------------
+title Acheter un produit\ncas de champs invalides dans le formulaire des coordonnées bancaires\nAnaïs Decolle
+
+Actor Acheteur
+participant EMarché
+activate EMarché
+    EMarché -> Acheteur: Formulaire coordonnées bancaires\n(nom, prénom, numéro de carte, type de carte : Visa ou Mastercard ou Paypal,\nnuméro secret, date de validité, adresse de livraison, adresse de facturation,\ntype de livraison : Colissimo ou envoi standard, confirmation de l'achat, acceptation des conditions générales de vente)
+    Acheteur -> EMarché: Envoi coordonnées bancaires
+    EMarché -> EMarché: Vérification de la validité des champs
+    EMarché -> EMarché: Vérification des coordonnées bancaires\navec celles du profil
+    loop Champs du formulaire incorrects
+    EMarché -> Acheteur: Formulaire de coordonnées bancaires
+        Acheteur -> EMarché: Envoi coordonnées bancaires
+    EMarché -> EMarché: Vérification de la validité des champs
+    EMarché -> EMarché: Vérification des coordonnées bancaires\navec celles du profil
+    end
+    EMarché -> EMarché: Enregistrement des données du formulaire
+    alt Stock encore disponible après transaction
+    	EMarché -> EMarché: Ajustement de la quantité restante du produit
+    else Epuisement du stock
+    	EMarché -> EMarché: Ajout dans les produits vendus
+        EMarché -> Vendeur: Mise à jour des produits vendus dans le profil
+        EMarché -> EMarché: Suppression du produit dans les ventes en cours
+        EMarché -> Vendeur: Mise à jour des produits en vente dans le profil
+    end
+    EMarché -> Vendeur: Notification de la vente\n(pseudo de l'acheteur, adresse de livraison, adresse de facturation,\nproduit, quantité, date, heure, délai pour envoyer, type de livraison)
     EMarché -> Acheteur: Confirmation de l'achat
 deactivate EMarché
 -------------------------
