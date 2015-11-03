@@ -1,6 +1,6 @@
 Projet CPOOA EMarché
 
-title Diagramme de contexte statique
+title Diagramme de contexte statique\nMagalie Mallinger
 agent EMarché
 actor Médiateur
 actor UtilisateurAnonyme
@@ -13,7 +13,7 @@ EMarché -- Vendeur
 
 ***
 
-title Diagramme de cas d'utilisation du Vendeur
+title Diagramme de cas d'utilisation du vendeur\nMallinger Magalie
 actor Vendeur
 left to right direction
 Vendeur -- (Consulter son compte)
@@ -32,9 +32,139 @@ Vendeur -- (Consulter un profil)
 (Consulter un profil) ..> (Authentification) : include
 Vendeur -- (Rechercher un profil)
 (Rechercher un profil) ..> (Authentification) : include
-Vendeur -- (Dialoguer avec l'acheteur)
-(Dialoguer avec l'acheteur) ..> (Authentification) : include
+Vendeur -- (Dialoguer avec un acheteur)
+(Dialoguer avec un acheteur) ..> (Authentification) : include
 
 ***
 
+title Annuler l'achat\nMagalie Mallinger
+Actor Acheteur
+participant EMarché
+activate EMarché
+Acheteur -> EMarché: Authentification
+EMarché -> Acheteur: Authentification réussie
+Acheteur -> EMarché: Demande d'annulation
+EMarché -> EMarché: Vérification du delai d'annulation\nnon dépassé
+EMarché -> EMarché: Suppression de l'achat
+EMarché -> Acheteur: Confirmation d'annulation
+participant Vendeur
+activate Vendeur
+EMarché -> Vendeur : Notification de l'annulation
+deactivate Vendeur
+deactivate EMarché
 
+***
+
+title Poser une réclamation\nMagalie Mallinger
+Actor Acheteur
+participant EMarché
+activate EMarché
+Acheteur -> EMarché: Authentification
+EMarché -> Acheteur: Authentification réussie
+Acheteur -> EMarché : Choix de l'achat concerné par la réclamation
+EMarché -> EMarché : Vérification que l'achat\nest existant
+EMarché -> EMarché : Enregistrement
+EMarché -> Acheteur : Notification de l'enregistrement
+deactivate EMarché
+
+***
+
+title Donner un avis à un vendeur\nMagalie Mallinger
+Actor Acheteur
+participant EMarché
+activate EMarché
+Acheteur -> EMarché: Authentification
+EMarché -> Acheteur: Authentification réussie
+EMarché -> Acheteur : Demande note, commentaire
+Acheteur -> EMarché : Envoi de la note et du commentaire
+EMarché -> EMarché : Enregistrement
+deactivate EMarché
+
+***
+
+title Donner un avis à un bien\nMagalie Mallinger
+Actor Acheteur
+participant EMarché
+activate EMarché
+Acheteur -> EMarché: Authentification
+EMarché -> Acheteur: Authentification réussie
+EMarché -> Acheteur : Demande note, commentaire
+Acheteur -> EMarché : Envoi de la note et du commentaire
+EMarché -> EMarché : Enregistrement
+deactivate EMarché
+
+***
+
+title Dialoguer avec un vendeur\nMagalie Mallinger
+Actor Acheteur
+participant EMarché
+activate EMarché
+Acheteur -> EMarché: Authentification
+EMarché -> Acheteur: Authentification réussie
+Acheteur -> EMarché : Envoi du message
+deactivate EMarché
+
+***
+
+title Ouvrir un dialogue\nMagalie Mallinger
+Actor Médiateur
+participant EMarché
+activate EMarché
+Médiateur -> EMarché: Authentification
+EMarché -> Médiateur: Authentification réussie
+Médiateur -> EMarché: Choix de l'acheteur et du vendeur concernés
+EMarché -> EMarché : Enregistrement
+EMarché -> Médiateur : Notification de l'ouverture du dialogue
+Actor Vendeur
+activate Vendeur
+EMarché -> Vendeur : Notification de l'ouverture du dialogue
+deactivate Vendeur
+Actor Acheteur
+activate Acheteur
+EMarché -> Acheteur : Notification de l'ouverture du dialogue
+deactivate Acheteur
+deactivate EMarché
+
+***
+
+title Fermer un dialogue\nMagalie Mallinger
+Actor Médiateur
+participant EMarché
+activate EMarché
+Médiateur -> EMarché: Authentification
+EMarché -> Médiateur: Authentification réussie
+Médiateur -> EMarché: Choix du dialogue concerné
+EMarché -> EMarché : Enregistrement
+EMarché -> Médiateur : Notification de la fermeture du dialogue
+Actor Vendeur
+activate Vendeur
+EMarché -> Vendeur: Notification de la fermeture du dialogue
+deactivate Vendeur
+Actor Acheteur
+activate Acheteur
+EMarché -> Acheteur: Notification de la fermeture du dialogue
+deactivate Acheteur
+deactivate EMarché
+
+***
+
+title Intervenir dans un dialogue\nMagalie Mallinger
+Actor Médiateur
+participant EMarché
+activate EMarché
+Médiateur -> EMarché: Authentification
+EMarché -> Médiateur: Authentification réussie
+Médiateur -> EMarché: Envoi du message
+deactivate EMarché
+
+***
+
+title Créer un compte\nMagalie Mallinger
+Actor UtilsateurAnonyme
+participant EMarché
+activate EMarché
+EMarché -> UtilsateurAnonyme: Demande email, mot de passe, nom, prénom, adresse
+UtilsateurAnonyme -> EMarché : Envoi email, mot de passe, nom, prénom, adresse
+EMarché -> EMarché : Vérification\ndonnées valides
+EMarché -> UtilsateurAnonyme : Validation de l'inscription
+deactivate EMarché
