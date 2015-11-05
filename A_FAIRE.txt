@@ -6,10 +6,12 @@ Acheteur :
 - consulter un profil 
 
 Vendeur :
-- déposer un article
 - retirer un article de la vente
 ------------------------------------------
 Diagramme de classe
+------------------------------------------
+modifier capture d'écran, possibilité de supprimer une vente en cours
+bouton pour ajouter une vente
 ------------------------------------------
 Liste des cas qu'on va faire dans l'ordre
 ------------------------------------------

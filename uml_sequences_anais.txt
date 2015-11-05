@@ -260,3 +260,62 @@ Acheteur -- (Poser une réclamation)
 (Poser une réclamation) ..> (Authentification) : include
 Acheteur -- (Annuler un achat)
 (Annuler un achat) ..> (Authentification) : include
+---------------------------
+title Dépôt d'un article en vente\nAnaïs Decolle
+
+Actor Vendeur
+participant EMarché
+activate EMarché
+Vendeur -> EMarché: Authentification
+EMarché -> Vendeur: Authentification réussie
+EMarché -> Vendeur: Demande choix vente standard ou enchère
+Vendeur -> EMarché: Envoi choix
+alt Vente standard
+EMarché -> Vendeur: Formulaire d'enregistrement du produit\n(nom, catégorie, quantité, prix_unitaire, photo) 
+Vendeur -> EMarché: Envoi des données du produit
+else Vente aux enchères
+EMarché -> Vendeur: Formulaire d'enregistrement du produit\n(nom, catégorie, quantité, prix de base, photo, date limite) 
+Vendeur -> EMarché: Envoi des données du produit 
+end
+EMarché -> EMarché: Vérification des données
+EMarché -> EMarché: Attribution d'une référence unique au produit
+EMarché -> EMarché: Ajout aux ventes en cours
+EMarché -> EMarché: Mise à jour des ventes en cours dans le profil du vendeur
+EMarché -> Vendeur: Confirmation de l'ajout du produit
+deactivate EMarché
+--------------------------
+title Dépôt d'un article en vente\nCas de données du produit invalides\nAnaïs Decolle
+
+Actor Vendeur
+participant EMarché
+activate EMarché
+Vendeur -> EMarché: Authentification
+EMarché -> Vendeur: Authentification réussie
+EMarché -> Vendeur: Demande choix vente standard ou enchère
+Vendeur -> EMarché: Envoi choix
+alt Vente standard
+EMarché -> Vendeur: Formulaire d'enregistrement du produit\n(nom, catégorie, quantité, prix_unitaire, photo) 
+Vendeur -> EMarché: Envoi des données du produit
+else Vente aux enchères
+EMarché -> Vendeur: Formulaire d'enregistrement du produit\n(nom, catégorie, quantité, prix de base, photo, date limite) 
+Vendeur -> EMarché: Envoi des données du produit 
+end
+EMarché -> EMarché: Vérification des données
+EMarché -> Vendeur: Données incorrectes, Dépôt refusé
+deactivate EMarché
+--------------------------
+title Annulation d'une vente\nAnaïs Decolle
+
+Actor Vendeur
+participant EMarché
+activate EMarché
+Vendeur -> EMarché: Authentification
+EMarché -> Vendeur: Authentification réussie
+Vendeur -> EMarché: Choix du produit à retirer de la vente
+alt Produit en vente aux enchères
+EMarché -> "Acheteurs ayant enchéri sur le produit": Notification de suppression de la vente
+end
+EMarché -> EMarché: Suppression du produit des ventes en cours
+EMarché -> EMarché: Mise à jour des ventes en cours dans le profil du vendeur
+EMarché -> Vendeur: Confirmation de la suppression
+deactivate EMarché
