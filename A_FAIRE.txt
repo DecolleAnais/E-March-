@@ -1,7 +1,5 @@
 RESTE A FAIRE :
 
-modifier capture d'écran, possibilité de supprimer une vente en cours
-bouton pour ajouter une vente
 ------------------------------------------
 Détail du cas 1 (déposer un article en vente ?)
 capture d'écran
