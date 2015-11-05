@@ -1,0 +1,11 @@
+@startuml
+title Diagramme de cas d'utilisation du médiateur\nNicolas Blin
+actor Médiateur
+left to right direction
+Médiateur -- (Intervenir dans le litige)
+(Intervenir dans le litige) ..> (Authentification) : include
+Médiateur -- (Ouvrir un dialogue)
+(Ouvrir un dialogue) ..> (Authentification) : include
+Médiateur -- (Clore un dialogue)
+(Clore un dialogue) ..> (Authentification) : include
+@enduml
