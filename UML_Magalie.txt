@@ -172,46 +172,121 @@ deactivate EMarché
 ***
 
 class Utilisateur {
-  String adresse
-  int nb_ventes
-  int nb_achats
+String pseudo
+String nom
+String prenom
+date date_naissance
+String email
+String adresse
+int nb_ventes
+int nb_achats
+int note_globale
+}
+
+abstract class EtatConnexion {
+
+}
+
+class EtatConnecter {
+
+}
+
+class EtatDeconnecter {
+
 }
 
 class CoordsBancaire {
-	String typeCarte
-    int numeroCarte
-    int cryptogramme
-    date expiration
+String typeCarte
+int numeroCarte
+int cryptogramme
+date date_expiration
+String adresse_facturation
+String adresse_livraison
 }
 
 class Droits {
-	int niveau
+int niveau
 }
 
 class Categorie {
-	String nom
+String nom
 }
 
 class Produit {
-	String nom
-    String reference
-    int prix_unitaire
-    int quantite
-    boolean enchere
-    date mise_en_vente
-    date achat
-    String status
+String nom
+String reference
+int prix_unitaire
+int quantite
+date date_depot
+date achat_ou_vente
+}
+
+abstract class EtatVente {
+
+}
+
+class VenteEnchere {
+int prix_final
+date date_limite
+int temps_restant
+}
+
+class VenteNormale {
+
 }
 
 class Avis {
-	int note
-    String commentaire
+int note
+String commentaire
 }
 
-Utilisateur  --"*"  Categorie
-Categorie --"*" Produit
+Utilisateur  --"*"  Produit
+Categorie "1"--"*" Produit
 Utilisateur --"1" Droits
 Utilisateur --"1" CoordsBancaire
 Utilisateur "1"-right-"*" Avis
 Produit --"*" Avis
+VenteEnchere --> EtatVente
+VenteNormale --> EtatVente
+EtatVente "*"-- Produit
+EtatConnecter --> EtatConnexion
+EtatDeconnecter --> EtatConnexion
+EtatConnexion "*"-- Utilisateur
 
+***
+
+title Consulter son compte\nMagalie Mallinger
+Actor Acheteur
+participant EMarché
+activate EMarché
+Acheteur -> EMarché: Authentification
+EMarché -> Acheteur: Authentification réussie
+Acheteur -> EMarché: Consulter "Mon profil"
+EMarché -> Acheteur: Envoi "Mon compte", "Mes statistiques", "Mes ventes", "Mes achats", "Ma messagerie"
+Acheteur -> EMarché: Consulter "Mon compte"
+EMarché -> Acheteur: Envoi pseudo, nom, prénom, date de naissance, email, coordonnées bancaires\n(type de carte, numéro de carte, date d'expiration, cryptogramme, adresse facturation, adresse livraison)
+Acheteur -> EMarché: Consulter "Mes statistiques"
+EMarché -> Acheteur: Envoi note globale, nombre de ventes, nombre d'achats, avis (pseudo de l'auteur, note, commentaire)
+Acheteur -> EMarché: Consulter "Mes ventes"
+EMarché -> Acheteur: Envoi des ventes en cours (référence, nom, catégorie, quantité, type vente,\nprix, date de dépôt, si enchères : prix actuel, date limite, temps restant, acheteur en tête)\n et des produits vendus (référence, nom, catégorie, quantité, type de vente, prix,\n date de dépôt, date de vente, pseudo acheteur, si enchères : prix final de vente, date limite)
+Acheteur -> EMarché: Consulter "Mes achats"
+EMarché -> Acheteur: Envoi des achats en cours (référence, nom, catégorie, quantité, type vente,\nprix, date de dépôt, si enchères : prix actuel, date limite, temps restant, acheteur en tête)\n et des achats terminés (référence, nom, catégorie, quantité, type de vente, prix,\n date de dépôt, date de vente, pseudo vendeur, si enchères : prix final de vente, date limite)
+Acheteur -> EMarché: Consulter "Ma messagerie"
+EMarché -> Acheteur: Envoi des notifications et des dialogues avec les acheteurs, les vendeurs et le médiateur
+deactivate EMarché
+
+***
+
+title Prévenir si le bien est expédié\nMagalie Mallinger
+Actor Vendeur
+participant EMarché
+activate EMarché
+Vendeur -> EMarché: Authentification
+EMarché -> Vendeur: Authentification réussie
+Vendeur -> EMarché: Prévenir que le bien est expédié
+EMarché -> EMarché: Enregistrement
+Actor Acheteur
+activate Acheteur
+EMarché -> Acheteur: Notifie que le bien a été expédié
+deactivate Acheteur
+deactivate EMarché
