@@ -4,16 +4,10 @@ Diagrammes de séquences :
 
 Acheteur :
 - consulter un profil 
-- consulter son compte (mon compte, mes statistiques, mes ventes, mes achats, ma messagerie)
 
 Vendeur :
 - déposer un article
-- prévenir si le bien est expédié
 - retirer un article de la vente
-
-Autres :
-- fin d'une enchère sans acheteur
-- déconnexion
 ------------------------------------------
 Diagramme de classe
 ------------------------------------------
@@ -22,3 +16,5 @@ Liste des cas qu'on va faire dans l'ordre
 Détail du cas 1 (déposer un article en vente ?)
 capture d'écran
 diagramme de classe complet
+------------------------------------------
+tout convertir en pdf

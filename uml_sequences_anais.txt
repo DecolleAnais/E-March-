@@ -1,9 +1,4 @@
-questions :
-trop détaillé ? (ex : 20/pages, suppressions etc)
-modification du profil vendeur : flèche vers vendeur ?
-à rajouter : ajout achat dans le profil acheteur
-gestion des délais ?
-enregistrement des données du formulaire ? (sécurité)
+
 ------------------------
 title Authentification\nAnaïs Decolle
 
@@ -20,9 +15,9 @@ activate EMarché
 Acheteur -> EMarché: Authentification
 EMarché -> Acheteur: Authentification réussie
     Acheteur -> EMarché: Envoi mots clés
-    EMarché -> EMarché: Recherche des ventes en cours avec la référence\nou la catégorie correspondante aux mots clés
-    EMarché -> EMarché: Sélection des 20 premières ventes par prix croissant
-    EMarché -> Acheteur: Liste des ventes en cours correspondantes\n(référence, catégorie, photo, prix, quantité, pseudoVendeur, dateLimite (si enchère))\n(20 max par page)
+    EMarché -> EMarché: Recherche des ventes en cours avec la référence, le nom\nou la catégorie correspondants aux mots clés
+    EMarché -> EMarché: Sélection des premières ventes par prix croissant (avec un nombre max de sélection)
+    EMarché -> Acheteur: Liste des ventes en cours correspondantes\n(référence, nom, catégorie, photo, prix, quantité, pseudoVendeur, dateLimite (si enchère))
 deactivate EMarché
 -------------------------
 title Consulter les ventes en cours\nAnaïs Decolle
@@ -33,8 +28,8 @@ activate EMarché
 	Acheteur -> EMarché: Authentification
 	EMarché -> Acheteur: Authentification réussie
     EMarché -> EMarché: Recherche des ventes en cours 
-    EMarché -> EMarché: Sélection des 20 premières ventes par ordre\nd'ancienneté (en partant du plus récent)
-    EMarché -> Acheteur: Liste des ventes en cours\n(référence, catégorie, photo, prix, quantité, pseudoVendeur, dateLimite (si enchère))\n(20 max par page)
+    EMarché -> EMarché: Sélection des premières ventes par ordre d'ancienneté\n(en partant du plus récent et avec un nombre max de sélection)
+    EMarché -> Acheteur: Liste des ventes en cours\n(référence, nom, catégorie, photo, prix, quantité, pseudoVendeur, noteVendeur, dateLimite (si enchère))
 deactivate EMarché
 -------------------------
 title Rechercher un profil par mots clés\nAnaïs Decolle
@@ -46,8 +41,8 @@ activate EMarché
 	EMarché -> Acheteur: Authentification réussie
     Acheteur -> EMarché: Envoi mots clés
     EMarché -> EMarché: Recherche des pseudos correspondants\naux mots clés
-    EMarché -> EMarché: Sélection des 20 premiers pseudos correspondants
-    EMarché -> Acheteur: Liste des profils correspondants\n(photo, pseudo, note)\n(20 max par page)
+    EMarché -> EMarché: Sélection des premiers pseudos correspondants\n(avec un nombre max de sélection)
+    EMarché -> Acheteur: Liste des profils correspondants\n(photo, pseudo, note)
 deactivate EMarché
 -------------------------
 title Acheter un produit\nAchat standard (sans enchère)\nAnaïs Decolle
@@ -56,12 +51,14 @@ participant EMarché
 activate EMarché
 	Acheteur -> EMarché: Authentification
 	EMarché -> Acheteur: Authentification réussie
-    Acheteur -> EMarché: Envoi produit choisi et quantité
-    EMarché -> Acheteur: Formulaire coordonnées bancaires\n(nom, prénom, numéro de carte, type de carte : Visa ou Mastercard ou Paypal,\nnuméro secret, date de validité, adresse de livraison, adresse de facturation,\ntype de livraison : Colissimo ou envoi standard, acceptation des conditions générales de vente)
-    Acheteur -> EMarché: Envoi coordonnées bancaires
-    EMarché -> EMarché: Vérification de la validité des champs
-    EMarché -> EMarché: Vérification des coordonnées bancaires\navec celles du profil
-    EMarché -> EMarché: Enregistrement des données du formulaire
+    Acheteur -> EMarché: Envoi produit choisi (référence) et quantité
+    EMarché -> EMarché: Coordonnées bancaires enregistrées dans le profil
+    EMarché -> Banque: Demande de confirmation
+    Banque -> Banque: Vérification de l'état du compte
+    Banque -> EMarché: Confirmation
+    activate Vendeur
+    EMarché -> Vendeur: Notification de la vente\n(pseudo de l'acheteur, adresse de livraison, adresse de facturation,\nréférence produit, nom, quantité, date, heure, délai pour envoyer, type de livraison)
+    deactivate Vendeur
     alt Stock encore disponible après transaction
     	EMarché -> EMarché: Ajustement de la quantité restante du produit
     else Epuisement du stock
@@ -70,25 +67,24 @@ activate EMarché
         EMarché -> EMarché: Suppression du produit dans les ventes en cours
         EMarché -> EMarché: Mise à jour des produits en vente dans le profil du vendeur
     end
-    activate Vendeur
-    EMarché -> Vendeur: Notification de la vente\n(pseudo de l'acheteur, adresse de livraison, adresse de facturation,\nréférence produit, quantité, date, heure, délai pour envoyer, type de livraison)
-    deactivate Vendeur
+    EMarché -> EMarché: Ajout dans les produits achetés dans le profil de l'acheteur
     EMarché -> Acheteur: Confirmation de l'achat
 deactivate EMarché
 -------------------------
-title Acheter un produit\ncas de coordonnées bancaires incorrectes avec le profil ou absentes\nAnaïs Decolle
+title Acheter un produit\nAchat standard (sans enchère)\ncas de coordonnées bancaires absentes du profil\nAnaïs Decolle
 
 Actor Acheteur
 participant EMarché
 activate EMarché
 	Acheteur -> EMarché: Authentification
 	EMarché -> Acheteur: Authentification réussie
+	Acheteur -> EMarché: Envoi produit choisi (référence) et quantité
+    EMarché -> EMarché: Absence de coordonnées bancaires enregistrées dans le profil
     EMarché -> Acheteur: Formulaire coordonnées bancaires\n(nom, prénom, numéro de carte, type de carte : Visa ou Mastercard ou Paypal,\nnuméro secret, date de validité, adresse de livraison, adresse de facturation,\ntype de livraison : Colissimo ou envoi standard, confirmation de l'achat, acceptation des conditions générales de vente)
     Acheteur -> EMarché: Envoi coordonnées bancaires
-    EMarché -> EMarché: Vérification de la validité des champs
-    EMarché -> EMarché: Vérification des coordonnées bancaires\navec celles du profil
-    EMarché -> Acheteur: Coordonnées bancaires non enregistrées/incorrectes\nDemande de confirmation
-    Acheteur -> EMarché: Confirmation de l'achat
+    	EMarché -> Banque: Demande de confirmation
+        Banque -> Banque: Vérification de l'état du compte
+        Banque -> EMarché: Confirmation
     EMarché -> Acheteur: Proposition d'enregistrement des coordonnées bancaires
     alt Enregistrement accepté
     Acheteur -> EMarché: Confirmation de l'enregistrement
@@ -96,7 +92,9 @@ activate EMarché
     else Enregistrement refusé
     Acheteur -> EMarché: Refus de l'enregistrement
     end
-    EMarché -> EMarché: Enregistrement des données du formulaire
+    activate Vendeur
+    EMarché -> Vendeur: Notification de la vente\n(pseudo de l'acheteur, adresse de livraison, adresse de facturation,\nréférence produit, nom, quantité, date, heure, délai pour envoyer, type de livraison)
+    deactivate Vendeur
     alt Stock encore disponible après transaction
     	EMarché -> EMarché: Ajustement de la quantité restante du produit
     else Epuisement du stock
@@ -105,42 +103,23 @@ activate EMarché
         EMarché -> EMarché: Suppression du produit dans les ventes en cours
         EMarché -> EMarché: Mise à jour des produits en vente dans le profil du vendeur
     end
-    activate Vendeur
-    EMarché -> Vendeur: Notification de la vente\n(pseudo de l'acheteur, adresse de livraison, adresse de facturation,\nréférence produit, quantité, date, heure, délai pour envoyer, type de livraison)
-    deactivate Vendeur
+EMarché -> EMarché: Ajout dans les produits achetés dans le profil de l'acheteur
     EMarché -> Acheteur: Confirmation de l'achat
 deactivate EMarché
 -------------------------
-title Acheter un produit\ncas de champs invalides dans le formulaire des coordonnées bancaires\nAnaïs Decolle
+title Acheter un produit\nAchat standard (sans enchère)\ncas de refus de la banque\nAnaïs Decolle
 
 Actor Acheteur
 participant EMarché
 activate EMarché
 Acheteur -> EMarché: Authentification
 EMarché -> Acheteur: Authentification réussie
-    EMarché -> Acheteur: Formulaire coordonnées bancaires\n(nom, prénom, numéro de carte, type de carte : Visa ou Mastercard ou Paypal,\nnuméro secret, date de validité, adresse de livraison, adresse de facturation,\ntype de livraison : Colissimo ou envoi standard, confirmation de l'achat, acceptation des conditions générales de vente)
-    Acheteur -> EMarché: Envoi coordonnées bancaires
-    EMarché -> EMarché: Vérification de la validité des champs
-    EMarché -> EMarché: Vérification des coordonnées bancaires\navec celles du profil
-    loop Champs du formulaire incorrects
-    EMarché -> Acheteur: Formulaire de coordonnées bancaires
-        Acheteur -> EMarché: Envoi coordonnées bancaires
-    EMarché -> EMarché: Vérification de la validité des champs
-    EMarché -> EMarché: Vérification des coordonnées bancaires\navec celles du profil
-    end
-    EMarché -> EMarché: Enregistrement des données du formulaire
-    alt Stock encore disponible après transaction
-    	EMarché -> EMarché: Ajustement de la quantité restante du produit
-    else Epuisement du stock
-    	EMarché -> EMarché: Ajout dans les produits vendus
-        EMarché -> EMarché: Mise à jour des produits vendus dans le profil du vendeur
-        EMarché -> EMarché: Suppression du produit dans les ventes en cours
-        EMarché -> EMarché: Mise à jour des produits en vente dans le profil du vendeur
-    end
-    activate Vendeur
-    EMarché -> Vendeur: Notification de la vente\n(pseudo de l'acheteur, adresse de livraison, adresse de facturation,\nréférence produit, quantité, date, heure, délai pour envoyer, type de livraison)
-    deactivate Vendeur
-    EMarché -> Acheteur: Confirmation de l'achat
+    Acheteur -> EMarché: Envoi produit choisi (référence) et quantité
+    EMarché -> EMarché: Coordonnées bancaires enregistrées dans le profil
+    EMarché -> Banque: Demande de confirmation
+    Banque -> Banque: Vérification de l'état du compte
+	Banque -> EMarché: Refus
+	EMarché -> Acheteur: Annulation de l'achat "Refus de la banque"
 deactivate EMarché
 -------------------------
 title Enchérir\nAnaïs Decolle
@@ -155,9 +134,14 @@ participant EMarché
         EMarché -> Acheteur: Demande du nouveau prix\n(supérieur au prix actuel)
         Acheteur -> EMarché: Envoi nouveau prix
         EMarché -> EMarché: Enregistrement du nouveau prix actuel
-        EMarché -> EMarché: Ajout de l'acheteur en tête de liste des acheteurs\n(10 acheteurs retenus maximum)\n(pour le cas où l'acheteur final annule son achat ou ne peut pas payer,\npour pouvoir prendre le suivant, ou annuler la vente si aucun acheteur valide)
+alt produit déjà présent dans les achats en cours de l'acheteur
+EMarché -> EMarché: Mise à jour des achats en cours dans le profil de l'acheteur
+else produit absent dans les achats en cours de l'acheteur
+EMarché -> EMarché: Ajout du produit dans les achats en cours dans le profil de l'acheteur
+end
+        EMarché -> EMarché: Ajout de l'acheteur en tête de liste des acheteurs\n(avec un nombre max d'acheteurs retenus)\n(pour le cas où l'acheteur final annule son achat ou ne peut pas payer,\npour pouvoir prendre le suivant, ou annuler la vente si aucun acheteur valide)
         EMarché -> Acheteur: Validation de l'enchère
-        EMarché -> "Ancien acheteur en tête": Notification d'une enchère supérieure à la sienne\n(référence produit, prix, date fin de l'enchère)
+        EMarché -> "Ancien acheteur en tête": Notification d'une enchère supérieure à la sienne\n(référence produit, nom, prix, date fin de l'enchère)
     deactivate EMarché
 -------------------------
 title Acheter un produit\nCas de fin d'une enchère\nAnaïs Decolle
@@ -168,19 +152,19 @@ activate EMarché
 	EMarché -> Acheteur: Authentification réussie
     EMarché -> EMarché: Suppression du produit dans les ventes en cours 
     EMarché -> EMarché: Sélection de l'acheteur en tête de liste
-    EMarché -> Acheteur: Notification fin d'enchère (référence produit, prix actuel, vendeur, délai de paiement)
+    EMarché -> Acheteur: Notification fin d'enchère (référence produit, nom, prix actuel, vendeur, délai de paiement)
     EMarché -> Acheteur: Validation de l'achat
     Acheteur -> EMarché: Achat validé
-    EMarché -> Acheteur: Formulaire coordonnées bancaires\n(nom, prénom, numéro de carte, type de carte : Visa ou Mastercard ou Paypal,\nnuméro secret, date de validité, adresse de livraison, adresse de facturation,\ntype de livraison : Colissimo ou envoi standard, confirmation de l'achat, acceptation des conditions générales de vente)
-    Acheteur -> EMarché: Envoi coordonnées bancaires
-    EMarché -> EMarché: Vérification de la validité des champs
-    EMarché -> EMarché: Vérification des coordonnées bancaires\navec celles du profil
-    EMarché -> EMarché: Enregistrement des données du formulaire
+EMarché -> EMarché: Coordonnées bancaires enregistrées dans le profil
+    EMarché -> Banque: Demande de confirmation
+    Banque -> Banque: Vérification de l'état du compte
+	Banque -> EMarché: Confirmation  
+	activate Vendeur
+    EMarché -> Vendeur: Notification de la vente\n(pseudo de l'acheteur, adresse de livraison, adresse de facturation,\nréférence produit, nom, date, heure, délai pour envoyer, type de livraison)
+    deactivate Vendeur
     EMarché -> EMarché: Mise à jour des produits vendus dans le profil du vendeur
     EMarché -> EMarché: Mise à jour des produits en vente dans le profil du vendeur
-    activate Vendeur
-    EMarché -> Vendeur: Notification de la vente\n(pseudo de l'acheteur, adresse de livraison, adresse de facturation,\nproduit, date, heure, délai pour envoyer, type de livraison)
-    deactivate Vendeur
+  EMarché -> EMarché: Ajout du produit dans les achats du profil de l'acheteur
     EMarché -> Acheteur: Confirmation de l'achat
  deactivate EMarché
 -------------------------
@@ -192,37 +176,61 @@ activate EMarché
 	EMarché -> Acheteur: Authentification réussie
     EMarché -> EMarché: Suppression du produit dans les ventes en cours 
     EMarché -> EMarché: Sélection de l'acheteur en tête de liste
-    EMarché -> Acheteur: Notification fin d'enchère (référence produit, prix actuel, vendeur, délai de paiement)
+    EMarché -> Acheteur: Notification fin d'enchère (référence produit, nom, prix actuel, vendeur, délai de paiement)
     EMarché -> Acheteur: Validation de l'achat
     loop Délai de paiement dépassé
     EMarché -> EMarché: Suppression de l'acheteur en tête de liste
     EMarché -> EMarché: Sélection de l'acheteur en tête de liste
-    EMarché -> Acheteur: Notification fin d'enchère (référence produit, prix actuel, vendeur, délai de paiement)
+    EMarché -> Acheteur: Notification fin d'enchère (référence produit, nom, prix actuel, vendeur, délai de paiement)
     EMarché -> Acheteur: Validation de l'achat
     end
     Acheteur -> EMarché: Achat validé
-    EMarché -> Acheteur: Formulaire coordonnées bancaires\n(nom, prénom, numéro de carte, type de carte : Visa ou Mastercard ou Paypal,\nnuméro secret, date de validité, adresse de livraison, adresse de facturation,\ntype de livraison : Colissimo ou envoi standard, confirmation de l'achat, acceptation des conditions générales de vente)
-    Acheteur -> EMarché: Envoi coordonnées bancaires
-    EMarché -> EMarché: Vérification de la validité des champs
-    EMarché -> EMarché: Vérification des coordonnées bancaires\navec celles du profil
-    EMarché -> EMarché: Enregistrement des données du formulaire
+EMarché -> EMarché: Coordonnées bancaires enregistrées dans le profil
+    EMarché -> Banque: Demande de confirmation
+    Banque -> Banque: Vérification de l'état du compte
+	Banque -> EMarché: Confirmation  
     EMarché -> EMarché: Mise à jour des produits vendus dans le profil du vendeur
     EMarché -> EMarché: Mise à jour des produits en vente dans le profil du vendeur
     activate Vendeur
-    EMarché -> Vendeur: Notification de la vente\n(pseudo de l'acheteur, adresse de livraison, adresse de facturation,\nproduit, date, heure, délai pour envoyer, type de livraison)
+    EMarché -> Vendeur: Notification de la vente\n(pseudo de l'acheteur, adresse de livraison, adresse de facturation,\nréférence produit, nom, date, heure, délai pour envoyer, type de livraison)
     deactivate Vendeur
+EMarché -> EMarché: Ajout du produit dans les achats de l'acheteur
     EMarché -> Acheteur: Confirmation de l'achat
  deactivate EMarché
 -------------------------
-title Acheter un produit\nCas de fin d'une enchère\nPas/plus d'acheteur (du au délai de paiement ou non)\nAnaïs Decolle
+title Fin d'une enchère\nPas/plus d'acheteur (du au délai de paiement ou non)\nAnaïs Decolle
 participant EMarché
 activate EMarché
     EMarché -> EMarché: Suppression du produit dans les ventes en cours 
+	EMarché -> EMarché: Mise à jour des produits en vente dans le profil du vendeur
     activate Vendeur
-	EMarché -> Vendeur: Mise à jour des produits en vente dans le profil
-    EMarché -> Vendeur: Notification échec de la vente\n(référence produit, prix actuel, date début de l'enchère, date fin de l'enchère)
+    EMarché -> Vendeur: Notification échec de la vente\n(référence produit, nom, prix actuel, date début de l'enchère, date fin de l'enchère)
  	deactivate Vendeur
  deactivate EMarché
+-------------------------
+title Déconnexion\nAnaïs Decolle
+Actor Acheteur
+participant EMarché
+activate EMarché
+Acheteur -> EMarché: Demande de déconnexion
+EMarché -> EMarché: Modification de l'état de l'acheteur
+EMarché -> Acheteur: Déconnexion
+deactivate EMarché
+-------------------------
+title Changement de page\nAnaïs Decolle
+Actor Acheteur
+participant EMarché
+activate EMarché
+alt demande de la page précédente
+EMarché -> EMarché: Vérification qu'on n'est pas en début de liste
+EMarché -> EMarché: Sélection des éléments précédents dans la liste (avec un nombre défini d'éléments)
+EMarché -> Acheteur: Affichage des éléments sélectionnés
+else demande de la page suivante
+EMarché -> EMarché: Vérification qu'on n'est pas en fin de liste
+EMarché -> EMarché: Sélection des éléments suivants dans la liste (avec un nombre défini d'éléments max)
+EMarché -> Acheteur: Affichage des éléments sélectionnés
+end
+deactivate EMarché
 -------------------------
 title Diagramme de cas d'utilisation de l'acheteur\nAnaïs Decolle
 
