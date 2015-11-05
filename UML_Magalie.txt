@@ -163,8 +163,55 @@ title Créer un compte\nMagalie Mallinger
 Actor UtilsateurAnonyme
 participant EMarché
 activate EMarché
-EMarché -> UtilsateurAnonyme: Demande email, mot de passe, nom, prénom, adresse
-UtilsateurAnonyme -> EMarché : Envoi email, mot de passe, nom, prénom, adresse
+EMarché -> UtilsateurAnonyme: Demande pseudo, email, mot de passe, nom, prénom, date de naissance, adresse
+UtilsateurAnonyme -> EMarché : Envoi pseudo, email, mot de passe, nom, prénom, date de naissance, adresse
 EMarché -> EMarché : Vérification\ndonnées valides
 EMarché -> UtilsateurAnonyme : Validation de l'inscription
 deactivate EMarché
+
+***
+
+class Utilisateur {
+  String adresse
+  int nb_ventes
+  int nb_achats
+}
+
+class CoordsBancaire {
+	String typeCarte
+    int numeroCarte
+    int cryptogramme
+    date expiration
+}
+
+class Droits {
+	int niveau
+}
+
+class Categorie {
+	String nom
+}
+
+class Produit {
+	String nom
+    String reference
+    int prix_unitaire
+    int quantite
+    boolean enchere
+    date mise_en_vente
+    date achat
+    String status
+}
+
+class Avis {
+	int note
+    String commentaire
+}
+
+Utilisateur  --"*"  Categorie
+Categorie --"*" Produit
+Utilisateur --"1" Droits
+Utilisateur --"1" CoordsBancaire
+Utilisateur "1"-right-"*" Avis
+Produit --"*" Avis
+
