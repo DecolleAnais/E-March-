@@ -290,3 +290,27 @@ activate Acheteur
 EMarché -> Acheteur: Notifie que le bien a été expédié
 deactivate Acheteur
 deactivate EMarché
+
+***
+
+title Consulter le profil d'un acheteur ou d'un vendeur\nMagalie Mallinger
+Actor Acheteur
+participant EMarché
+activate EMarché
+Acheteur -> EMarché: Authentification
+EMarché -> Acheteur: Authentification réussie
+Acheteur -> EMarché: Consulter le profil d'un acheteur ou d'un vendeur
+EMarché -> Acheteur: Envoi pseudo, note globale, nombre de produits proposés, produits proposés,\n nombre de ventes, avis sur les ventes, nombre d'achats, avis sur les achats
+deactivate EMarché
+
+***
+
+title Consulter le profil d'un vendeur\nMagalie Mallinger
+Actor UtilisateurAnonyme
+participant EMarché
+activate EMarché
+UtilisateurAnonyme -> EMarché: Authentification
+EMarché -> UtilisateurAnonyme: Authentification réussie
+UtilisateurAnonyme -> EMarché: Consulter le profil d'un vendeur
+EMarché -> UtilisateurAnonyme: Envoi pseudo, note globale, nombre de produits proposés,\n produits proposés, nombre de ventes, avis sur les ventes
+deactivate EMarché
