@@ -1,0 +1,17 @@
+@startuml
+title Dépôt d'un article aux enchères :\nArticle absent sur le site\nNicolas Blin
+Actor Vendeur
+activate EMarché
+Vendeur -> EMarché : Authentification
+EMarché -> Vendeur : Autentifiaction réussie
+EMarché -> Vendeur : Formulaire de saisie des caractéristiques du produit
+Vendeur -> EMarché : nom, référence, prix de départ, quantité, catégorie
+EMarché -> EMarché : Vérification des données
+EMarché -> EMarché : Date de dépôt de formulaire
+EMarché -> EMarché : Ajout à la liste des articles en vente
+EMarché -> EMarché : Mise en place du début des enchères
+EMarché -> EMarché : Ajout à la liste des articles en vente aux enchères\ndans le profil du vendeur
+EMarché -> EMarché : Enregistrer le dépôt
+EMarché -> Vendeur : Enregistrer le dépôt
+deactivate EMarché
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+title Diagramme de cas d'utilisation de l'utilisateur anonyme\nNicolas Blin
+actor Anonyme
+left to right direction
+Anonyme -- (Créer un compte)
+(Créer un compte) ..> (Authentification) : include
+Anonyme -- (Consulter stats vendeur)
+(Consulter stats vendeur) ..> (Authentification) : include
+Anonyme -- (Consulter produit)
+(Consulter produit) ..> (Authentification) : include
+@enduml

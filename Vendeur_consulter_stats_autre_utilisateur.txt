@@ -1,0 +1,11 @@
+@startuml
+title Consulter les statistiques d'un autre utilisateur\nNicolas Blin
+Actor Vendeur
+activate EMarché
+Vendeur -> EMarché : Authentification
+EMarché -> Vendeur : Authentification réussie
+EMarché -> EMarché : Vérification des droits
+EMarché -> EMarché : Consulter les statistiques
+EMarché -> Vendeur : Détailes des stats(note, commentaire, âge, nom, articles vendus)
+deactivate EMarché
+@enduml

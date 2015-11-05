@@ -1,0 +1,9 @@
+@startuml
+title Dialoguer avec un acheteur\nNicolas Blin
+Actor Vendeur
+activate EMarché
+Vendeur -> EMarché: Authentification
+EMarché -> Vendeur: Authentification réussie
+Vendeur -> EMarché : Envoi du message
+deactivate EMarché
+@enduml
