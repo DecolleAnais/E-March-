@@ -1,24 +1,8 @@
 RESTE A FAIRE :
 
-Diagrammes de cas d'utilisations :
-- Médiateur
-- Utilisateur Anonyme
------------------------------------------
-Diagrammes de séquences :
-
-Acheteur :
-- consulter un profil
-- consulter son compte
-
-Vendeur :
-- déposer un article
-- prévenir si le bien est expédié
-- retirer un article de la vente
-
-(pour médiateur et utilisateur anonyme, je ne sais pas, je n'ai pas les cas d'utlisations, mais tout a peut-être déjà été fait)
-------------------------------------------
-Captures d'écran de l'application pour les cas importants
-------------------------------------------
-Liste des cas qu'on va faire dans l'ordre
 ------------------------------------------
 Détail du cas 1 (déposer un article en vente ?)
+capture d'écran
+diagramme de classe complet
+------------------------------------------
+tout convertir en pdf
