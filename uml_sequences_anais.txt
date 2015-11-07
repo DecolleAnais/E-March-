@@ -236,16 +236,16 @@ title Diagramme de cas d'utilisation de l'acheteur\nAnaïs Decolle
 
 Actor Acheteur
 left to right direction
-Acheteur -- (Consulter les produits disponibles)
-(Consulter les produits disponibles) ..> (Authentification) : include
-Acheteur -- (Rechercher un produit par mots-clés)
-(Rechercher un produit par mots-clés) ..> (Authentification) : include
+Acheteur -- (Consulter les ventes en cours)
+(Consulter les ventes en cours) ..> (Authentification) : include
+Acheteur -- (Rechercher les ventes en cours par mots-clés)
+(Rechercher les ventes en cours par mots-clés) ..> (Authentification) : include
 Acheteur -- (Acheter un produit)
 (Acheter un produit) ..> (Authentification) : include
 Acheteur -- (Enchérir)
 (Enchérir) ..> (Authentification) : include
-Acheteur -- (Rechercher un profil)
-(Rechercher un profil) ..> (Authentification) : include
+Acheteur -- (Rechercher un profil par mots-clés)
+(Rechercher un profil par mots-clés) ..> (Authentification) : include
 Acheteur -- (Consulter un profil)
 (Consulter un profil) ..> (Authentification) : include
 Acheteur -- (Consulter son compte)
