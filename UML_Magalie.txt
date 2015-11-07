@@ -171,16 +171,19 @@ deactivate EMarché
 
 ***
 
+title Diagramme de classe\nMagalie Mallinger
+
 class Utilisateur {
-String pseudo
-String nom
-String prenom
-date date_naissance
-String email
-String adresse
-int nb_ventes
-int nb_achats
-int note_globale
+# String pseudo
+# String motDePasse
+# String nom
+# String prenom
+# date dateNaissance
+# String email
+# String adresse
+# int nbVentes
+# int nbAchats
+# int noteGlobale
 }
 
 abstract class EtatConnexion {
@@ -196,29 +199,25 @@ class EtatDeconnecter {
 }
 
 class CoordsBancaire {
-String typeCarte
-int numeroCarte
-int cryptogramme
-date date_expiration
-String adresse_facturation
-String adresse_livraison
-}
-
-class Droits {
-int niveau
+# String typeCarte
+# int numeroCarte
+# int cryptogramme
+# date dateExpiration
+# String adresseFacturation
+# String adresseLivraison
 }
 
 class Categorie {
-String nom
+# String nom
 }
 
 class Produit {
-String nom
-String reference
-int prix_unitaire
-int quantite
-date date_depot
-date achat_ou_vente
+# String nom
+# String reference
+# int prixUnitaire
+# int quantite
+# date dateDepot
+# date dateAchatVente
 }
 
 abstract class EtatVente {
@@ -226,9 +225,9 @@ abstract class EtatVente {
 }
 
 class VenteEnchere {
-int prix_final
-date date_limite
-int temps_restant
+# int prixFinal
+# date dateLimite
+# int tempsRestant
 }
 
 class VenteNormale {
@@ -236,16 +235,15 @@ class VenteNormale {
 }
 
 class Avis {
-int note
-String commentaire
+# int note
+# String commentaire
 }
 
 Utilisateur  --"*"  Produit
 Categorie "1"--"*" Produit
-Utilisateur --"1" Droits
 Utilisateur --"1" CoordsBancaire
 Utilisateur "1"-right-"*" Avis
-Produit --"*" Avis
+Produit "1"--"*" Avis
 VenteEnchere --> EtatVente
 VenteNormale --> EtatVente
 EtatVente "*"-- Produit
