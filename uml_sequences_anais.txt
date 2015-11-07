@@ -319,3 +319,85 @@ EMarché -> EMarché: Suppression du produit des ventes en cours
 EMarché -> EMarché: Mise à jour des ventes en cours dans le profil du vendeur
 EMarché -> Vendeur: Confirmation de la suppression
 deactivate EMarché
+---------------------------
+title Diagramme de classe\nMagalie Mallinger
+
+class Utilisateur {
+# String pseudo
+# String motDePasse
+# String nom
+# String prenom
+# date dateNaissance
+# String email
+# String adresse
+# int nbVentes
+# int nbAchats
+# int noteGlobale
+}
+
+abstract class EtatConnexion {
+
+}
+
+class EtatConnecte {
+
+}
+
+class EtatDeconnecte {
+
+}
+
+class CoordsBancaires {
+# String typeCarte
+# int numCarte
+# int cryptogramme
+# date dateExpiration
+# String adresseFacturation
+# String adresseLivraison
+}
+
+class Categorie {
+# String nom
+}
+
+class Produit {
+# String nom
+# String reference
+# int prixUnitaire
+# int quantite
+# date dateDepot
+# date dateAchatVente
+}
+
+abstract class EtatVente {
+# boolean venteEnCours
+}
+
+class VenteEnchere {
+# int prixActuel
+# date dateLimite
+# int tempsRestant
+}
+
+class VenteNormale {
+
+}
+
+class Avis {
+# int note
+# String commentaire
+}
+
+Utilisateur  --"*"  Produit
+Categorie "1"--"*" Produit
+Utilisateur --"1" CoordsBancaires
+Utilisateur "1"-right-"*" Avis
+Produit "1"--"*" Avis
+VenteEnchere --> EtatVente
+VenteNormale --> EtatVente
+EtatVente "*"-- Produit
+EtatConnecte --> EtatConnexion
+EtatDeconnecte --> EtatConnexion
+EtatConnexion "*"-- Utilisateur
+LesProduits --"*" Produit
+LesUtilisateurs --"*" Utilisateur
