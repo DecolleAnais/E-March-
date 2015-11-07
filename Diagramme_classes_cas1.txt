@@ -1,0 +1,95 @@
+﻿title Spécification itération n°1\nAjouter ou déposer un article\n
+class Utilisateur {
+.. Imported ..
+# Produit prod
+.. Protected data ..
+# String pseudo
+# String motDePasse
+# String nom
+# String prenom
+# date dateNaissance
+# String email
+# String adresse
+# int nbVentes
+# int nbAchats
+# int noteGlobale
+.. Public data ..
++ void ajouterArticleVente(String nom, int prixDepart, \nint quantite, String categorie)
++ void retirerArticleVente(String reference)
+}
+
+abstract class EtatConnexion {
+
+}
+
+class EtatConnecte {
+
+}
+
+class EtatDeconnecte {
+
+}
+
+class CoordsBancaire {
+.. Protected data ..
+# String typeCarte
+# int numCarte
+# int cryptogramme
+# date dateExpiration
+# String adresseFacturation
+# String adresseLivraison
+}
+
+class Categorie {
+# String nom
+}
+
+class Produit {
+.. Protected data ..
+# String nom
+# String reference
+# int prixUnitaire
+# int quantite
+# date dateDepot
+# date dateAchatVente
+.. Public data ..
+.. getters ..
++ String getReference()
+.. setters ..
++ void setReference(String reference)
+}
+
+abstract class EtatVente {
+# boolean venteEnCours
+}
+
+class VenteEnchere {
+.. Protected data ..
+# int prixActuel
+# date dateLimite
+# int tempsRestant
+}
+
+class VenteNormale {
+
+}
+
+class Avis {
+.. Protected data ..
+# int note
+# String commentaire
+}
+
+Utilisateur  "*"--"*"  Produit
+Categorie "1"--"*" Produit
+Utilisateur --"1" CoordsBancaire
+Utilisateur "1"-right-"*" Avis
+Produit "1"--"*" Avis
+VenteEnchere --> EtatVente
+VenteNormale --> EtatVente
+EtatVente "*"-- Produit
+EtatConnecte --> EtatConnexion
+EtatDeconnecte --> EtatConnexion
+EtatConnexion "*"-- Utilisateur
+LesUtilisateurs --"*" Utilisateur
+LesProduits --"*" Produit

@@ -1,9 +1,6 @@
-@startuml
-title Spécification itération n°1\nAjouter ou déposer un article\n
+title Diagramme de classe
+
 class Utilisateur {
-.. Imported ..
-# Produit prod
-.. Protected data ..
 # String pseudo
 # String motDePasse
 # String nom
@@ -14,27 +11,23 @@ class Utilisateur {
 # int nbVentes
 # int nbAchats
 # int noteGlobale
-.. Public data ..
-+ void ajouterArticleVente(String nom, int prixDepart, \nint quantite, String categorie)
-+ void retirerArticleVente(String reference)
 }
 
 abstract class EtatConnexion {
 
 }
 
-class EtatConnecter {
+class EtatConnecte {
 
 }
 
-class EtatDeconnecter {
+class EtatDeconnecte {
 
 }
 
-class CoordsBancaire {
-.. Protected data ..
+class CoordsBancaires {
 # String typeCarte
-# int numeroCarte
+# int numCarte
 # int cryptogramme
 # date dateExpiration
 # String adresseFacturation
@@ -46,27 +39,20 @@ class Categorie {
 }
 
 class Produit {
-.. Protected data ..
 # String nom
 # String reference
 # int prixUnitaire
 # int quantite
 # date dateDepot
 # date dateAchatVente
-.. Public data ..
-.. getters ..
-+ String getReference()
-.. setters ..
-+ void setReference(String reference)
 }
 
 abstract class EtatVente {
-
+# boolean venteEnCours
 }
 
 class VenteEnchere {
-.. Protected data ..
-# int prixFinal
+# int prixActuel
 # date dateLimite
 # int tempsRestant
 }
@@ -76,20 +62,20 @@ class VenteNormale {
 }
 
 class Avis {
-.. Protected data ..
 # int note
 # String commentaire
 }
 
-Utilisateur  --"*"  Produit
+Utilisateur  "*"--"*"  Produit
 Categorie "1"--"*" Produit
-Utilisateur --"1" CoordsBancaire
+Utilisateur --"1" CoordsBancaires
 Utilisateur "1"-right-"*" Avis
 Produit "1"--"*" Avis
 VenteEnchere --> EtatVente
 VenteNormale --> EtatVente
 EtatVente "*"-- Produit
-EtatConnecter --> EtatConnexion
-EtatDeconnecter --> EtatConnexion
+EtatConnecte --> EtatConnexion
+EtatDeconnecte --> EtatConnexion
 EtatConnexion "*"-- Utilisateur
-@enduml
+LesProduits --"*" Produit
+LesUtilisateurs --"*" Utilisateur
