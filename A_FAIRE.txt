@@ -1,8 +1,3 @@
 RESTE A FAIRE :
 
-------------------------------------------
-Détail du cas 1 (déposer un article en vente ?)
-capture d'écran
-diagramme de classe complet
-------------------------------------------
-tout convertir en pdf
+captures d'écran du cas 1 en pdf

@@ -1,39 +1,4 @@
-ï»¿title SpÃ©cification itÃ©ration nÂ°1\nAjouter, retirer et consulter un produit\n
-class Utilisateur {
-# char* pseudo
-# char* motDePasse
-# char* nom
-# char* prenom
-# date dateNaissance
-# char* email
-# char* adresse
-# int nbVentes
-# int nbAchats
-# int noteGlobale
-+ void ajouterProduitVente(char* nom, float prix, \nint quantite, char* categorie)
-+ void retirerProduitVente(char* reference)
-}
-
-abstract class EtatConnexion {
-
-}
-
-class EtatConnecte {
-
-}
-
-class EtatDeconnecte {
-
-}
-
-class CoordsBancaire {
-# char* typeCarte
-# int numCarte
-# int cryptogramme
-# date dateExpiration
-# char* adresseFacturation
-# char* adresseLivraison
-}
+title Spécification itération n°1\nAjouter, retirer et consulter un produit\n
 
 class Categorie {
 # char* nom
@@ -97,11 +62,6 @@ class VenteNormale {
 + VenteNormale()
 }
 
-class Avis {
-# int note
-# char* commentaire
-}
-
 class LesProduits {
 ..constructeurs..
 + LesProduits()
@@ -116,16 +76,9 @@ __
 + char* toString()
 }
 
-Utilisateur  "*"--"*"  Produit
+
 Categorie "1"--"*" Produit
-Utilisateur --"1" CoordsBancaire
-Utilisateur "1"-right-"*" Avis
-Produit "1"--"*" Avis
 VenteEnchere --> EtatVente
 VenteNormale --> EtatVente
 EtatVente "*"-- Produit
-EtatConnecte --> EtatConnexion
-EtatDeconnecte --> EtatConnexion
-EtatConnexion "*"-- Utilisateur
-LesUtilisateurs --"*" Utilisateur
 LesProduits --"*" Produit

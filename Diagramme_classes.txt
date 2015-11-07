@@ -1,13 +1,13 @@
 title Diagramme de classe
 
 class Utilisateur {
-# String pseudo
-# String motDePasse
-# String nom
-# String prenom
+# char* pseudo
+# char* motDePasse
+# char* nom
+# char* prenom
 # date dateNaissance
-# String email
-# String adresse
+# char* email
+# char* adresse
 # int nbVentes
 # int nbAchats
 # int noteGlobale
@@ -26,22 +26,22 @@ class EtatDeconnecte {
 }
 
 class CoordsBancaires {
-# String typeCarte
+# char* typeCarte
 # int numCarte
 # int cryptogramme
 # date dateExpiration
-# String adresseFacturation
-# String adresseLivraison
+# char* adresseFacturation
+# char* adresseLivraison
 }
 
 class Categorie {
-# String nom
+# char* nom
 }
 
 class Produit {
-# String nom
-# String reference
-# int prixUnitaire
+# char* nom
+# char* reference
+# float prixUnitaire
 # int quantite
 # date dateDepot
 # date dateAchatVente
@@ -52,7 +52,7 @@ abstract class EtatVente {
 }
 
 class VenteEnchere {
-# int prixActuel
+# float prixActuel
 # date dateLimite
 # int tempsRestant
 }
@@ -63,7 +63,7 @@ class VenteNormale {
 
 class Avis {
 # int note
-# String commentaire
+# char* commentaire
 }
 
 Utilisateur  "*"--"*"  Produit
