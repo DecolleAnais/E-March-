@@ -1,20 +1,20 @@
 Classement des cas d'utilisation :
 1. Déposer un article en vente (normale ou enchère)
    Retirer un article de la vente
-2. Consulter les produits disponibles
-3. Rechercher un produit par mots-clés ou catégorie ou référence
-4. Monter une enchère
-5. Acheter un produit
+   Consulter les produits disponibles
+2. Rechercher un produit par mots-clés ou catégorie ou référence
+3. Monter une enchère
+4. Acheter un produit
    Pour un acheteur, enchérir dans le cas d'une vente aux enchères
    Pour un acheteur, annuler un achat
-6. Créer un compte
+5. Créer un compte
    Consulter son compte
    Si vendeur, prévenir si le bien est expédié
-7. Mettre un avis sur un produit
+6. Mettre un avis sur un produit
    Mettre un avis sur un vendeur
-8. Rechercher un profil
-9. Consulter un profil (pour un vendeur/acheteur et pour un utilisateur anonyme)
-10. Poser une réclamation pour un acheteur
+7. Rechercher un profil
+8. Consulter un profil (pour un vendeur/acheteur et pour un utilisateur anonyme)
+9. Poser une réclamation pour un acheteur
     Si médiateur, ouvrir ou clore un dialogue
-11. Dialoguer entre vendeur et acheteur
+10. Dialoguer entre vendeur et acheteur
     Si médiateur, intervenir dans le dialogue
