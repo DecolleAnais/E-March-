@@ -3,8 +3,8 @@
 using namespace std;
 
 
-Produit::Produit(string n, Categorie cat, float prix, unsigned int qte) :
-categorie(cat), nom(n), prixUnitaire(prix), quantite(qte), reference("ref"), date(time(NULL)) {
+Produit::Produit(string n, string cat, float prix, unsigned int qte) :
+categorie(cat), nom(n), prixUnitaire(prix), quantite(qte), reference("ref"), date(time(NULL)), dateDepot(&date) {
 
 }
 
@@ -22,6 +22,10 @@ string Produit::getReference(){
 
 string Produit::getNom(){
     return nom;
+}
+
+string Produit::getCategorie(){
+    return categorie;
 }
 
 string Produit::getDateDepot(){

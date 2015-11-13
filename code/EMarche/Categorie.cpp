@@ -2,6 +2,10 @@
 
 using namespace std;
 
-std::string Categorie::getNom(){
+Categorie::Categorie(string n):nom(n){
+
+}
+
+string Categorie::getNom(){
     return nom;
 }
