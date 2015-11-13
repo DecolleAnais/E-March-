@@ -6,7 +6,7 @@
 class Categorie {
 public :
 
-    Categorie(std::string n){nom = n;}
+    Categorie(std::string n);
 
     std::string getNom();
 
