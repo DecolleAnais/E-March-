@@ -35,3 +35,4 @@ string Produit::getDateAchatVente(){
 void Produit::setQuantite(unsigned int q){
     quantite = q;
 }
+
