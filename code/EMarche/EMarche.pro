@@ -17,8 +17,10 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     Produit.cpp \
-    Categorie.cpp
+    Categorie.cpp \
+    VenteEnchere.cpp
 
 HEADERS += \
     Produit.h \
-    Categorie.h
+    Categorie.h \
+    VenteEnchere.h
