@@ -3,18 +3,20 @@
 #include "Produit.h"
 #include <vector>
 
+#include "VenteEnchere.h"
+
 using namespace std;
 
 int main(void)
 {
-    /*Produit p;
+    Produit p;
     p.setQuantite(2);
     cout << "nom " << p.getNom() << endl;
     cout << "ref " << p.getReference() << endl;
     cout << "qt " << p.getQuantite() << endl;
     cout << "pu " << p.getPrixUnitaire() << endl;
     cout << "depot " << p.getDateDepot() << endl;
-    cout << "achat " << p.getDateAchatVente() << endl;*/
+    cout << "achat " << p.getDateAchatVente() << endl;
 //    string nom = "";
 //    string categorie = "";
 //    float prix = 0;
@@ -32,6 +34,8 @@ int main(void)
 
       /*list<Produit> mylist;
       Produit p("fdf","fdg",5.6,5);
+      list<Produit> mylist;
+      Produit p("fdf",string("fdg"),5.6,5);
       mylist.push_front(p);
       mylist.push_front(p);
       mylist.push_front(p);
@@ -47,6 +51,7 @@ int main(void)
           cout << ' ';
           cout << "----------------------------------------\n";
       }
+
       cout << "----------------------------------------\n";*/
 
     vector<Produit*> liste;     // a liberer apres
@@ -57,6 +62,9 @@ int main(void)
     }
 
 
+
+
+      cout << "----------------------------------------\n";
 
     return 0;
 }

@@ -3,10 +3,12 @@
 
 #include <string>
 #include <ctime>
+#include "EtatVente.h"
 
-class VenteEnchere {
+class VenteEnchere : public EtatVente {
+
 public :
-    VenteEnchere();
+    VenteEnchere(bool b);
     float getPrixActuel();
     std::string getDateLimite();
     void setPrixActuel(float prix);
