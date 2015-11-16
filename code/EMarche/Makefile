@@ -47,10 +47,16 @@ OBJECTS_DIR   = ./
 
 SOURCES       = main.cpp \
 		Produit.cpp \
-		Categorie.cpp 
+		Categorie.cpp \
+		VenteEnchere.cpp \
+		Utilisateur.cpp \
+		Avis.cpp 
 OBJECTS       = main.o \
 		Produit.o \
-		Categorie.o
+		Categorie.o \
+		VenteEnchere.o \
+		Utilisateur.o \
+		Avis.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/shell-unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -265,7 +271,7 @@ qmake_all: FORCE
 
 dist: 
 	@test -d .tmp/EMarche1.0.0 || mkdir -p .tmp/EMarche1.0.0
-	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/EMarche1.0.0/ && $(COPY_FILE) --parents Produit.h Categorie.h .tmp/EMarche1.0.0/ && $(COPY_FILE) --parents main.cpp Produit.cpp Categorie.cpp .tmp/EMarche1.0.0/ && (cd `dirname .tmp/EMarche1.0.0` && $(TAR) EMarche1.0.0.tar EMarche1.0.0 && $(COMPRESS) EMarche1.0.0.tar) && $(MOVE) `dirname .tmp/EMarche1.0.0`/EMarche1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/EMarche1.0.0
+	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/EMarche1.0.0/ && $(COPY_FILE) --parents Produit.h Categorie.h VenteEnchere.h Utilisateur.h Avis.h .tmp/EMarche1.0.0/ && $(COPY_FILE) --parents main.cpp Produit.cpp Categorie.cpp VenteEnchere.cpp Utilisateur.cpp Avis.cpp .tmp/EMarche1.0.0/ && (cd `dirname .tmp/EMarche1.0.0` && $(TAR) EMarche1.0.0.tar EMarche1.0.0 && $(COMPRESS) EMarche1.0.0.tar) && $(MOVE) `dirname .tmp/EMarche1.0.0`/EMarche1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/EMarche1.0.0
 
 
 clean:compiler_clean 
@@ -302,14 +308,25 @@ compiler_clean:
 
 ####### Compile
 
-main.o: main.cpp Produit.h
+main.o: main.cpp Produit.h \
+		Categorie.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
-Produit.o: Produit.cpp Produit.h
+Produit.o: Produit.cpp Produit.h \
+		Categorie.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Produit.o Produit.cpp
 
 Categorie.o: Categorie.cpp Categorie.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Categorie.o Categorie.cpp
+
+VenteEnchere.o: VenteEnchere.cpp VenteEnchere.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o VenteEnchere.o VenteEnchere.cpp
+
+Utilisateur.o: Utilisateur.cpp Utilisateur.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Utilisateur.o Utilisateur.cpp
+
+Avis.o: Avis.cpp Avis.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Avis.o Avis.cpp
 
 ####### Install
 

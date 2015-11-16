@@ -26,6 +26,9 @@ public:
 
     Produit(std::string n, std::string cat, float prix, unsigned int qte);
 
+    /* destructeur */
+    virtual ~Produit() {}
+
     unsigned int getQuantite();
     float getPrixUnitaire();
     std::string getReference();

@@ -8,6 +8,9 @@ public :
 
     Categorie(std::string n);
 
+    /* destructeur */
+    virtual ~Categorie() {}
+
     std::string getNom();
 
 private:
