@@ -18,9 +18,16 @@ TEMPLATE = app
 SOURCES += main.cpp \
     Produit.cpp \
     Categorie.cpp \
-    VenteEnchere.cpp
+    VenteEnchere.cpp \
+    EtatVente.cpp \
+    EtatConnexion.cpp
 
 HEADERS += \
     Produit.h \
     Categorie.h \
-    VenteEnchere.h
+    VenteEnchere.h \
+    EtatVente.h \
+    VenteNormale.h \
+    EtatConnexion.h \
+    EtatConnecte.h \
+    EtatDeconnecte.h
