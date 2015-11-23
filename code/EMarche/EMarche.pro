@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core
+QT       += core \
+    widgets
 
 QT       -= gui
 
@@ -19,25 +20,18 @@ SOURCES += main.cpp \
     Produit.cpp \
     Categorie.cpp \
     VenteEnchere.cpp \
-<<<<<<< HEAD
     Utilisateur.cpp \
-    Avis.cpp
-=======
+    Avis.cpp \
+    LesUtilisateurs.cpp
     EtatVente.cpp \
-    EtatConnexion.cpp
->>>>>>> 6e4c0d939eaa5a3763afc3f66464d1c038f5db69
 
 HEADERS += \
     Produit.h \
     Categorie.h \
     VenteEnchere.h \
-<<<<<<< HEAD
     Utilisateur.h \
-    Avis.h
-=======
-    EtatVente.h \
-    VenteNormale.h \
-    EtatConnexion.h \
-    EtatConnecte.h \
-    EtatDeconnecte.h
->>>>>>> 6e4c0d939eaa5a3763afc3f66464d1c038f5db69
+    Avis.h \
+    EtatDeconnecte.h \
+    LesUtilisateurs.h
+
+FORMS +=

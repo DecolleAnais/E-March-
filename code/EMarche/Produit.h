@@ -18,7 +18,7 @@ private:
     struct tm dateAchatVente;
 
 public:
-    Produit() : categorie("cat"), nom("truc"), reference("#0"), prixUnitaire(2), quantite(1) {
+    Produit() : categorie("Divers"), nom("truc"), reference("#0"), prixUnitaire(2), quantite(1) {
         // Initialisation de la date de dépôt au jour actuel
         time_t maintenant;
         time(&maintenant);
@@ -46,6 +46,7 @@ public:
     /* destructeur */
     virtual ~Produit() {}
 
+    /* fonctions get */
     unsigned int getQuantite();
     float getPrixUnitaire();
     std::string getReference();
@@ -53,8 +54,12 @@ public:
     std::string getCategorie();
     std::string getDateDepot();
     std::string getDateAchatVente();
+
+    /* fonctions set */
     void setQuantite(unsigned int q);
     void setDateVenteAchat(int jour, int mois, int annee);
+
+    /* fonctions d'affichage */
     std::string toString();
 
     void   decrit(std::ostream &os) {

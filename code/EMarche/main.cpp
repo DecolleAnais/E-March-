@@ -1,70 +1,42 @@
 #include <iostream>
-#include <list>
 #include "Produit.h"
-#include <vector>
+#include "Utilisateur.h"
+#include "LesUtilisateurs.h"
+#include "Categorie.h"
 
 #include "VenteEnchere.h"
 
 using namespace std;
 
-int main(void)
+int main(int argc, char* argv[])
 {
     Produit p;
-    p.setQuantite(2);
-    cout << "nom " << p.getNom() << endl;
-    cout << "ref " << p.getReference() << endl;
-    cout << "qt " << p.getQuantite() << endl;
-    cout << "pu " << p.getPrixUnitaire() << endl;
-    cout << "depot " << p.getDateDepot() << endl;
-    cout << "achat " << p.getDateAchatVente() << endl;
-//    string nom = "";
-//    string categorie = "";
-//    float prix = 0;
-//    unsigned int quantite = 1;
-//    cout << "Mise en vente de votre produit :" << endl <<"Nom : ";
-//    cin >> nom;
-//    cout << "Categorie :" << endl;
-//    cin >> categorie;
-//    cout << "Prix/Unite :" << endl;
-//    cin >> prix;
-//    cout << "Quantite :" << endl;
-//    cin >> quantite;
+    string nom = "nom";
+    string categorie = "categorie";
+    float prix = 2;
+    unsigned int quantite = 1;
+    /*cout << "Mise en vente de votre produit :" << endl <<"Nom : ";
+    cin >> nom;
+    cout << "Categorie :" << endl;
+    cin >> categorie;
+    cout << "Prix/Unite :" << endl;
+    cin >> prix;
+    cout << "Quantite :" << endl;
+    cin >> quantite;*/
 
-//    Produit prod(nom, categorie, prix, quantite);
+    Produit prod(nom, categorie, prix, quantite);
+    prod.affiche(cout);
 
-      /*list<Produit> mylist;
-      Produit p("fdf","fdg",5.6,5);
-      list<Produit> mylist;
-      Produit p("fdf",string("fdg"),5.6,5);
-      mylist.push_front(p);
-      mylist.push_front(p);
-      mylist.push_front(p);
-      mylist.push_front(p);
-      mylist.push_front(p);
-      mylist.push_front(p);
+    Utilisateur user("Graou","mdp","Decolle","Anais",18,4,1994,"graou@orange.fr","3, rue du biscuit");
+    Utilisateur user2("Graou2","mdp","Mallinger","Magalie",0,0,0,"graou@orange.fr","3, rue du chocolat");
+    Utilisateur user3("Graou3","mdp","Gra","Aou",18,4,1994,"graou@orange.fr","3, rue de l'hiver");
 
-      mylist.remove(0);
+    LesUtilisateurs users;
+    users.add(&user);
+    users.add(&user2);
+    users.add(&user3);
 
-      cout << "Liste de produits :\n";
-      for (list<Produit>::iterator it=mylist.begin(); it != mylist.end(); ++it) {
-          it->affiche(cout);
-          cout << ' ';
-          cout << "----------------------------------------\n";
-      }
-
-      cout << "----------------------------------------\n";*/
-
-    vector<Produit*> liste;     // a liberer apres
-    Produit p("Produit1","test",4,1);
-    liste.push_back(&p);
-    for(int i = 0;i < liste.size();i++) {
-        liste[i]->affiche(cout);
-    }
-
-
-
-
-      cout << "----------------------------------------\n";
+    users.affiche();
 
     return 0;
 }
