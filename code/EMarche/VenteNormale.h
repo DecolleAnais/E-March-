@@ -1,0 +1,4 @@
+#ifndef VENTENORMALE_H
+#define VENTENORMALE_H
+
+#endif // VENTENORMALE_H

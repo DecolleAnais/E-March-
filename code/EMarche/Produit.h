@@ -9,7 +9,7 @@
 class Produit {
 
 private:
-    std::string categorie;
+    Categorie *categorie;
     std::string nom;
     std::string reference;
     float prixUnitaire;
@@ -18,7 +18,9 @@ private:
     struct tm dateAchatVente;
 
 public:
-    Produit() : categorie("Divers"), nom("truc"), reference("#0"), prixUnitaire(2), quantite(1) {
+    Produit() : nom("truc"), reference("#0"), prixUnitaire(2), quantite(1) {
+        // Initialisation de la catégorie
+        categorie = new Categorie("cat");
         // Initialisation de la date de dépôt au jour actuel
         time_t maintenant;
         time(&maintenant);
@@ -30,8 +32,10 @@ public:
         dateAchatVente.tm_year = 0;
     }
 
-    Produit(std::string n, std::string cat, float prix, unsigned int qte) : categorie(cat),
-        nom(n), reference("ref"), prixUnitaire(prix), quantite(qte) {
+    Produit(std::string n, std::string cat, float prix, unsigned int qte) : nom(n),
+        reference("ref"), prixUnitaire(prix), quantite(qte) {
+        // Initialisation de la catégorie
+        categorie = new Categorie(cat);
         // Initialisation de la date de dépôt au jour actuel
         time_t maintenant;
         time(&maintenant);

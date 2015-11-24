@@ -19,7 +19,7 @@ string Produit::getNom(){
 }
 
 string Produit::getCategorie(){
-    return categorie;
+    return categorie->getNom();
 }
 
 string Produit::getDateDepot(){

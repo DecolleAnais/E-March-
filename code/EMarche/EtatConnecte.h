@@ -1,0 +1,4 @@
+#ifndef ETATCONNECTE_H
+#define ETATCONNECTE_H
+
+#endif // ETATCONNECTE_H

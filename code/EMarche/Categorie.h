@@ -2,7 +2,6 @@
 #define CATEGORIE_H
 
 #include <string>
-#include "Produit.h"
 
 class Categorie {
 
@@ -18,6 +17,7 @@ public:
     virtual ~Categorie() {}
 
     std::string getNom();
+    void setNom(std::string n);
 
 };
 
