@@ -22,7 +22,9 @@ SOURCES += main.cpp \
     VenteEnchere.cpp \
     Utilisateur.cpp \
     Avis.cpp \
-    LesUtilisateurs.cpp
+    LesUtilisateurs.cpp \
+    EtatConnexion.cpp \
+    EtatVente.cpp
     EtatVente.cpp \
 
 HEADERS += \
@@ -32,6 +34,10 @@ HEADERS += \
     Utilisateur.h \
     Avis.h \
     EtatDeconnecte.h \
-    LesUtilisateurs.h
+    LesUtilisateurs.h \
+    EtatConnecte.h \
+    EtatConnexion.h \
+    EtatVente.h \
+    VenteNormale.h
 
 FORMS +=

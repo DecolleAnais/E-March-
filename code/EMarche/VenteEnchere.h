@@ -1,6 +1,6 @@
 #ifndef VENTEENCHERE_H
 #define VENTEENCHERE_H
-/*
+
 #include <string>
 #include <ctime>
 #include "EtatVente.h"
@@ -19,5 +19,5 @@ private:
     int tempsRestant;
     struct tm dateLimite;
 };
-*/
+
 #endif

@@ -2,7 +2,7 @@
 #include "VenteEnchere.h"
 
 using namespace std;
-/*
+
 VenteEnchere::VenteEnchere (bool b) : EtatVente(b), prixActuel(0), tempsRestant(0) {
     dateLimite.tm_year = 2015;
     dateLimite.tm_mon = 11;
@@ -30,4 +30,4 @@ void VenteEnchere::setPrixActuel(float prix){
 void VenteEnchere::setDateLimite(struct tm date){
     dateLimite = date;
 }
-*/
+

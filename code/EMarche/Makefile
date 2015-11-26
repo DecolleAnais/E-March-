@@ -51,14 +51,18 @@ SOURCES       = main.cpp \
 		VenteEnchere.cpp \
 		Utilisateur.cpp \
 		Avis.cpp \
-		LesUtilisateurs.cpp 
+		LesUtilisateurs.cpp \
+		EtatConnexion.cpp \
+		EtatVente.cpp 
 OBJECTS       = main.o \
 		Produit.o \
 		Categorie.o \
 		VenteEnchere.o \
 		Utilisateur.o \
 		Avis.o \
-		LesUtilisateurs.o
+		LesUtilisateurs.o \
+		EtatConnexion.o \
+		EtatVente.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/shell-unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -346,7 +350,7 @@ qmake_all: FORCE
 
 dist: 
 	@test -d .tmp/EMarche1.0.0 || mkdir -p .tmp/EMarche1.0.0
-	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/EMarche1.0.0/ && $(COPY_FILE) --parents Produit.h Categorie.h VenteEnchere.h Utilisateur.h Avis.h EtatDeconnecte.h LesUtilisateurs.h .tmp/EMarche1.0.0/ && $(COPY_FILE) --parents main.cpp Produit.cpp Categorie.cpp VenteEnchere.cpp Utilisateur.cpp Avis.cpp LesUtilisateurs.cpp .tmp/EMarche1.0.0/ && (cd `dirname .tmp/EMarche1.0.0` && $(TAR) EMarche1.0.0.tar EMarche1.0.0 && $(COMPRESS) EMarche1.0.0.tar) && $(MOVE) `dirname .tmp/EMarche1.0.0`/EMarche1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/EMarche1.0.0
+	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/EMarche1.0.0/ && $(COPY_FILE) --parents Produit.h Categorie.h VenteEnchere.h Utilisateur.h Avis.h EtatDeconnecte.h LesUtilisateurs.h EtatConnecte.h EtatConnexion.h EtatVente.h VenteNormale.h .tmp/EMarche1.0.0/ && $(COPY_FILE) --parents main.cpp Produit.cpp Categorie.cpp VenteEnchere.cpp Utilisateur.cpp Avis.cpp LesUtilisateurs.cpp EtatConnexion.cpp EtatVente.cpp .tmp/EMarche1.0.0/ && (cd `dirname .tmp/EMarche1.0.0` && $(TAR) EMarche1.0.0.tar EMarche1.0.0 && $(COMPRESS) EMarche1.0.0.tar) && $(MOVE) `dirname .tmp/EMarche1.0.0`/EMarche1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/EMarche1.0.0
 
 
 clean:compiler_clean 
@@ -388,7 +392,9 @@ compiler_clean:
 main.o: main.cpp Produit.h \
 		Categorie.h \
 		Utilisateur.h \
-		VenteEnchere.h
+		LesUtilisateurs.h \
+		VenteEnchere.h \
+		EtatVente.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 Produit.o: Produit.cpp Produit.h \
@@ -399,7 +405,8 @@ Categorie.o: Categorie.cpp Categorie.h \
 		Produit.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Categorie.o Categorie.cpp
 
-VenteEnchere.o: VenteEnchere.cpp VenteEnchere.h
+VenteEnchere.o: VenteEnchere.cpp VenteEnchere.h \
+		EtatVente.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o VenteEnchere.o VenteEnchere.cpp
 
 Utilisateur.o: Utilisateur.cpp Utilisateur.h
@@ -411,6 +418,12 @@ Avis.o: Avis.cpp Avis.h
 LesUtilisateurs.o: LesUtilisateurs.cpp LesUtilisateurs.h \
 		Utilisateur.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o LesUtilisateurs.o LesUtilisateurs.cpp
+
+EtatConnexion.o: EtatConnexion.cpp EtatConnexion.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o EtatConnexion.o EtatConnexion.cpp
+
+EtatVente.o: EtatVente.cpp EtatVente.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o EtatVente.o EtatVente.cpp
 
 ####### Install
 
