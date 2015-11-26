@@ -401,8 +401,7 @@ Produit.o: Produit.cpp Produit.h \
 		Categorie.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Produit.o Produit.cpp
 
-Categorie.o: Categorie.cpp Categorie.h \
-		Produit.h
+Categorie.o: Categorie.cpp Categorie.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Categorie.o Categorie.cpp
 
 VenteEnchere.o: VenteEnchere.cpp VenteEnchere.h \

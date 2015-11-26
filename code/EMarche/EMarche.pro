@@ -24,7 +24,6 @@ SOURCES += main.cpp \
     Avis.cpp \
     LesUtilisateurs.cpp \
     EtatConnexion.cpp \
-    EtatVente.cpp
     EtatVente.cpp \
 
 HEADERS += \
