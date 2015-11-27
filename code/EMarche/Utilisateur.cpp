@@ -49,6 +49,18 @@ unsigned int Utilisateur::getNote() {
     return note;
 }
 
+vector<Produit*> Utilisateur::getLesAchats() {
+    return lesAchats;
+}
+
+vector<Produit*> Utilisateur::getLesVentes() {
+    return lesVentes;
+}
+
+vector<Avis> Utilisateur::getLesAvis() {
+    return lesAvis;
+}
+
 /* Fonctions set */
 void Utilisateur::setPseudo(string p) {
     pseudo = p;
@@ -90,4 +102,20 @@ void Utilisateur::setNbAchats(unsigned int n) {
 
 void Utilisateur::setNote(unsigned int n) {
     note = n;
+}
+
+/* Autres fonctions */
+void Utilisateur::addAchat(Produit* p) {
+    lesAchats.push_back(p);
+    nbAchats++;
+}
+
+void Utilisateur::addVente(Produit* p) {
+    lesVentes.push_back(p);
+    nbVentes++;
+}
+
+void Utilisateur::addAvis(Avis a) {
+    lesAvis.push_back(a);
+    nbAvis++;
 }

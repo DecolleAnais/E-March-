@@ -41,7 +41,12 @@ int main()
     users.add(&user2);
     users.add(&user3);
 
-    users.affiche();
+    /*users.supprimer("Graou");
+    users.supprimer("Graou3");
+    users.affiche();*/
+
+    Utilisateur recupUser = *users.getUtilisateur("Graou2");
+    recupUser.affiche(cout);
 
     return 0;
 }

@@ -12,7 +12,11 @@ void LesUtilisateurs::supprimer(string pseudo) {
     unsigned int i = 0;
     while(!trouve && i < lesUtilisateurs.size()) {
         if(pseudo == lesUtilisateurs[i]->getPseudo()) {
-            delete(lesUtilisateurs[i]);
+            /* échange de l'élément avec le dernier, puis suppression du dernier */
+            Utilisateur* tmp = lesUtilisateurs[lesUtilisateurs.size()-1];
+            lesUtilisateurs[lesUtilisateurs.size()-1] = lesUtilisateurs[i];
+            lesUtilisateurs[i] = tmp;
+            lesUtilisateurs.pop_back();
             trouve = true;
         }
         i++;
@@ -20,7 +24,14 @@ void LesUtilisateurs::supprimer(string pseudo) {
 }
 
 Utilisateur* LesUtilisateurs::getUtilisateur(string pseudo) {
-
+    unsigned int i = 0;
+    while(i < lesUtilisateurs.size()) {
+        if(pseudo == lesUtilisateurs[i]->getPseudo()) {
+            return lesUtilisateurs[i];
+        }
+        i++;
+    }
+    return NULL;
 }
 
 int LesUtilisateurs::getNbUtilisateurs() {

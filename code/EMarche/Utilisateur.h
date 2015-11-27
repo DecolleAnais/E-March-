@@ -4,6 +4,9 @@
 #include <string>
 #include <sstream>
 #include <ctime>
+#include <vector>
+#include "Produit.h"
+#include "Avis.h"
 
 class Utilisateur {
 
@@ -17,12 +20,16 @@ private:
     std::string adresse;
     unsigned int nbVentes;
     unsigned int nbAchats;
+    unsigned int nbAvis;
     unsigned int note;
+    std::vector<Produit*> lesAchats;
+    std::vector<Produit*> lesVentes;
+    std::vector<Avis> lesAvis;
 
 public:
     /* Constructeur */
     Utilisateur(std::string monPseudo, std::string monMdp, std::string name, std::string firstname, int jourNaiss, int moisNaiss, int anneeNaiss, std::string mail, std::string adr) :
-        pseudo(monPseudo), mdp(monMdp), nom(name), prenom(firstname), email(mail), adresse(adr), nbVentes(0), nbAchats(0), note(0) {
+        pseudo(monPseudo), mdp(monMdp), nom(name), prenom(firstname), email(mail), adresse(adr), nbVentes(0), nbAchats(0), nbAvis(0), note(0) {
         dateNaissance.tm_mday = jourNaiss;
         dateNaissance.tm_mon = moisNaiss;
         dateNaissance.tm_year = anneeNaiss;
@@ -42,6 +49,9 @@ public:
     unsigned int getNbVentes();
     unsigned int getNbAchats();
     unsigned int getNote();
+    std::vector<Produit*> getLesAchats();
+    std::vector<Produit*> getLesVentes();
+    std::vector<Avis> getLesAvis();
 
     /* Fonctions set */
     void setPseudo(std::string p);
@@ -54,6 +64,11 @@ public:
     void setNbVentes(unsigned int n);
     void setNbAchats(unsigned int n);
     void setNote(unsigned int n);
+
+    /* Autres fonctions */
+    void addAchat(Produit* p);
+    void addVente(Produit* p);
+    void addAvis(Avis a);
 
     /* Fonctions d'affichage */
     std::string toString();
