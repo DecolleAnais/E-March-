@@ -12,15 +12,16 @@ private:
     int nbElems;
 
 public:
-    LesProduits() : lesProduits(10), nbElems(0) {}
+    LesProduits() : lesProduits(), nbElems(0) {}
 
     //LesProduits();
 
     std::vector<Produit*> getListProduits();
     int size();
     void addProduit(Produit* p);
-    void supprimerProduit(int ref);
-    Produit getProduit(int ref);
+    void supprimerProduit(std::string ref);
+    void supprimerProduit(Produit* p);
+    Produit getProduit(std::string ref);
     void toString();
 };
 

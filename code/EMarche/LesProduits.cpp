@@ -15,24 +15,48 @@ void LesProduits::addProduit(Produit* p) {
     nbElems++;
 }
 
-void LesProduits::supprimerProduit(int ref) {
-
+void LesProduits::supprimerProduit(string ref) {
+    int pos = 0;
+    int i = 0;
+    for(i = 0; i < nbElems; i++) {
+        if(lesProduits[i]->getReference().compare(ref) == 0) {
+            pos = i;
+            i = nbElems;
+        }
+    }
+    lesProduits.erase(lesProduits.begin()+pos);
+    nbElems--;
 }
 
-Produit LesProduits::getProduit(int ref) {
+void LesProduits::supprimerProduit(Produit* p) {
+    int pos = 0;
+    int i = 0;
+    for(i = 0; i < nbElems; i++) {
+        if(lesProduits[i]->getReference().compare(p->getReference()) == 0) {
+            pos = i;
+            i = nbElems;
+        }
+    }
+    lesProduits.erase(lesProduits.begin()+pos);
+    nbElems--;
+}
 
+Produit LesProduits::getProduit(string ref) {
+    int pos = 0;
+    int i = 0;
+    for(i = 0; i < nbElems; i++) {
+        if(lesProduits[i]->getReference().compare(ref) == 0) {
+            pos = i;
+            i = nbElems;
+        }
+    }
+    return *lesProduits[pos];
 }
 
 void LesProduits::toString() {
     vector<Produit*>::iterator it;
-    cout << "Liste de produits :" << endl;
-    for (it=lesProduits.begin(); it != lesProduits.end(); ++it) {
+    for (it=lesProduits.begin(); it != lesProduits.end(); it++) {
         (*it)->affiche(cout);
-        cout << ' ';
-        cout << "----------------------------------------" << endl;
+        cout << " ----------------------------------------" << endl;
     }
-    if(it == lesProduits.end()) {
-        cout << "hello" << endl;
-    }
-    cout << "hum" << endl;
 }

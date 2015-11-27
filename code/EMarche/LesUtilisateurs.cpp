@@ -41,7 +41,7 @@ int LesUtilisateurs::getNbUtilisateurs() {
 void LesUtilisateurs::affiche() {
     vector<Utilisateur*>::iterator it;
     for(it = lesUtilisateurs.begin();it != lesUtilisateurs.end();it++) {
-        (*it)->Utilisateur::affiche(cout);
+        (*it)->affiche(cout);
     }
 }
 

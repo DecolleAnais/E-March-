@@ -3,7 +3,7 @@
 #include "Utilisateur.h"
 #include "LesUtilisateurs.h"
 #include "Categorie.h"
-
+#include "LesProduits.h"
 #include "VenteEnchere.h"
 
 using namespace std;
@@ -29,7 +29,19 @@ int main()
 
     /* Test affichage 1 produit */
     Produit prod("produit1", "categorieProd", 2.5, 1);
-    prod.affiche(cout);
+    Produit prod1("produit2", "categorieProd", 2.5, 1);
+    Produit prod2("produit3", "categorieProd", 2.5, 1);
+    LesProduits lesProduits;
+    lesProduits.addProduit(&prod);
+    lesProduits.addProduit(&prod1);
+    lesProduits.addProduit(&prod2);
+    lesProduits.toString();
+    lesProduits.supprimerProduit("ref");
+    lesProduits.supprimerProduit(&prod1);
+    lesProduits.toString();
+    cout << "****************getter*****************" << endl;
+    lesProduits.getProduit("ref").affiche(cout);
+    lesProduits.supprimerProduit("ref");
 
     /* Test affichage plusieurs utilisateurs */
     Utilisateur user("Graou","mdp","Decolle","Anais",18,4,1994,"graou@orange.fr","3, rue du biscuit");
@@ -47,6 +59,8 @@ int main()
 
     Utilisateur recupUser = *users.getUtilisateur("Graou2");
     recupUser.affiche(cout);
+
+
 
     return 0;
 }
