@@ -3,6 +3,7 @@
 
 #include <string>
 #include <ctime>
+#include <iostream>
 #include <sstream>
 #include "Categorie.h"
 #include "EtatVente.h"
@@ -97,6 +98,7 @@ public:
     void   decrit(std::ostream &os) {
         os << "------Fiche produit-------\nReference : " << getReference() << "\nNom : " << getNom() << "\nCategorie : " << getCategorie()
            << "\nPrix unitaire : " << getPrixUnitaire() << "\nType de vente : " << getEtatVente() << "\nQuantite : " << getQuantite() << "\nDate de depot : " << getDateDepot();
+
     }
 
     std::string decrit() {
