@@ -58,6 +58,7 @@ int main()
     users.affiche();*/
 
     Utilisateur recupUser = *users.getUtilisateur("Graou2");
+    recupUser.addAvis(Avis(4,"Good User"));
     recupUser.affiche(cout);
 
 
