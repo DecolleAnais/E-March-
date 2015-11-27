@@ -3,6 +3,7 @@
 
 #include <string>
 #include <ctime>
+#include <iostream>
 #include <sstream>
 #include "Categorie.h"
 
@@ -67,7 +68,7 @@ public:
     std::string toString();
 
     void   decrit(std::ostream &os) {
-        os << "------Fiche produit-------\nReference : " << getReference() << "\nNom : " << getNom() << "\nCategorie : " << getCategorie()
+        os << "Reference : " << getReference() << "\nNom : " << getNom() << "\nCategorie : " << getCategorie()
            << "\nPrix unitaire : " << getPrixUnitaire() << "\nQuantite : " << getQuantite() << "\nDate de depot : " << getDateDepot();
     }
 
