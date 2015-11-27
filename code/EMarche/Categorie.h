@@ -4,15 +4,21 @@
 #include <string>
 
 class Categorie {
-public :
-
-    Categorie(std::string n);
-
-    std::string getNom();
 
 private:
 
     std::string nom;
+
+public:
+
+    Categorie(std::string n) : nom(n) {};
+
+    /* destructeur */
+    virtual ~Categorie() {}
+
+    std::string getNom();
+    void setNom(std::string n);
+
 };
 
 #endif

@@ -6,26 +6,51 @@
 #include <sstream>
 #include "Categorie.h"
 
-class Produit
-{
+class Produit {
 
 private:
-
-    std::string categorie;
+    Categorie *categorie;
     std::string nom;
     std::string reference;
     float prixUnitaire;
     unsigned int quantite;
-    const std::time_t date;
-    const std::time_t* dateDepot;
-    const std::time_t* dateAchatVente;
+    struct tm dateDepot;
+    struct tm dateAchatVente;
 
 public:
-    Produit() : categorie("cat"), nom("truc"), reference("#0"), prixUnitaire(2), quantite(1),
-        date(std::time(NULL)), dateDepot(&date), dateAchatVente(&date) {}
+    Produit() : nom("truc"), reference("#0"), prixUnitaire(2), quantite(1) {
+        // Initialisation de la catégorie
+        categorie = new Categorie("cat");
+        // Initialisation de la date de dépôt au jour actuel
+        time_t maintenant;
+        time(&maintenant);
+        dateDepot = *localtime(&maintenant);
+        dateDepot.tm_year = dateDepot.tm_year + 1900;
+        // Initialisation de dateVenteAchat
+        dateAchatVente.tm_mday = 0;
+        dateAchatVente.tm_mon = 0;
+        dateAchatVente.tm_year = 0;
+    }
 
-    Produit(std::string n, std::string cat, float prix, unsigned int qte);
+    Produit(std::string n, std::string cat, float prix, unsigned int qte) : nom(n),
+        reference("ref"), prixUnitaire(prix), quantite(qte) {
+        // Initialisation de la catégorie
+        categorie = new Categorie(cat);
+        // Initialisation de la date de dépôt au jour actuel
+        time_t maintenant;
+        time(&maintenant);
+        dateDepot = *localtime(&maintenant);
+        dateDepot.tm_year = dateDepot.tm_year + 1900;
+        // Initialisation de dateVenteAchat
+        dateAchatVente.tm_mday = 0;
+        dateAchatVente.tm_mon = 0;
+        dateAchatVente.tm_year = 0;
+    }
 
+    /* destructeur */
+    virtual ~Produit() {}
+
+    /* fonctions get */
     unsigned int getQuantite();
     float getPrixUnitaire();
     std::string getReference();
@@ -33,7 +58,12 @@ public:
     std::string getCategorie();
     std::string getDateDepot();
     std::string getDateAchatVente();
+
+    /* fonctions set */
     void setQuantite(unsigned int q);
+    void setDateVenteAchat(int jour, int mois, int annee);
+
+    /* fonctions d'affichage */
     std::string toString();
 
     void   decrit(std::ostream &os) {

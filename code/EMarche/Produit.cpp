@@ -2,12 +2,6 @@
 
 using namespace std;
 
-
-Produit::Produit(string n, string cat, float prix, unsigned int qte) :
-categorie(cat), nom(n), prixUnitaire(prix), quantite(qte), reference("ref"), date(time(NULL)), dateDepot(&date) {
-
-}
-
 unsigned int Produit::getQuantite(){
     return quantite;
 }
@@ -25,18 +19,35 @@ string Produit::getNom(){
 }
 
 string Produit::getCategorie(){
-    return categorie;
+    return categorie->getNom();
 }
 
 string Produit::getDateDepot(){
-    return ctime(dateDepot);
+    string result;
+    stringstream sstm;
+
+    sstm << dateDepot.tm_mday << "/" << dateDepot.tm_mon << "/" << dateDepot.tm_year;
+    result = sstm.str();
+
+    return result;
 }
 
 string Produit::getDateAchatVente(){
-    return ctime(dateAchatVente);
+    string result;
+    stringstream sstm;
+
+    sstm << dateAchatVente.tm_mday << "/" << dateAchatVente.tm_mon << "/" << dateAchatVente.tm_year;
+    result = sstm.str();
+
+    return result;
 }
 
 void Produit::setQuantite(unsigned int q){
     quantite = q;
 }
 
+void Produit::setDateVenteAchat(int jour, int mois, int annee){
+    dateAchatVente.tm_mday = jour;
+    dateAchatVente.tm_mon = mois;
+    dateAchatVente.tm_year = annee;
+}
