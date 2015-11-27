@@ -25,13 +25,15 @@ int main()
     cout << "Prix/Unite :" << endl;
     cin >> prix;
     cout << "Quantite :" << endl;
-    cin >> quantite;*/
+    cin >> quantite;
+    */
 
     /* Test affichage 1 produit */
-    Produit prod("produit1", "categorieProd", 2.5, 1);
+    Produit prod("produit1", "categorieProd", 2.5, 1, false);
     prod.affiche(cout);
 
     /* Test affichage plusieurs utilisateurs */
+    /*
     Utilisateur user("Graou","mdp","Decolle","Anais",18,4,1994,"graou@orange.fr","3, rue du biscuit");
     Utilisateur user2("Graou2","mdp","Mallinger","Magalie",0,0,0,"graou@orange.fr","12, rue du chocolat");
     Utilisateur user3("Graou3","mdp","Aou","Gra",18,4,1994,"graou@orange.fr","6, rue de l'hiver");
@@ -42,7 +44,7 @@ int main()
     users.add(&user3);
 
     users.affiche();
-
+    */
     return 0;
 }
 

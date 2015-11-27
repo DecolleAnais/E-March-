@@ -42,6 +42,14 @@ string Produit::getDateAchatVente(){
     return result;
 }
 
+string Produit::getEtatVente(){
+    if(etatVente->venteEnCours() == false){
+        return "Vente normale";
+    } else {
+        return "Vente aux enchères";
+    }
+}
+
 void Produit::setQuantite(unsigned int q){
     quantite = q;
 }

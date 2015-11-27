@@ -25,6 +25,8 @@ SOURCES += main.cpp \
     LesUtilisateurs.cpp \
     EtatConnexion.cpp \
     EtatVente.cpp \
+    LesProduits.cpp \
+    VenteNormale.cpp
 
 HEADERS += \
     Produit.h \
@@ -37,6 +39,7 @@ HEADERS += \
     EtatConnecte.h \
     EtatConnexion.h \
     EtatVente.h \
-    VenteNormale.h
+    VenteNormale.h \
+    LesProduits.h
 
 FORMS +=
