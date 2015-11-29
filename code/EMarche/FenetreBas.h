@@ -5,6 +5,8 @@
 #include <QPushButton>
 #include <QLabel>
 
+/* Bas de la fenêtre principale de l'application contenant les boutons de changement de pages */
+
 class FenetreBas : public QHBoxLayout
 {
 

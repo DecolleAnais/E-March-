@@ -10,6 +10,8 @@
 #include "FenetreHaut.h"
 #include "FenetreBas.h"
 
+/* Fenêtre principale de l'application */
+
 class maFenetre : public QWidget
 {
 

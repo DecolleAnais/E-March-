@@ -9,8 +9,8 @@ maFenetre::maFenetre(int l, int h, GestionBdd bdd) : largeur(l), hauteur(h), ges
 
     /* layouts */
     QVBoxLayout *vLayout = new QVBoxLayout;
-    FenetreHaut *haut = new FenetreHaut(gestionBdd);
     QGridLayout *gridLayout = new QGridLayout;
+    FenetreHaut *haut = new FenetreHaut(gestionBdd);
     FenetreBas *bas = new FenetreBas;
 
     /*********************************************
@@ -25,6 +25,7 @@ maFenetre::maFenetre(int l, int h, GestionBdd bdd) : largeur(l), hauteur(h), ges
 
     /* Grille de produits */
     barreDefile->setLayout(gridLayout);
+
 
     /* Alignement vertical */
     vLayout->addLayout(haut);

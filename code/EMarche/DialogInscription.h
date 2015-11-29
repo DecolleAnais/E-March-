@@ -4,6 +4,8 @@
 #include <QDialog>
 #include "bdd/GestionBdd.h"
 
+/* Boîte de dialogue pour l'inscription */
+
 namespace Ui {
 class DialogInscription;
 }

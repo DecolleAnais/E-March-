@@ -2,6 +2,8 @@
 #include <QCoreApplication>
 #include "DialogConnexion.h"
 
+using namespace std;
+
 FenetreHaut::FenetreHaut(GestionBdd bdd) : gestionBdd(bdd)
 {
     /* liste deroulante pour le type de recherche */
@@ -32,4 +34,19 @@ FenetreHaut::FenetreHaut(GestionBdd bdd) : gestionBdd(bdd)
     addWidget(valRecherche);
     addWidget(boutonRecherche);
     addWidget(boutonConnexion);
+}
+
+void FenetreHaut::on_boutonRecherche_clicked() {
+    /* Récupération des valeurs pour la recherche */
+    string type = typeRecherche->currentText().toStdString();
+    string val = valRecherche->text().toStdString();
+
+    if(type.compare("Utilisateur") == 0) {
+        /* Recherche d'un utilisateur */
+        gestionBdd.rechercherUtilisateur(val);
+
+    }else {
+        /* Recherche d'un produit */
+        gestionBdd.rechercherProduit(val);
+    }
 }
