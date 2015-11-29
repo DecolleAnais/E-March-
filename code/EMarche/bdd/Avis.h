@@ -9,21 +9,23 @@ class Avis {
 private:
     unsigned int note;
     std::string commentaire;
+    std::string auteur;
 
 public:
 
     /* Constructeurs */
-    Avis(unsigned int notation) : note(notation), commentaire("") {}
-    Avis(unsigned int notation, std::string com) : note(notation), commentaire(com) {}
+    Avis(std::string author, unsigned int notation) : note(notation), commentaire(""), auteur(author) {}
+    Avis(std::string author, unsigned int notation, std::string com) : note(notation), commentaire(com), auteur(author) {}
 
     /* Fonctions get */
     unsigned int getNote();
     std::string getCommentaire();
+    std::string getAuteur();
 
     /* Affichage */
 
     void   decrit(std::ostream &os) {
-        os << "------Avis-------\nNote : " << getNote() << "\nCommentaire : " << getCommentaire() ;
+        os << "------Avis-------\nAuteur : " << getAuteur() << "\nNote : " << getNote() << "\nCommentaire : " << getCommentaire() ;
     }
 
     std::string decrit() {

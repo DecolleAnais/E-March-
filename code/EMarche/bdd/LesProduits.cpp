@@ -57,6 +57,6 @@ void LesProduits::toString() {
     vector<Produit*>::iterator it;
     for (it=lesProduits.begin(); it != lesProduits.end(); it++) {
         (*it)->affiche(cout);
-        cout << " ----------------------------------------" << endl;
+        //cout << " ----------------------------------------" << endl;
     }
 }

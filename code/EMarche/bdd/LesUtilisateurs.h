@@ -8,6 +8,7 @@ class LesUtilisateurs {
 
 private:
    std::vector<Utilisateur*> lesUtilisateurs;
+   int nbUtilisateurs;
 
 public:
    /* Constructeur */

@@ -5,6 +5,7 @@ using namespace std;
 
 void LesUtilisateurs::add(Utilisateur* u) {
     lesUtilisateurs.push_back(u);
+    nbUtilisateurs++;
 }
 
 void LesUtilisateurs::supprimer(string pseudo) {
@@ -17,6 +18,7 @@ void LesUtilisateurs::supprimer(string pseudo) {
             lesUtilisateurs[lesUtilisateurs.size()-1] = lesUtilisateurs[i];
             lesUtilisateurs[i] = tmp;
             lesUtilisateurs.pop_back();
+            nbUtilisateurs--;
             trouve = true;
         }
         i++;
@@ -35,7 +37,7 @@ Utilisateur* LesUtilisateurs::getUtilisateur(string pseudo) {
 }
 
 int LesUtilisateurs::getNbUtilisateurs() {
-    return lesUtilisateurs.size();
+    return nbUtilisateurs;
 }
 
 void LesUtilisateurs::affiche() {

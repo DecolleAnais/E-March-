@@ -22,6 +22,7 @@ private:
     unsigned int nbAchats;
     unsigned int nbAvis;
     unsigned int note;
+    unsigned int nbNotes;
     std::vector<Produit*> lesAchats;
     std::vector<Produit*> lesVentes;
     std::vector<Avis> lesAvis;
@@ -29,7 +30,7 @@ private:
 public:
     /* Constructeur */
     Utilisateur(std::string monPseudo, std::string monMdp, std::string name, std::string firstname, int jourNaiss, int moisNaiss, int anneeNaiss, std::string mail, std::string adr) :
-        pseudo(monPseudo), mdp(monMdp), nom(name), prenom(firstname), email(mail), adresse(adr), nbVentes(0), nbAchats(0), nbAvis(0), note(0) {
+        pseudo(monPseudo), mdp(monMdp), nom(name), prenom(firstname), email(mail), adresse(adr), nbVentes(0), nbAchats(0), nbAvis(0), note(0), nbNotes(0) {
         dateNaissance.tm_mday = jourNaiss;
         dateNaissance.tm_mon = moisNaiss;
         dateNaissance.tm_year = anneeNaiss;
@@ -52,6 +53,7 @@ public:
     std::vector<Produit*> getLesAchats();
     std::vector<Produit*> getLesVentes();
     std::vector<Avis> getLesAvis();
+    void getLesAvis(unsigned int deb, unsigned int nb);
 
     /* Fonctions set */
     void setPseudo(std::string p);
