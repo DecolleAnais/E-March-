@@ -261,7 +261,7 @@ Acheteur -- (Poser une réclamation)
 Acheteur -- (Annuler un achat)
 (Annuler un achat) ..> (Authentification) : include
 ---------------------------
-title Dépôt d'un article en vente\nAnaïs Decolle
+title Dépôt d'un article en vente\nAnaïs Decolle\n
 
 Actor Vendeur
 participant EMarché
