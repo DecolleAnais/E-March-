@@ -49,6 +49,31 @@ unsigned int Utilisateur::getNote() {
     return note;
 }
 
+vector<Produit*> Utilisateur::getLesAchats() {
+    return lesAchats;
+}
+
+vector<Produit*> Utilisateur::getLesVentes() {
+    return lesVentes;
+}
+
+vector<Avis> Utilisateur::getLesAvis() {
+    return lesAvis;
+}
+
+
+void Utilisateur::getLesAvis(unsigned int deb, unsigned int nb) {
+    vector<Avis>::iterator it;
+    if(deb < lesAvis.size()) {
+        if(deb + nb > lesAvis.size()) {
+            nb = lesAvis.size() - deb;
+        }
+        for(it = lesAvis.begin()+deb;it != lesAvis.begin()+deb+nb;it++) {
+            (*it).affiche(cout);
+        }
+    }
+}
+
 /* Fonctions set */
 void Utilisateur::setPseudo(string p) {
     pseudo = p;
@@ -90,4 +115,22 @@ void Utilisateur::setNbAchats(unsigned int n) {
 
 void Utilisateur::setNote(unsigned int n) {
     note = n;
+}
+
+/* Autres fonctions */
+void Utilisateur::addAchat(Produit* p) {
+    lesAchats.push_back(p);
+    nbAchats++;
+}
+
+void Utilisateur::addVente(Produit* p) {
+    lesVentes.push_back(p);
+    nbVentes++;
+}
+
+void Utilisateur::addAvis(Avis a) {
+    lesAvis.push_back(a);
+    nbAvis++;
+    nbNotes++;
+    note = (a.getNote() + note) / nbNotes;
 }

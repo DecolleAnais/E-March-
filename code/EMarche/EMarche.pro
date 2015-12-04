@@ -1,43 +1,45 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2015-11-09T16:32:47
-#
-#-------------------------------------------------
+QT       += widgets \
+        core
 
-QT       += core \
-    widgets
-
-QT       -= gui
-
-TARGET = EMarche
-CONFIG   += console
-CONFIG   -= app_bundle
-
-TEMPLATE = app
-
-
-SOURCES += main.cpp \
-    Produit.cpp \
-    Categorie.cpp \
-    VenteEnchere.cpp \
-    Utilisateur.cpp \
-    Avis.cpp \
-    LesUtilisateurs.cpp \
-    EtatVente.cpp \
-    EtatConnexion.cpp
-    EtatVente.cpp \
+SOURCES += \
+    main.cpp \
+    maFenetre.cpp \
+    FenetreBas.cpp \
+    FenetreHaut.cpp \
+    DialogConnexion.cpp \
+    bdd/Avis.cpp \
+    bdd/Categorie.cpp \
+    bdd/EtatConnexion.cpp \
+    bdd/EtatVente.cpp \
+    bdd/LesProduits.cpp \
+    bdd/LesUtilisateurs.cpp \
+    bdd/Produit.cpp \
+    bdd/Utilisateur.cpp \
+    bdd/VenteEnchere.cpp \
+    bdd/VenteNormale.cpp \
+    DialogInscription.cpp \
+    bdd/GestionBdd.cpp
 
 HEADERS += \
-    Produit.h \
-    Categorie.h \
-    VenteEnchere.h \
-    Utilisateur.h \
-    Avis.h \
-    EtatDeconnecte.h \
-    LesUtilisateurs.h \
-    EtatVente.h \
-    VenteNormale.h \
-    EtatConnexion.h \
-    EtatConnecte.h
+    maFenetre.h \
+    FenetreBas.h \
+    FenetreHaut.h \
+    DialogConnexion.h \
+    bdd/Avis.h \
+    bdd/Categorie.h \
+    bdd/EtatConnecte.h \
+    bdd/EtatConnexion.h \
+    bdd/EtatDeconnecte.h \
+    bdd/EtatVente.h \
+    bdd/LesProduits.h \
+    bdd/LesUtilisateurs.h \
+    bdd/Produit.h \
+    bdd/Utilisateur.h \
+    bdd/VenteEnchere.h \
+    bdd/VenteNormale.h \
+    DialogInscription.h \
+    bdd/GestionBdd.h
 
-FORMS +=
+FORMS += \
+    DialogConnexion.ui \
+    DialogInscription.ui

@@ -8,6 +8,7 @@ class LesUtilisateurs {
 
 private:
    std::vector<Utilisateur*> lesUtilisateurs;
+   int nbUtilisateurs;
 
 public:
    /* Constructeur */
@@ -15,18 +16,8 @@ public:
 
     }
 
-    LesUtilisateurs(const LesUtilisateurs &other);
-    LesUtilisateurs &operator= (const LesUtilisateurs &other) {
-
-    }
-
     /* Destructeur */
-    virtual ~LesUtilisateurs() {
-        for(size_t i = 0; i < lesUtilisateurs.size(); i++) {
-            lesUtilisateurs[i] = 0;
-             delete(lesUtilisateurs[i]);
-        }
-    }
+    virtual ~LesUtilisateurs() {}
 
     /* Fonctions */
     void add(Utilisateur* u);

@@ -2,18 +2,18 @@
 #include "VenteEnchere.h"
 
 using namespace std;
-/*
-VenteEnchere::VenteEnchere (bool b) : EtatVente(b), prixActuel(0), tempsRestant(0) {
+
+VenteEnchere::VenteEnchere (bool b) : EtatVente(b) {
     dateLimite.tm_year = 2015;
     dateLimite.tm_mon = 11;
     dateLimite.tm_mday = 13;
 }
 
-float VenteEnchere::getPrixActuel(){
+float EtatVente::getPrixActuel(){
     return prixActuel;
 }
 
-string VenteEnchere::getDateLimite(){
+string EtatVente::getDateLimite(){
     string result;
     stringstream sstm;
 
@@ -23,11 +23,11 @@ string VenteEnchere::getDateLimite(){
     return result;
 }
 
-void VenteEnchere::setPrixActuel(float prix){
+void EtatVente::setPrixActuel(float prix){
     prixActuel = prix;
 }
 
-void VenteEnchere::setDateLimite(struct tm date){
+void EtatVente::setDateLimite(struct tm date){
     dateLimite = date;
 }
-*/
+

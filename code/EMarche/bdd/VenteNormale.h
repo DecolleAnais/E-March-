@@ -6,7 +6,7 @@
 class VenteNormale : public EtatVente {
 
 public :
-    VenteNormale(bool b) : EtatVente(b);
+    VenteNormale(bool b);
 
 private:
 

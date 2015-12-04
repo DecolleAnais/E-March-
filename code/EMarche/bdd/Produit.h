@@ -3,8 +3,12 @@
 
 #include <string>
 #include <ctime>
+#include <iostream>
 #include <sstream>
 #include "Categorie.h"
+#include "EtatVente.h"
+#include "VenteEnchere.h"
+#include "VenteNormale.h"
 
 class Produit {
 
@@ -16,11 +20,14 @@ private:
     unsigned int quantite;
     struct tm dateDepot;
     struct tm dateAchatVente;
+    EtatVente *etatVente;
 
 public:
     Produit() : nom("truc"), reference("#0"), prixUnitaire(2), quantite(1) {
         // Initialisation de la catégorie
         categorie = new Categorie("cat");
+        // Initialisation de l'état de vente
+        etatVente = new EtatVente(false);
         // Initialisation de la date de dépôt au jour actuel
         time_t maintenant;
         time(&maintenant);
@@ -47,6 +54,27 @@ public:
         dateAchatVente.tm_year = 0;
     }
 
+    Produit(std::string n, std::string cat, float prix, unsigned int qte, bool etat) : nom(n),
+        reference("ref"), prixUnitaire(prix), quantite(qte) {
+        // Initialisation de l'état de vente
+        if(etat == 0){ // si 0, vente normale
+            etatVente = new VenteNormale(etat);
+        } else { // sinon, vente aux enchères
+            etatVente = new VenteEnchere(etat);
+        }
+        // Initialisation de la catégorie
+        categorie = new Categorie(cat);
+        // Initialisation de la date de dépôt au jour actuel
+        time_t maintenant;
+        time(&maintenant);
+        dateDepot = *localtime(&maintenant);
+        dateDepot.tm_year = dateDepot.tm_year + 1900;
+        // Initialisation de dateVenteAchat
+        dateAchatVente.tm_mday = 0;
+        dateAchatVente.tm_mon = 0;
+        dateAchatVente.tm_year = 0;
+    }
+
     /* destructeur */
     virtual ~Produit() {}
 
@@ -58,6 +86,7 @@ public:
     std::string getCategorie();
     std::string getDateDepot();
     std::string getDateAchatVente();
+    std::string getEtatVente();
 
     /* fonctions set */
     void setQuantite(unsigned int q);
@@ -68,7 +97,8 @@ public:
 
     void   decrit(std::ostream &os) {
         os << "------Fiche produit-------\nReference : " << getReference() << "\nNom : " << getNom() << "\nCategorie : " << getCategorie()
-           << "\nPrix unitaire : " << getPrixUnitaire() << "\nQuantite : " << getQuantite() << "\nDate de depot : " << getDateDepot();
+           << "\nPrix unitaire : " << getPrixUnitaire() << "\nType de vente : " << getEtatVente() << "\nQuantite : " << getQuantite() << "\nDate de depot : " << getDateDepot();
+
     }
 
     std::string decrit() {
