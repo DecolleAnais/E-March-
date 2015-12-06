@@ -5,10 +5,11 @@
 
 class EtatConnecte : public EtatConnexion {
 
-public :
-    EtatConnecte(bool b) : EtatConnexion(b);
+public:
 
-private :
+    EtatConnecte(bool b) : EtatConnexion(b) {}
+
+private:
 
 };
 

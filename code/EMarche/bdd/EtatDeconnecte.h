@@ -5,8 +5,9 @@
 
 class EtatDeconnecte : public EtatConnexion {
 
-public :
-    EtatDeconnecte(bool b) : EtatConnexion(b);
+public:
+
+    EtatDeconnecte(bool b) : EtatConnexion(b) {}
 
 private:
 

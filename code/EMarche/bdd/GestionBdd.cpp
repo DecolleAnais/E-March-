@@ -38,6 +38,11 @@ void GestionBdd::inscrire(string monPseudo, string monMdp, string name, string f
     utilisateurs.add(new Utilisateur(monPseudo, monMdp, name, firstname, jourNaiss, moisNaiss, anneeNaiss, mail, adr));
 }
 
+/* Ajouter un nouveau produit */
+void GestionBdd::nouveauProduit(Produit *p){
+    produits.addProduit(p);
+}
+
 /* recherche utilisateurs */
 vector<Utilisateur*> GestionBdd::rechercherUtilisateurs(string pseudo) {
     return utilisateurs.getUtilisateurs(pseudo);
@@ -67,4 +72,23 @@ vector<Produit*> GestionBdd::rechercherProduitNom(string nom) {
 /* recherche produit par catégorie */
 vector<Produit*> GestionBdd::rechercherProduitCat(string cat) {
     return produits.getProduitsCat(cat);
+}
+
+/* Rechercher un produit */
+Produit* GestionBdd::rechercherProduit(string ref) {
+    return produits.getProduit(ref);
+}
+
+/* Rechercher les tags d'un produit */
+vector<Produit*> GestionBdd::rechercherTags(string t){
+    // Transformation des caractères du tag en minuscules
+    std::transform(t.begin(), t.end(), t.begin(), ::tolower);
+    return produits.rechercherTags(t);
+}
+
+/* Rechercher tous les produits d'une catégorie */
+vector<Produit*> GestionBdd::rechercherCategorie(string c){
+    // Transformation des caractères de la catégorie en minuscules
+    std::transform(c.begin(), c.end(), c.begin(), ::tolower);
+    return produits.rechercherCategorie(c);
 }
