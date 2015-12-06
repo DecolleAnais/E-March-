@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <algorithm>
 #include "LesUtilisateurs.h"
 #include "LesProduits.h"
 #include "Vue.h"
@@ -14,7 +15,6 @@ private:
     LesUtilisateurs utilisateurs;
     LesProduits produits;
     std::vector<Vue*> vues;
-
 
 public:
     GestionBdd();
@@ -31,13 +31,19 @@ public:
     void inscrire(std::string monPseudo, std::string monMdp, std::string name, std::string firstname,
                   int jourNaiss, int moisNaiss, int anneeNaiss, std::string mail, std::string adr);
 
+    /* Ajouter un produit */
+    void nouveauProduit(Produit *p);
+
     std::vector<Utilisateur*> rechercherUtilisateurs(std::string pseudo);
 
     /* recherche utilisateur */
     Utilisateur* rechercherUtilisateur(std::string pseudo);
 
-    std::vector<Produit*> rechercherProduit(std::string nom);
+    Produit *rechercherProduit(std::string ref);
 
+    std::vector<Produit*> rechercherTags(std::string t);
+
+    std::vector<Produit*> rechercherCategorie(std::string c);
 };
 
 #endif // GESTIONBDD_H
