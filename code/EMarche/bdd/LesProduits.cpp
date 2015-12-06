@@ -53,6 +53,39 @@ Produit LesProduits::getProduit(string ref) {
     return *lesProduits[pos];
 }
 
+vector<Produit*> LesProduits::getProduitsRef(string chaine) {
+    vector<Produit*> res;
+    vector<Produit*>::iterator it;
+    for(it = lesProduits.begin();it != lesProduits.end();it++) {
+        if((*it)->getReference().find(chaine) != string::npos) {
+            res.push_back(*it);
+        }
+    }
+    return res;
+}
+
+vector<Produit*> LesProduits::getProduitsNom(string chaine) {
+    vector<Produit*> res;
+    vector<Produit*>::iterator it;
+    for(it = lesProduits.begin();it != lesProduits.end();it++) {
+        if((*it)->getNom().find(chaine) != string::npos) {
+            res.push_back(*it);
+        }
+    }
+    return res;
+}
+
+vector<Produit*> LesProduits::getProduitsCat(string chaine) {
+    vector<Produit*> res;
+    vector<Produit*>::iterator it;
+    for(it = lesProduits.begin();it != lesProduits.end();it++) {
+        if((*it)->getCategorie().find(chaine) != string::npos) {
+            res.push_back(*it);
+        }
+    }
+    return res;
+}
+
 void LesProduits::toString() {
     vector<Produit*>::iterator it;
     for (it=lesProduits.begin(); it != lesProduits.end(); it++) {

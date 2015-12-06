@@ -14,6 +14,7 @@ private:
     LesUtilisateurs utilisateurs;
     LesProduits produits;
     std::vector<Vue*> vues;
+    Utilisateur* utilisateurConnecte;
 
 
 public:
@@ -27,6 +28,9 @@ public:
     /* maj vues */
     void update();
 
+    /* connexion */
+    void connecterUtilisateur(std::string pseudo, std::string mdp);
+
     /* inscrire */
     void inscrire(std::string monPseudo, std::string monMdp, std::string name, std::string firstname,
                   int jourNaiss, int moisNaiss, int anneeNaiss, std::string mail, std::string adr);
@@ -36,7 +40,15 @@ public:
     /* recherche utilisateur */
     Utilisateur* rechercherUtilisateur(std::string pseudo);
 
-    std::vector<Produit*> rechercherProduit(std::string nom);
+    /* ajouter vente */
+    void ajouterVente(std::string n, std::string cat, float prix, unsigned int qte, bool etat);
+
+    /* recherche produit */
+    std::vector<Produit*> rechercherProduitRef(std::string ref);
+
+    std::vector<Produit*> rechercherProduitNom(std::string nom);
+
+    std::vector<Produit*> rechercherProduitCat(std::string cat);
 
 };
 

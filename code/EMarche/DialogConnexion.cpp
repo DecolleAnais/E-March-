@@ -31,3 +31,8 @@ void DialogConnexion::on_boutonSInscrire_clicked()
 {
     close();
 }
+
+void DialogConnexion::on_boutonSeConnecter_clicked()
+{
+    gestionBdd.connecterUtilisateur(ui->valPseudo->text().toStdString(), ui->valMdp->text().toStdString());
+}

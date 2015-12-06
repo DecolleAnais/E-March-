@@ -33,6 +33,9 @@ public:
     /* retourne un vector contenant les pointeurs vers tous les utilisateurs dont le pseudo contient la chaine demandée */
     std::vector<Utilisateur*> getUtilisateurs(std::string chaine);
 
+    /* retourne vrai si l'utilisateur avec ce pseudo et mot de passe existe, faux sinon */
+    bool existeUtilisateur(std::string pseudo, std::string mdp);
+
     /* retourne le nombre d'utilisateurs */
     int getNbUtilisateurs();
 
