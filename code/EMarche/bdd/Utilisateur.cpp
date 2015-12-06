@@ -134,3 +134,11 @@ void Utilisateur::addAvis(Avis a) {
     nbNotes++;
     note = (a.getNote() + note) / nbNotes;
 }
+
+string Utilisateur::toString() {
+    /*string s;
+    s = "------Utilisateur " + getPseudo() + "-------\n" + getPrenom() + " " + getNom() + "\nMot de passe : " + getMdp()
+       + "\nDate de naissance : " + getDateNaissance() + "\nEmail : " + getEmail() + "\nAdresse : " + getAdresse()
+       + "\nNombre de ventes : " + getNbVentes() + "  Nombre d'achats : " + getNbAchats() + "\nNote : " + getNote();
+    return s;*/
+}

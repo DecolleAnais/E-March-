@@ -12,11 +12,13 @@
 
 /* Fenêtre principale de l'application */
 
-class maFenetre : public QWidget
+class maFenetre : public QWidget, public Vue
 {
 
 public:
     maFenetre(int l, int h, GestionBdd bdd);
+
+    void update();
 
 private:
     QLabel *titreSection;

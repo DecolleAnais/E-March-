@@ -36,6 +36,18 @@ Utilisateur* LesUtilisateurs::getUtilisateur(string pseudo) {
     return NULL;
 }
 
+vector<Utilisateur*> LesUtilisateurs::getUtilisateurs(string chaine) {
+    vector<Utilisateur*> res;
+    vector<Utilisateur*>::iterator it;
+    for(it = lesUtilisateurs.begin();it != lesUtilisateurs.end();it++) {
+        if((*it)->getPseudo().find(chaine) != string::npos) {
+            res.push_back(*it);
+            cout << "+";
+        }
+    }
+    return res;
+}
+
 int LesUtilisateurs::getNbUtilisateurs() {
     return nbUtilisateurs;
 }

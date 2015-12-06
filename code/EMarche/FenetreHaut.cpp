@@ -6,6 +6,7 @@ using namespace std;
 
 FenetreHaut::FenetreHaut(GestionBdd bdd) : gestionBdd(bdd)
 {
+    gestionBdd.addVue(this);
     /* liste deroulante pour le type de recherche */
     typeRecherche = new QComboBox;
     typeRecherche->addItem("Produit");
@@ -16,6 +17,11 @@ FenetreHaut::FenetreHaut(GestionBdd bdd) : gestionBdd(bdd)
 
     /* bouton rechercher */
     boutonRecherche = new QPushButton("Rechercher");
+
+    QObject::connect(boutonRecherche, SIGNAL(clicked()), this, SLOT(rechercher()));
+
+    /* label peudo de l'utilisateur connecté */
+    pseudoConnecte = new QLabel("Graou");
 
     /* bouton connexion */
     boutonConnexion = new QPushButton("Se connecter");     // bouton connexion
@@ -33,10 +39,13 @@ FenetreHaut::FenetreHaut(GestionBdd bdd) : gestionBdd(bdd)
     addWidget(typeRecherche);
     addWidget(valRecherche);
     addWidget(boutonRecherche);
+    addWidget(pseudoConnecte);
     addWidget(boutonConnexion);
 }
 
-void FenetreHaut::on_boutonRecherche_clicked() {
+void FenetreHaut::rechercher() {
+    gestionBdd.update();
+
     /* Récupération des valeurs pour la recherche */
     string type = typeRecherche->currentText().toStdString();
     string val = valRecherche->text().toStdString();
@@ -49,4 +58,9 @@ void FenetreHaut::on_boutonRecherche_clicked() {
         /* Recherche d'un produit */
         gestionBdd.rechercherProduit(val);
     }
+}
+
+void FenetreHaut::update() {
+pseudoConnecte->setText("Blp");
+pseudoConnecte->repaint();
 }

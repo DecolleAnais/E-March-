@@ -12,3 +12,7 @@ FenetreBas::FenetreBas()
     setAlignment(Qt::AlignHCenter);
 
 }
+
+void FenetreBas::update() {
+
+}

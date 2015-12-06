@@ -5,23 +5,28 @@
 #include <QComboBox>
 #include <QLineEdit>
 #include <QPushButton>
+#include <QLabel>
 #include "bdd/GestionBdd.h"
 
 /* Haut de la fenêtre principale de l'application contenant les boutons de recherche et de connexion */
 
-class FenetreHaut : public QHBoxLayout
+class FenetreHaut : public QHBoxLayout, public Vue
 {
+Q_OBJECT;
 
 public:
     FenetreHaut(GestionBdd bdd);
 
-private slots:
-    void on_boutonRecherche_clicked();
+    void update();
+
+public slots:
+    void rechercher();
 
 private:
     QComboBox *typeRecherche;
     QLineEdit *valRecherche;
     QPushButton *boutonRecherche;
+    QLabel *pseudoConnecte;
     QPushButton *boutonConnexion;
     GestionBdd gestionBdd;
 
