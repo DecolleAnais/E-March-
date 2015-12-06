@@ -20,9 +20,7 @@ public:
     void addProduit(Produit* p);
     void supprimerProduit(std::string ref);
     void supprimerProduit(Produit* p);
-    std::vector<Produit*> getProduitsRef(std::string chaine);
     std::vector<Produit*> getProduitsNom(std::string chaine);
-    std::vector<Produit*> getProduitsCat(std::string chaine);
     Produit* getProduit(std::string ref);
     std::vector<Produit*> rechercherTags(std::string t);
     std::vector<Produit*> rechercherCategorie(std::string t);

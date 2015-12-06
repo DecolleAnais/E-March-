@@ -104,7 +104,9 @@ void maFenetre::rechercher() {
 
     }else if(type.compare("Produit/ref") == 0){
         /* Recherche d'un produit par référence*/
-        vector<Produit*> v = gestionBdd.rechercherProduitRef(val);
+        //vector<Produit*> v = gestionBdd.rechercherProduitRef(val);
+        vector<Produit*> v;
+        v.push_back(gestionBdd.rechercherProduit(val));
         emit signalRechercheProduits(v);
         titreSection->setText("Résultats de la recherche de la référence " + QString::fromStdString(val));
     }else if(type.compare("Produit/nom") == 0){
@@ -114,7 +116,8 @@ void maFenetre::rechercher() {
         titreSection->setText("Résultats de la recherche du produit " + QString::fromStdString(val));
     }else {
         /* Recherche d'un produit par catégorie*/
-        vector<Produit*> v = gestionBdd.rechercherProduitCat(val);
+        //vector<Produit*> v = gestionBdd.rechercherProduitCat(val);
+        vector<Produit*> v = gestionBdd.rechercherCategorie(val);
         emit signalRechercheProduits(v);
         titreSection->setText("Résultats de la recherche de la catégorie " + QString::fromStdString(val));
     }

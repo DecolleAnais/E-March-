@@ -59,22 +59,12 @@ void GestionBdd::ajouterVente(string n, string cat, float prix, unsigned int qte
     produits.addProduit(new Produit(n, cat, prix, qte, etat));
 }
 
-/* recherche produit par référence */
-vector<Produit*> GestionBdd::rechercherProduitRef(string ref) {
-    return produits.getProduitsRef(ref);
-}
-
 /* recherche produit par nom */
 vector<Produit*> GestionBdd::rechercherProduitNom(string nom) {
     return produits.getProduitsNom(nom);
 }
 
-/* recherche produit par catégorie */
-vector<Produit*> GestionBdd::rechercherProduitCat(string cat) {
-    return produits.getProduitsCat(cat);
-}
-
-/* Rechercher un produit */
+/* Rechercher un produit par référence */
 Produit* GestionBdd::rechercherProduit(string ref) {
     return produits.getProduit(ref);
 }

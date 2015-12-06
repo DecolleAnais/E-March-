@@ -47,11 +47,8 @@ public:
     void ajouterVente(std::string n, std::string cat, float prix, unsigned int qte, bool etat);
 
     /* recherche produit */
-    std::vector<Produit*> rechercherProduitRef(std::string ref);
 
     std::vector<Produit*> rechercherProduitNom(std::string nom);
-
-    std::vector<Produit*> rechercherProduitCat(std::string cat);
 
     Produit* rechercherProduit(std::string ref);
 
