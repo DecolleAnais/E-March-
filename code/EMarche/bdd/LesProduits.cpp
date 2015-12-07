@@ -16,28 +16,24 @@ void LesProduits::addProduit(Produit* p) {
 }
 
 void LesProduits::supprimerProduit(string ref) {
-    int pos = 0;
     int i = 0;
     for(i = 0; i < nbElems; i++) {
         if(lesProduits[i]->getReference().compare(ref) == 0) {
-            pos = i;
+            lesProduits.erase(lesProduits.begin()+i);
             i = nbElems;
         }
     }
-    lesProduits.erase(lesProduits.begin()+pos);
     nbElems--;
 }
 
 void LesProduits::supprimerProduit(Produit* p) {
-    int pos = 0;
     int i = 0;
     for(i = 0; i < nbElems; i++) {
         if(lesProduits[i]->getReference().compare(p->getReference()) == 0) {
-            pos = i;
+            lesProduits.erase(lesProduits.begin()+i);
             i = nbElems;
         }
     }
-    lesProduits.erase(lesProduits.begin()+pos);
     nbElems--;
 }
 
@@ -65,6 +61,27 @@ vector<Produit*> LesProduits::rechercherTags(string t){
         // Recherche de t dans la chaîne des tags
         if(tags.find(t) != string::npos) {
             tab.push_back((*it));
+        }
+    }
+    return tab;
+}
+
+/* Rechercher tous les produits tagés par une liste de tags */
+vector<Produit*> LesProduits::rechercherTags(int nbArguments, string t, ...) {
+    vector<Produit*> tab;
+    vector<Produit*>::iterator it;
+    va_list list;
+    va_start(list,t);
+    for(int arg = 0; arg < nbArguments; arg++) {
+        for (it = lesProduits.begin(); it != lesProduits.end(); it++) {
+            // Récupération des tags du produit courant
+            string tags = (*it)->getTags();
+            // Transformation de la chaîne des tags en miniscule
+            std::transform(tags.begin(), tags.end(), tags.begin(), ::tolower);
+            // Recherche de t dans la chaîne des tags
+            if(tags.find(t) != string::npos) {
+                tab.push_back((*it));
+            }
         }
     }
     return tab;

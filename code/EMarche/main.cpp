@@ -1,5 +1,5 @@
 #include <QApplication>
-#include "maFenetre.h"
+#include "MaFenetre.h"
 #include "bdd/GestionBdd.h"
 #include <vector>
 
