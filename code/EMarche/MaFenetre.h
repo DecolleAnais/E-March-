@@ -7,20 +7,58 @@
 #include <QLineEdit>
 #include <QLabel>
 #include <QScrollArea>
-#include "FenetreHaut.h"
-#include "FenetreBas.h"
+#include <QCoreApplication>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
+#include <QGridLayout>
+#include <iostream>
+#include "DialogConnexion.h"
+#include "DialogInscription.h"
+#include "Vue.h"
+#include "bdd/GestionBdd.h"
 
 /* Fenêtre principale de l'application */
 
-class maFenetre : public QWidget
+class maFenetre : public QWidget, public Vue
 {
+    Q_OBJECT;
 
 public:
     maFenetre(int l, int h, GestionBdd bdd);
 
+    void update();
+    void clearLayout(QLayout *layout);
+
+public slots:
+    void afficherResUtilisateurs(std::vector<Utilisateur*> v);
+    void afficherResProduits(std::vector<Produit*> v);
+    void rechercher();
+    void accueil();
+    void voirProfil(std::string pseudo);
+
+signals:
+    void signalRechercheUtilisateur(std::vector<Utilisateur*> v);
+    void signalRechercheProduits(std::vector<Produit*> v);
+
 private:
+    QHBoxLayout *haut;
+    QVBoxLayout *centre;
+    QHBoxLayout *bas;
+
+    QComboBox *typeRecherche;
+    QLineEdit *valRecherche;
+    QPushButton *boutonRecherche;
+    QPushButton *boutonAccueil;
+    QLabel *pseudoConnecte;
+    QPushButton *boutonConnexion;
+
     QLabel *titreSection;
     QScrollArea *barreDefile;
+
+    QPushButton *boutonPrecedent;
+    QPushButton *boutonSuivant;
+    QLabel *numPage;
+
     int largeur;
     int hauteur;
     GestionBdd gestionBdd;

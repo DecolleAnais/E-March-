@@ -50,6 +50,27 @@ string Produit::getEtatVente(){
     }
 }
 
+float Produit::getPrixActuel(){
+    if(etatVente->venteEnCours() == 1){
+        return etatVente->getPrixActuel();
+    }
+    return prixUnitaire;
+}
+
+std::string Produit::getTags(){
+    string result;
+    stringstream sstm;
+
+    unsigned int i = 0;
+    while(i < tags.size()) {
+        sstm << tags[i] << "; ";
+        i++;
+    }
+
+    result = sstm.str();
+    return result;
+}
+
 void Produit::setQuantite(unsigned int q){
     quantite = q;
 }
@@ -58,4 +79,14 @@ void Produit::setDateVenteAchat(int jour, int mois, int annee){
     dateAchatVente.tm_mday = jour;
     dateAchatVente.tm_mon = mois;
     dateAchatVente.tm_year = annee;
+}
+
+void Produit::augmenterEnchere(int prix){
+    if(etatVente->venteEnCours() == 1){
+        etatVente->setPrixActuel(prix);
+    }
+}
+
+void Produit::ajouterTag(std::string t){
+    tags.push_back(t);
 }

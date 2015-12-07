@@ -4,8 +4,6 @@ QT       += widgets \
 SOURCES += \
     main.cpp \
     maFenetre.cpp \
-    FenetreBas.cpp \
-    FenetreHaut.cpp \
     DialogConnexion.cpp \
     bdd/Avis.cpp \
     bdd/Categorie.cpp \
@@ -18,12 +16,11 @@ SOURCES += \
     bdd/VenteEnchere.cpp \
     bdd/VenteNormale.cpp \
     DialogInscription.cpp \
-    bdd/GestionBdd.cpp
+    bdd/GestionBdd.cpp \
+    Vue.cpp
 
 HEADERS += \
     maFenetre.h \
-    FenetreBas.h \
-    FenetreHaut.h \
     DialogConnexion.h \
     bdd/Avis.h \
     bdd/Categorie.h \
@@ -38,7 +35,8 @@ HEADERS += \
     bdd/VenteEnchere.h \
     bdd/VenteNormale.h \
     DialogInscription.h \
-    bdd/GestionBdd.h
+    bdd/GestionBdd.h \
+    Vue.h
 
 FORMS += \
     DialogConnexion.ui \

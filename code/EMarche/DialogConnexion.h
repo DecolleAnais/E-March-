@@ -24,6 +24,8 @@ public slots:
 private slots:
     void on_boutonSInscrire_clicked();
 
+    void on_boutonSeConnecter_clicked();
+
 private:
     Ui::DialogConnexion *ui;
     GestionBdd gestionBdd;

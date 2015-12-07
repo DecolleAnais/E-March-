@@ -36,6 +36,17 @@ Utilisateur* LesUtilisateurs::getUtilisateur(string pseudo) {
     return NULL;
 }
 
+vector<Utilisateur*> LesUtilisateurs::getUtilisateurs(string chaine) {
+    vector<Utilisateur*> res;
+    vector<Utilisateur*>::iterator it;
+    for(it = lesUtilisateurs.begin();it != lesUtilisateurs.end();it++) {
+        if((*it)->getPseudo().find(chaine) != string::npos) {
+            res.push_back(*it);
+        }
+    }
+    return res;
+}
+
 int LesUtilisateurs::getNbUtilisateurs() {
     return nbUtilisateurs;
 }
@@ -45,6 +56,16 @@ void LesUtilisateurs::affiche() {
     for(it = lesUtilisateurs.begin();it != lesUtilisateurs.end();it++) {
         (*it)->affiche(cout);
     }
+}
+
+bool LesUtilisateurs::existeUtilisateur(string pseudo, string mdp) {
+    bool existe = false;
+    vector<Utilisateur*>::iterator it;
+    for(it = lesUtilisateurs.begin();it != lesUtilisateurs.end();it++) {
+        if((*it)->getPseudo().compare(pseudo) == 0 && (*it)->getMdp().compare(mdp) == 0)
+            existe = true;
+    }
+    return existe;
 }
 
 

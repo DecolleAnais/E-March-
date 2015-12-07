@@ -9,11 +9,11 @@ VenteEnchere::VenteEnchere (bool b) : EtatVente(b) {
     dateLimite.tm_mday = 13;
 }
 
-float EtatVente::getPrixActuel(){
+float VenteEnchere::getPrixActuel(){
     return prixActuel;
 }
 
-string EtatVente::getDateLimite(){
+string VenteEnchere::getDateLimite(){
     string result;
     stringstream sstm;
 
@@ -23,11 +23,10 @@ string EtatVente::getDateLimite(){
     return result;
 }
 
-void EtatVente::setPrixActuel(float prix){
+void VenteEnchere::setPrixActuel(float prix){
     prixActuel = prix;
 }
 
-void EtatVente::setDateLimite(struct tm date){
+void VenteEnchere::setDateLimite(struct tm date){
     dateLimite = date;
 }
-
