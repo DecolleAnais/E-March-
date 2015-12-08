@@ -22,6 +22,9 @@ public:
 
     /* FONCTIONS */
 
+    /* nouvelle référence */
+    std::string generateReference();
+
     /* ajouter vue */
     void addVue(Vue* v);
 

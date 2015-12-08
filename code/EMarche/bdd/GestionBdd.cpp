@@ -8,6 +8,24 @@ GestionBdd::GestionBdd() : utilisateurConnecte(NULL)
 
 }
 
+/* Génération de la référence */
+int valRef = 1;
+string nouvelleRef = "#1";
+string GestionBdd::generateReference() {
+    vector<Produit*>::iterator it;
+    vector<Produit*> lesProduits = produits.getListProduits();
+    for (it = lesProduits.begin(); it != lesProduits.end(); it++) {
+        if((*it)->getReference().compare(nouvelleRef) == 0) {
+            while((*it)->getReference().compare(nouvelleRef) == 0) {
+                valRef++;
+                string s = to_string(valRef);
+                nouvelleRef = "#" + s;
+            }
+        }
+    }
+    return nouvelleRef;
+}
+
 /* Fonctions */
 
 /* ajouter vue */
@@ -74,6 +92,7 @@ Utilisateur* GestionBdd::rechercherUtilisateur(string pseudo) {
 /* ajouter produit en vente */
 void GestionBdd::ajouterVente(string n, string cat, float prix, unsigned int qte, bool etat) {
     Produit *p = new Produit(n, cat, prix, qte, etat);
+    p->setReference(generateReference());
     //utilisateurConnecte->addVente(p);
     produits.addProduit(p);
 }

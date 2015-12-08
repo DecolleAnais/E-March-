@@ -79,6 +79,10 @@ void Produit::setQuantite(unsigned int q){
     quantite = q;
 }
 
+void Produit::setReference(string s) {
+    reference = s;
+}
+
 void Produit::setDateVenteAchat(int jour, int mois, int annee){
     dateAchatVente.tm_mday = jour;
     dateAchatVente.tm_mon = mois;

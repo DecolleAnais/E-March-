@@ -93,6 +93,7 @@ public:
     /* Fonctions set */
     void setQuantite(unsigned int q);
     void setDateVenteAchat(int jour, int mois, int annee);
+    void setReference(std::string s);
 
     /* Fonctions */
     void augmenterEnchere(int prix);

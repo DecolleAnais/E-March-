@@ -49,7 +49,7 @@ Produit* LesProduits::getProduit(string ref) {
     return NULL;
 }
 
-/* Rechercher tous les produits tagés par t */
+/* Rechercher tous les produits tagués par t */
 vector<Produit*> LesProduits::rechercherTags(string t){
     vector<Produit*> tab;
     vector<Produit*>::iterator it;
