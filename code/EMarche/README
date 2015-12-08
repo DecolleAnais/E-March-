@@ -1,3 +1,7 @@
 pour savoir si qqn lit :
 
 je commence le CB ?
+
+il faut que vous changiez votre makefile à la main changez ça :
+CXXFLAGS = -m64 -pipe -O2 -Wall -W -D_REENTRANT -fPIE -std=c++0x $(DEFINES)
+ça permet en gros d'utiliser la fonction to_string(entier)
