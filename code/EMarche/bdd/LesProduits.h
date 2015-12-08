@@ -16,6 +16,13 @@ private:
 public:
     LesProduits() : lesProduits(), nbElems(0) {}
 
+    ~LesProduits() {
+        std::vector<Produit*>::iterator it;
+        for(it = lesProduits.begin(); it != lesProduits.end();it++) {
+            delete(*it);
+        }
+    }
+
     std::vector<Produit*> getListProduits();
     int size();
     void addProduit(Produit* p);

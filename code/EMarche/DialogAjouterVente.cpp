@@ -16,6 +16,7 @@ DialogAjouterVente::DialogAjouterVente(GestionBdd *bdd, QWidget *parent) :
 DialogAjouterVente::~DialogAjouterVente()
 {
     delete ui;
+    delete gestionBdd;
 }
 
 void DialogAjouterVente::on_radioNormale_toggled(bool checked)

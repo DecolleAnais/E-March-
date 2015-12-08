@@ -39,7 +39,15 @@ public:
     Utilisateur() : pseudo(""){}
 
     /* Destructeur */
-    virtual ~Utilisateur() {}
+    ~Utilisateur() {
+        /*std::vector<Produit*>::iterator it;
+        for(it = lesAchats.begin(); it != lesAchats.end();it++) {
+            delete(*it);
+        }
+        for(it = lesVentes.begin(); it != lesVentes.end();it++) {
+            delete(*it);
+        }*/
+    }
 
     /* Fonctions get */
     std::string getPseudo();

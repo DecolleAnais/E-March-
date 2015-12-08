@@ -17,7 +17,12 @@ public:
     }
 
     /* Destructeur */
-    virtual ~LesUtilisateurs() {}
+     ~LesUtilisateurs() {
+        std::vector<Utilisateur*>::iterator it;
+        for(it = lesUtilisateurs.begin(); it != lesUtilisateurs.end();it++) {
+            delete(*it);
+        }
+    }
 
     /* Fonctions */
 

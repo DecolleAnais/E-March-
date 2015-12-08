@@ -28,6 +28,26 @@ class maFenetre : public QWidget, public Vue
 
 public:
     maFenetre(int l, int h, GestionBdd *bdd);
+    ~maFenetre() {
+        delete(haut);
+        delete(bas);
+        delete(centre);
+        delete(typeRecherche);
+        delete(valRecherche);
+        delete(boutonRecherche);
+        delete(boutonAccueil);
+        delete(boutonProfil);
+        delete(boutonAjouterVente);
+        delete(pseudoConnecte);
+        delete(boutonConnexion);
+
+        delete(titreSection);
+
+        delete(boutonPrecedent);
+        delete(boutonSuivant);
+        delete(numPage);
+
+    };
 
     void update();
     void clearLayout(QLayout *layout);
@@ -41,6 +61,7 @@ public slots:
     void ajouterVente();
     void connexion();
     void voirProfil(std::string pseudo);
+    void voirProduit(std::string ref);
 
 signals:
     void signalRechercheUtilisateur(std::vector<Utilisateur*> v);

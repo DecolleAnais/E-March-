@@ -86,6 +86,10 @@ string Produit::getDateLimite(){
         return "";
 }
 
+void Produit::setReference(string r) {
+    reference = r;
+}
+
 void Produit::setQuantite(unsigned int q){
     quantite = q;
 }

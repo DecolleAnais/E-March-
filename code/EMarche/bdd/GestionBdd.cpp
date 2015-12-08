@@ -3,12 +3,21 @@
 
 using namespace std;
 
-GestionBdd::GestionBdd() : utilisateurConnecte(new Utilisateur())
+GestionBdd::GestionBdd() : utilisateurConnecte(new Utilisateur()), ref("0")
 {
 
 }
 
 /* Fonctions */
+
+/* incrémenter ref */
+void GestionBdd::incrementerRef() {
+    int r = atoi(ref.c_str());
+    r++;
+    ostringstream ss;
+    ss << r;
+    ref = ss.str();
+}
 
 /* ajouter vue */
 void GestionBdd::addVue(Vue* v) {
@@ -34,7 +43,7 @@ void GestionBdd::connecterUtilisateur(string pseudo, string mdp) {
 
 /* déconnexion */
 void GestionBdd::deconnecterUtilisateur() {
-    utilisateurConnecte = NULL;
+    utilisateurConnecte = new Utilisateur();
 }
 
 /* savoir si on est connecté */
@@ -75,6 +84,8 @@ Utilisateur* GestionBdd::rechercherUtilisateur(string pseudo) {
 void GestionBdd::ajouterVente(string n, string cat, float prix, unsigned int qte, bool etat) {
     string vendeur = utilisateurConnecte->getPseudo();
     Produit *p = new Produit(vendeur, n, cat, prix, qte, etat);
+    p->setReference(ref);
+    incrementerRef();
     utilisateurConnecte->addVente(p);
     produits.addProduit(p);
     update();
@@ -83,19 +94,6 @@ void GestionBdd::ajouterVente(string n, string cat, float prix, unsigned int qte
 /* ventes en cours */
 vector<Produit*> GestionBdd::ventesEnCours() {
     return produits.getListProduits();
-}
-
-/* recherche produit par nom */
-vector<Produit*> GestionBdd::rechercherProduitNom(string nom) {
-    return produits.getProduitsNom(nom);
-}
-
-/* recherche produit par tags */
-vector<Produit*> GestionBdd::rechercherProduitTags(string tags) {
-    istringstream split(tags);
-    vector<string> tokens;
-    for (string each; getline(split, each, ' '); tokens.push_back(each));
-    return produits.rechercherTags(tokens);
 }
 
 /* Rechercher un produit par référence */
@@ -110,9 +108,3 @@ vector<Produit*> GestionBdd::rechercherTags(string t){
     return produits.rechercherTags(t);
 }
 
-/* Rechercher tous les produits d'une catégorie */
-vector<Produit*> GestionBdd::rechercherCategorie(string c){
-    // Transformation des caractères de la catégorie en minuscules
-    std::transform(c.begin(), c.end(), c.begin(), ::tolower);
-    return produits.rechercherCategorie(c);
-}

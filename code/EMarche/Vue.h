@@ -4,6 +4,8 @@
 class Vue {
 
 public:
+    virtual ~Vue() {};
+
     virtual void update() = 0;
 
 };

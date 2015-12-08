@@ -19,6 +19,7 @@ DialogConnexion::DialogConnexion( GestionBdd *bdd, QWidget *parent) :
 DialogConnexion::~DialogConnexion()
 {
     delete ui;
+    delete gestionBdd;
 }
 
 
