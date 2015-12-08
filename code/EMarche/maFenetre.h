@@ -11,6 +11,7 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QGridLayout>
+#include <QMessageBox>
 #include <iostream>
 #include "DialogConnexion.h"
 #include "DialogInscription.h"
@@ -24,7 +25,7 @@ class maFenetre : public QWidget, public Vue
     Q_OBJECT;
 
 public:
-    maFenetre(int l, int h, GestionBdd bdd);
+    maFenetre(int l, int h, GestionBdd *bdd);
 
     void update();
     void clearLayout(QLayout *layout);
@@ -49,6 +50,7 @@ private:
     QLineEdit *valRecherche;
     QPushButton *boutonRecherche;
     QPushButton *boutonAccueil;
+    QPushButton *boutonAjouterVente;
     QLabel *pseudoConnecte;
     QPushButton *boutonConnexion;
 
@@ -61,7 +63,7 @@ private:
 
     int largeur;
     int hauteur;
-    GestionBdd gestionBdd;
+    GestionBdd *gestionBdd;
 
 };
 

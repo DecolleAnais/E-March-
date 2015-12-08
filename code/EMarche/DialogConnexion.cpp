@@ -2,7 +2,7 @@
 #include "ui_DialogConnexion.h"
 #include "DialogInscription.h"
 
-DialogConnexion::DialogConnexion( GestionBdd bdd, QWidget *parent) :
+DialogConnexion::DialogConnexion( GestionBdd *bdd, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::DialogConnexion),
     gestionBdd(bdd)
@@ -34,5 +34,5 @@ void DialogConnexion::on_boutonSInscrire_clicked()
 
 void DialogConnexion::on_boutonSeConnecter_clicked()
 {
-    gestionBdd.connecterUtilisateur(ui->valPseudo->text().toStdString(), ui->valMdp->text().toStdString());
+    gestionBdd->connecterUtilisateur(ui->valPseudo->text().toStdString(), ui->valMdp->text().toStdString());
 }

@@ -15,7 +15,7 @@ class DialogInscription : public QDialog
     Q_OBJECT
 
 public:
-    explicit DialogInscription(GestionBdd bdd, QWidget *parent = 0);
+    explicit DialogInscription(GestionBdd *bdd, QWidget *parent = 0);
     ~DialogInscription();
 
 public slots:
@@ -26,7 +26,7 @@ private slots:
 
 private:
     Ui::DialogInscription *ui;
-    GestionBdd gestionBdd;
+    GestionBdd *gestionBdd;
 };
 
 #endif // DIALOGINSCRIPTION_H

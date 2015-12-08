@@ -3,7 +3,7 @@
 
 using namespace std;
 
-DialogInscription::DialogInscription(GestionBdd bdd, QWidget *parent) :
+DialogInscription::DialogInscription(GestionBdd *bdd, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::DialogInscription),
     gestionBdd(bdd)
@@ -38,5 +38,5 @@ void DialogInscription::on_boutonValider_clicked()
     string mail = ui->valMail->text().toStdString();
     string adresse = ui->valAdresse->text().toStdString();
 
-    gestionBdd.inscrire(pseudo, mdp, nom, prenom, jourNaissInt, moisNaissInt, anneeNaissInt, mail, adresse);
+    gestionBdd->inscrire(pseudo, mdp, nom, prenom, jourNaissInt, moisNaissInt, anneeNaissInt, mail, adresse);
 }

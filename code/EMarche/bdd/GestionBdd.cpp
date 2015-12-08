@@ -36,6 +36,7 @@ void GestionBdd::inscrire(string monPseudo, string monMdp, string name, string f
               int jourNaiss, int moisNaiss, int anneeNaiss, string mail, string adr)
 {
     utilisateurs.add(new Utilisateur(monPseudo, monMdp, name, firstname, jourNaiss, moisNaiss, anneeNaiss, mail, adr));
+    utilisateurs.affiche();
 }
 
 /* Ajouter un nouveau produit */
