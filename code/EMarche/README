@@ -16,6 +16,8 @@ si quelqu'un a vraiment envie de s'amuser, il y a 2 boutons à faire fonctionner
 void maFenetre::afficherResProduits(vector<Produit*> v)
 et qui appelle la fonction void voirProduit(...) plus bas aussi
 
+il faut que ça ressemble à nos captures d'écrans
+
 on a des fuites de mémoire, donc si vous savez faire les destructeurs, les delete etc 
 en utilisant valgrind ./EMarche pour vérifier 
 
