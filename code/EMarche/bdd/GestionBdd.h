@@ -55,6 +55,10 @@ public:
     std::vector<Produit*> rechercherTags(std::string t);
 
     std::vector<Produit*> rechercherCategorie(std::string c);
+
+    std::vector<Produit*> rechercherProduitTags(std::string tags);
+
+    int analyseTags(std::string tags);
 };
 
 #endif // GESTIONBDD_H

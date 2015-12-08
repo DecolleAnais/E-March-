@@ -88,6 +88,7 @@ public:
     std::string getEtatVente();
     float getPrixActuel();
     std::string getTags();
+    std::vector<std::string> getTagsVector();
 
     /* Fonctions set */
     void setQuantite(unsigned int q);

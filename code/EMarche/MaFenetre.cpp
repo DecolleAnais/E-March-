@@ -22,6 +22,7 @@ maFenetre::maFenetre(int l, int h, GestionBdd bdd) : largeur(l), hauteur(h), ges
     /* liste deroulante pour le type de recherche */
     typeRecherche = new QComboBox;
     typeRecherche->addItem("Produit/nom");
+    typeRecherche->addItem("Produit/tags");
     typeRecherche->addItem("Produit/catégorie");
     typeRecherche->addItem("Utilisateur");
 
@@ -114,6 +115,11 @@ void maFenetre::rechercher() {
         vector<Produit*> v = gestionBdd.rechercherProduitNom(val);
         emit signalRechercheProduits(v);
         titreSection->setText("Résultats de la recherche du produit " + QString::fromStdString(val));
+    }else if(type.compare("Produit/tags") == 0){
+        /* Recherche d'un produit par tags*/
+        vector<Produit*> v = gestionBdd.rechercherProduitTags(val);
+        emit signalRechercheProduits(v);
+        titreSection->setText("Résultats de la recherche des tags " + QString::fromStdString(val));
     }else {
         /* Recherche d'un produit par catégorie*/
         //vector<Produit*> v = gestionBdd.rechercherProduitCat(val);

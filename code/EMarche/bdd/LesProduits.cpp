@@ -67,20 +67,25 @@ vector<Produit*> LesProduits::rechercherTags(string t){
 }
 
 /* Rechercher tous les produits tagés par une liste de tags */
-vector<Produit*> LesProduits::rechercherTags(int nbArguments, string t, ...) {
+vector<Produit*> LesProduits::rechercherTags(vector<string> tags) {
     vector<Produit*> tab;
+    vector<string>::iterator itTags;
     vector<Produit*>::iterator it;
-    va_list list;
-    va_start(list,t);
-    for(int arg = 0; arg < nbArguments; arg++) {
+    vector<string>::iterator itTagsProd;
+    for(itTags = tags.begin(); itTags != tags.end(); itTags++) {
+        string str = (*itTags);
         for (it = lesProduits.begin(); it != lesProduits.end(); it++) {
-            // Récupération des tags du produit courant
-            string tags = (*it)->getTags();
-            // Transformation de la chaîne des tags en miniscule
-            std::transform(tags.begin(), tags.end(), tags.begin(), ::tolower);
-            // Recherche de t dans la chaîne des tags
-            if(tags.find(t) != string::npos) {
-                tab.push_back((*it));
+            vector<string> donno = (*it)->getTagsVector();
+            for (itTagsProd = donno.begin(); itTagsProd != donno.end(); itTagsProd++) {
+                // Récupération des tags du produit courant
+                string s = (*itTagsProd);
+                // Transformation de la chaîne des tags en miniscule
+                std::transform(s.begin(), s.end(), s.begin(), ::tolower);
+                std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+                // Recherche de str dans la chaîne des t
+                if(s.compare(str) == 0) {
+                    tab.push_back((*it));
+                }
             }
         }
     }
