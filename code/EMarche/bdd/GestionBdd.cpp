@@ -102,6 +102,7 @@ void GestionBdd::ajouterVente(string n, string cat, float prix, unsigned int qte
 void GestionBdd::ajouterVente(string n, string cat, float prix, unsigned int qte, bool etat, struct tm date) {
     string vendeur = utilisateurConnecte->getPseudo();
     Produit *p = new Produit(vendeur, n, cat, prix, qte, etat, date);
+    p->setReference(generateReference());
     utilisateurConnecte->addVente(p);
     produits.addProduit(p);
     update();
