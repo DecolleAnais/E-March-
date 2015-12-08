@@ -1,7 +1,22 @@
 pour savoir si qqn lit :
 
-je commence le CB ?
+je commence le CB ? Oui
 
 il faut que vous changiez votre makefile à la main changez ça :
 CXXFLAGS = -m64 -pipe -O2 -Wall -W -D_REENTRANT -fPIE -std=c++0x $(DEFINES)
 ça permet en gros d'utiliser la fonction to_string(entier)
+
+pas la peine, j'avais déjà fait une fonction qui fonctionne et consomme moins, même si j'ai laissé les deux versions
+
+si quelqu'un a vraiment envie de s'amuser, il y a 2 boutons à faire fonctionner dans maFenetre.cpp :
+- boutonProfil créé dans le constructeur qui appelle la fonction void profil(...) qui est plus bas dans le fichier
+
+- voirProduit qui se crée dans cette fonction : 
+/* affichage du résultat d'une recherche de produits */
+void maFenetre::afficherResProduits(vector<Produit*> v)
+et qui appelle la fonction void voirProduit(...) plus bas aussi
+
+on a des fuites de mémoire, donc si vous savez faire les destructeurs, les delete etc 
+en utilisant valgrind ./EMarche pour vérifier 
+
+
