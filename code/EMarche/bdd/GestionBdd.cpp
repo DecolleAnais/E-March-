@@ -31,6 +31,11 @@ void GestionBdd::connecterUtilisateur(string pseudo, string mdp) {
     }
 }
 
+/* savoir si on est connecté */
+bool GestionBdd::isConnecte() {
+
+}
+
 /* inscription */
 void GestionBdd::inscrire(string monPseudo, string monMdp, string name, string firstname,
               int jourNaiss, int moisNaiss, int anneeNaiss, string mail, string adr)

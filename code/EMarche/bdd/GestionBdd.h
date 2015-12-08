@@ -31,6 +31,9 @@ public:
     /* connexion */
     void connecterUtilisateur(std::string pseudo, std::string mdp);
 
+    /* savoir si on est connecté */
+    bool isConnecte();
+
     /* inscrire */
     void inscrire(std::string monPseudo, std::string monMdp, std::string name, std::string firstname,
                   int jourNaiss, int moisNaiss, int anneeNaiss, std::string mail, std::string adr);

@@ -15,6 +15,7 @@
 #include <iostream>
 #include "DialogConnexion.h"
 #include "DialogInscription.h"
+#include "DialogAjouterVente.h"
 #include "Vue.h"
 #include "bdd/GestionBdd.h"
 
@@ -35,6 +36,7 @@ public slots:
     void afficherResProduits(std::vector<Produit*> v);
     void rechercher();
     void accueil();
+    void ajouterVente();
     void voirProfil(std::string pseudo);
 
 signals:
