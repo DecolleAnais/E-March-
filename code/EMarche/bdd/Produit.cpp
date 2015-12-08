@@ -61,7 +61,7 @@ float Produit::getPrixActuel(){
     return prixUnitaire;
 }
 
-std::string Produit::getTags(){
+string Produit::getTags(){
     string result;
     stringstream sstm;
 
@@ -73,6 +73,17 @@ std::string Produit::getTags(){
 
     result = sstm.str();
     return result;
+}
+
+vector<string> Produit::getTagsVector(){
+    return tags;
+}
+
+string Produit::getDateLimite(){
+    if(etatVente->venteEnCours() == true)
+        return etatVente->getDateLimite();
+    else
+        return "";
 }
 
 void Produit::setQuantite(unsigned int q){

@@ -25,7 +25,8 @@ public:
     Produit* getProduit(std::string ref);
     std::vector<Produit*> rechercherTags(std::string t);
     std::vector<Produit*> rechercherCategorie(std::string t);
-    std::vector<Produit*> rechercherTags(int nbArguments, std::string t, ...);
+    std::vector<Produit*> rechercherTags(std::vector<std::string>);
+    std::vector<Produit*> triPrixCroissant (std::vector<Produit*> produits);
     void toString();
 };
 

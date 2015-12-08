@@ -90,6 +90,14 @@ vector<Produit*> GestionBdd::rechercherProduitNom(string nom) {
     return produits.getProduitsNom(nom);
 }
 
+/* recherche produit par tags */
+vector<Produit*> GestionBdd::rechercherProduitTags(string tags) {
+    istringstream split(tags);
+    vector<string> tokens;
+    for (string each; getline(split, each, ' '); tokens.push_back(each));
+    return produits.rechercherTags(tokens);
+}
+
 /* Rechercher un produit par référence */
 Produit* GestionBdd::rechercherProduit(string ref) {
     return produits.getProduit(ref);
