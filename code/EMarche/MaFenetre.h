@@ -36,7 +36,9 @@ public slots:
     void afficherResProduits(std::vector<Produit*> v);
     void rechercher();
     void accueil();
+    void profil();
     void ajouterVente();
+    void connexion();
     void voirProfil(std::string pseudo);
 
 signals:
@@ -52,6 +54,7 @@ private:
     QLineEdit *valRecherche;
     QPushButton *boutonRecherche;
     QPushButton *boutonAccueil;
+    QPushButton *boutonProfil;
     QPushButton *boutonAjouterVente;
     QLabel *pseudoConnecte;
     QPushButton *boutonConnexion;

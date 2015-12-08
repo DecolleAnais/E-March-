@@ -39,6 +39,10 @@ maFenetre::maFenetre(int l, int h, GestionBdd *bdd) : largeur(l), hauteur(h), ge
     boutonAccueil = new QPushButton("Accueil");
     QObject::connect(boutonAccueil, SIGNAL(clicked()), this, SLOT(accueil()));
 
+    /* bouton profil */
+    boutonProfil = new QPushButton("Mon profil");
+    QObject::connect(boutonAccueil, SIGNAL(clicked()), this, SLOT(profil()));
+
     /* bouton ajouterVente */
     boutonAjouterVente = new QPushButton("Ajouter vente");
     QObject::connect(boutonAjouterVente, SIGNAL(clicked()), this, SLOT(ajouterVente()));
@@ -48,13 +52,15 @@ maFenetre::maFenetre(int l, int h, GestionBdd *bdd) : largeur(l), hauteur(h), ge
 
     /* bouton connexion */
     boutonConnexion = new QPushButton("Se connecter");     // bouton connexion
-    QObject::connect(boutonConnexion, SIGNAL(clicked()), new DialogConnexion(gestionBdd), SLOT(ouvrir()));
+    //QObject::connect(boutonConnexion, SIGNAL(clicked()), new DialogConnexion(gestionBdd), SLOT(ouvrir()));
+    QObject::connect(boutonConnexion, SIGNAL(clicked()), this, SLOT(connexion()));
 
     /* Layouts */
     haut->addWidget(typeRecherche);
     haut->addWidget(valRecherche);
     haut->addWidget(boutonRecherche);
     haut->addWidget(boutonAccueil);
+    haut->addWidget(boutonProfil);
     haut->addWidget(boutonAjouterVente);
     haut->addWidget(pseudoConnecte);
     haut->addWidget(boutonConnexion);
@@ -134,12 +140,29 @@ void maFenetre::accueil() {
     clearLayout(centre);
 }
 
+/* voir mon profil */
+void maFenetre::profil() {
+    titreSection->setText("Mon profil");
+    clearLayout(centre);
+}
+
 /* ajouter une vente */
 void maFenetre::ajouterVente() {
     if(gestionBdd->isConnecte()) {
-        DialogAjouterVente ajouterVente;
+        DialogAjouterVente *ajouterVente = new DialogAjouterVente(gestionBdd);
     }else {
         QMessageBox::warning(this, "Ajouter une vente", "Attention, vous devez être connecté pour ajouter un produit en vente !");
+    }
+}
+
+/* connexion */
+void maFenetre::connexion() {
+    if(gestionBdd->isConnecte()) {
+        gestionBdd->deconnecterUtilisateur();
+        pseudoConnecte->setText("");
+        boutonConnexion->setText("Se connecter");
+    }else {
+        DialogConnexion *connexion = new DialogConnexion(gestionBdd);
     }
 }
 
@@ -193,6 +216,10 @@ void maFenetre::voirProfil(string pseudo) {
 }
 
 void maFenetre::update() {
+    if(gestionBdd->isConnecte()) {
+        pseudoConnecte->setText(QString::fromStdString(gestionBdd->getUtilisateurConnecte()->getPseudo()));
+        boutonConnexion->setText("Se déconnecter");
+    }
 }
 
 /* vide le layout */

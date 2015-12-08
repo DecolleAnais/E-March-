@@ -13,6 +13,7 @@ DialogConnexion::DialogConnexion( GestionBdd *bdd, QWidget *parent) :
 
     // Connexion clic bouton "S'inscrire" qui affiche la fenetre d'inscription
     QObject::connect(ui->boutonSInscrire, SIGNAL(clicked()), new DialogInscription(gestionBdd), SLOT(ouvrir()));
+    show();
 }
 
 DialogConnexion::~DialogConnexion()
@@ -34,5 +35,6 @@ void DialogConnexion::on_boutonSInscrire_clicked()
 
 void DialogConnexion::on_boutonSeConnecter_clicked()
 {
+    close();
     gestionBdd->connecterUtilisateur(ui->valPseudo->text().toStdString(), ui->valMdp->text().toStdString());
 }
