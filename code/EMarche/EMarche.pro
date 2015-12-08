@@ -17,7 +17,8 @@ SOURCES += \
     bdd/VenteNormale.cpp \
     DialogInscription.cpp \
     bdd/GestionBdd.cpp \
-    Vue.cpp
+    Vue.cpp \
+    DialogAjouterVente.cpp
 
 HEADERS += \
     MaFenetre.h \
@@ -36,8 +37,10 @@ HEADERS += \
     bdd/VenteNormale.h \
     DialogInscription.h \
     bdd/GestionBdd.h \
-    Vue.h
+    Vue.h \
+    DialogAjouterVente.h
 
 FORMS += \
     DialogConnexion.ui \
-    DialogInscription.ui
+    DialogInscription.ui \
+    DialogAjouterVente.ui

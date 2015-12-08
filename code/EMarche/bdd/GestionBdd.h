@@ -20,7 +20,7 @@ private:
 public:
     GestionBdd();
 
-    /* Fonctions */
+    /* FONCTIONS */
 
     /* ajouter vue */
     void addVue(Vue* v);
@@ -31,20 +31,32 @@ public:
     /* connexion */
     void connecterUtilisateur(std::string pseudo, std::string mdp);
 
+    /* déconnexion */
+    void deconnecterUtilisateur();
+
+    /* savoir si on est connecté */
+    bool isConnecte();
+
+    /* retourner un pointeur vers l'utilisateur connecté */
+    Utilisateur* getUtilisateurConnecte();
+
     /* inscrire */
     void inscrire(std::string monPseudo, std::string monMdp, std::string name, std::string firstname,
                   int jourNaiss, int moisNaiss, int anneeNaiss, std::string mail, std::string adr);
 
-    /* Ajouter un produit */
-    void nouveauProduit(Produit *p);
-
-    std::vector<Utilisateur*> rechercherUtilisateurs(std::string pseudo);
-
     /* recherche utilisateur */
     Utilisateur* rechercherUtilisateur(std::string pseudo);
 
+    std::vector<Utilisateur*> rechercherUtilisateurs(std::string pseudo);
+
+    /* Ajouter un produit */
+    void nouveauProduit(Produit *p);
+
     /* ajouter vente */
     void ajouterVente(std::string n, std::string cat, float prix, unsigned int qte, bool etat);
+
+    /* ventes en cours */
+    void ventesEnCours();
 
     /* recherche produit */
 

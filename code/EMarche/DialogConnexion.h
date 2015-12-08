@@ -15,7 +15,7 @@ class DialogConnexion : public QDialog
     Q_OBJECT
 
 public:
-    explicit DialogConnexion(GestionBdd bdd, QWidget *parent = 0);
+    explicit DialogConnexion(GestionBdd *bdd, QWidget *parent = 0);
     ~DialogConnexion();
 
 public slots:
@@ -28,7 +28,7 @@ private slots:
 
 private:
     Ui::DialogConnexion *ui;
-    GestionBdd gestionBdd;
+    GestionBdd *gestionBdd;
 };
 
 #endif // DIALOGCONNEXION_H

@@ -2,9 +2,9 @@
 
 using namespace std;
 
-maFenetre::maFenetre(int l, int h, GestionBdd bdd) : largeur(l), hauteur(h), gestionBdd(bdd)
+maFenetre::maFenetre(int l, int h, GestionBdd *bdd) : largeur(l), hauteur(h), gestionBdd(bdd)
 {
-    gestionBdd.addVue(this);
+    gestionBdd->addVue(this);
     setFixedSize(largeur, hauteur);    // taille fenetre
 
     /* layouts */
@@ -40,18 +40,29 @@ maFenetre::maFenetre(int l, int h, GestionBdd bdd) : largeur(l), hauteur(h), ges
     boutonAccueil = new QPushButton("Accueil");
     QObject::connect(boutonAccueil, SIGNAL(clicked()), this, SLOT(accueil()));
 
+    /* bouton profil */
+    boutonProfil = new QPushButton("Mon profil");
+    QObject::connect(boutonAccueil, SIGNAL(clicked()), this, SLOT(profil()));
+
+    /* bouton ajouterVente */
+    boutonAjouterVente = new QPushButton("Ajouter vente");
+    QObject::connect(boutonAjouterVente, SIGNAL(clicked()), this, SLOT(ajouterVente()));
+
     /* label peudo de l'utilisateur connecté */
     pseudoConnecte = new QLabel("");
 
     /* bouton connexion */
     boutonConnexion = new QPushButton("Se connecter");     // bouton connexion
-    QObject::connect(boutonConnexion, SIGNAL(clicked()), new DialogConnexion(gestionBdd), SLOT(ouvrir()));
+    //QObject::connect(boutonConnexion, SIGNAL(clicked()), new DialogConnexion(gestionBdd), SLOT(ouvrir()));
+    QObject::connect(boutonConnexion, SIGNAL(clicked()), this, SLOT(connexion()));
 
     /* Layouts */
     haut->addWidget(typeRecherche);
     haut->addWidget(valRecherche);
     haut->addWidget(boutonRecherche);
     haut->addWidget(boutonAccueil);
+    haut->addWidget(boutonProfil);
+    haut->addWidget(boutonAjouterVente);
     haut->addWidget(pseudoConnecte);
     haut->addWidget(boutonConnexion);
 
@@ -99,7 +110,7 @@ void maFenetre::rechercher() {
 
     if(type.compare("Utilisateur") == 0) {
         /* Recherche d'un utilisateur */
-        vector<Utilisateur*> v = gestionBdd.rechercherUtilisateurs(val);
+        vector<Utilisateur*> v = gestionBdd->rechercherUtilisateurs(val);
         emit signalRechercheUtilisateur(v);
         titreSection->setText("Résultats de la recherche de l'utilisateur " + QString::fromStdString(val));
 
@@ -107,23 +118,23 @@ void maFenetre::rechercher() {
         /* Recherche d'un produit par référence*/
         //vector<Produit*> v = gestionBdd.rechercherProduitRef(val);
         vector<Produit*> v;
-        v.push_back(gestionBdd.rechercherProduit(val));
+        v.push_back(gestionBdd->rechercherProduit(val));
         emit signalRechercheProduits(v);
         titreSection->setText("Résultats de la recherche de la référence " + QString::fromStdString(val));
     }else if(type.compare("Produit/nom") == 0){
         /* Recherche d'un produit par nom*/
-        vector<Produit*> v = gestionBdd.rechercherProduitNom(val);
+        vector<Produit*> v = gestionBdd->rechercherProduitNom(val);
         emit signalRechercheProduits(v);
         titreSection->setText("Résultats de la recherche du produit " + QString::fromStdString(val));
     }else if(type.compare("Produit/tags") == 0){
         /* Recherche d'un produit par tags*/
-        vector<Produit*> v = gestionBdd.rechercherProduitTags(val);
+        vector<Produit*> v = gestionBdd->rechercherProduitTags(val);
         emit signalRechercheProduits(v);
         titreSection->setText("Résultats de la recherche des tags " + QString::fromStdString(val));
     }else {
         /* Recherche d'un produit par catégorie*/
         //vector<Produit*> v = gestionBdd.rechercherProduitCat(val);
-        vector<Produit*> v = gestionBdd.rechercherCategorie(val);
+        vector<Produit*> v = gestionBdd->rechercherCategorie(val);
         emit signalRechercheProduits(v);
         titreSection->setText("Résultats de la recherche de la catégorie " + QString::fromStdString(val));
     }
@@ -135,6 +146,31 @@ void maFenetre::accueil() {
     clearLayout(centre);
 }
 
+/* voir mon profil */
+void maFenetre::profil() {
+    titreSection->setText("Mon profil");
+    clearLayout(centre);
+}
+
+/* ajouter une vente */
+void maFenetre::ajouterVente() {
+    if(gestionBdd->isConnecte()) {
+        DialogAjouterVente *ajouterVente = new DialogAjouterVente(gestionBdd);
+    }else {
+        QMessageBox::warning(this, "Ajouter une vente", "Attention, vous devez être connecté pour ajouter un produit en vente !");
+    }
+}
+
+/* connexion */
+void maFenetre::connexion() {
+    if(gestionBdd->isConnecte()) {
+        gestionBdd->deconnecterUtilisateur();
+        pseudoConnecte->setText("");
+        boutonConnexion->setText("Se connecter");
+    }else {
+        DialogConnexion *connexion = new DialogConnexion(gestionBdd);
+    }
+}
 
 /* affichage du résultat d'une recherche d'utilisateurs */
 void maFenetre::afficherResUtilisateurs(vector<Utilisateur*> v) {
@@ -186,6 +222,10 @@ void maFenetre::voirProfil(string pseudo) {
 }
 
 void maFenetre::update() {
+    if(gestionBdd->isConnecte()) {
+        pseudoConnecte->setText(QString::fromStdString(gestionBdd->getUtilisateurConnecte()->getPseudo()));
+        boutonConnexion->setText("Se déconnecter");
+    }
 }
 
 /* vide le layout */
