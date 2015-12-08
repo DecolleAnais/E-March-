@@ -54,6 +54,7 @@ public:
 
     /* ajouter vente */
     void ajouterVente(std::string n, std::string cat, float prix, unsigned int qte, bool etat);
+    void ajouterVente(std::string n, std::string cat, float prix, unsigned int qte, bool etat, struct tm date);
 
     /* ventes en cours */
     std::vector<Produit*> ventesEnCours();

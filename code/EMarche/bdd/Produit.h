@@ -27,31 +27,6 @@ private:
 
 public:
 
-    Produit(std::string n, std::string cat, float prix, unsigned int qte, bool etat) : nom(n),
-        reference("ref"), prixUnitaire(prix), quantite(qte) {
-        // Initialisation de l'état de vente
-        if(etat == 0){ // cas d'une vente normale
-            etatVente = new VenteNormale(etat);
-        }else{
-            etatVente = new VenteEnchere(etat);
-            etatVente->setPrixActuel(prix);
-        }
-        // Initialisation de la catégorie
-        categorie = new Categorie(cat);
-        // Initialisation de la date de dépôt au jour actuel
-        time_t maintenant;
-        time(&maintenant);
-        dateDepot = *localtime(&maintenant);
-        dateDepot.tm_year = dateDepot.tm_year + 1900;
-        // Initialisation de dateVenteAchat
-        dateAchatVente.tm_mday = 0;
-        dateAchatVente.tm_mon = 0;
-        dateAchatVente.tm_year = 0;
-        // Ajout des tags
-        ajouterTag(n);
-        ajouterTag(categorie->getNom());
-    }
-
     Produit(std::string v, std::string n, std::string cat, float prix, unsigned int qte, bool etat) : vendeur(v), nom(n),
         reference("ref"), prixUnitaire(prix), quantite(qte) {
         // Initialisation de l'état de vente
@@ -77,8 +52,8 @@ public:
         ajouterTag(categorie->getNom());
     }
 
-    Produit(std::string n, std::string cat, float prix, unsigned int qte, bool etat, struct tm dateLimite) : nom(n),
-        reference("ref"), prixUnitaire(prix), quantite(qte) {
+    Produit(std::string v,std::string n, std::string cat, float prix, unsigned int qte, bool etat, struct tm dateLimite) : vendeur(v),
+        nom(n), reference("ref"), prixUnitaire(prix), quantite(qte) {
         // Initialisation de l'état de vente
         if(etat == 0){ // cas d'une vente normale
             etatVente = new VenteNormale(etat);

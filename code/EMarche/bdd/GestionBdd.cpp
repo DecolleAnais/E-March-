@@ -80,6 +80,14 @@ void GestionBdd::ajouterVente(string n, string cat, float prix, unsigned int qte
     update();
 }
 
+void GestionBdd::ajouterVente(string n, string cat, float prix, unsigned int qte, bool etat, struct tm date) {
+    string vendeur = utilisateurConnecte->getPseudo();
+    Produit *p = new Produit(vendeur, n, cat, prix, qte, etat, date);
+    utilisateurConnecte->addVente(p);
+    produits.addProduit(p);
+    update();
+}
+
 /* ventes en cours */
 vector<Produit*> GestionBdd::ventesEnCours() {
     return produits.getListProduits();
