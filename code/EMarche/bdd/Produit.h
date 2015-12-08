@@ -89,6 +89,7 @@ public:
     float getPrixActuel();
     std::string getTags();
     std::vector<std::string> getTagsVector();
+    std::string getDateLimite();
 
     /* Fonctions set */
     void setQuantite(unsigned int q);

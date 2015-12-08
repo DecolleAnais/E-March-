@@ -126,3 +126,13 @@ void LesProduits::toString() {
         (*it)->affiche(cout);
     }
 }
+
+vector<Produit*> LesProduits::triPrixCroissant (vector<Produit*> produits){
+
+    vector<Produit*> liste = produits;
+
+    // ...
+
+    return liste;
+}
+

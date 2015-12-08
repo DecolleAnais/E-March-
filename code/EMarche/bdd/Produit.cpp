@@ -75,6 +75,13 @@ vector<string> Produit::getTagsVector(){
     return tags;
 }
 
+string Produit::getDateLimite(){
+    if(etatVente->venteEnCours() == true)
+        return etatVente->getDateLimite();
+    else
+        return "";
+}
+
 void Produit::setQuantite(unsigned int q){
     quantite = q;
 }
