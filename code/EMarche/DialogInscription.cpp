@@ -39,4 +39,6 @@ void DialogInscription::on_boutonValider_clicked()
     string adresse = ui->valAdresse->text().toStdString();
 
     gestionBdd->inscrire(pseudo, mdp, nom, prenom, jourNaissInt, moisNaissInt, anneeNaissInt, mail, adresse);
+
+    close();
 }

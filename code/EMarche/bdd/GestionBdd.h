@@ -15,7 +15,7 @@ private:
     LesUtilisateurs utilisateurs;
     LesProduits produits;
     std::vector<Vue*> vues;
-    Utilisateur* utilisateurConnecte;
+    Utilisateur *utilisateurConnecte;
 
 public:
     GestionBdd();
@@ -57,9 +57,10 @@ public:
 
     /* ajouter vente */
     void ajouterVente(std::string n, std::string cat, float prix, unsigned int qte, bool etat);
+    void ajouterVente(std::string n, std::string cat, float prix, unsigned int qte, bool etat, struct tm date);
 
     /* ventes en cours */
-    void ventesEnCours();
+    std::vector<Produit*> ventesEnCours();
 
     /* recherche produit */
 

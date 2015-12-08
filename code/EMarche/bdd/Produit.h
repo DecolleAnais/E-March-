@@ -14,6 +14,7 @@
 class Produit {
 
 private:
+    std::string vendeur;
     Categorie *categorie;
     std::string nom;
     std::string reference;
@@ -26,11 +27,14 @@ private:
 
 public:
 
-    Produit(std::string n, std::string cat, float prix, unsigned int qte, bool etat) : nom(n),
+    Produit(std::string v, std::string n, std::string cat, float prix, unsigned int qte, bool etat) : vendeur(v), nom(n),
         reference("ref"), prixUnitaire(prix), quantite(qte) {
         // Initialisation de l'état de vente
         if(etat == 0){ // cas d'une vente normale
             etatVente = new VenteNormale(etat);
+        }else{
+            etatVente = new VenteEnchere(etat);
+            etatVente->setPrixActuel(prix);
         }
         // Initialisation de la catégorie
         categorie = new Categorie(cat);
@@ -48,8 +52,8 @@ public:
         ajouterTag(categorie->getNom());
     }
 
-    Produit(std::string n, std::string cat, float prix, unsigned int qte, bool etat, struct tm dateLimite) : nom(n),
-        reference("ref"), prixUnitaire(prix), quantite(qte) {
+    Produit(std::string v,std::string n, std::string cat, float prix, unsigned int qte, bool etat, struct tm dateLimite) : vendeur(v),
+        nom(n), reference("ref"), prixUnitaire(prix), quantite(qte) {
         // Initialisation de l'état de vente
         if(etat == 0){ // cas d'une vente normale
             etatVente = new VenteNormale(etat);
@@ -78,6 +82,7 @@ public:
     virtual ~Produit() {}
 
     /* Fonctions get */
+    std::string getVendeur();
     unsigned int getQuantite();
     float getPrixUnitaire();
     std::string getReference();
@@ -89,6 +94,7 @@ public:
     float getPrixActuel();
     std::string getTags();
     std::vector<std::string> getTagsVector();
+    std::string getDateLimite();
 
     /* Fonctions set */
     void setQuantite(unsigned int q);
@@ -102,7 +108,8 @@ public:
     /* Fonctions d'affichage */
     void decrit(std::ostream &os) {
         os << "------Fiche produit-------\nReference : " << getReference() << "\nNom : " << getNom() << "\nCategorie : " << getCategorie()
-           << "\nPrix unitaire : " << getPrixUnitaire() << "\nType de vente : " << getEtatVente() << "\nQuantite : " << getQuantite() << "\nDate de depot : " << getDateDepot();
+           << "\nPrix unitaire : " << getPrixUnitaire() << "\nType de vente : " << getEtatVente() << "\nQuantite : " << getQuantite()
+           << "\nDate de depot : " << getDateDepot();
 
         if(etatVente->venteEnCours() == true){
             os << "\nPrix actuel : " << getPrixActuel() << "\nDate limite de l'enchère : " << etatVente->getDateLimite();
