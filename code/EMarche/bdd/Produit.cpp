@@ -2,6 +2,10 @@
 
 using namespace std;
 
+string Produit::getVendeur() {
+    return vendeur;
+}
+
 unsigned int Produit::getQuantite(){
     return quantite;
 }
@@ -51,7 +55,7 @@ string Produit::getEtatVente(){
 }
 
 float Produit::getPrixActuel(){
-    if(etatVente->venteEnCours() == 1){
+    if(etatVente->venteEnCours() == true){
         return etatVente->getPrixActuel();
     }
     return prixUnitaire;

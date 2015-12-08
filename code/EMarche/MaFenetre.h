@@ -12,6 +12,7 @@
 #include <QVBoxLayout>
 #include <QGridLayout>
 #include <QMessageBox>
+#include <QGroupBox>
 #include <iostream>
 #include "DialogConnexion.h"
 #include "DialogInscription.h"

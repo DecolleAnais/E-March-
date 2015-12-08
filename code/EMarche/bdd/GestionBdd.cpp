@@ -3,7 +3,7 @@
 
 using namespace std;
 
-GestionBdd::GestionBdd() : utilisateurConnecte(NULL)
+GestionBdd::GestionBdd() : utilisateurConnecte(new Utilisateur())
 {
 
 }
@@ -39,7 +39,7 @@ void GestionBdd::deconnecterUtilisateur() {
 
 /* savoir si on est connecté */
 bool GestionBdd::isConnecte() {
-    return utilisateurConnecte != NULL ? true : false;
+    return utilisateurConnecte->getPseudo() != "" ? true : false;
 }
 
 /* retourner un pointeur vers l'utilisateur connecté */
@@ -73,14 +73,16 @@ Utilisateur* GestionBdd::rechercherUtilisateur(string pseudo) {
 
 /* ajouter produit en vente */
 void GestionBdd::ajouterVente(string n, string cat, float prix, unsigned int qte, bool etat) {
-    Produit *p = new Produit(n, cat, prix, qte, etat);
-    //utilisateurConnecte->addVente(p);
+    string vendeur = utilisateurConnecte->getPseudo();
+    Produit *p = new Produit(vendeur, n, cat, prix, qte, etat);
+    utilisateurConnecte->addVente(p);
     produits.addProduit(p);
+    update();
 }
 
 /* ventes en cours */
-void GestionBdd::ventesEnCours() {
-
+vector<Produit*> GestionBdd::ventesEnCours() {
+    return produits.getListProduits();
 }
 
 /* recherche produit par nom */

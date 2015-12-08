@@ -36,6 +36,8 @@ public:
         dateNaissance.tm_year = anneeNaiss;
     }
 
+    Utilisateur() : pseudo(""){}
+
     /* Destructeur */
     virtual ~Utilisateur() {}
 

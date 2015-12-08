@@ -41,7 +41,7 @@ maFenetre::maFenetre(int l, int h, GestionBdd *bdd) : largeur(l), hauteur(h), ge
 
     /* bouton profil */
     boutonProfil = new QPushButton("Mon profil");
-    QObject::connect(boutonAccueil, SIGNAL(clicked()), this, SLOT(profil()));
+    QObject::connect(boutonProfil, SIGNAL(clicked()), this, SLOT(profil()));
 
     /* bouton ajouterVente */
     boutonAjouterVente = new QPushButton("Ajouter vente");
@@ -73,6 +73,7 @@ maFenetre::maFenetre(int l, int h, GestionBdd *bdd) : largeur(l), hauteur(h), ge
     titreSection = new QLabel("Ventes en cours", this);
     QScrollArea *defile = new QScrollArea;
     defile->setLayout(centre);
+    emit signalRechercheProduits(gestionBdd->ventesEnCours());
 
     /*********************************************
      * BAS                                       *
@@ -137,7 +138,7 @@ void maFenetre::rechercher() {
 /* retour à l'accueil avec l'affichage des ventes en cours */
 void maFenetre::accueil() {
     titreSection->setText("Ventes en cours");
-    clearLayout(centre);
+    emit signalRechercheProduits(gestionBdd->ventesEnCours());
 }
 
 /* voir mon profil */
@@ -193,20 +194,46 @@ void maFenetre::afficherResProduits(vector<Produit*> v) {
     clearLayout(centre);
     vector<Produit*>::iterator it;
     for(it = v.begin();it != v.end();it++) {
-        QHBoxLayout *box = new QHBoxLayout;
-        box->setAlignment(Qt::AlignLeft);
+        /* création d'une grille pour chaque produit */
+        QGroupBox *box = new QGroupBox;
+        QGridLayout *grille = new QGridLayout();
+
+        /* conversion des champs string du produit en QString */
         QString ref = QString::fromStdString((*it)->getReference());
         QString nom = QString::fromStdString((*it)->getNom());
         QString cat = QString::fromStdString((*it)->getCategorie());
-        QString prix = QString::number((*it)->getPrixUnitaire());
+        QString prix = QString::number((*it)->getPrixActuel());
         QString qte = QString::number((*it)->getQuantite());
-        //QString vendeur = QString::fromStdString((*it)->getVendeur());
-        //QString dateLimite = QString::fromStdString((*it)->getDateLimite());
-        box->addWidget(new QLabel("Reference : " + ref + "   -   Nom : " + nom + "   -   Catégorie : " + cat + "\nPix Unitaire : " + prix + "    -   Quantité : " + qte));
+        QString vendeur = QString::fromStdString((*it)->getVendeur());
+        QString dateDepot = QString::fromStdString((*it)->getDateDepot());
+
+        /* agencement dans le GridLayout */
+        grille->addWidget(new QLabel("Nom : " + nom), 0, 0);
+        grille->addWidget(new QLabel("Référence : " + ref), 0, 1);
+        grille->addWidget(new QLabel("Catégorie : " + cat), 1, 0);
+        grille->addWidget(new QLabel("Date du dépôt : " + dateDepot), 2, 0);
+        grille->addWidget(new QLabel("Quantité : " + qte), 3, 0);
+        grille->addWidget(new QLabel("Vendeur : " + vendeur), 4, 0);
+
+        /* affichages spécifiques aux enchères ou ventes normales */
+        /* PROBLEME LE PRODUIT TABLE CREE DANS LE MAIN NE PASSE PAS DANS LES ENCHERES, MAUVAIS AFFICHAGE*/
+        if((*it)->getEtatVente() == "Ventes aux enchères") {
+            //QString dateLimite = QString::fromStdString((*it)->getDateLimite());
+            //grille->addWidget(new QLabel("Date Limite : " + dateLimite));
+            grille->addWidget(new QLabel("Prix Actuel : " + prix), 0, 4);
+            grille->addWidget(new QLabel("Vente aux Enchères"), 2, 4);
+        }else {
+            grille->addWidget(new QLabel("Prix Unitaire : " + prix), 0, 4);
+            grille->addWidget(new QLabel("Vente Normale"), 2, 4);
+        }
+
         /* création d'un bouton pour accéder au produit concerné */
         QPushButton *voirProduit = new QPushButton("Voir produit");
+        grille->addWidget(voirProduit, 2, 5);
         //QObject::connect(voirProduit, SIGNAL(clicked()), this, SLOT(voirProduit(string nom)));
-        centre->addLayout(box);
+
+        box->setLayout(grille);
+        centre->addWidget(box);
     }
     centre->update();
 }

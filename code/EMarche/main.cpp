@@ -9,6 +9,14 @@ using namespace std;
 int main(int argc, char *argv[])
 
 {
+    /*Produit *p0 = new Produit("prod0","test",1,2,0);
+    Utilisateur *u = new Utilisateur("pseudo","mdp","nom","prenom",1,1,2000,"mail","adr");
+    u->addVente(p0);
+    vector<Produit*>::iterator it;
+    vector<Produit*> v = u->getLesVentes();
+    for(it = v.begin();it != v.end();it++)
+        (*it)->affiche(cout);*/
+
     QApplication app(argc, argv);
 
     /* initialisation de la base de données contenant la liste des utilisateurs, des produits etc */
