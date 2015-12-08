@@ -3,7 +3,7 @@ QT       += widgets \
 
 SOURCES += \
     main.cpp \
-    maFenetre.cpp \
+    MaFenetre.cpp \
     DialogConnexion.cpp \
     bdd/Avis.cpp \
     bdd/Categorie.cpp \
@@ -21,7 +21,7 @@ SOURCES += \
     DialogAjouterVente.cpp
 
 HEADERS += \
-    maFenetre.h \
+    MaFenetre.h \
     DialogConnexion.h \
     bdd/Avis.h \
     bdd/Categorie.h \

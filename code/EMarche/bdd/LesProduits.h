@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <cstdarg>
 
 class LesProduits
 {
@@ -24,6 +25,7 @@ public:
     Produit* getProduit(std::string ref);
     std::vector<Produit*> rechercherTags(std::string t);
     std::vector<Produit*> rechercherCategorie(std::string t);
+    std::vector<Produit*> rechercherTags(int nbArguments, std::string t, ...);
     void toString();
 };
 

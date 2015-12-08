@@ -1,4 +1,4 @@
-#include "maFenetre.h"
+#include "MaFenetre.h"
 
 using namespace std;
 
