@@ -31,8 +31,12 @@ public:
 
     /* FONCTIONS */
 
+
     /* incrémenter ref servant de référence unique aux produits */
     void incrementerRef();
+
+    /* nouvelle référence */
+    std::string generateReference();
 
     /* ajouter vue */
     void addVue(Vue* v);
@@ -66,6 +70,7 @@ public:
 
     /* ajouter vente */
     void ajouterVente(std::string n, std::string cat, float prix, unsigned int qte, bool etat);
+    void ajouterVente(std::string n, std::string cat, float prix, unsigned int qte, bool etat, struct tm date);
 
     /* ventes en cours */
     std::vector<Produit*> ventesEnCours();

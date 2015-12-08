@@ -206,9 +206,9 @@ void maFenetre::afficherResProduits(vector<Produit*> v) {
 
         /* affichages spécifiques aux enchères ou ventes normales */
         /* PROBLEME LE PRODUIT TABLE CREE DANS LE MAIN NE PASSE PAS DANS LES ENCHERES, MAUVAIS AFFICHAGE*/
-        if((*it)->getEtatVente() == "Ventes aux enchères") {
-            //QString dateLimite = QString::fromStdString((*it)->getDateLimite());
-            //grille->addWidget(new QLabel("Date Limite : " + dateLimite));
+        if((*it)->getEtatVente() == "Vente aux enchères") {
+            QString dateLimite = QString::fromStdString((*it)->getDateLimite());
+            grille->addWidget(new QLabel("Date Limite : " + dateLimite));
             grille->addWidget(new QLabel("Prix Actuel : " + prix), 0, 4);
             grille->addWidget(new QLabel("Vente aux Enchères"), 2, 4);
         }else {

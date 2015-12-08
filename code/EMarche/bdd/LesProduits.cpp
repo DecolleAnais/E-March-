@@ -49,7 +49,7 @@ Produit* LesProduits::getProduit(string ref) {
     return NULL;
 }
 
-/* Rechercher tous les produits tagés par t */
+/* Rechercher tous les produits tagués par t */
 vector<Produit*> LesProduits::rechercherTags(string t){
     vector<Produit*> tab;
     vector<Produit*>::iterator it;
@@ -128,11 +128,16 @@ void LesProduits::toString() {
 }
 
 vector<Produit*> LesProduits::triPrixCroissant (vector<Produit*> produits){
-
     vector<Produit*> liste = produits;
-
-    // ...
-
+    vector<Produit*>::iterator it, it2;
+    for (it = liste.begin(); it != liste.end(); it++) {
+        double prix = (*it)->getPrixActuel();
+        for(it2 = liste.begin(); it2 != liste.end(); it2++){
+            double prix2 = (*it2)->getPrixActuel();
+            if(prix2 > prix){
+                swap((*it), (*it2));
+            }
+        }
+    }
     return liste;
 }
-
