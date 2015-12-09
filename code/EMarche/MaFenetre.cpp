@@ -132,8 +132,141 @@ void MaFenetre::accueil() {
 
 /* voir mon profil */
 void MaFenetre::profil() {
+    if(!gestionBdd->isConnecte()) {
+        QMessageBox::warning(this, "Consulter son profil", "Attention, vous devez être connecté pour consulter son profil !");
+    } else {
     titreSection->setText("Mon profil");
     clearLayout(centre);
+    QHBoxLayout *box = new QHBoxLayout;
+    QGroupBox *boxTxt = new QGroupBox;
+    QHBoxLayout *boxButtons = new QHBoxLayout;
+    box->setAlignment(Qt::AlignLeft);
+    boxButtons->setAlignment(Qt::AlignLeft);
+    boutonProfil = new QPushButton("Mon profil");
+    QObject::connect(boutonProfil, SIGNAL(clicked()), this, SLOT(profil()));
+    box->addWidget(boutonProfil);
+    boutonStatistiques = new QPushButton("Mes statistiques");
+    QObject::connect(boutonStatistiques, SIGNAL(clicked()), this, SLOT(statistiques()));
+    box->addWidget(boutonStatistiques);
+    boutonVentes = new QPushButton("Mes ventes");
+    QObject::connect(boutonVentes, SIGNAL(clicked()), this, SLOT(ventes()));
+    box->addWidget(boutonVentes);
+    boutonAchats = new QPushButton("Mes achats");
+    QObject::connect(boutonAchats, SIGNAL(clicked()), this, SLOT(achats()));
+    box->addWidget(boutonAchats);
+
+    QGridLayout *grille = new QGridLayout();
+    QString pseudo = QString::fromStdString(gestionBdd->getUtilisateurConnecte()->getPseudo());
+    QString nom = QString::fromStdString(gestionBdd->getUtilisateurConnecte()->getNom());
+    QString prenom = QString::fromStdString(gestionBdd->getUtilisateurConnecte()->getPrenom());
+    QString ddn = QString::fromStdString(gestionBdd->getUtilisateurConnecte()->getDateNaissance());
+    QString email = QString::fromStdString(gestionBdd->getUtilisateurConnecte()->getEmail());
+    grille->addWidget(new QLabel("<b>Pseudo : </b>" + pseudo), 0, 0);
+    grille->addWidget(new QLabel("<b>Nom : </b>" + nom), 1, 0);
+    grille->addWidget(new QLabel("<b>Prénom : </b>" + prenom), 2, 0);
+    grille->addWidget(new QLabel("<b>Date de naissance : </b>" + ddn), 3, 0);
+    grille->addWidget(new QLabel("<b>Email : </b>" + email), 4, 0);
+    QPushButton *modifProfil = new QPushButton("Modifier profil");
+    QObject::connect(modifProfil, SIGNAL(clicked()), this, SLOT(modificationProfil()));
+    boxButtons->addWidget(modifProfil);
+    boxTxt->setLayout(grille);
+
+    centre->addLayout(box);
+    centre->addWidget(boxTxt);
+    centre->addLayout(boxButtons);
+    }
+}
+
+/* voir mes statistiques */
+void MaFenetre::statistiques() {
+    if(!gestionBdd->isConnecte()) {
+        QMessageBox::warning(this, "Consulter son profil", "Attention, vous devez être connecté pour consulter son profil !");
+    } else {
+        titreSection->setText("Mes statistiques");
+        clearLayout(centre);
+        QHBoxLayout *box = new QHBoxLayout;
+        QGroupBox *boxTxt = new QGroupBox;
+        box->setAlignment(Qt::AlignLeft);
+        boutonProfil = new QPushButton("Mon profil");
+        QObject::connect(boutonProfil, SIGNAL(clicked()), this, SLOT(profil()));
+        box->addWidget(boutonProfil);
+        boutonStatistiques = new QPushButton("Mes statistiques");
+        QObject::connect(boutonStatistiques, SIGNAL(clicked()), this, SLOT(statistiques()));
+        box->addWidget(boutonStatistiques);
+        boutonVentes = new QPushButton("Mes ventes");
+        QObject::connect(boutonVentes, SIGNAL(clicked()), this, SLOT(ventes()));
+        box->addWidget(boutonVentes);
+        boutonAchats = new QPushButton("Mes achats");
+        QObject::connect(boutonAchats, SIGNAL(clicked()), this, SLOT(achats()));
+        box->addWidget(boutonAchats);
+
+        QGridLayout *grille = new QGridLayout();
+        string s1 = to_string(gestionBdd->getUtilisateurConnecte()->getNbVentes());
+        string s2 = to_string(gestionBdd->getUtilisateurConnecte()->getNbAchats());
+        string s3 = to_string(gestionBdd->getUtilisateurConnecte()->getNote());
+        QString nbVentes = QString::fromStdString(s1);
+        QString nbAchats = QString::fromStdString(s2);
+        QString note = QString::fromStdString(s3);
+        grille->addWidget(new QLabel("<b>Nombre d\'achats : </b>" + note), 0, 0);
+        grille->addWidget(new QLabel("<b>Nombre de ventes : </b>" + nbVentes), 1, 0);
+        grille->addWidget(new QLabel("<b>Nombre d\'achats : </b>" + nbAchats), 1, 1);
+        boxTxt->setLayout(grille);
+
+        centre->addLayout(box);
+        centre->addWidget(boxTxt);
+    }
+}
+
+/* voir mes ventes */
+void MaFenetre::ventes() {
+    if(!gestionBdd->isConnecte()) {
+        QMessageBox::warning(this, "Consulter son profil", "Attention, vous devez être connecté pour consulter son profil !");
+    } else {
+        titreSection->setText("Mes ventes");
+        clearLayout(centre);
+        QHBoxLayout *box = new QHBoxLayout;
+        box->setAlignment(Qt::AlignLeft);
+        boutonProfil = new QPushButton("Mon profil");
+        QObject::connect(boutonProfil, SIGNAL(clicked()), this, SLOT(profil()));
+        box->addWidget(boutonProfil);
+        boutonStatistiques = new QPushButton("Mes statistiques");
+        QObject::connect(boutonStatistiques, SIGNAL(clicked()), this, SLOT(statistiques()));
+        box->addWidget(boutonStatistiques);
+        boutonVentes = new QPushButton("Mes ventes");
+        QObject::connect(boutonVentes, SIGNAL(clicked()), this, SLOT(ventes()));
+        box->addWidget(boutonVentes);
+        boutonAchats = new QPushButton("Mes achats");
+        QObject::connect(boutonAchats, SIGNAL(clicked()), this, SLOT(achats()));
+        box->addWidget(boutonAchats);
+
+        centre->addLayout(box);
+    }
+}
+
+/* voir mes achats */
+void MaFenetre::achats() {
+    if(!gestionBdd->isConnecte()) {
+        QMessageBox::warning(this, "Consulter son profil", "Attention, vous devez être connecté pour consulter son profil !");
+    } else {
+        titreSection->setText("Mes achats");
+        clearLayout(centre);
+        QHBoxLayout *box = new QHBoxLayout;
+        box->setAlignment(Qt::AlignLeft);
+        boutonProfil = new QPushButton("Mon profil");
+        QObject::connect(boutonProfil, SIGNAL(clicked()), this, SLOT(profil()));
+        box->addWidget(boutonProfil);
+        boutonStatistiques = new QPushButton("Mes statistiques");
+        QObject::connect(boutonStatistiques, SIGNAL(clicked()), this, SLOT(statistiques()));
+        box->addWidget(boutonStatistiques);
+        boutonVentes = new QPushButton("Mes ventes");
+        QObject::connect(boutonVentes, SIGNAL(clicked()), this, SLOT(ventes()));
+        box->addWidget(boutonVentes);
+        boutonAchats = new QPushButton("Mes achats");
+        QObject::connect(boutonAchats, SIGNAL(clicked()), this, SLOT(achats()));
+        box->addWidget(boutonAchats);
+
+        centre->addLayout(box);
+    }
 }
 
 /* ajouter une vente */
@@ -142,6 +275,15 @@ void MaFenetre::ajouterVente() {
         DialogAjouterVente *ajouterVente = new DialogAjouterVente(gestionBdd);
     }else {
         QMessageBox::warning(this, "Ajouter une vente", "Attention, vous devez être connecté pour ajouter un produit en vente !");
+    }
+}
+
+/* modification de profil */
+void MaFenetre::modificationProfil() {
+    if(gestionBdd->isConnecte()) {
+        DialogModificationProfil *modifProfil = new DialogModificationProfil(gestionBdd);
+    } else {
+        QMessageBox::warning(this, "Modifier son profil", "Attention, vous devez être connecté pour modifier son profil !");
     }
 }
 

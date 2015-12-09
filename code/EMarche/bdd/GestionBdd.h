@@ -60,6 +60,9 @@ public:
     void inscrire(std::string monPseudo, std::string monMdp, std::string name, std::string firstname,
                   int jourNaiss, int moisNaiss, int anneeNaiss, std::string mail, std::string adr);
 
+    /*modifier profil */
+    void modifierProfil(std::string pseudo, std::string nom, std::string prenom, std::string mail, std::string codePostal, std::string ville);
+
     /* recherche utilisateur */
     Utilisateur* rechercherUtilisateur(std::string pseudo);
 

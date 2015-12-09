@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
     gestionBdd->inscrire("graou2","mdp","nom","prenom",18,04,1994,"mail","adr");
     gestionBdd->inscrire("blp3","mdp","nom","prenom",18,04,1994,"mail","adr");
 
+
     struct tm date;
     date.tm_year = 2016;
     date.tm_mon = 01;
@@ -32,6 +33,7 @@ int main(int argc, char *argv[])
     gestionBdd->ajouterVente("camion","véhicule",10000,1,0);
     gestionBdd->ajouterVente("table","meubles",30,1,1, date);
 
+    gestionBdd->connecterUtilisateur("graou","mdp");
 
     /* fenêtre principale de l'application */
     MaFenetre fenetre(1200,700, gestionBdd);

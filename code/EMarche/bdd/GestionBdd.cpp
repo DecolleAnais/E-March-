@@ -81,6 +81,11 @@ void GestionBdd::inscrire(string monPseudo, string monMdp, string name, string f
     utilisateurs.add(new Utilisateur(monPseudo, monMdp, name, firstname, jourNaiss, moisNaiss, anneeNaiss, mail, adr));
 }
 
+/* modifier le profil */
+void GestionBdd::modifierProfil(string pseudo, string nom, string prenom, string mail, string codePostal, string ville) {
+
+}
+
 /* Ajouter un nouveau produit */
 void GestionBdd::nouveauProduit(Produit *p){
     produits.addProduit(p);

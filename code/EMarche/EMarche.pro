@@ -5,6 +5,7 @@ SOURCES += \
     main.cpp \
     MaFenetre.cpp \
     DialogConnexion.cpp \
+    DialogModificationProfil.cpp \
     bdd/Avis.cpp \
     bdd/Categorie.cpp \
     bdd/EtatConnexion.cpp \
@@ -23,6 +24,7 @@ SOURCES += \
 HEADERS += \
     MaFenetre.h \
     DialogConnexion.h \
+    DialogModificationProfil.h \
     bdd/Avis.h \
     bdd/Categorie.h \
     bdd/EtatConnecte.h \
@@ -43,4 +45,5 @@ HEADERS += \
 FORMS += \
     DialogConnexion.ui \
     DialogInscription.ui \
-    DialogAjouterVente.ui
+    DialogAjouterVente.ui \
+    DialogModificationProfil.ui

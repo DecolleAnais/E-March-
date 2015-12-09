@@ -17,6 +17,7 @@
 #include "DialogConnexion.h"
 #include "DialogInscription.h"
 #include "DialogAjouterVente.h"
+#include "DialogModificationProfil.h"
 #include "Vue.h"
 #include "bdd/GestionBdd.h"
 
@@ -32,6 +33,7 @@ public:
         delete(haut);
         delete(bas);
         delete(centre);
+        delete(centreProfil);
         delete(typeRecherche);
         delete(valRecherche);
         delete(boutonRecherche);
@@ -58,8 +60,12 @@ public slots:
     void rechercher();
     void accueil();
     void profil();
+    void statistiques();
+    void ventes();
+    void achats();
     void ajouterVente();
     void connexion();
+    void modificationProfil();
     void voirProfil(std::string pseudo);
     void voirProduit(std::string ref);
 
@@ -70,6 +76,7 @@ signals:
 private:
     QHBoxLayout *haut;
     QVBoxLayout *centre;
+    QHBoxLayout *centreProfil;
     QHBoxLayout *bas;
 
     QComboBox *typeRecherche;
