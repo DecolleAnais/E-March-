@@ -22,13 +22,13 @@
 
 /* Fenêtre principale de l'application */
 
-class maFenetre : public QWidget, public Vue
+class MaFenetre : public QWidget, public Vue
 {
     Q_OBJECT;
 
 public:
-    maFenetre(int l, int h, GestionBdd *bdd);
-    ~maFenetre() {
+    MaFenetre(int l, int h, GestionBdd *bdd);
+    ~MaFenetre() {
         delete(haut);
         delete(bas);
         delete(centre);

@@ -18,8 +18,8 @@ string GestionBdd::generateReference() {
         if((*it)->getReference().compare(nouvelleRef) == 0) {
             while((*it)->getReference().compare(nouvelleRef) == 0) {
                 valRef++;
-                //string s = to_string(valRef);
-                //nouvelleRef = "#" + s;
+                string s = to_string(valRef);
+                nouvelleRef = "#" + s;
             }
         }
     }
@@ -102,9 +102,9 @@ Utilisateur* GestionBdd::rechercherUtilisateur(string pseudo) {
 void GestionBdd::ajouterVente(string n, string cat, float prix, unsigned int qte, bool etat) {
     string vendeur = utilisateurConnecte->getPseudo();
     Produit *p = new Produit(vendeur, n, cat, prix, qte, etat);
-    p->setReference(ref);
-    incrementerRef();
-    //p->setReference(generateReference());
+    //p->setReference(ref);
+    //incrementerRef();
+    p->setReference(generateReference());
     utilisateurConnecte->addVente(p);
     produits.addProduit(p);
     update();
@@ -113,9 +113,9 @@ void GestionBdd::ajouterVente(string n, string cat, float prix, unsigned int qte
 void GestionBdd::ajouterVente(string n, string cat, float prix, unsigned int qte, bool etat, struct tm date) {
     string vendeur = utilisateurConnecte->getPseudo();
     Produit *p = new Produit(vendeur, n, cat, prix, qte, etat, date);
-    p->setReference(ref);
-    incrementerRef();
-    //p->setReference(generateReference());
+    //p->setReference(ref);
+    //incrementerRef();
+    p->setReference(generateReference());
     utilisateurConnecte->addVente(p);
     produits.addProduit(p);
     update();
