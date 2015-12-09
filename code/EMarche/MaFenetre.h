@@ -57,6 +57,10 @@ private:
     QPushButton *boutonAccueil;
     QPushButton *boutonProfil;
     QPushButton *boutonAjouterVente;
+    QPushButton *boutonStatistiques;
+    QPushButton *boutonVentes;
+    QPushButton *boutonAchats;
+    QPushButton *boutonCompte;
     QLabel *pseudoConnecte;
     QPushButton *boutonConnexion;
 
