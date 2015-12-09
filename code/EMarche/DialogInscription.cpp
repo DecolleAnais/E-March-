@@ -14,6 +14,7 @@ DialogInscription::DialogInscription(GestionBdd *bdd, QWidget *parent) :
 DialogInscription::~DialogInscription()
 {
     delete ui;
+    delete gestionBdd;
 }
 
 /* SLOTS */

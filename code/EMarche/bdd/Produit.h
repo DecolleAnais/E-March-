@@ -79,7 +79,7 @@ public:
     }
 
     /* destructeur */
-    virtual ~Produit() {}
+    ~Produit() {}
 
     /* Fonctions get */
     std::string getVendeur();
@@ -97,9 +97,9 @@ public:
     std::string getDateLimite();
 
     /* Fonctions set */
+    void setReference(std::string r);
     void setQuantite(unsigned int q);
     void setDateVenteAchat(int jour, int mois, int annee);
-    void setReference(std::string s);
 
     /* Fonctions */
     void augmenterEnchere(int prix);

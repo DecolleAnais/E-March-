@@ -21,9 +21,9 @@ maFenetre::maFenetre(int l, int h, GestionBdd *bdd) : largeur(l), hauteur(h), ge
 
     /* liste deroulante pour le type de recherche */
     typeRecherche = new QComboBox;
-    typeRecherche->addItem("Produit/nom");
-    typeRecherche->addItem("Produit/tags");
-    typeRecherche->addItem("Produit/catégorie");
+    //typeRecherche->addItem("Produit/nom");
+    typeRecherche->addItem("Produit");
+    //typeRecherche->addItem("Produit/catégorie");
     typeRecherche->addItem("Utilisateur");
 
     /* texte de la recherche */
@@ -104,6 +104,7 @@ maFenetre::maFenetre(int l, int h, GestionBdd *bdd) : largeur(l), hauteur(h), ge
 /************************************
  * FONCTIONS                        *
  * **********************************/
+
 void maFenetre::rechercher() {
     /* Récupération des valeurs pour la recherche */
     string type = typeRecherche->currentText().toStdString();
@@ -115,29 +116,11 @@ void maFenetre::rechercher() {
         emit signalRechercheUtilisateur(v);
         titreSection->setText("Résultats de la recherche de l'utilisateur " + QString::fromStdString(val));
 
-    }else if(type.compare("Produit/ref") == 0){
-        /* Recherche d'un produit par référence*/
-        //vector<Produit*> v = gestionBdd.rechercherProduitRef(val);
-        vector<Produit*> v;
-        v.push_back(gestionBdd->rechercherProduit(val));
+    }else {
+        /* Recherche d'un produit */
+        vector<Produit*> v = gestionBdd->rechercherTags(val);
         emit signalRechercheProduits(v);
         titreSection->setText("Résultats de la recherche de la référence " + QString::fromStdString(val));
-    }else if(type.compare("Produit/nom") == 0){
-        /* Recherche d'un produit par nom*/
-        vector<Produit*> v = gestionBdd->rechercherProduitNom(val);
-        emit signalRechercheProduits(v);
-        titreSection->setText("Résultats de la recherche du produit " + QString::fromStdString(val));
-    }else if(type.compare("Produit/tags") == 0){
-        /* Recherche d'un produit par tags*/
-        vector<Produit*> v = gestionBdd->rechercherProduitTags(val);
-        emit signalRechercheProduits(v);
-        titreSection->setText("Résultats de la recherche des tags " + QString::fromStdString(val));
-    }else {
-        /* Recherche d'un produit par catégorie*/
-        //vector<Produit*> v = gestionBdd.rechercherProduitCat(val);
-        vector<Produit*> v = gestionBdd->rechercherCategorie(val);
-        emit signalRechercheProduits(v);
-        titreSection->setText("Résultats de la recherche de la catégorie " + QString::fromStdString(val));
     }
 }
 
@@ -236,7 +219,7 @@ void maFenetre::afficherResProduits(vector<Produit*> v) {
         /* création d'un bouton pour accéder au produit concerné */
         QPushButton *voirProduit = new QPushButton("Voir produit");
         grille->addWidget(voirProduit, 2, 5);
-        //QObject::connect(voirProduit, SIGNAL(clicked()), this, SLOT(voirProduit(string nom)));
+        QObject::connect(voirProduit, SIGNAL(clicked()), this, SLOT(voirProduit(string ref)));
 
         box->setLayout(grille);
         centre->addWidget(box);
@@ -248,10 +231,19 @@ void maFenetre::voirProfil(string pseudo) {
 
 }
 
+void maFenetre::voirProduit(string ref) {
+
+}
+
 void maFenetre::update() {
     if(gestionBdd->isConnecte()) {
+        /* mets à jour l'interface à la connexion */
         pseudoConnecte->setText(QString::fromStdString(gestionBdd->getUtilisateurConnecte()->getPseudo()));
         boutonConnexion->setText("Se déconnecter");
+    }
+    if(titreSection->text() == "Ventes en cours") {
+        /* mets à jour l'affichage des ventes en cours en cas d'ajout */
+        emit signalRechercheProduits(gestionBdd->ventesEnCours());
     }
 }
 

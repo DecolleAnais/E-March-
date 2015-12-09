@@ -16,11 +16,24 @@ private:
     LesProduits produits;
     std::vector<Vue*> vues;
     Utilisateur *utilisateurConnecte;
+    std::string ref;
 
 public:
     GestionBdd();
 
+    ~GestionBdd() {
+        std::vector<Vue*>::iterator it;
+        for(it = vues.begin(); it != vues.end();it++) {
+            delete(*it);
+        }
+        delete(utilisateurConnecte);
+    }
+
     /* FONCTIONS */
+
+
+    /* incrémenter ref servant de référence unique aux produits */
+    void incrementerRef();
 
     /* nouvelle référence */
     std::string generateReference();
@@ -64,17 +77,10 @@ public:
 
     /* recherche produit */
 
-    std::vector<Produit*> rechercherProduitNom(std::string nom);
-
     Produit* rechercherProduit(std::string ref);
 
     std::vector<Produit*> rechercherTags(std::string t);
 
-    std::vector<Produit*> rechercherCategorie(std::string c);
-
-    std::vector<Produit*> rechercherProduitTags(std::string tags);
-
-    int analyseTags(std::string tags);
 };
 
 #endif // GESTIONBDD_H
