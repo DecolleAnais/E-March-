@@ -22,14 +22,15 @@ DialogModificationProfil::~DialogModificationProfil()
 void DialogModificationProfil::on_boutonValider_clicked()
 {
     /* récupération des valeurs nécessaires à la création d'un utilisateur */
-    string pseudo = ui->lineEdit->text().toStdString();
-    string nom = ui->lineEdit_2->text().toStdString();
-    string prenom = ui->lineEdit_3->text().toStdString();
-    string mail = ui->lineEdit_4->text().toStdString();
-    string codePostal = ui->lineEdit_5->text().toStdString();
-    string ville = ui->lineEdit_6->text().toStdString();
+    string nom = ui->nom->text().toStdString();
+    string prenom = ui->prenom->text().toStdString();
+    string mail = ui->email->text().toStdString();
+    int codePostal = ui->code_postal->text().toInt();
+    string ville = ui->ville->text().toStdString();
+    string adresse = ui->adresse->text().toStdString();
 
-    gestionBdd->modifierProfil(pseudo,nom,prenom,mail,codePostal,ville);
-
-    close();
+    if(nom!="" && prenom!="" && mail!="" && !ui->code_postal->text().isEmpty() && ville!="" && adresse!="") {
+        gestionBdd->modifierProfil(nom,prenom,mail,codePostal,ville,adresse);
+        close();
+    }
 }

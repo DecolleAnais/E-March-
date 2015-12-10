@@ -38,8 +38,9 @@ void DialogInscription::on_boutonValider_clicked()
     int anneeNaissInt = atoi(anneeNaiss.c_str());
     string mail = ui->valMail->text().toStdString();
     string adresse = ui->valAdresse->text().toStdString();
+    int codePostal = ui->valCodePostal->text().toInt();
 
-    gestionBdd->inscrire(pseudo, mdp, nom, prenom, jourNaissInt, moisNaissInt, anneeNaissInt, mail, adresse);
+    gestionBdd->inscrire(pseudo, mdp, nom, prenom, jourNaissInt, moisNaissInt, anneeNaissInt, mail, adresse, codePostal);
 
     close();
 }

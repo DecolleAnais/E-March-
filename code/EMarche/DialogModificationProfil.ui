@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="boutonValider">
    <property name="geometry">
     <rect>
      <x>200</x>
@@ -26,34 +26,31 @@
     <string>Valider</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>45</y>
-     <width>126</width>
-     <height>27</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>127</x>
-     <y>50</y>
-     <width>80</width>
-     <height>17</height>
+     <x>160</x>
+     <y>20</y>
+     <width>271</width>
+     <height>31</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
-    <string>Pseudo :</string>
+    <string>Changement profil</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
+  <widget class="QLineEdit" name="nom">
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>81</y>
+     <y>76</y>
      <width>126</width>
      <height>27</height>
     </rect>
@@ -63,7 +60,7 @@
    <property name="geometry">
     <rect>
      <x>127</x>
-     <y>86</y>
+     <y>81</y>
      <width>121</width>
      <height>20</height>
     </rect>
@@ -72,11 +69,11 @@
     <string>Nom :</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
+  <widget class="QLineEdit" name="prenom">
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>116</y>
+     <y>111</y>
      <width>126</width>
      <height>27</height>
     </rect>
@@ -86,7 +83,7 @@
    <property name="geometry">
     <rect>
      <x>127</x>
-     <y>121</y>
+     <y>116</y>
      <width>121</width>
      <height>20</height>
     </rect>
@@ -95,11 +92,11 @@
     <string>Prénom :</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_5">
+  <widget class="QLineEdit" name="email">
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>150</y>
+     <y>145</y>
      <width>126</width>
      <height>27</height>
     </rect>
@@ -109,20 +106,20 @@
    <property name="geometry">
     <rect>
      <x>127</x>
-     <y>155</y>
+     <y>150</y>
      <width>121</width>
      <height>20</height>
     </rect>
    </property>
    <property name="text">
-    <string>Adresse mail :</string>
+    <string>Email :</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="code_postal">
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>186</y>
+     <y>181</y>
      <width>126</width>
      <height>27</height>
     </rect>
@@ -135,7 +132,7 @@
    <property name="geometry">
     <rect>
      <x>127</x>
-     <y>191</y>
+     <y>186</y>
      <width>121</width>
      <height>20</height>
     </rect>
@@ -144,11 +141,11 @@
     <string>Code postal :</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_6">
+  <widget class="QLineEdit" name="ville">
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>221</y>
+     <y>216</y>
      <width>126</width>
      <height>27</height>
     </rect>
@@ -158,13 +155,36 @@
    <property name="geometry">
     <rect>
      <x>127</x>
-     <y>226</y>
+     <y>221</y>
      <width>121</width>
      <height>20</height>
     </rect>
    </property>
    <property name="text">
     <string>Ville :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>127</x>
+     <y>255</y>
+     <width>121</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Adresse :</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="adresse">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>250</y>
+     <width>126</width>
+     <height>27</height>
+    </rect>
    </property>
   </widget>
  </widget>

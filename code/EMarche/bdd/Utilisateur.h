@@ -18,19 +18,21 @@ private:
     struct tm dateNaissance;
     std::string email;
     std::string adresse;
+    std::string ville;
     unsigned int nbVentes;
     unsigned int nbAchats;
     unsigned int nbAvis;
     unsigned int note;
     unsigned int nbNotes;
+    int codePostal;
     std::vector<Produit*> lesAchats;
     std::vector<Produit*> lesVentes;
     std::vector<Avis> lesAvis;
 
 public:
     /* Constructeur */
-    Utilisateur(std::string monPseudo, std::string monMdp, std::string name, std::string firstname, int jourNaiss, int moisNaiss, int anneeNaiss, std::string mail, std::string adr) :
-        pseudo(monPseudo), mdp(monMdp), nom(name), prenom(firstname), email(mail), adresse(adr), nbVentes(0), nbAchats(0), nbAvis(0), note(0), nbNotes(0) {
+    Utilisateur(std::string monPseudo, std::string monMdp, std::string name, std::string firstname, int jourNaiss, int moisNaiss, int anneeNaiss, std::string mail, std::string adr, int cP) :
+        pseudo(monPseudo), mdp(monMdp), nom(name), prenom(firstname), email(mail), adresse(adr), codePostal(cP), nbVentes(0), nbAchats(0), nbAvis(0), note(0), nbNotes(0) {
         dateNaissance.tm_mday = jourNaiss;
         dateNaissance.tm_mon = moisNaiss;
         dateNaissance.tm_year = anneeNaiss;
@@ -57,6 +59,8 @@ public:
     std::string getDateNaissance();
     std::string getEmail();
     std::string getAdresse();
+    std::string getVille();
+    int getCodePostal();
     unsigned int getNbVentes();
     unsigned int getNbAchats();
     unsigned int getNote();
@@ -73,6 +77,8 @@ public:
     void setDateNaissance(int jour, int mois, int annee);
     void setEmail(std::string e);
     void setAdresse(std::string a);
+    void setCodePostal(int i);
+    void setVille(std::string v);
     void setNbVentes(unsigned int n);
     void setNbAchats(unsigned int n);
     void setNote(unsigned int n);

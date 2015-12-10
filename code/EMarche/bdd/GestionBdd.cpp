@@ -76,14 +76,23 @@ Utilisateur* GestionBdd::getUtilisateurConnecte() {
 
 /* inscription */
 void GestionBdd::inscrire(string monPseudo, string monMdp, string name, string firstname,
-              int jourNaiss, int moisNaiss, int anneeNaiss, string mail, string adr)
+              int jourNaiss, int moisNaiss, int anneeNaiss, string mail, string adr, int codePostal)
 {
-    utilisateurs.add(new Utilisateur(monPseudo, monMdp, name, firstname, jourNaiss, moisNaiss, anneeNaiss, mail, adr));
+    utilisateurs.add(new Utilisateur(monPseudo, monMdp, name, firstname,
+                                     jourNaiss, moisNaiss, anneeNaiss, mail, adr, codePostal));
 }
 
 /* modifier le profil */
-void GestionBdd::modifierProfil(string pseudo, string nom, string prenom, string mail, string codePostal, string ville) {
-
+void GestionBdd::modifierProfil(string nom, string prenom, string mail,
+                                int codePostal, string ville, string adresse) {
+    string pseudo = utilisateurConnecte->getPseudo();
+    utilisateurs.getUtilisateur(pseudo)->setNom(nom);
+    utilisateurs.getUtilisateur(pseudo)->setPrenom(prenom);
+    utilisateurs.getUtilisateur(pseudo)->setEmail(mail);
+    utilisateurs.getUtilisateur(pseudo)->setCodePostal(codePostal);
+    utilisateurs.getUtilisateur(pseudo)->setVille(ville);
+    utilisateurs.getUtilisateur(pseudo)->setAdresse(adresse);
+    update();
 }
 
 /* Ajouter un nouveau produit */

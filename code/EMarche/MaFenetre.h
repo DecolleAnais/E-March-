@@ -66,7 +66,6 @@ public slots:
     void ajouterVente();
     void connexion();
     void modificationProfil();
-    void voirProfil(std::string pseudo);
     void voirProduit(std::string ref);
 
 signals:

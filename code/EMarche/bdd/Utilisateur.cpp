@@ -37,6 +37,14 @@ string Utilisateur::getAdresse() {
     return adresse;
 }
 
+int Utilisateur::getCodePostal() {
+    return codePostal;
+}
+
+string Utilisateur::getVille() {
+    return ville;
+}
+
 unsigned int Utilisateur::getNbVentes() {
     return nbVentes;
 }
@@ -104,6 +112,15 @@ void Utilisateur::setEmail(string e) {
 void Utilisateur::setAdresse(string a) {
     adresse = a;
 }
+
+void Utilisateur::setCodePostal(int i) {
+    codePostal = i;
+}
+
+void Utilisateur::setVille(string v) {
+    ville = v;
+}
+
 
 void Utilisateur::setNbVentes(unsigned int n) {
     nbVentes = n;

@@ -369,10 +369,6 @@ void MaFenetre::afficherResProduits(vector<Produit*> v) {
     centre->update();
 }
 
-void MaFenetre::voirProfil(string pseudo) {
-
-}
-
 void MaFenetre::voirProduit(string ref) {
 
 }

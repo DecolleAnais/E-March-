@@ -13,9 +13,9 @@ int main(int argc, char *argv[])
 
     /* initialisation de la base de données contenant la liste des utilisateurs, des produits etc */
     GestionBdd *gestionBdd = new GestionBdd;
-    gestionBdd->inscrire("graou","mdp","nom","prenom",18,04,1994,"mail","adr");
-    gestionBdd->inscrire("graou2","mdp","nom","prenom",18,04,1994,"mail","adr");
-    gestionBdd->inscrire("blp3","mdp","nom","prenom",18,04,1994,"mail","adr");
+    gestionBdd->inscrire("graou","mdp","nom","prenom",18,04,1994,"mail","adr",54000);
+    gestionBdd->inscrire("graou2","mdp","nom","prenom",18,04,1994,"mail","adr",68745);
+    gestionBdd->inscrire("blp3","mdp","nom","prenom",18,04,1994,"mail","adr",78650);
 
 
     struct tm date;
