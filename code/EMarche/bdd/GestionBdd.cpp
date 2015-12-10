@@ -74,6 +74,11 @@ Utilisateur* GestionBdd::getUtilisateurConnecte() {
     return utilisateurConnecte;
 }
 
+/* retourner un pointeur vers un avis */
+Avis* GestionBdd::getAvis() {
+    return avis;
+}
+
 /* inscription */
 void GestionBdd::inscrire(string monPseudo, string monMdp, string name, string firstname,
               int jourNaiss, int moisNaiss, int anneeNaiss, string mail, string adr, int codePostal)

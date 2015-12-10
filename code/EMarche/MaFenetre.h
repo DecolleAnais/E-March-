@@ -60,9 +60,13 @@ public slots:
     void rechercher();
     void accueil();
     void profil();
+    void profil(std::string pseudo);
     void statistiques();
+    void statistiques(std::string pseudo);
     void ventes();
+    void ventes(std::string pseudo);
     void achats();
+    void achats(std::string pseudo);
     void ajouterVente();
     void connexion();
     void modificationProfil();
@@ -97,6 +101,10 @@ private:
     QPushButton *boutonPrecedent;
     QPushButton *boutonSuivant;
     QLabel *numPage;
+
+    DialogModificationProfil *modifProfil;
+    DialogAjouterVente *ajouterVentes;
+    DialogConnexion *connexions;
 
     int largeur;
     int hauteur;

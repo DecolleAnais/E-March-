@@ -7,6 +7,7 @@
 #include "LesUtilisateurs.h"
 #include "LesProduits.h"
 #include "Vue.h"
+#include "Avis.h"
 
 class GestionBdd
 {
@@ -16,6 +17,7 @@ private:
     LesProduits produits;
     std::vector<Vue*> vues;
     Utilisateur *utilisateurConnecte;
+    Avis *avis;
     std::string ref;
 
 public:
@@ -55,6 +57,9 @@ public:
 
     /* retourner un pointeur vers l'utilisateur connecté */
     Utilisateur* getUtilisateurConnecte();
+
+    /* retourner un pointeur sur un avis */
+    Avis* getAvis();
 
     /* inscrire */
     void inscrire(std::string monPseudo, std::string monMdp, std::string name, std::string firstname,
