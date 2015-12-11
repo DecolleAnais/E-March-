@@ -112,7 +112,11 @@ private:
     int hauteur;
     GestionBdd *gestionBdd;
 
-    QSignalMapper mapper;
+    QSignalMapper mapperVoirProfilAutreUtilisateur;
+    QSignalMapper mapperProfil;
+    QSignalMapper mapperStatistiques;
+    QSignalMapper mapperVentes;
+    QSignalMapper mapperAchats;
 };
 
 #endif // MAFENETRE_H

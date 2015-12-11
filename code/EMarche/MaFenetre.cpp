@@ -331,14 +331,14 @@ void MaFenetre::afficherResUtilisateurs(vector<Utilisateur*> v) {
         box->addWidget(new QLabel("Pseudo : " + pseudo + "  -   Note : " + note));
         /* création d'un bouton pour accéder au profil concerné */
         QPushButton *voirProfil = new QPushButton("Voir profil");
-        QObject::connect(voirProfil, SIGNAL(clicked()), &mapper, SLOT( map() ));
+        QObject::connect(voirProfil, SIGNAL(clicked()), &mapperVoirProfilAutreUtilisateur, SLOT( map() ));
         //QObject::connect(voirProfil, SIGNAL(clicked()), this, SLOT(voirProfil(string pseudoStr)));
-        mapper.setMapping(voirProfil, pseudo);
+        mapperVoirProfilAutreUtilisateur.setMapping(voirProfil, pseudo);
         box->addWidget(voirProfil);
         centre->addLayout(box);
         i++;
     }
-    connect( &mapper, SIGNAL( mapped(QString) ), this, SLOT( profilAutreUtilisateur(QString) ) );
+    connect( &mapperVoirProfilAutreUtilisateur, SIGNAL( mapped(QString) ), this, SLOT( profilAutreUtilisateur(QString) ) );
     centre->update();
 }
 
@@ -354,17 +354,29 @@ void MaFenetre::profilAutreUtilisateur(QString pseudonyme) {
         QHBoxLayout *boxButtons = new QHBoxLayout;
         box->setAlignment(Qt::AlignLeft);
         boxButtons->setAlignment(Qt::AlignLeft);
+
         boutonProfil = new QPushButton("Profil");
-        QObject::connect(boutonProfil, SIGNAL(clicked()), this, SLOT(profilAutreUtilisateur(pseudonyme)));
+        QObject::connect(boutonProfil, SIGNAL(clicked()), &mapperProfil, SLOT( map() ));
+        mapperProfil.setMapping(boutonProfil, pseudonyme);
+        connect( &mapperProfil, SIGNAL( mapped(QString) ), this, SLOT( profilAutreUtilisateur(QString) ) );
         box->addWidget(boutonProfil);
+
         boutonStatistiques = new QPushButton("Statistiques");
-        QObject::connect(boutonStatistiques, SIGNAL(clicked()), this, SLOT(statistiquesAutreUtilisateur(pseudonyme)));
+        QObject::connect(boutonStatistiques, SIGNAL(clicked()), &mapperStatistiques, SLOT( map() ));
+        mapperStatistiques.setMapping(boutonStatistiques, pseudonyme);
+        connect( &mapperStatistiques, SIGNAL( mapped(QString) ), this, SLOT( statistiquesAutreUtilisateur(QString) ) );
         box->addWidget(boutonStatistiques);
+
         boutonVentes = new QPushButton("Ventes");
-        QObject::connect(boutonVentes, SIGNAL(clicked()), this, SLOT(ventesAutreUtilisateur(pseudonyme)));
+        QObject::connect(boutonVentes, SIGNAL(clicked()), &mapperVentes, SLOT( map() ));
+        mapperVentes.setMapping(boutonVentes, pseudonyme);
+        connect( &mapperVentes, SIGNAL( mapped(QString) ), this, SLOT( ventesAutreUtilisateur(QString) ) );
         box->addWidget(boutonVentes);
+
         boutonAchats = new QPushButton("Achats");
-        QObject::connect(boutonAchats, SIGNAL(clicked()), this, SLOT(achatsAutreUtilisateur(pseudonyme)));
+        QObject::connect(boutonAchats, SIGNAL(clicked()), &mapperAchats, SLOT( map() ));
+        mapperAchats.setMapping(boutonAchats, pseudonyme);
+        connect( &mapperAchats, SIGNAL( mapped(QString) ), this, SLOT( achatsAutreUtilisateur(QString) ) );
         box->addWidget(boutonAchats);
 
         QGridLayout *grille = new QGridLayout();
@@ -396,17 +408,29 @@ void MaFenetre::statistiquesAutreUtilisateur(QString pseudonyme) {
         QHBoxLayout *box = new QHBoxLayout;
         QGroupBox *boxTxt = new QGroupBox;
         box->setAlignment(Qt::AlignLeft);
+
         boutonProfil = new QPushButton("Profil");
-        QObject::connect(boutonProfil, SIGNAL(clicked()), this, SLOT(profilAutreUtilisateur(pseudonyme)));
+        QObject::connect(boutonProfil, SIGNAL(clicked()), &mapperProfil, SLOT( map() ));
+        mapperProfil.setMapping(boutonProfil, pseudonyme);
+        connect( &mapperProfil, SIGNAL( mapped(QString) ), this, SLOT( profilAutreUtilisateur(QString) ) );
         box->addWidget(boutonProfil);
+
         boutonStatistiques = new QPushButton("Statistiques");
-        QObject::connect(boutonStatistiques, SIGNAL(clicked()), this, SLOT(statistiquesAutreUtilisateur(pseudonyme)));
+        QObject::connect(boutonStatistiques, SIGNAL(clicked()), &mapperStatistiques, SLOT( map() ));
+        mapperStatistiques.setMapping(boutonStatistiques, pseudonyme);
+        connect( &mapperStatistiques, SIGNAL( mapped(QString) ), this, SLOT( statistiquesAutreUtilisateur(QString) ) );
         box->addWidget(boutonStatistiques);
+
         boutonVentes = new QPushButton("Ventes");
-        QObject::connect(boutonVentes, SIGNAL(clicked()), this, SLOT(ventesAutreUtilisateur(pseudonyme)));
+        QObject::connect(boutonVentes, SIGNAL(clicked()), &mapperVentes, SLOT( map() ));
+        mapperVentes.setMapping(boutonVentes, pseudonyme);
+        connect( &mapperVentes, SIGNAL( mapped(QString) ), this, SLOT( ventesAutreUtilisateur(QString) ) );
         box->addWidget(boutonVentes);
+
         boutonAchats = new QPushButton("Achats");
-        QObject::connect(boutonAchats, SIGNAL(clicked()), this, SLOT(achatsAutreUtilisateur(pseudonyme)));
+        QObject::connect(boutonAchats, SIGNAL(clicked()), &mapperAchats, SLOT( map() ));
+        mapperAchats.setMapping(boutonAchats, pseudonyme);
+        connect( &mapperAchats, SIGNAL( mapped(QString) ), this, SLOT( achatsAutreUtilisateur(QString) ) );
         box->addWidget(boutonAchats);
 
         QGridLayout *grille = new QGridLayout();
@@ -455,16 +479,27 @@ void MaFenetre::ventesAutreUtilisateur(QString pseudonyme) {
         QHBoxLayout *box = new QHBoxLayout;
         box->setAlignment(Qt::AlignLeft);
         boutonProfil = new QPushButton("Profil");
-        QObject::connect(boutonProfil, SIGNAL(clicked()), this, SLOT(profilAutreUtilisateur(pseudonyme)));
+        QObject::connect(boutonProfil, SIGNAL(clicked()), &mapperProfil, SLOT( map() ));
+        mapperProfil.setMapping(boutonProfil, pseudonyme);
+        connect( &mapperProfil, SIGNAL( mapped(QString) ), this, SLOT( profilAutreUtilisateur(QString) ) );
         box->addWidget(boutonProfil);
+
         boutonStatistiques = new QPushButton("Statistiques");
-        QObject::connect(boutonStatistiques, SIGNAL(clicked()), this, SLOT(statistiquesAutreUtilisateur(pseudonyme)));
+        QObject::connect(boutonStatistiques, SIGNAL(clicked()), &mapperStatistiques, SLOT( map() ));
+        mapperStatistiques.setMapping(boutonStatistiques, pseudonyme);
+        connect( &mapperStatistiques, SIGNAL( mapped(QString) ), this, SLOT( statistiquesAutreUtilisateur(QString) ) );
         box->addWidget(boutonStatistiques);
+
         boutonVentes = new QPushButton("Ventes");
-        QObject::connect(boutonVentes, SIGNAL(clicked()), this, SLOT(ventesAutreUtilisateur(pseudonyme)));
+        QObject::connect(boutonVentes, SIGNAL(clicked()), &mapperVentes, SLOT( map() ));
+        mapperVentes.setMapping(boutonVentes, pseudonyme);
+        connect( &mapperVentes, SIGNAL( mapped(QString) ), this, SLOT( ventesAutreUtilisateur(QString) ) );
         box->addWidget(boutonVentes);
+
         boutonAchats = new QPushButton("Achats");
-        QObject::connect(boutonAchats, SIGNAL(clicked()), this, SLOT(achatsAutreUtilisateur(pseudonyme)));
+        QObject::connect(boutonAchats, SIGNAL(clicked()), &mapperAchats, SLOT( map() ));
+        mapperAchats.setMapping(boutonAchats, pseudonyme);
+        connect( &mapperAchats, SIGNAL( mapped(QString) ), this, SLOT( achatsAutreUtilisateur(QString) ) );
         box->addWidget(boutonAchats);
 
         centre->addLayout(box);
@@ -481,16 +516,27 @@ void MaFenetre::achatsAutreUtilisateur(QString pseudonyme) {
         QHBoxLayout *box = new QHBoxLayout;
         box->setAlignment(Qt::AlignLeft);
         boutonProfil = new QPushButton("Profil");
-        QObject::connect(boutonProfil, SIGNAL(clicked()), this, SLOT(profilAutreUtilisateur(pseudonyme)));
+        QObject::connect(boutonProfil, SIGNAL(clicked()), &mapperProfil, SLOT( map() ));
+        mapperProfil.setMapping(boutonProfil, pseudonyme);
+        connect( &mapperProfil, SIGNAL( mapped(QString) ), this, SLOT( profilAutreUtilisateur(QString) ) );
         box->addWidget(boutonProfil);
+
         boutonStatistiques = new QPushButton("Statistiques");
-        QObject::connect(boutonStatistiques, SIGNAL(clicked()), this, SLOT(statistiquesAutreUtilisateur(pseudonyme)));
+        QObject::connect(boutonStatistiques, SIGNAL(clicked()), &mapperStatistiques, SLOT( map() ));
+        mapperStatistiques.setMapping(boutonStatistiques, pseudonyme);
+        connect( &mapperStatistiques, SIGNAL( mapped(QString) ), this, SLOT( statistiquesAutreUtilisateur(QString) ) );
         box->addWidget(boutonStatistiques);
+
         boutonVentes = new QPushButton("Ventes");
-        QObject::connect(boutonVentes, SIGNAL(clicked()), this, SLOT(ventesAutreUtilisateur(pseudonyme)));
+        QObject::connect(boutonVentes, SIGNAL(clicked()), &mapperVentes, SLOT( map() ));
+        mapperVentes.setMapping(boutonVentes, pseudonyme);
+        connect( &mapperVentes, SIGNAL( mapped(QString) ), this, SLOT( ventesAutreUtilisateur(QString) ) );
         box->addWidget(boutonVentes);
+
         boutonAchats = new QPushButton("Achats");
-        QObject::connect(boutonAchats, SIGNAL(clicked()), this, SLOT(achatsAutreUtilisateur(pseudonyme)));
+        QObject::connect(boutonAchats, SIGNAL(clicked()), &mapperAchats, SLOT( map() ));
+        mapperAchats.setMapping(boutonAchats, pseudonyme);
+        connect( &mapperAchats, SIGNAL( mapped(QString) ), this, SLOT( achatsAutreUtilisateur(QString) ) );
         box->addWidget(boutonAchats);
 
         centre->addLayout(box);
