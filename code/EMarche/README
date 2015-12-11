@@ -1,7 +1,22 @@
-pour savoir si qqn lit :
-
-je commence le CB ?
-
 il faut que vous changiez votre makefile à la main changez ça :
 CXXFLAGS = -m64 -pipe -O2 -Wall -W -D_REENTRANT -fPIE -std=c++0x $(DEFINES)
 ça permet en gros d'utiliser la fonction to_string(entier)
+
+si quelqu'un a vraiment envie de s'amuser, il y a 1 bouton à faire fonctionner dans MaFenetre.cpp :
+- voirProduit qui se crée dans cette fonction : 
+/* affichage du résultat d'une recherche de produits */
+void maFenetre::afficherResProduits(vector<Produit*> v)
+et qui appelle la fonction void voirProduit(...) plus bas aussi
+
+il faut que ça ressemble à nos captures d'écrans
+
+on a des fuites de mémoire, donc si vous savez faire les destructeurs, les delete etc 
+en utilisant valgrind ./EMarche pour vérifier 
+
+
+Je rajoute aussi le fait qu'il faut finir le CB
+Il faut régler un problème peut-être mineur mais chiant : 
+ - quand dans le main j'appelle la fonction connecte pour l'utilisateur, ça doit connecter l'utilisateur
+   (ça facilite les tests beaucoup)
+
+Sinon j'ai fini l'affichage du profil et modification du profil. (ça met pas à jour la vue je sais pas pk)

@@ -17,18 +17,19 @@
 #include "DialogConnexion.h"
 #include "DialogInscription.h"
 #include "DialogAjouterVente.h"
+#include "DialogModificationProfil.h"
 #include "Vue.h"
 #include "bdd/GestionBdd.h"
 
 /* Fenêtre principale de l'application */
 
-class maFenetre : public QWidget, public Vue
+class MaFenetre : public QWidget, public Vue
 {
     Q_OBJECT;
 
 public:
-    maFenetre(int l, int h, GestionBdd *bdd);
-    ~maFenetre() {
+    MaFenetre(int l, int h, GestionBdd *bdd);
+    ~MaFenetre() {
         delete(haut);
         delete(bas);
         delete(centre);
@@ -58,9 +59,16 @@ public slots:
     void rechercher();
     void accueil();
     void profil();
+    void profil(std::string pseudo);
+    void statistiques();
+    void statistiques(std::string pseudo);
+    void ventes();
+    void ventes(std::string pseudo);
+    void achats();
+    void achats(std::string pseudo);
     void ajouterVente();
     void connexion();
-    void voirProfil(std::string pseudo);
+    void modificationProfil();
     void voirProduit(std::string ref);
 
 signals:
@@ -70,6 +78,7 @@ signals:
 private:
     QHBoxLayout *haut;
     QVBoxLayout *centre;
+    QHBoxLayout *centreProfil;
     QHBoxLayout *bas;
 
     QComboBox *typeRecherche;
@@ -78,6 +87,10 @@ private:
     QPushButton *boutonAccueil;
     QPushButton *boutonProfil;
     QPushButton *boutonAjouterVente;
+    QPushButton *boutonStatistiques;
+    QPushButton *boutonVentes;
+    QPushButton *boutonAchats;
+    QPushButton *boutonCompte;
     QLabel *pseudoConnecte;
     QPushButton *boutonConnexion;
 
@@ -87,6 +100,10 @@ private:
     QPushButton *boutonPrecedent;
     QPushButton *boutonSuivant;
     QLabel *numPage;
+
+    DialogModificationProfil *modifProfil;
+    DialogAjouterVente *ajouterVentes;
+    DialogConnexion *connexions;
 
     int largeur;
     int hauteur;

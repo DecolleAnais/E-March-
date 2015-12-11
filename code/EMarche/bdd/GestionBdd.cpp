@@ -18,8 +18,8 @@ string GestionBdd::generateReference() {
         if((*it)->getReference().compare(nouvelleRef) == 0) {
             while((*it)->getReference().compare(nouvelleRef) == 0) {
                 valRef++;
-                //string s = to_string(valRef);
-                //nouvelleRef = "#" + s;
+                string s = to_string(valRef);
+                nouvelleRef = "#" + s;
             }
         }
     }
@@ -74,11 +74,30 @@ Utilisateur* GestionBdd::getUtilisateurConnecte() {
     return utilisateurConnecte;
 }
 
+/* retourner un pointeur vers un avis */
+Avis* GestionBdd::getAvis() {
+    return avis;
+}
+
 /* inscription */
 void GestionBdd::inscrire(string monPseudo, string monMdp, string name, string firstname,
-              int jourNaiss, int moisNaiss, int anneeNaiss, string mail, string adr)
+              int jourNaiss, int moisNaiss, int anneeNaiss, string mail, string adr, int codePostal)
 {
-    utilisateurs.add(new Utilisateur(monPseudo, monMdp, name, firstname, jourNaiss, moisNaiss, anneeNaiss, mail, adr));
+    utilisateurs.add(new Utilisateur(monPseudo, monMdp, name, firstname,
+                                     jourNaiss, moisNaiss, anneeNaiss, mail, adr, codePostal));
+}
+
+/* modifier le profil */
+void GestionBdd::modifierProfil(string nom, string prenom, string mail,
+                                int codePostal, string ville, string adresse) {
+    string pseudo = utilisateurConnecte->getPseudo();
+    utilisateurs.getUtilisateur(pseudo)->setNom(nom);
+    utilisateurs.getUtilisateur(pseudo)->setPrenom(prenom);
+    utilisateurs.getUtilisateur(pseudo)->setEmail(mail);
+    utilisateurs.getUtilisateur(pseudo)->setCodePostal(codePostal);
+    utilisateurs.getUtilisateur(pseudo)->setVille(ville);
+    utilisateurs.getUtilisateur(pseudo)->setAdresse(adresse);
+    update();
 }
 
 /* Ajouter un nouveau produit */
@@ -102,9 +121,9 @@ Utilisateur* GestionBdd::rechercherUtilisateur(string pseudo) {
 void GestionBdd::ajouterVente(string n, string cat, float prix, unsigned int qte, bool etat) {
     string vendeur = utilisateurConnecte->getPseudo();
     Produit *p = new Produit(vendeur, n, cat, prix, qte, etat);
-    p->setReference(ref);
-    incrementerRef();
-    //p->setReference(generateReference());
+    //p->setReference(ref);
+    //incrementerRef();
+    p->setReference(generateReference());
     utilisateurConnecte->addVente(p);
     produits.addProduit(p);
     update();
@@ -113,9 +132,9 @@ void GestionBdd::ajouterVente(string n, string cat, float prix, unsigned int qte
 void GestionBdd::ajouterVente(string n, string cat, float prix, unsigned int qte, bool etat, struct tm date) {
     string vendeur = utilisateurConnecte->getPseudo();
     Produit *p = new Produit(vendeur, n, cat, prix, qte, etat, date);
-    p->setReference(ref);
-    incrementerRef();
-    //p->setReference(generateReference());
+    //p->setReference(ref);
+    //incrementerRef();
+    p->setReference(generateReference());
     utilisateurConnecte->addVente(p);
     produits.addProduit(p);
     update();
