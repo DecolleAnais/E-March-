@@ -21,9 +21,7 @@ maFenetre::maFenetre(int l, int h, GestionBdd *bdd) : largeur(l), hauteur(h), ge
 
     /* liste deroulante pour le type de recherche */
     typeRecherche = new QComboBox;
-    //typeRecherche->addItem("Produit/nom");
     typeRecherche->addItem("Produit");
-    //typeRecherche->addItem("Produit/catégorie");
     typeRecherche->addItem("Utilisateur");
 
     /* texte de la recherche */
@@ -53,7 +51,6 @@ maFenetre::maFenetre(int l, int h, GestionBdd *bdd) : largeur(l), hauteur(h), ge
 
     /* bouton connexion */
     boutonConnexion = new QPushButton("Se connecter");     // bouton connexion
-    //QObject::connect(boutonConnexion, SIGNAL(clicked()), new DialogConnexion(gestionBdd), SLOT(ouvrir()));
     QObject::connect(boutonConnexion, SIGNAL(clicked()), this, SLOT(connexion()));
 
     /* Layouts */
@@ -171,7 +168,7 @@ void maFenetre::afficherResUtilisateurs(vector<Utilisateur*> v) {
         box->addWidget(new QLabel("Pseudo : " + pseudo + "  -   Note : " + note));
         /* création d'un bouton pour accéder au profil concerné */
         QPushButton *voirProfil = new QPushButton("Voir profil");
-        //QObject::connect(voirProfil, SIGNAL(clicked()), this, SLOT(voirProfil(string pseudoStr)));
+        QObject::connect(voirProfil, SIGNAL(clicked()), this, SLOT(voirProfil(string pseudoStr)));
         box->addWidget(voirProfil);
         centre->addLayout(box);
     }
@@ -205,7 +202,6 @@ void maFenetre::afficherResProduits(vector<Produit*> v) {
         grille->addWidget(new QLabel("Vendeur : " + vendeur), 4, 0);
 
         /* affichages spécifiques aux enchères ou ventes normales */
-        /* PROBLEME LE PRODUIT TABLE CREE DANS LE MAIN NE PASSE PAS DANS LES ENCHERES, MAUVAIS AFFICHAGE*/
         if((*it)->getEtatVente() == "Vente aux enchères") {
             QString dateLimite = QString::fromStdString((*it)->getDateLimite());
             grille->addWidget(new QLabel("Date Limite : " + dateLimite));
