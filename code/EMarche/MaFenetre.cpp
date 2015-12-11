@@ -22,9 +22,7 @@ MaFenetre::MaFenetre(int l, int h, GestionBdd *bdd) : largeur(l), hauteur(h), ge
 
     /* liste deroulante pour le type de recherche */
     typeRecherche = new QComboBox;
-    //typeRecherche->addItem("Produit/nom");
     typeRecherche->addItem("Produit");
-    //typeRecherche->addItem("Produit/catégorie");
     typeRecherche->addItem("Utilisateur");
 
     /* texte de la recherche */
@@ -54,7 +52,6 @@ MaFenetre::MaFenetre(int l, int h, GestionBdd *bdd) : largeur(l), hauteur(h), ge
 
     /* bouton connexion */
     boutonConnexion = new QPushButton("Se connecter");     // bouton connexion
-    //QObject::connect(boutonConnexion, SIGNAL(clicked()), new DialogConnexion(gestionBdd), SLOT(ouvrir()));
     QObject::connect(boutonConnexion, SIGNAL(clicked()), this, SLOT(connexion()));
 
     /* Layouts */
@@ -527,7 +524,6 @@ void MaFenetre::afficherResProduits(vector<Produit*> v) {
         grille->addWidget(new QLabel("Vendeur : " + vendeur), 4, 0);
 
         /* affichages spécifiques aux enchères ou ventes normales */
-        /* PROBLEME LE PRODUIT TABLE CREE DANS LE MAIN NE PASSE PAS DANS LES ENCHERES, MAUVAIS AFFICHAGE*/
         if((*it)->getEtatVente() == "Vente aux enchères") {
             QString dateLimite = QString::fromStdString((*it)->getDateLimite());
             grille->addWidget(new QLabel("Date Limite : " + dateLimite));

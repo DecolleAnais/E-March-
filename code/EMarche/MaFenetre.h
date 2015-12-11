@@ -36,7 +36,6 @@ public:
         delete(haut);
         delete(bas);
         delete(centre);
-        delete(centreProfil);
         delete(typeRecherche);
         delete(valRecherche);
         delete(boutonRecherche);
