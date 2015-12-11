@@ -13,6 +13,7 @@
 #include <QGridLayout>
 #include <QMessageBox>
 #include <QGroupBox>
+#include <QSignalMapper>
 #include <iostream>
 #include "DialogConnexion.h"
 #include "DialogInscription.h"
@@ -25,7 +26,7 @@
 
 class MaFenetre : public QWidget, public Vue
 {
-    Q_OBJECT;
+    Q_OBJECT
 
 public:
     MaFenetre(int l, int h, GestionBdd *bdd);
@@ -70,7 +71,7 @@ public slots:
     void ajouterVente();
     void connexion();
     void modificationProfil();
-    void voirProduit(std::string ref);
+    void voirProduit(QString ref);
 
 signals:
     void signalRechercheUtilisateur(std::vector<Utilisateur*> v);
@@ -109,6 +110,8 @@ private:
     int largeur;
     int hauteur;
     GestionBdd *gestionBdd;
+
+    QSignalMapper mapperProduit;
 
 };
 

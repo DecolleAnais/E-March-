@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     //gestionBdd->ajouterVente("guirlande","déco",1,5,0);
 
     gestionBdd->ajouterVente("chocolat","nourriture",5,10,0);
-    gestionBdd->ajouterVente("camion","véhicule",10000,1,0);
+    //gestionBdd->ajouterVente("camion","véhicule",10000,1,0);
     gestionBdd->ajouterVente("table","meubles",30,1,1, date);
 
     gestionBdd->connecterUtilisateur("graou","mdp");
