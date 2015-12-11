@@ -13,6 +13,8 @@
 #include <QGridLayout>
 #include <QMessageBox>
 #include <QGroupBox>
+#include <QTimer>
+#include <QSignalMapper>
 #include <iostream>
 #include "DialogConnexion.h"
 #include "DialogInscription.h"
@@ -20,6 +22,7 @@
 #include "DialogModificationProfil.h"
 #include "Vue.h"
 #include "bdd/GestionBdd.h"
+#include "bdd/LesUtilisateurs.h"
 
 /* Fenêtre principale de l'application */
 
@@ -60,13 +63,13 @@ public slots:
     void rechercher();
     void accueil();
     void profil();
-    void profil(std::string pseudo);
+    void profilAutreUtilisateur(QString str);
     void statistiques();
-    void statistiques(std::string pseudo);
+    void statistiquesAutreUtilisateur(QString str);
     void ventes();
-    void ventes(std::string pseudo);
+    void ventesAutreUtilisateur(QString str);
     void achats();
-    void achats(std::string pseudo);
+    void achatsAutreUtilisateur(QString str);
     void ajouterVente();
     void connexion();
     void modificationProfil();
@@ -110,6 +113,7 @@ private:
     int hauteur;
     GestionBdd *gestionBdd;
 
+    QSignalMapper mapper;
 };
 
 #endif // MAFENETRE_H

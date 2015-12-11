@@ -156,4 +156,3 @@ vector<Produit*> GestionBdd::rechercherTags(string t){
     std::transform(t.begin(), t.end(), t.begin(), ::tolower);
     return produits.rechercherTags(t);
 }
-
