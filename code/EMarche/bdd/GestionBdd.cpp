@@ -74,11 +74,6 @@ Utilisateur* GestionBdd::getUtilisateurConnecte() {
     return utilisateurConnecte;
 }
 
-/* retourner un pointeur vers un avis */
-Avis* GestionBdd::getAvis() {
-    return avis;
-}
-
 /* inscription */
 void GestionBdd::inscrire(string monPseudo, string monMdp, string name, string firstname,
               int jourNaiss, int moisNaiss, int anneeNaiss, string mail, string adr, int codePostal)
@@ -98,11 +93,6 @@ void GestionBdd::modifierProfil(string nom, string prenom, string mail,
     utilisateurs.getUtilisateur(pseudo)->setVille(ville);
     utilisateurs.getUtilisateur(pseudo)->setAdresse(adresse);
     update();
-}
-
-/* Ajouter un nouveau produit */
-void GestionBdd::nouveauProduit(Produit *p){
-    produits.addProduit(p);
 }
 
 /* recherche utilisateurs */
@@ -126,6 +116,7 @@ void GestionBdd::ajouterVente(string n, string cat, float prix, unsigned int qte
     p->setReference(generateReference());
     utilisateurConnecte->addVente(p);
     produits.addProduit(p);
+    produits.triPrixCroissant();
     update();
 }
 

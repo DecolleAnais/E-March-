@@ -32,7 +32,7 @@ private:
 public:
     /* Constructeur */
     Utilisateur(std::string monPseudo, std::string monMdp, std::string name, std::string firstname, int jourNaiss, int moisNaiss, int anneeNaiss, std::string mail, std::string adr, int cP) :
-        pseudo(monPseudo), mdp(monMdp), nom(name), prenom(firstname), email(mail), adresse(adr), codePostal(cP), nbVentes(0), nbAchats(0), nbAvis(0), note(0), nbNotes(0) {
+        pseudo(monPseudo), mdp(monMdp), nom(name), prenom(firstname), email(mail), adresse(adr), nbVentes(0), nbAchats(0), nbAvis(0), note(0), nbNotes(0), codePostal(cP) {
         dateNaissance.tm_mday = jourNaiss;
         dateNaissance.tm_mon = moisNaiss;
         dateNaissance.tm_year = anneeNaiss;

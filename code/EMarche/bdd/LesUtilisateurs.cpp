@@ -10,7 +10,7 @@ void LesUtilisateurs::add(Utilisateur* u) {
 
 void LesUtilisateurs::supprimer(string pseudo) {
     bool trouve = false;
-    unsigned int i = 0;
+    int i = 0;
     while(!trouve && i < nbUtilisateurs) {
         if(pseudo == lesUtilisateurs[i]->getPseudo()) {
             /* échange de l'élément avec le dernier, puis suppression du dernier */
@@ -26,7 +26,7 @@ void LesUtilisateurs::supprimer(string pseudo) {
 }
 
 Utilisateur* LesUtilisateurs::getUtilisateur(string pseudo) {
-    unsigned int i = 0;
+    int i = 0;
     while(i < nbUtilisateurs) {
         if(pseudo == lesUtilisateurs[i]->getPseudo()) {
             return lesUtilisateurs[i];
