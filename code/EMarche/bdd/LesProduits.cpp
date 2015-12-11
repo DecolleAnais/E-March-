@@ -127,17 +127,15 @@ void LesProduits::toString() {
     }
 }
 
-vector<Produit*> LesProduits::triPrixCroissant (vector<Produit*> produits){
-    vector<Produit*> liste = produits;
+void LesProduits::triPrixCroissant (){
     vector<Produit*>::iterator it, it2;
-    for (it = liste.begin(); it != liste.end(); it++) {
+    for (it = lesProduits.begin(); it != lesProduits.end(); it++) {
         double prix = (*it)->getPrixActuel();
-        for(it2 = liste.begin(); it2 != liste.end(); it2++){
+        for(it2 = lesProduits.begin(); it2 != lesProduits.end(); it2++){
             double prix2 = (*it2)->getPrixActuel();
             if(prix2 > prix){
                 swap((*it), (*it2));
             }
         }
     }
-    return liste;
 }
