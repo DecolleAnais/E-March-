@@ -51,7 +51,7 @@ public:
         delete(boutonSuivant);
         delete(numPage);
 
-    };
+    }
 
     void update();
     void clearLayout(QLayout *layout);
@@ -73,6 +73,7 @@ public slots:
     void connexion();
     void modificationProfil();
     void voirProduit(QString ref);
+    void acheter();
 
 signals:
     void signalRechercheUtilisateur(std::vector<Utilisateur*> v);
@@ -111,6 +112,7 @@ private:
     int largeur;
     int hauteur;
     GestionBdd *gestionBdd;
+    Produit *produitCourant;
 
     QSignalMapper mapperProduit;
     QSignalMapper mapperVoirProfilAutreUtilisateur;

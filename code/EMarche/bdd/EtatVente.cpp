@@ -2,12 +2,12 @@
 
 using namespace std;
 
-EtatVente::EtatVente(bool b):estEnCours(b){
+EtatVente::EtatVente(bool b):typeDeVente(b){
 
 }
 
-bool EtatVente::venteEnCours(){
-    return estEnCours;
+bool EtatVente::typeVente(){
+    return typeDeVente;
 }
 
 float EtatVente::getPrixActuel(){

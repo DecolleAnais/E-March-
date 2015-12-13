@@ -2,6 +2,7 @@
 #define DIALOGINSCRIPTION_H
 
 #include <QDialog>
+#include <QMessageBox>
 #include "bdd/GestionBdd.h"
 
 /* Boîte de dialogue pour l'inscription */

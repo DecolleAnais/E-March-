@@ -95,6 +95,19 @@ void GestionBdd::modifierProfil(string nom, string prenom, string mail,
     update();
 }
 
+void GestionBdd::acheterProduit(Produit* p){
+    // Ajout du produit dans la liste des achats
+    utilisateurConnecte->addAchat(p);
+
+    // Mise à jour de la liste des produits
+    int qte = produits.getProduit(p->getReference())->getQuantite();
+    if(qte == 1){
+        produits.supprimerProduit(p);
+    } else {
+        produits.getProduit(p->getReference())->setQuantite(qte-1);
+    }
+}
+
 /* recherche utilisateurs */
 vector<Utilisateur*> GestionBdd::rechercherUtilisateurs(string pseudo) {
     return utilisateurs.getUtilisateurs(pseudo);

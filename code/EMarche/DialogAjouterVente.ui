@@ -112,16 +112,6 @@
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QLineEdit" name="valPrix">
-   <property name="geometry">
-    <rect>
-     <x>320</x>
-     <y>188</y>
-     <width>146</width>
-     <height>27</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="labelQte">
    <property name="geometry">
     <rect>
@@ -143,9 +133,15 @@
     <rect>
      <x>320</x>
      <y>221</y>
-     <width>48</width>
+     <width>81</width>
      <height>27</height>
     </rect>
+   </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
+   <property name="maximum">
+    <number>999</number>
    </property>
   </widget>
   <widget class="QLabel" name="label_6">
@@ -208,6 +204,26 @@
      <height>27</height>
     </rect>
    </property>
+   <property name="dateTime">
+    <datetime>
+     <hour>0</hour>
+     <minute>0</minute>
+     <second>0</second>
+     <year>2015</year>
+     <month>12</month>
+     <day>25</day>
+    </datetime>
+   </property>
+   <property name="minimumDateTime">
+    <datetime>
+     <hour>0</hour>
+     <minute>0</minute>
+     <second>0</second>
+     <year>2015</year>
+     <month>12</month>
+     <day>1</day>
+    </datetime>
+   </property>
   </widget>
   <widget class="QPushButton" name="boutonAjouterVente">
    <property name="geometry">
@@ -237,6 +253,22 @@
    <attribute name="buttonGroup">
     <string notr="true">buttonGroup</string>
    </attribute>
+  </widget>
+  <widget class="QDoubleSpinBox" name="valPrix">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>190</y>
+     <width>81</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <double>1.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>10000.000000000000000</double>
+   </property>
   </widget>
  </widget>
  <resources/>

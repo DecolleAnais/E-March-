@@ -574,10 +574,10 @@ void MaFenetre::afficherResProduits(vector<Produit*> v) {
         if((*it)->getEtatVente() == "Vente aux enchères") {
             QString dateLimite = QString::fromStdString((*it)->getDateLimite());
             grille->addWidget(new QLabel("<b>Date limite : </b>" + dateLimite));
-            grille->addWidget(new QLabel("<b>Prix actuel : </b>" + prix), 0, 4);
+            grille->addWidget(new QLabel("<b>Prix actuel : </b>" + prix + " euros"), 0, 4);
             grille->addWidget(new QLabel("<b>Type de vente : </b>Vente aux enchères"), 2, 4);
         }else {
-            grille->addWidget(new QLabel("<b>Prix unitaire : </b>" + prix), 0, 4);
+            grille->addWidget(new QLabel("<b>Prix unitaire : </b>" + prix + " euros"), 0, 4);
             grille->addWidget(new QLabel("<b>Type de vente : </b>Vente normale"), 2, 4);
         }
 
@@ -597,18 +597,18 @@ void MaFenetre::afficherResProduits(vector<Produit*> v) {
 
 void MaFenetre::voirProduit(QString ref) {
     clearLayout(centre);
-    Produit *p = gestionBdd->rechercherProduit(ref.toStdString());
+    produitCourant = gestionBdd->rechercherProduit(ref.toStdString());
     QGroupBox *box = new QGroupBox;
     QGridLayout *grille = new QGridLayout();
 
     /* conversion des champs string du produit en QString */
-    QString reff = QString::fromStdString(p->getReference());
-    QString nom = QString::fromStdString(p->getNom());
-    QString cat = QString::fromStdString(p->getCategorie());
-    QString prix = QString::number(p->getPrixActuel());
-    QString qte = QString::number(p->getQuantite());
-    QString vendeur = QString::fromStdString(p->getVendeur());
-    QString dateDepot = QString::fromStdString(p->getDateDepot());
+    QString reff = QString::fromStdString(produitCourant->getReference());
+    QString nom = QString::fromStdString(produitCourant->getNom());
+    QString cat = QString::fromStdString(produitCourant->getCategorie());
+    QString prix = QString::number(produitCourant->getPrixActuel());
+    QString qte = QString::number(produitCourant->getQuantite());
+    QString vendeur = QString::fromStdString(produitCourant->getVendeur());
+    QString dateDepot = QString::fromStdString(produitCourant->getDateDepot());
 
     /* agencement dans le GridLayout */
     grille->addWidget(new QLabel("<b>Nom : </b>" + nom), 0, 0);
@@ -618,8 +618,8 @@ void MaFenetre::voirProduit(QString ref) {
     grille->addWidget(new QLabel("<b>Quantité : </b>" + qte), 4, 0);
     grille->addWidget(new QLabel("<b>Vendeur : </b>" + vendeur), 5, 0);
 
-    if(p->getEtatVente() == "Vente aux enchères") {
-        QString dateLimite = QString::fromStdString(p->getDateLimite());
+    if(produitCourant->getEtatVente() == "Vente aux enchères") {
+        QString dateLimite = QString::fromStdString(produitCourant->getDateLimite());
         grille->addWidget(new QLabel("<b>Date Limite : </b>" + dateLimite), 6, 0);
         grille->addWidget(new QLabel("<b>Prix Actuel : </b>" + prix + " euros"), 7, 0);
         grille->addWidget(new QLabel("<b>Type de vente : </b> Vente aux enchères"), 8, 0);
@@ -631,10 +631,27 @@ void MaFenetre::voirProduit(QString ref) {
     box->setLayout(grille);
     centre->addWidget(box);
 
+    QHBoxLayout *boxDeux = new QHBoxLayout;
+    boxDeux->setAlignment(Qt::AlignLeft);
+
     QPushButton *retour = new QPushButton("Retour à l'accueil");
     QObject::connect(retour, SIGNAL(clicked()), this, SLOT(accueil()));
-    centre->addWidget(retour);
+    boxDeux->addWidget(retour);
 
+    QPushButton *acheter = new QPushButton("Acheter");
+    QObject::connect(acheter, SIGNAL(clicked()), this, SLOT(acheter()));
+    boxDeux->addWidget(acheter);
+    centre->addLayout(boxDeux);
+}
+
+void MaFenetre::acheter(){
+    if(gestionBdd->isConnecte()) {
+        gestionBdd->acheterProduit(produitCourant);
+        QMessageBox::information(this, "Acheter un produit", "Produit acheté !");
+        accueil();
+    } else {
+        QMessageBox::warning(this, "Acheter un produit", "Attention, vous devez être connecté pour acheter un produit !");
+    }
 }
 
 void MaFenetre::update() {

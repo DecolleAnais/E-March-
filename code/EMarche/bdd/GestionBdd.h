@@ -133,6 +133,8 @@ public:
     void modifierProfil(std::string nom, std::string prenom, std::string mail,
                         int codePostal, std::string ville, std::string adresse);
 
+    void acheterProduit(Produit* p);
+
     /* recherche utilisateur */
     //!
     //! \fn Utilisateur* rechercherUtilisateur(std::string pseudo)
@@ -161,6 +163,7 @@ public:
     //! \param etat - état du produit (en enchère ou non)
     //!
     void ajouterVente(std::string n, std::string cat, float prix, unsigned int qte, bool etat);
+
     //!
     //! \fn void ajouterVente(std::string n, std::string cat, float prix, unsigned int qte, bool etat, struct tm date)
     //! \brief ajoute un produit en vente aux enchères avec ces caractéristiques
