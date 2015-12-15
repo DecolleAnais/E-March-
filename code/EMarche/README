@@ -19,4 +19,5 @@ Il faut régler un problème peut-être mineur mais chiant :
  - quand dans le main j'appelle la fonction connecte pour l'utilisateur, ça doit connecter l'utilisateur
    (ça facilite les tests beaucoup)
 
-Sinon j'ai fini l'affichage du profil et modification du profil. (ça met pas à jour la vue je sais pas pk)
+
+Quand on veut acheter un produit en vente aux enchères, on doit pouvoir enchérir, pas acheter
