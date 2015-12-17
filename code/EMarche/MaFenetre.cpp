@@ -547,6 +547,7 @@ void MaFenetre::achatsAutreUtilisateur(QString pseudonyme) {
 void MaFenetre::afficherResProduits(vector<Produit*> v) {
     clearLayout(centre);
     vector<Produit*>::iterator it;
+    int i = 0;
     for(it = v.begin();it != v.end();it++) {
         /* création d'une grille pour chaque produit */
         QGroupBox *box = new QGroupBox;
@@ -562,37 +563,95 @@ void MaFenetre::afficherResProduits(vector<Produit*> v) {
         QString dateDepot = QString::fromStdString((*it)->getDateDepot());
 
         /* agencement dans le GridLayout */
-        grille->addWidget(new QLabel("Nom : " + nom), 0, 0);
-        grille->addWidget(new QLabel("Référence : " + ref), 0, 1);
-        grille->addWidget(new QLabel("Catégorie : " + cat), 1, 0);
-        grille->addWidget(new QLabel("Date du dépôt : " + dateDepot), 2, 0);
-        grille->addWidget(new QLabel("Quantité : " + qte), 3, 0);
-        grille->addWidget(new QLabel("Vendeur : " + vendeur), 4, 0);
+        grille->addWidget(new QLabel("<b>Nom : </b>" + nom), 0, 0);
+        grille->addWidget(new QLabel("<b>Référence : </b>" + ref), 0, 1);
+        grille->addWidget(new QLabel("<b>Catégorie : </b>" + cat), 1, 0);
+        grille->addWidget(new QLabel("<b>Date du dépôt : </b>" + dateDepot), 2, 0);
+        grille->addWidget(new QLabel("<b>Quantité : </b>" + qte), 3, 0);
+        grille->addWidget(new QLabel("<b>Vendeur : </b>" + vendeur), 4, 0);
 
         /* affichages spécifiques aux enchères ou ventes normales */
         if((*it)->getEtatVente() == "Vente aux enchères") {
             QString dateLimite = QString::fromStdString((*it)->getDateLimite());
-            grille->addWidget(new QLabel("Date Limite : " + dateLimite));
-            grille->addWidget(new QLabel("Prix Actuel : " + prix), 0, 4);
-            grille->addWidget(new QLabel("Vente aux Enchères"), 2, 4);
+            grille->addWidget(new QLabel("<b>Date limite : </b>" + dateLimite));
+            grille->addWidget(new QLabel("<b>Prix actuel : </b>" + prix + " euros"), 0, 4);
+            grille->addWidget(new QLabel("<b>Type de vente : </b>Vente aux enchères"), 2, 4);
         }else {
-            grille->addWidget(new QLabel("Prix Unitaire : " + prix), 0, 4);
-            grille->addWidget(new QLabel("Vente Normale"), 2, 4);
+            grille->addWidget(new QLabel("<b>Prix unitaire : </b>" + prix + " euros"), 0, 4);
+            grille->addWidget(new QLabel("<b>Type de vente : </b>Vente normale"), 2, 4);
         }
 
         /* création d'un bouton pour accéder au produit concerné */
-        QPushButton *voirProduit = new QPushButton("Voir produit");
-        grille->addWidget(voirProduit, 2, 5);
-        QObject::connect(voirProduit, SIGNAL(clicked()), this, SLOT(voirProduit(string)));
+        QPushButton *boutonProduit = new QPushButton("Voir produit");
+        QObject::connect(boutonProduit, SIGNAL(clicked()),&mapperProduit, SLOT(map()));
+        mapperProduit.setMapping(boutonProduit, ref);
+        grille->addWidget(boutonProduit, 2, 5);
+        i++;
 
         box->setLayout(grille);
         centre->addWidget(box);
     }
+    QObject::connect(&mapperProduit, SIGNAL(mapped(QString)), this, SLOT(voirProduit(QString)));
     centre->update();
 }
 
-void MaFenetre::voirProduit(string ref) {
+void MaFenetre::voirProduit(QString ref) {
+    clearLayout(centre);
+    produitCourant = gestionBdd->rechercherProduit(ref.toStdString());
+    QGroupBox *box = new QGroupBox;
+    QGridLayout *grille = new QGridLayout();
 
+    /* conversion des champs string du produit en QString */
+    QString reff = QString::fromStdString(produitCourant->getReference());
+    QString nom = QString::fromStdString(produitCourant->getNom());
+    QString cat = QString::fromStdString(produitCourant->getCategorie());
+    QString prix = QString::number(produitCourant->getPrixActuel());
+    QString qte = QString::number(produitCourant->getQuantite());
+    QString vendeur = QString::fromStdString(produitCourant->getVendeur());
+    QString dateDepot = QString::fromStdString(produitCourant->getDateDepot());
+
+    /* agencement dans le GridLayout */
+    grille->addWidget(new QLabel("<b>Nom : </b>" + nom), 0, 0);
+    grille->addWidget(new QLabel("<b>Référence : </b>" + reff), 1, 0);
+    grille->addWidget(new QLabel("<b>Catégorie : </b>" + cat), 2, 0);
+    grille->addWidget(new QLabel("<b>Date du dépôt : </b>" + dateDepot), 3, 0);
+    grille->addWidget(new QLabel("<b>Quantité : </b>" + qte), 4, 0);
+    grille->addWidget(new QLabel("<b>Vendeur : </b>" + vendeur), 5, 0);
+
+    if(produitCourant->getEtatVente() == "Vente aux enchères") {
+        QString dateLimite = QString::fromStdString(produitCourant->getDateLimite());
+        grille->addWidget(new QLabel("<b>Date Limite : </b>" + dateLimite), 6, 0);
+        grille->addWidget(new QLabel("<b>Prix Actuel : </b>" + prix + " euros"), 7, 0);
+        grille->addWidget(new QLabel("<b>Type de vente : </b> Vente aux enchères"), 8, 0);
+    } else {
+        grille->addWidget(new QLabel("<b>Prix unitaire : </b>" + prix), 6, 0);
+        grille->addWidget(new QLabel("<b>Type de vente : </b> Vente normale"), 7, 0);
+    }
+
+    box->setLayout(grille);
+    centre->addWidget(box);
+
+    QHBoxLayout *boxDeux = new QHBoxLayout;
+    boxDeux->setAlignment(Qt::AlignLeft);
+
+    QPushButton *retour = new QPushButton("Retour à l'accueil");
+    QObject::connect(retour, SIGNAL(clicked()), this, SLOT(accueil()));
+    boxDeux->addWidget(retour);
+
+    QPushButton *acheter = new QPushButton("Acheter");
+    QObject::connect(acheter, SIGNAL(clicked()), this, SLOT(acheter()));
+    boxDeux->addWidget(acheter);
+    centre->addLayout(boxDeux);
+}
+
+void MaFenetre::acheter(){
+    if(gestionBdd->isConnecte()) {
+        gestionBdd->acheterProduit(produitCourant);
+        QMessageBox::information(this, "Acheter un produit", "Produit acheté !");
+        accueil();
+    } else {
+        QMessageBox::warning(this, "Acheter un produit", "Attention, vous devez être connecté pour acheter un produit !");
+    }
 }
 
 void MaFenetre::update() {

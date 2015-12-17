@@ -2,6 +2,8 @@
 #include "ui_DialogConnexion.h"
 #include "DialogInscription.h"
 
+using namespace std;
+
 DialogConnexion::DialogConnexion( GestionBdd *bdd, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::DialogConnexion),
@@ -36,6 +38,12 @@ void DialogConnexion::on_boutonSInscrire_clicked()
 
 void DialogConnexion::on_boutonSeConnecter_clicked()
 {
-    close();
-    gestionBdd->connecterUtilisateur(ui->valPseudo->text().toStdString(), ui->valMdp->text().toStdString());
+    string pseudo = ui->valPseudo->text().toStdString();
+    string motDePasse = ui->valMdp->text().toStdString();
+    if(pseudo != "" && motDePasse != "") {
+        gestionBdd->connecterUtilisateur(pseudo, motDePasse);
+        close();
+    } else {
+        QMessageBox::warning(this, "Connexion", "Remplissez tous les champs ou inscrivez-vous !");
+    }
 }

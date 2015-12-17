@@ -47,7 +47,7 @@ string Produit::getDateAchatVente(){
 }
 
 string Produit::getEtatVente(){
-    if(etatVente->venteEnCours() == false){
+    if(etatVente->typeVente() == false){
         return "Vente normale";
     } else {
         return "Vente aux enchères";
@@ -55,7 +55,7 @@ string Produit::getEtatVente(){
 }
 
 float Produit::getPrixActuel(){
-    if(etatVente->venteEnCours() == true){
+    if(etatVente->typeVente() == true){
         return etatVente->getPrixActuel();
     }
     return prixUnitaire;
@@ -80,7 +80,7 @@ vector<string> Produit::getTagsVector(){
 }
 
 string Produit::getDateLimite(){
-    if(etatVente->venteEnCours() == true)
+    if(etatVente->typeVente() == true)
         return etatVente->getDateLimite();
     else
         return "";
@@ -101,7 +101,7 @@ void Produit::setDateVenteAchat(int jour, int mois, int annee){
 }
 
 void Produit::augmenterEnchere(int prix){
-    if(etatVente->venteEnCours() == 1){
+    if(etatVente->typeVente() == 1){
         etatVente->setPrixActuel(prix);
     }
 }

@@ -41,6 +41,5 @@ void DialogInscription::on_boutonValider_clicked()
     int codePostal = ui->valCodePostal->text().toInt();
 
     gestionBdd->inscrire(pseudo, mdp, nom, prenom, jourNaissInt, moisNaissInt, anneeNaissInt, mail, adresse, codePostal);
-
     close();
 }
