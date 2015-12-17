@@ -16,6 +16,8 @@ public:
      */
     VenteEnchere(bool b);
 
+    ~VenteEnchere(){};
+
     /* ----- Fonctions get ----- */
 
     /*!

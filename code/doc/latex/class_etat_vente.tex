@@ -1,0 +1,196 @@
+\hypertarget{class_etat_vente}{\section{Référence de la classe Etat\-Vente}
+\label{class_etat_vente}\index{Etat\-Vente@{Etat\-Vente}}
+}
+
+
+Cette classe gère l'état d'une vente (enchère ou normale)  
+
+
+
+
+{\ttfamily \#include $<$Etat\-Vente.\-h$>$}
+
+Graphe d'héritage de Etat\-Vente\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_etat_vente}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_etat_vente_a6b2788e1edd74d8051623e966c5400a1}{Etat\-Vente} (bool b)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \hyperlink{class_etat_vente}{Etat\-Vente}. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_etat_vente_aace2ed3063f41ff36bddc3c09c024424}{$\sim$\-Etat\-Vente} ()
+\item 
+bool \hyperlink{class_etat_vente_acecfe3b215062d9a835831989e420ccd}{type\-Vente} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction indique la type de la vente. Si elle retourne true, c'est une vente aux enchères, sinon c'est une vente normale. \end{DoxyCompactList}\item 
+virtual float \hyperlink{class_etat_vente_a0e797a253bbfe990d22f3d2827c8a318}{get\-Prix\-Actuel} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction virtuelle retourne le prix actuel de la vente. \end{DoxyCompactList}\item 
+virtual std\-::string \hyperlink{class_etat_vente_ab466d257671a59ec97ae393c80226b7a}{get\-Date\-Limite} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction virtuelle retourne la date limite de l'enchère. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_etat_vente_a8436bb978172c8e136fa349706baef0d}{set\-Prix\-Actuel} (float prix)
+\begin{DoxyCompactList}\small\item\em Cette fonction virtuelle fixe le prix actuel. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_etat_vente_a8efa95982f7252801512df1ea16faeeb}{set\-Date\-Limite} (struct tm date)
+\begin{DoxyCompactList}\small\item\em Cette fonction virtuelle fixe la date limite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_etat_vente_a6fac909bb6c53a68450ff1f1e287e298}{type\-De\-Vente}
+\begin{DoxyCompactList}\small\item\em Booléen qui distingue une vente normale d'une vente aux enchères. \end{DoxyCompactList}\item 
+float \hyperlink{class_etat_vente_a69258e9f4890fc1fe84e5afdba35bc0f}{prix\-Actuel}
+\begin{DoxyCompactList}\small\item\em Prix actuel. \end{DoxyCompactList}\item 
+struct tm \hyperlink{class_etat_vente_a02900fecb3074f37d5a6d0948975de03}{date\-Limite}
+\begin{DoxyCompactList}\small\item\em Date limite avant la fin de l'enchère. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Cette classe gère l'état d'une vente (enchère ou normale) 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{class_etat_vente_a6b2788e1edd74d8051623e966c5400a1}{\index{Etat\-Vente@{Etat\-Vente}!Etat\-Vente@{Etat\-Vente}}
+\index{Etat\-Vente@{Etat\-Vente}!EtatVente@{Etat\-Vente}}
+\subsubsection[{Etat\-Vente}]{\setlength{\rightskip}{0pt plus 5cm}Etat\-Vente\-::\-Etat\-Vente (
+\begin{DoxyParamCaption}
+\item[{bool}]{b}
+\end{DoxyParamCaption}
+)}}\label{class_etat_vente_a6b2788e1edd74d8051623e966c5400a1}
+
+
+Constructeur de la classe \hyperlink{class_etat_vente}{Etat\-Vente}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em b} & -\/ Booléen qui donne le type de la vente \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_etat_vente_aace2ed3063f41ff36bddc3c09c024424}{\index{Etat\-Vente@{Etat\-Vente}!$\sim$\-Etat\-Vente@{$\sim$\-Etat\-Vente}}
+\index{$\sim$\-Etat\-Vente@{$\sim$\-Etat\-Vente}!EtatVente@{Etat\-Vente}}
+\subsubsection[{$\sim$\-Etat\-Vente}]{\setlength{\rightskip}{0pt plus 5cm}virtual Etat\-Vente\-::$\sim$\-Etat\-Vente (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_etat_vente_aace2ed3063f41ff36bddc3c09c024424}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_etat_vente_ab466d257671a59ec97ae393c80226b7a}{\index{Etat\-Vente@{Etat\-Vente}!get\-Date\-Limite@{get\-Date\-Limite}}
+\index{get\-Date\-Limite@{get\-Date\-Limite}!EtatVente@{Etat\-Vente}}
+\subsubsection[{get\-Date\-Limite}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Etat\-Vente\-::get\-Date\-Limite (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_etat_vente_ab466d257671a59ec97ae393c80226b7a}
+
+
+Cette fonction virtuelle retourne la date limite de l'enchère. 
+
+\begin{DoxyReturn}{Renvoie}
+Un string contenant la date limite de l'enchère 
+\end{DoxyReturn}
+
+
+Réimplémentée dans \hyperlink{class_vente_enchere_a2ab7fb32692d9cb1d250b81f0f87dd88}{Vente\-Enchere}.
+
+\hypertarget{class_etat_vente_a0e797a253bbfe990d22f3d2827c8a318}{\index{Etat\-Vente@{Etat\-Vente}!get\-Prix\-Actuel@{get\-Prix\-Actuel}}
+\index{get\-Prix\-Actuel@{get\-Prix\-Actuel}!EtatVente@{Etat\-Vente}}
+\subsubsection[{get\-Prix\-Actuel}]{\setlength{\rightskip}{0pt plus 5cm}float Etat\-Vente\-::get\-Prix\-Actuel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_etat_vente_a0e797a253bbfe990d22f3d2827c8a318}
+
+
+Cette fonction virtuelle retourne le prix actuel de la vente. 
+
+\begin{DoxyReturn}{Renvoie}
+Un float représentant le prix actuel 
+\end{DoxyReturn}
+
+
+Réimplémentée dans \hyperlink{class_vente_enchere_a53455121f689127d4daf6123af1668f3}{Vente\-Enchere}.
+
+\hypertarget{class_etat_vente_a8efa95982f7252801512df1ea16faeeb}{\index{Etat\-Vente@{Etat\-Vente}!set\-Date\-Limite@{set\-Date\-Limite}}
+\index{set\-Date\-Limite@{set\-Date\-Limite}!EtatVente@{Etat\-Vente}}
+\subsubsection[{set\-Date\-Limite}]{\setlength{\rightskip}{0pt plus 5cm}void Etat\-Vente\-::set\-Date\-Limite (
+\begin{DoxyParamCaption}
+\item[{struct tm}]{date}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_etat_vente_a8efa95982f7252801512df1ea16faeeb}
+
+
+Cette fonction virtuelle fixe la date limite. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em date} & -\/ Nouvelle date \\
+\hline
+\end{DoxyParams}
+
+
+Réimplémentée dans \hyperlink{class_vente_enchere_a034150f779a519dfc4973a3fcfd0d23e}{Vente\-Enchere}.
+
+\hypertarget{class_etat_vente_a8436bb978172c8e136fa349706baef0d}{\index{Etat\-Vente@{Etat\-Vente}!set\-Prix\-Actuel@{set\-Prix\-Actuel}}
+\index{set\-Prix\-Actuel@{set\-Prix\-Actuel}!EtatVente@{Etat\-Vente}}
+\subsubsection[{set\-Prix\-Actuel}]{\setlength{\rightskip}{0pt plus 5cm}void Etat\-Vente\-::set\-Prix\-Actuel (
+\begin{DoxyParamCaption}
+\item[{float}]{prix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_etat_vente_a8436bb978172c8e136fa349706baef0d}
+
+
+Cette fonction virtuelle fixe le prix actuel. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em prix} & -\/ Nouveau prix \\
+\hline
+\end{DoxyParams}
+
+
+Réimplémentée dans \hyperlink{class_vente_enchere_abad32fe0ea40ea89e1aef1621dc673e6}{Vente\-Enchere}.
+
+\hypertarget{class_etat_vente_acecfe3b215062d9a835831989e420ccd}{\index{Etat\-Vente@{Etat\-Vente}!type\-Vente@{type\-Vente}}
+\index{type\-Vente@{type\-Vente}!EtatVente@{Etat\-Vente}}
+\subsubsection[{type\-Vente}]{\setlength{\rightskip}{0pt plus 5cm}bool Etat\-Vente\-::type\-Vente (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_etat_vente_acecfe3b215062d9a835831989e420ccd}
+
+
+Cette fonction indique la type de la vente. Si elle retourne true, c'est une vente aux enchères, sinon c'est une vente normale. 
+
+\begin{DoxyReturn}{Renvoie}
+True si c'est une vente aux enchères, false sinon 
+\end{DoxyReturn}
+
+
+\subsection{Documentation des données membres}
+\hypertarget{class_etat_vente_a02900fecb3074f37d5a6d0948975de03}{\index{Etat\-Vente@{Etat\-Vente}!date\-Limite@{date\-Limite}}
+\index{date\-Limite@{date\-Limite}!EtatVente@{Etat\-Vente}}
+\subsubsection[{date\-Limite}]{\setlength{\rightskip}{0pt plus 5cm}struct tm Etat\-Vente\-::date\-Limite\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_etat_vente_a02900fecb3074f37d5a6d0948975de03}
+
+
+Date limite avant la fin de l'enchère. 
+
+\hypertarget{class_etat_vente_a69258e9f4890fc1fe84e5afdba35bc0f}{\index{Etat\-Vente@{Etat\-Vente}!prix\-Actuel@{prix\-Actuel}}
+\index{prix\-Actuel@{prix\-Actuel}!EtatVente@{Etat\-Vente}}
+\subsubsection[{prix\-Actuel}]{\setlength{\rightskip}{0pt plus 5cm}float Etat\-Vente\-::prix\-Actuel\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_etat_vente_a69258e9f4890fc1fe84e5afdba35bc0f}
+
+
+Prix actuel. 
+
+\hypertarget{class_etat_vente_a6fac909bb6c53a68450ff1f1e287e298}{\index{Etat\-Vente@{Etat\-Vente}!type\-De\-Vente@{type\-De\-Vente}}
+\index{type\-De\-Vente@{type\-De\-Vente}!EtatVente@{Etat\-Vente}}
+\subsubsection[{type\-De\-Vente}]{\setlength{\rightskip}{0pt plus 5cm}bool Etat\-Vente\-::type\-De\-Vente\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_etat_vente_a6fac909bb6c53a68450ff1f1e287e298}
+
+
+Booléen qui distingue une vente normale d'une vente aux enchères. 
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+bdd/\hyperlink{_etat_vente_8h}{Etat\-Vente.\-h}\item 
+bdd/\hyperlink{_etat_vente_8cpp}{Etat\-Vente.\-cpp}\end{DoxyCompactItemize}

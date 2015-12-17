@@ -16,6 +16,8 @@ public :
      */
     VenteNormale(bool b);
 
+    ~VenteNormale() {};
+
 };
 
 #endif

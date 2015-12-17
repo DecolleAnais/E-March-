@@ -1,0 +1,302 @@
+.TH "MaFenetre" 3 "Jeudi 17 Décembre 2015" "Version dernière version" "EMarche" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MaFenetre \- 
+.PP
+The \fBMaFenetre\fP class - Affichage principal de l'application\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MaFenetre\&.h>\fP
+.PP
+Est dérivée de QWidget, et \fBVue\fP\&.
+.SS "Connecteurs publics"
+
+.in +1c
+.ti -1c
+.RI "void \fBafficherResUtilisateurs\fP (std::vector< \fBUtilisateur\fP * > v)"
+.br
+.RI "\fIafficherResUtilisateurs - Affiche le résultat d'une recherche d'utilisateur \fP"
+.ti -1c
+.RI "void \fBafficherResProduits\fP (std::vector< \fBProduit\fP * > v)"
+.br
+.RI "\fIafficherResProduits - Affiche le résultat d'une recherche de produit \fP"
+.ti -1c
+.RI "void \fBrechercher\fP ()"
+.br
+.RI "\fIrechercher - Redirige vers l'affichage d'utilisateurs ou de produits selon le type de recherche lancé \fP"
+.ti -1c
+.RI "void \fBaccueil\fP ()"
+.br
+.RI "\fIaccueil - Affiche les produits en vente actuellement \fP"
+.ti -1c
+.RI "void \fBprofil\fP ()"
+.br
+.RI "\fIprofil - Affiche le profil de l'utilisateur connecté \fP"
+.ti -1c
+.RI "void \fBprofilAutreUtilisateur\fP (QString str)"
+.br
+.RI "\fIprofilAutreUtilisateur - Affiche le profil d'un utilisateur \fP"
+.ti -1c
+.RI "void \fBstatistiques\fP ()"
+.br
+.RI "\fIstatistiques - Affiche les statistiques de l'utilisateur connecté \fP"
+.ti -1c
+.RI "void \fBstatistiquesAutreUtilisateur\fP (QString str)"
+.br
+.RI "\fIstatistiquesAutreUtilisateur - Affiche les statistiques d'un utilisateur \fP"
+.ti -1c
+.RI "void \fBventes\fP ()"
+.br
+.RI "\fIventes - Affiche les ventes de l'utilisateur connecté \fP"
+.ti -1c
+.RI "void \fBventesAutreUtilisateur\fP (QString str)"
+.br
+.RI "\fIventesAutreUtilisateur - Affiche les ventes d'un utilisateur \fP"
+.ti -1c
+.RI "void \fBachats\fP ()"
+.br
+.RI "\fIachats - Affiche les achats de l'utilisateur connecté \fP"
+.ti -1c
+.RI "void \fBachatsAutreUtilisateur\fP (QString str)"
+.br
+.RI "\fIachatsAutreUtilisateur - Affiche les achats d'un utilisateur \fP"
+.ti -1c
+.RI "void \fBajouterVente\fP ()"
+.br
+.RI "\fIajouterVente - Ouvre la boîte de dialogue permettant d'ajouter une vente si on est connecté \fP"
+.ti -1c
+.RI "void \fBconnexion\fP ()"
+.br
+.RI "\fIconnexion - Ouvre la boîte de dialogue de connexion \fP"
+.ti -1c
+.RI "void \fBmodificationProfil\fP ()"
+.br
+.RI "\fImodificationProfil - Ouvre la boîte de dialogue de modification de profil de l'utilisateur connecté \fP"
+.ti -1c
+.RI "void \fBvoirProduit\fP (QString ref)"
+.br
+.RI "\fIvoirProduit - Affiche les données du produit et permet de l'acheter \fP"
+.ti -1c
+.RI "void \fBacheter\fP ()"
+.br
+.RI "\fIacheter - Achète le produit si on est connecté \fP"
+.in -1c
+.SS "Signaux"
+
+.in +1c
+.ti -1c
+.RI "void \fBsignalRechercheUtilisateur\fP (std::vector< \fBUtilisateur\fP * > v)"
+.br
+.RI "\fIsignalRechercheUtilisateur - Signale qu'il s'agit d'une recherche d'utilisateurs \fP"
+.ti -1c
+.RI "void \fBsignalRechercheProduits\fP (std::vector< \fBProduit\fP * > v)"
+.br
+.RI "\fIsignalRechercheProduits - Signale qu'il s'agit d'une recherche de produits \fP"
+.in -1c
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBMaFenetre\fP (int l, int h, \fBGestionBdd\fP *bdd)"
+.br
+.RI "\fI\fBMaFenetre\fP - Constructeur\&. \fP"
+.ti -1c
+.RI "\fB~MaFenetre\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.RI "\fIupdate - Mets à jour la fenêtre principal \fP"
+.ti -1c
+.RI "void \fBclearLayout\fP (QLayout *layout)"
+.br
+.RI "\fIclearLayout - Vide un layout entré en paramètre \fP"
+.in -1c
+.SH "Description détaillée"
+.PP 
+The \fBMaFenetre\fP class - Affichage principal de l'application\&. 
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "MaFenetre::MaFenetre (intl, inth, \fBGestionBdd\fP *bdd)"
+
+.PP
+\fBMaFenetre\fP - Constructeur\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIl\fP - largeur 
+.br
+\fIh\fP - hauteur 
+.br
+\fIbdd\fP - Lien vers \fBGestionBdd\fP qui contient toutes les données 
+.RE
+.PP
+
+.SS "MaFenetre::~MaFenetre ()\fC [inline]\fP"
+
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "void MaFenetre::accueil ()\fC [slot]\fP"
+
+.PP
+accueil - Affiche les produits en vente actuellement 
+.SS "void MaFenetre::achats ()\fC [slot]\fP"
+
+.PP
+achats - Affiche les achats de l'utilisateur connecté 
+.SS "void MaFenetre::achatsAutreUtilisateur (QStringstr)\fC [slot]\fP"
+
+.PP
+achatsAutreUtilisateur - Affiche les achats d'un utilisateur 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIstr\fP 
+.RE
+.PP
+
+.SS "void MaFenetre::acheter ()\fC [slot]\fP"
+
+.PP
+acheter - Achète le produit si on est connecté 
+.SS "void MaFenetre::afficherResProduits (std::vector< \fBProduit\fP * >v)\fC [slot]\fP"
+
+.PP
+afficherResProduits - Affiche le résultat d'une recherche de produit 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIv\fP - Produits à afficher 
+.RE
+.PP
+
+.SS "void MaFenetre::afficherResUtilisateurs (std::vector< \fBUtilisateur\fP * >v)\fC [slot]\fP"
+
+.PP
+afficherResUtilisateurs - Affiche le résultat d'une recherche d'utilisateur 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIv\fP - Utilisateurs à afficher 
+.RE
+.PP
+
+.SS "void MaFenetre::ajouterVente ()\fC [slot]\fP"
+
+.PP
+ajouterVente - Ouvre la boîte de dialogue permettant d'ajouter une vente si on est connecté 
+.SS "void MaFenetre::clearLayout (QLayout *layout)"
+
+.PP
+clearLayout - Vide un layout entré en paramètre 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIlayout\fP 
+.RE
+.PP
+
+.SS "void MaFenetre::connexion ()\fC [slot]\fP"
+
+.PP
+connexion - Ouvre la boîte de dialogue de connexion 
+.SS "void MaFenetre::modificationProfil ()\fC [slot]\fP"
+
+.PP
+modificationProfil - Ouvre la boîte de dialogue de modification de profil de l'utilisateur connecté 
+.SS "void MaFenetre::profil ()\fC [slot]\fP"
+
+.PP
+profil - Affiche le profil de l'utilisateur connecté 
+.SS "void MaFenetre::profilAutreUtilisateur (QStringstr)\fC [slot]\fP"
+
+.PP
+profilAutreUtilisateur - Affiche le profil d'un utilisateur 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIstr\fP - Pseudo de l'utilisateur 
+.RE
+.PP
+
+.SS "void MaFenetre::rechercher ()\fC [slot]\fP"
+
+.PP
+rechercher - Redirige vers l'affichage d'utilisateurs ou de produits selon le type de recherche lancé 
+.SS "void MaFenetre::signalRechercheProduits (std::vector< \fBProduit\fP * >v)\fC [signal]\fP"
+
+.PP
+signalRechercheProduits - Signale qu'il s'agit d'une recherche de produits 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIv\fP - Produits à afficher 
+.RE
+.PP
+
+.SS "void MaFenetre::signalRechercheUtilisateur (std::vector< \fBUtilisateur\fP * >v)\fC [signal]\fP"
+
+.PP
+signalRechercheUtilisateur - Signale qu'il s'agit d'une recherche d'utilisateurs 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIv\fP - Utilisateurs à afficher 
+.RE
+.PP
+
+.SS "void MaFenetre::statistiques ()\fC [slot]\fP"
+
+.PP
+statistiques - Affiche les statistiques de l'utilisateur connecté 
+.SS "void MaFenetre::statistiquesAutreUtilisateur (QStringstr)\fC [slot]\fP"
+
+.PP
+statistiquesAutreUtilisateur - Affiche les statistiques d'un utilisateur 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIstr\fP - Pseudo de l'utilisateur 
+.RE
+.PP
+
+.SS "void MaFenetre::update ()\fC [virtual]\fP"
+
+.PP
+update - Mets à jour la fenêtre principal 
+.PP
+Implémente \fBVue\fP\&.
+.SS "void MaFenetre::ventes ()\fC [slot]\fP"
+
+.PP
+ventes - Affiche les ventes de l'utilisateur connecté 
+.SS "void MaFenetre::ventesAutreUtilisateur (QStringstr)\fC [slot]\fP"
+
+.PP
+ventesAutreUtilisateur - Affiche les ventes d'un utilisateur 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIstr\fP - Pseudo de l'utilisateur 
+.RE
+.PP
+
+.SS "void MaFenetre::voirProduit (QStringref)\fC [slot]\fP"
+
+.PP
+voirProduit - Affiche les données du produit et permet de l'acheter 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIref\fP 
+.RE
+.PP
+
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour EMarche à partir du code source\&.

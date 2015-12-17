@@ -1,0 +1,402 @@
+\hypertarget{class_ma_fenetre}{\section{Référence de la classe Ma\-Fenetre}
+\label{class_ma_fenetre}\index{Ma\-Fenetre@{Ma\-Fenetre}}
+}
+
+
+The \hyperlink{class_ma_fenetre}{Ma\-Fenetre} class -\/ Affichage principal de l'application.  
+
+
+
+
+{\ttfamily \#include $<$Ma\-Fenetre.\-h$>$}
+
+Graphe d'héritage de Ma\-Fenetre\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ma_fenetre}
+\end{center}
+\end{figure}
+\subsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_ma_fenetre_a4c4a8f4b2f7a79839e2c2250f4835166}{afficher\-Res\-Utilisateurs} (std\-::vector$<$ \hyperlink{class_utilisateur}{Utilisateur} $\ast$ $>$ v)
+\begin{DoxyCompactList}\small\item\em afficher\-Res\-Utilisateurs -\/ Affiche le résultat d'une recherche d'utilisateur \end{DoxyCompactList}\item 
+void \hyperlink{class_ma_fenetre_a115348adbe409a24a0d381e1fcc62fe7}{afficher\-Res\-Produits} (std\-::vector$<$ \hyperlink{class_produit}{Produit} $\ast$ $>$ v)
+\begin{DoxyCompactList}\small\item\em afficher\-Res\-Produits -\/ Affiche le résultat d'une recherche de produit \end{DoxyCompactList}\item 
+void \hyperlink{class_ma_fenetre_a8107c2666807db431962fdcd4e942c69}{rechercher} ()
+\begin{DoxyCompactList}\small\item\em rechercher -\/ Redirige vers l'affichage d'utilisateurs ou de produits selon le type de recherche lancé \end{DoxyCompactList}\item 
+void \hyperlink{class_ma_fenetre_abc0a097122f161ced271718b254206cd}{accueil} ()
+\begin{DoxyCompactList}\small\item\em accueil -\/ Affiche les produits en vente actuellement \end{DoxyCompactList}\item 
+void \hyperlink{class_ma_fenetre_a08a81ac61e783cf5ed3855ca4f18c84e}{profil} ()
+\begin{DoxyCompactList}\small\item\em profil -\/ Affiche le profil de l'utilisateur connecté \end{DoxyCompactList}\item 
+void \hyperlink{class_ma_fenetre_a91caf819bc0ddee1c27a35b131049259}{profil\-Autre\-Utilisateur} (Q\-String str)
+\begin{DoxyCompactList}\small\item\em profil\-Autre\-Utilisateur -\/ Affiche le profil d'un utilisateur \end{DoxyCompactList}\item 
+void \hyperlink{class_ma_fenetre_abdebcc3a608ba960f92d9c33198afa8e}{statistiques} ()
+\begin{DoxyCompactList}\small\item\em statistiques -\/ Affiche les statistiques de l'utilisateur connecté \end{DoxyCompactList}\item 
+void \hyperlink{class_ma_fenetre_a001780a069e034521e7669382d7eb5e1}{statistiques\-Autre\-Utilisateur} (Q\-String str)
+\begin{DoxyCompactList}\small\item\em statistiques\-Autre\-Utilisateur -\/ Affiche les statistiques d'un utilisateur \end{DoxyCompactList}\item 
+void \hyperlink{class_ma_fenetre_ae0699859505bac920f9cb033ddb1da23}{ventes} ()
+\begin{DoxyCompactList}\small\item\em ventes -\/ Affiche les ventes de l'utilisateur connecté \end{DoxyCompactList}\item 
+void \hyperlink{class_ma_fenetre_acf4ee6e1091a054e5401c9b9b00fcb41}{ventes\-Autre\-Utilisateur} (Q\-String str)
+\begin{DoxyCompactList}\small\item\em ventes\-Autre\-Utilisateur -\/ Affiche les ventes d'un utilisateur \end{DoxyCompactList}\item 
+void \hyperlink{class_ma_fenetre_a48f619e7d913b0e969273be7435b9ab5}{achats} ()
+\begin{DoxyCompactList}\small\item\em achats -\/ Affiche les achats de l'utilisateur connecté \end{DoxyCompactList}\item 
+void \hyperlink{class_ma_fenetre_ac384e90a833894bec8d4552659e90c31}{achats\-Autre\-Utilisateur} (Q\-String str)
+\begin{DoxyCompactList}\small\item\em achats\-Autre\-Utilisateur -\/ Affiche les achats d'un utilisateur \end{DoxyCompactList}\item 
+void \hyperlink{class_ma_fenetre_abd8cb1d6b536873f3d369457073270c4}{ajouter\-Vente} ()
+\begin{DoxyCompactList}\small\item\em ajouter\-Vente -\/ Ouvre la boîte de dialogue permettant d'ajouter une vente si on est connecté \end{DoxyCompactList}\item 
+void \hyperlink{class_ma_fenetre_a65270bfc0eeecb1003c6abc9a1199f32}{connexion} ()
+\begin{DoxyCompactList}\small\item\em connexion -\/ Ouvre la boîte de dialogue de connexion \end{DoxyCompactList}\item 
+void \hyperlink{class_ma_fenetre_a4568c5e0376f04b9d1ab6c54b9f7c7ed}{modification\-Profil} ()
+\begin{DoxyCompactList}\small\item\em modification\-Profil -\/ Ouvre la boîte de dialogue de modification de profil de l'utilisateur connecté \end{DoxyCompactList}\item 
+void \hyperlink{class_ma_fenetre_ade3a46e2b308936d934503a88275495a}{voir\-Produit} (Q\-String ref)
+\begin{DoxyCompactList}\small\item\em voir\-Produit -\/ Affiche les données du produit et permet de l'acheter \end{DoxyCompactList}\item 
+void \hyperlink{class_ma_fenetre_a44eae809341ad4816d8ca151d9b703fb}{acheter} ()
+\begin{DoxyCompactList}\small\item\em acheter -\/ Achète le produit si on est connecté \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signaux}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_ma_fenetre_aed4dd546bfb6e374aa317946e9247d4f}{signal\-Recherche\-Utilisateur} (std\-::vector$<$ \hyperlink{class_utilisateur}{Utilisateur} $\ast$ $>$ v)
+\begin{DoxyCompactList}\small\item\em signal\-Recherche\-Utilisateur -\/ Signale qu'il s'agit d'une recherche d'utilisateurs \end{DoxyCompactList}\item 
+void \hyperlink{class_ma_fenetre_a75cd895beb38fe68a4319eb6c37ac8ee}{signal\-Recherche\-Produits} (std\-::vector$<$ \hyperlink{class_produit}{Produit} $\ast$ $>$ v)
+\begin{DoxyCompactList}\small\item\em signal\-Recherche\-Produits -\/ Signale qu'il s'agit d'une recherche de produits \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ma_fenetre_ae39212ca7a4d4b4c99a13b1d5eb063fa}{Ma\-Fenetre} (int l, int h, \hyperlink{class_gestion_bdd}{Gestion\-Bdd} $\ast$bdd)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_ma_fenetre}{Ma\-Fenetre} -\/ Constructeur. \end{DoxyCompactList}\item 
+\hyperlink{class_ma_fenetre_a2396ba2918e49df8d0c4a8c70f927151}{$\sim$\-Ma\-Fenetre} ()
+\item 
+void \hyperlink{class_ma_fenetre_a342da912af9b611d47229fd190d68522}{update} ()
+\begin{DoxyCompactList}\small\item\em update -\/ Mets à jour la fenêtre principal \end{DoxyCompactList}\item 
+void \hyperlink{class_ma_fenetre_a4bc520a56473760bb8433a1de67da378}{clear\-Layout} (Q\-Layout $\ast$layout)
+\begin{DoxyCompactList}\small\item\em clear\-Layout -\/ Vide un layout entré en paramètre \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+The \hyperlink{class_ma_fenetre}{Ma\-Fenetre} class -\/ Affichage principal de l'application. 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{class_ma_fenetre_ae39212ca7a4d4b4c99a13b1d5eb063fa}{\index{Ma\-Fenetre@{Ma\-Fenetre}!Ma\-Fenetre@{Ma\-Fenetre}}
+\index{Ma\-Fenetre@{Ma\-Fenetre}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{Ma\-Fenetre}]{\setlength{\rightskip}{0pt plus 5cm}Ma\-Fenetre\-::\-Ma\-Fenetre (
+\begin{DoxyParamCaption}
+\item[{int}]{l, }
+\item[{int}]{h, }
+\item[{{\bf Gestion\-Bdd} $\ast$}]{bdd}
+\end{DoxyParamCaption}
+)}}\label{class_ma_fenetre_ae39212ca7a4d4b4c99a13b1d5eb063fa}
+
+
+\hyperlink{class_ma_fenetre}{Ma\-Fenetre} -\/ Constructeur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em l} & -\/ largeur \\
+\hline
+{\em h} & -\/ hauteur \\
+\hline
+{\em bdd} & -\/ Lien vers \hyperlink{class_gestion_bdd}{Gestion\-Bdd} qui contient toutes les données \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_ma_fenetre_a2396ba2918e49df8d0c4a8c70f927151}{\index{Ma\-Fenetre@{Ma\-Fenetre}!$\sim$\-Ma\-Fenetre@{$\sim$\-Ma\-Fenetre}}
+\index{$\sim$\-Ma\-Fenetre@{$\sim$\-Ma\-Fenetre}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{$\sim$\-Ma\-Fenetre}]{\setlength{\rightskip}{0pt plus 5cm}Ma\-Fenetre\-::$\sim$\-Ma\-Fenetre (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_ma_fenetre_a2396ba2918e49df8d0c4a8c70f927151}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_ma_fenetre_abc0a097122f161ced271718b254206cd}{\index{Ma\-Fenetre@{Ma\-Fenetre}!accueil@{accueil}}
+\index{accueil@{accueil}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{accueil}]{\setlength{\rightskip}{0pt plus 5cm}void Ma\-Fenetre\-::accueil (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_ma_fenetre_abc0a097122f161ced271718b254206cd}
+
+
+accueil -\/ Affiche les produits en vente actuellement 
+
+\hypertarget{class_ma_fenetre_a48f619e7d913b0e969273be7435b9ab5}{\index{Ma\-Fenetre@{Ma\-Fenetre}!achats@{achats}}
+\index{achats@{achats}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{achats}]{\setlength{\rightskip}{0pt plus 5cm}void Ma\-Fenetre\-::achats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_ma_fenetre_a48f619e7d913b0e969273be7435b9ab5}
+
+
+achats -\/ Affiche les achats de l'utilisateur connecté 
+
+\hypertarget{class_ma_fenetre_ac384e90a833894bec8d4552659e90c31}{\index{Ma\-Fenetre@{Ma\-Fenetre}!achats\-Autre\-Utilisateur@{achats\-Autre\-Utilisateur}}
+\index{achats\-Autre\-Utilisateur@{achats\-Autre\-Utilisateur}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{achats\-Autre\-Utilisateur}]{\setlength{\rightskip}{0pt plus 5cm}void Ma\-Fenetre\-::achats\-Autre\-Utilisateur (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_ma_fenetre_ac384e90a833894bec8d4552659e90c31}
+
+
+achats\-Autre\-Utilisateur -\/ Affiche les achats d'un utilisateur 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em str} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_ma_fenetre_a44eae809341ad4816d8ca151d9b703fb}{\index{Ma\-Fenetre@{Ma\-Fenetre}!acheter@{acheter}}
+\index{acheter@{acheter}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{acheter}]{\setlength{\rightskip}{0pt plus 5cm}void Ma\-Fenetre\-::acheter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_ma_fenetre_a44eae809341ad4816d8ca151d9b703fb}
+
+
+acheter -\/ Achète le produit si on est connecté 
+
+\hypertarget{class_ma_fenetre_a115348adbe409a24a0d381e1fcc62fe7}{\index{Ma\-Fenetre@{Ma\-Fenetre}!afficher\-Res\-Produits@{afficher\-Res\-Produits}}
+\index{afficher\-Res\-Produits@{afficher\-Res\-Produits}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{afficher\-Res\-Produits}]{\setlength{\rightskip}{0pt plus 5cm}void Ma\-Fenetre\-::afficher\-Res\-Produits (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Produit} $\ast$ $>$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_ma_fenetre_a115348adbe409a24a0d381e1fcc62fe7}
+
+
+afficher\-Res\-Produits -\/ Affiche le résultat d'une recherche de produit 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em v} & -\/ Produits à afficher \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_ma_fenetre_a4c4a8f4b2f7a79839e2c2250f4835166}{\index{Ma\-Fenetre@{Ma\-Fenetre}!afficher\-Res\-Utilisateurs@{afficher\-Res\-Utilisateurs}}
+\index{afficher\-Res\-Utilisateurs@{afficher\-Res\-Utilisateurs}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{afficher\-Res\-Utilisateurs}]{\setlength{\rightskip}{0pt plus 5cm}void Ma\-Fenetre\-::afficher\-Res\-Utilisateurs (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Utilisateur} $\ast$ $>$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_ma_fenetre_a4c4a8f4b2f7a79839e2c2250f4835166}
+
+
+afficher\-Res\-Utilisateurs -\/ Affiche le résultat d'une recherche d'utilisateur 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em v} & -\/ Utilisateurs à afficher \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_ma_fenetre_abd8cb1d6b536873f3d369457073270c4}{\index{Ma\-Fenetre@{Ma\-Fenetre}!ajouter\-Vente@{ajouter\-Vente}}
+\index{ajouter\-Vente@{ajouter\-Vente}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{ajouter\-Vente}]{\setlength{\rightskip}{0pt plus 5cm}void Ma\-Fenetre\-::ajouter\-Vente (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_ma_fenetre_abd8cb1d6b536873f3d369457073270c4}
+
+
+ajouter\-Vente -\/ Ouvre la boîte de dialogue permettant d'ajouter une vente si on est connecté 
+
+\hypertarget{class_ma_fenetre_a4bc520a56473760bb8433a1de67da378}{\index{Ma\-Fenetre@{Ma\-Fenetre}!clear\-Layout@{clear\-Layout}}
+\index{clear\-Layout@{clear\-Layout}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{clear\-Layout}]{\setlength{\rightskip}{0pt plus 5cm}void Ma\-Fenetre\-::clear\-Layout (
+\begin{DoxyParamCaption}
+\item[{Q\-Layout $\ast$}]{layout}
+\end{DoxyParamCaption}
+)}}\label{class_ma_fenetre_a4bc520a56473760bb8433a1de67da378}
+
+
+clear\-Layout -\/ Vide un layout entré en paramètre 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em layout} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_ma_fenetre_a65270bfc0eeecb1003c6abc9a1199f32}{\index{Ma\-Fenetre@{Ma\-Fenetre}!connexion@{connexion}}
+\index{connexion@{connexion}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{connexion}]{\setlength{\rightskip}{0pt plus 5cm}void Ma\-Fenetre\-::connexion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_ma_fenetre_a65270bfc0eeecb1003c6abc9a1199f32}
+
+
+connexion -\/ Ouvre la boîte de dialogue de connexion 
+
+\hypertarget{class_ma_fenetre_a4568c5e0376f04b9d1ab6c54b9f7c7ed}{\index{Ma\-Fenetre@{Ma\-Fenetre}!modification\-Profil@{modification\-Profil}}
+\index{modification\-Profil@{modification\-Profil}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{modification\-Profil}]{\setlength{\rightskip}{0pt plus 5cm}void Ma\-Fenetre\-::modification\-Profil (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_ma_fenetre_a4568c5e0376f04b9d1ab6c54b9f7c7ed}
+
+
+modification\-Profil -\/ Ouvre la boîte de dialogue de modification de profil de l'utilisateur connecté 
+
+\hypertarget{class_ma_fenetre_a08a81ac61e783cf5ed3855ca4f18c84e}{\index{Ma\-Fenetre@{Ma\-Fenetre}!profil@{profil}}
+\index{profil@{profil}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{profil}]{\setlength{\rightskip}{0pt plus 5cm}void Ma\-Fenetre\-::profil (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_ma_fenetre_a08a81ac61e783cf5ed3855ca4f18c84e}
+
+
+profil -\/ Affiche le profil de l'utilisateur connecté 
+
+\hypertarget{class_ma_fenetre_a91caf819bc0ddee1c27a35b131049259}{\index{Ma\-Fenetre@{Ma\-Fenetre}!profil\-Autre\-Utilisateur@{profil\-Autre\-Utilisateur}}
+\index{profil\-Autre\-Utilisateur@{profil\-Autre\-Utilisateur}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{profil\-Autre\-Utilisateur}]{\setlength{\rightskip}{0pt plus 5cm}void Ma\-Fenetre\-::profil\-Autre\-Utilisateur (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_ma_fenetre_a91caf819bc0ddee1c27a35b131049259}
+
+
+profil\-Autre\-Utilisateur -\/ Affiche le profil d'un utilisateur 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em str} & -\/ Pseudo de l'utilisateur \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_ma_fenetre_a8107c2666807db431962fdcd4e942c69}{\index{Ma\-Fenetre@{Ma\-Fenetre}!rechercher@{rechercher}}
+\index{rechercher@{rechercher}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{rechercher}]{\setlength{\rightskip}{0pt plus 5cm}void Ma\-Fenetre\-::rechercher (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_ma_fenetre_a8107c2666807db431962fdcd4e942c69}
+
+
+rechercher -\/ Redirige vers l'affichage d'utilisateurs ou de produits selon le type de recherche lancé 
+
+\hypertarget{class_ma_fenetre_a75cd895beb38fe68a4319eb6c37ac8ee}{\index{Ma\-Fenetre@{Ma\-Fenetre}!signal\-Recherche\-Produits@{signal\-Recherche\-Produits}}
+\index{signal\-Recherche\-Produits@{signal\-Recherche\-Produits}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{signal\-Recherche\-Produits}]{\setlength{\rightskip}{0pt plus 5cm}void Ma\-Fenetre\-::signal\-Recherche\-Produits (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Produit} $\ast$ $>$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{class_ma_fenetre_a75cd895beb38fe68a4319eb6c37ac8ee}
+
+
+signal\-Recherche\-Produits -\/ Signale qu'il s'agit d'une recherche de produits 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em v} & -\/ Produits à afficher \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_ma_fenetre_aed4dd546bfb6e374aa317946e9247d4f}{\index{Ma\-Fenetre@{Ma\-Fenetre}!signal\-Recherche\-Utilisateur@{signal\-Recherche\-Utilisateur}}
+\index{signal\-Recherche\-Utilisateur@{signal\-Recherche\-Utilisateur}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{signal\-Recherche\-Utilisateur}]{\setlength{\rightskip}{0pt plus 5cm}void Ma\-Fenetre\-::signal\-Recherche\-Utilisateur (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Utilisateur} $\ast$ $>$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{class_ma_fenetre_aed4dd546bfb6e374aa317946e9247d4f}
+
+
+signal\-Recherche\-Utilisateur -\/ Signale qu'il s'agit d'une recherche d'utilisateurs 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em v} & -\/ Utilisateurs à afficher \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_ma_fenetre_abdebcc3a608ba960f92d9c33198afa8e}{\index{Ma\-Fenetre@{Ma\-Fenetre}!statistiques@{statistiques}}
+\index{statistiques@{statistiques}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{statistiques}]{\setlength{\rightskip}{0pt plus 5cm}void Ma\-Fenetre\-::statistiques (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_ma_fenetre_abdebcc3a608ba960f92d9c33198afa8e}
+
+
+statistiques -\/ Affiche les statistiques de l'utilisateur connecté 
+
+\hypertarget{class_ma_fenetre_a001780a069e034521e7669382d7eb5e1}{\index{Ma\-Fenetre@{Ma\-Fenetre}!statistiques\-Autre\-Utilisateur@{statistiques\-Autre\-Utilisateur}}
+\index{statistiques\-Autre\-Utilisateur@{statistiques\-Autre\-Utilisateur}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{statistiques\-Autre\-Utilisateur}]{\setlength{\rightskip}{0pt plus 5cm}void Ma\-Fenetre\-::statistiques\-Autre\-Utilisateur (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_ma_fenetre_a001780a069e034521e7669382d7eb5e1}
+
+
+statistiques\-Autre\-Utilisateur -\/ Affiche les statistiques d'un utilisateur 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em str} & -\/ Pseudo de l'utilisateur \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_ma_fenetre_a342da912af9b611d47229fd190d68522}{\index{Ma\-Fenetre@{Ma\-Fenetre}!update@{update}}
+\index{update@{update}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Ma\-Fenetre\-::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_ma_fenetre_a342da912af9b611d47229fd190d68522}
+
+
+update -\/ Mets à jour la fenêtre principal 
+
+
+
+Implémente \hyperlink{class_vue_a49c501f530bbe66414c415c438ec0695}{Vue}.
+
+\hypertarget{class_ma_fenetre_ae0699859505bac920f9cb033ddb1da23}{\index{Ma\-Fenetre@{Ma\-Fenetre}!ventes@{ventes}}
+\index{ventes@{ventes}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{ventes}]{\setlength{\rightskip}{0pt plus 5cm}void Ma\-Fenetre\-::ventes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_ma_fenetre_ae0699859505bac920f9cb033ddb1da23}
+
+
+ventes -\/ Affiche les ventes de l'utilisateur connecté 
+
+\hypertarget{class_ma_fenetre_acf4ee6e1091a054e5401c9b9b00fcb41}{\index{Ma\-Fenetre@{Ma\-Fenetre}!ventes\-Autre\-Utilisateur@{ventes\-Autre\-Utilisateur}}
+\index{ventes\-Autre\-Utilisateur@{ventes\-Autre\-Utilisateur}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{ventes\-Autre\-Utilisateur}]{\setlength{\rightskip}{0pt plus 5cm}void Ma\-Fenetre\-::ventes\-Autre\-Utilisateur (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_ma_fenetre_acf4ee6e1091a054e5401c9b9b00fcb41}
+
+
+ventes\-Autre\-Utilisateur -\/ Affiche les ventes d'un utilisateur 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em str} & -\/ Pseudo de l'utilisateur \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_ma_fenetre_ade3a46e2b308936d934503a88275495a}{\index{Ma\-Fenetre@{Ma\-Fenetre}!voir\-Produit@{voir\-Produit}}
+\index{voir\-Produit@{voir\-Produit}!MaFenetre@{Ma\-Fenetre}}
+\subsubsection[{voir\-Produit}]{\setlength{\rightskip}{0pt plus 5cm}void Ma\-Fenetre\-::voir\-Produit (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{ref}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_ma_fenetre_ade3a46e2b308936d934503a88275495a}
+
+
+voir\-Produit -\/ Affiche les données du produit et permet de l'acheter 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ref} & \\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_ma_fenetre_8h}{Ma\-Fenetre.\-h}\item 
+\hyperlink{_ma_fenetre_8cpp}{Ma\-Fenetre.\-cpp}\end{DoxyCompactItemize}

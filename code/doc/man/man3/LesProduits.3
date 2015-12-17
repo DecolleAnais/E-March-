@@ -1,0 +1,232 @@
+.TH "LesProduits" 3 "Jeudi 17 Décembre 2015" "Version dernière version" "EMarche" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LesProduits \- 
+.PP
+Cette classe gère la liste des produits\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <LesProduits\&.h>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBLesProduits\fP ()"
+.br
+.RI "\fIConstructeur de la classe \fBLesProduits\fP\&. \fP"
+.ti -1c
+.RI "\fB~LesProduits\fP ()"
+.br
+.ti -1c
+.RI "std::vector< \fBProduit\fP * > \fBgetListProduits\fP ()"
+.br
+.RI "\fICette fonction retourne le liste des produits\&. \fP"
+.ti -1c
+.RI "int \fBsize\fP ()"
+.br
+.RI "\fICette fonction retourne la taille de la liste\&. \fP"
+.ti -1c
+.RI "void \fBaddProduit\fP (\fBProduit\fP *p)"
+.br
+.RI "\fICette fonction permet d'ajouter un produit à la lfin de la liste\&. \fP"
+.ti -1c
+.RI "void \fBsupprimerProduit\fP (std::string ref)"
+.br
+.RI "\fICette fonction permet de supprimer un produit selon sa référence\&. \fP"
+.ti -1c
+.RI "void \fBsupprimerProduit\fP (\fBProduit\fP *p)"
+.br
+.RI "\fICette fonction permet de supprimer un produit\&. \fP"
+.ti -1c
+.RI "std::vector< \fBProduit\fP * > \fBgetProduitsNom\fP (std::string chaine)"
+.br
+.RI "\fICette fonction retourne une liste de produits dont le nom contient chaine\&. \fP"
+.ti -1c
+.RI "\fBProduit\fP * \fBgetProduit\fP (std::string ref)"
+.br
+.RI "\fIRetourne le produit dont la référence est passée en paramètre\&. \fP"
+.ti -1c
+.RI "std::vector< \fBProduit\fP * > \fBrechercherTags\fP (std::string t)"
+.br
+.RI "\fICette fonction retourne une liste de produits tagués par t\&. \fP"
+.ti -1c
+.RI "std::vector< \fBProduit\fP * > \fBrechercherCategorie\fP (std::string t)"
+.br
+.RI "\fICette fonction retourne une liste de produits de la catégorie c\&. \fP"
+.ti -1c
+.RI "std::vector< \fBProduit\fP * > \fBrechercherTags\fP (std::vector< std::string >)"
+.br
+.RI "\fICette fonction retourne une liste de produits tagués par plusieurs mots-clés\&. \fP"
+.ti -1c
+.RI "void \fBtriPrixCroissant\fP ()"
+.br
+.RI "\fICette fonction tri les produits par prix croissant\&. \fP"
+.ti -1c
+.RI "void \fBtoString\fP ()"
+.br
+.RI "\fICette fonction permet d'afficher la liste des produits\&. \fP"
+.in -1c
+.SH "Description détaillée"
+.PP 
+Cette classe gère la liste des produits\&. 
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "LesProduits::LesProduits ()\fC [inline]\fP"
+
+.PP
+Constructeur de la classe \fBLesProduits\fP\&. 
+.SS "LesProduits::~LesProduits ()\fC [inline]\fP"
+Destructeur de la classe LesProduis 
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "void LesProduits::addProduit (\fBProduit\fP *p)"
+
+.PP
+Cette fonction permet d'ajouter un produit à la lfin de la liste\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIp\fP - Nouveau produit à ajouter 
+.RE
+.PP
+
+.SS "vector< \fBProduit\fP * > LesProduits::getListProduits ()"
+
+.PP
+Cette fonction retourne le liste des produits\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un vector contenant la liste des produits 
+.RE
+.PP
+
+.SS "\fBProduit\fP * LesProduits::getProduit (std::stringref)"
+
+.PP
+Retourne le produit dont la référence est passée en paramètre\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIref\fP - Référence du produit à rechercher 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un produit 
+.RE
+.PP
+
+.SS "vector< \fBProduit\fP * > LesProduits::getProduitsNom (std::stringchaine)"
+
+.PP
+Cette fonction retourne une liste de produits dont le nom contient chaine\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIchaine\fP - Nom du produit à rechercher 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un vector de produits 
+.RE
+.PP
+
+.SS "vector< \fBProduit\fP * > LesProduits::rechercherCategorie (std::stringt)"
+
+.PP
+Cette fonction retourne une liste de produits de la catégorie c\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIt\fP - Catégorie à rechercher 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un vector de produits 
+.RE
+.PP
+
+.SS "std::vector<\fBProduit\fP*> LesProduits::rechercherTags (std::stringt)"
+
+.PP
+Cette fonction retourne une liste de produits tagués par t\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIt\fP - Tags à rechercher 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un vector de produits 
+.RE
+.PP
+
+.SS "std::vector<\fBProduit\fP*> LesProduits::rechercherTags (std::vector< std::string >)"
+
+.PP
+Cette fonction retourne une liste de produits tagués par plusieurs mots-clés\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIt\fP - Liste de tags à rechercher 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un vector de produits 
+.RE
+.PP
+
+.SS "int LesProduits::size ()"
+
+.PP
+Cette fonction retourne la taille de la liste\&. Elle correspond également au nombre de produits 
+.PP
+\fBRenvoie:\fP
+.RS 4
+
+.RE
+.PP
+
+.SS "void LesProduits::supprimerProduit (std::stringref)"
+
+.PP
+Cette fonction permet de supprimer un produit selon sa référence\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIref\fP - Référence du produit à supprimer 
+.RE
+.PP
+
+.SS "void LesProduits::supprimerProduit (\fBProduit\fP *p)"
+
+.PP
+Cette fonction permet de supprimer un produit\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIp\fP - \fBProduit\fP à supprimer 
+.RE
+.PP
+
+.SS "void LesProduits::toString ()"
+
+.PP
+Cette fonction permet d'afficher la liste des produits\&. 
+.SS "void LesProduits::triPrixCroissant ()"
+
+.PP
+Cette fonction tri les produits par prix croissant\&. 
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour EMarche à partir du code source\&.

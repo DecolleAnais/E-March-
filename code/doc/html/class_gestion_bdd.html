@@ -1,0 +1,821 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>EMarche: Référence de la classe GestionBdd</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">EMarche
+   &#160;<span id="projectnumber">dernière version</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="hierarchy.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_gestion_bdd.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="class_gestion_bdd-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la classe GestionBdd</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>The <a class="el" href="class_gestion_bdd.html" title="The GestionBdd class - Gère le stockage des utilisateurs, des produits, et la mise à jour des vues...">GestionBdd</a> class - Gère le stockage des utilisateurs, des produits, et la mise à jour des vues.  
+ <a href="class_gestion_bdd.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_gestion_bdd_8h_source.html">GestionBdd.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:aec9ad935a7fafff545f62c8c1452e8db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_bdd.html#aec9ad935a7fafff545f62c8c1452e8db">GestionBdd</a> ()</td></tr>
+<tr class="memdesc:aec9ad935a7fafff545f62c8c1452e8db"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_gestion_bdd.html" title="The GestionBdd class - Gère le stockage des utilisateurs, des produits, et la mise à jour des vues...">GestionBdd</a> - constructeur.  <a href="#aec9ad935a7fafff545f62c8c1452e8db">Plus de détails...</a><br/></td></tr>
+<tr class="separator:aec9ad935a7fafff545f62c8c1452e8db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4398ba38755e93b303635ac5bd2713c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_bdd.html#a4398ba38755e93b303635ac5bd2713c6">~GestionBdd</a> ()</td></tr>
+<tr class="separator:a4398ba38755e93b303635ac5bd2713c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdaf971b3644b2aebbbb65a75b3e6c4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_bdd.html#acdaf971b3644b2aebbbb65a75b3e6c4c">incrementerRef</a> ()</td></tr>
+<tr class="memdesc:acdaf971b3644b2aebbbb65a75b3e6c4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">incrémente la référence pour l'attribuer à un produit et qu'elle soit unique (version 1)  <a href="#acdaf971b3644b2aebbbb65a75b3e6c4c">Plus de détails...</a><br/></td></tr>
+<tr class="separator:acdaf971b3644b2aebbbb65a75b3e6c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6169a8867e04bcc950fe2e0fb2a5621d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_bdd.html#a6169a8867e04bcc950fe2e0fb2a5621d">generateReference</a> ()</td></tr>
+<tr class="memdesc:a6169a8867e04bcc950fe2e0fb2a5621d"><td class="mdescLeft">&#160;</td><td class="mdescRight">génère une référence unique (version 2)  <a href="#a6169a8867e04bcc950fe2e0fb2a5621d">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a6169a8867e04bcc950fe2e0fb2a5621d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a029ffbc385ac5bbb665101308ae82ba0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_bdd.html#a029ffbc385ac5bbb665101308ae82ba0">addVue</a> (<a class="el" href="class_vue.html">Vue</a> *v)</td></tr>
+<tr class="memdesc:a029ffbc385ac5bbb665101308ae82ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">ajoute une vue au vector contenant les vues  <a href="#a029ffbc385ac5bbb665101308ae82ba0">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a029ffbc385ac5bbb665101308ae82ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a518211afbda535f9bcbf718254c7a6aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_bdd.html#a518211afbda535f9bcbf718254c7a6aa">update</a> ()</td></tr>
+<tr class="memdesc:a518211afbda535f9bcbf718254c7a6aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">provoque la fonction update dans toutes les vues  <a href="#a518211afbda535f9bcbf718254c7a6aa">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a518211afbda535f9bcbf718254c7a6aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a936ae71d7145692ec01ccb0f282d3b59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_bdd.html#a936ae71d7145692ec01ccb0f282d3b59">connecterUtilisateur</a> (std::string pseudo, std::string mdp)</td></tr>
+<tr class="memdesc:a936ae71d7145692ec01ccb0f282d3b59"><td class="mdescLeft">&#160;</td><td class="mdescRight">connecte l'utilisateur avec ce pseudo et ce mot de passe s'il existe  <a href="#a936ae71d7145692ec01ccb0f282d3b59">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a936ae71d7145692ec01ccb0f282d3b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e99ded45980647e925295e8cd828004"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_bdd.html#a0e99ded45980647e925295e8cd828004">deconnecterUtilisateur</a> ()</td></tr>
+<tr class="memdesc:a0e99ded45980647e925295e8cd828004"><td class="mdescLeft">&#160;</td><td class="mdescRight">déconnecte l'utilisateur  <a href="#a0e99ded45980647e925295e8cd828004">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a0e99ded45980647e925295e8cd828004"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86ee63900b31ef17bf487ebc1abe8634"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_bdd.html#a86ee63900b31ef17bf487ebc1abe8634">isConnecte</a> ()</td></tr>
+<tr class="memdesc:a86ee63900b31ef17bf487ebc1abe8634"><td class="mdescLeft">&#160;</td><td class="mdescRight">retourne true si un utilisateur est connecté, false sinon  <a href="#a86ee63900b31ef17bf487ebc1abe8634">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a86ee63900b31ef17bf487ebc1abe8634"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ca66731bc3b85a279d5b140e63ba838"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_utilisateur.html">Utilisateur</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_bdd.html#a2ca66731bc3b85a279d5b140e63ba838">getUtilisateurConnecte</a> ()</td></tr>
+<tr class="memdesc:a2ca66731bc3b85a279d5b140e63ba838"><td class="mdescLeft">&#160;</td><td class="mdescRight">récupère un pointeur vers l'utilisateur actuellement connecté  <a href="#a2ca66731bc3b85a279d5b140e63ba838">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a2ca66731bc3b85a279d5b140e63ba838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02f362c2dd2ca487922e00988f71281b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_bdd.html#a02f362c2dd2ca487922e00988f71281b">inscrire</a> (std::string monPseudo, std::string monMdp, std::string name, std::string firstname, int jourNaiss, int moisNaiss, int anneeNaiss, std::string mail, std::string adr, int codePostal)</td></tr>
+<tr class="memdesc:a02f362c2dd2ca487922e00988f71281b"><td class="mdescLeft">&#160;</td><td class="mdescRight">inscrire un nouvel utilisateur et le stocker dans utilisateurs  <a href="#a02f362c2dd2ca487922e00988f71281b">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a02f362c2dd2ca487922e00988f71281b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a966846d69aa1cf0ed82ef74127e10883"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_bdd.html#a966846d69aa1cf0ed82ef74127e10883">modifierProfil</a> (std::string nom, std::string prenom, std::string mail, int codePostal, std::string ville, std::string adresse)</td></tr>
+<tr class="memdesc:a966846d69aa1cf0ed82ef74127e10883"><td class="mdescLeft">&#160;</td><td class="mdescRight">modifie le profil avec ces informations  <a href="#a966846d69aa1cf0ed82ef74127e10883">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a966846d69aa1cf0ed82ef74127e10883"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34b4f9816d96e49889a6455f974e21ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_bdd.html#a34b4f9816d96e49889a6455f974e21ee">acheterProduit</a> (<a class="el" href="class_produit.html">Produit</a> *p)</td></tr>
+<tr class="memdesc:a34b4f9816d96e49889a6455f974e21ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">acheterProduit - Acheter un produit, avec suppression du produit si la quantité arrive à 0  <a href="#a34b4f9816d96e49889a6455f974e21ee">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a34b4f9816d96e49889a6455f974e21ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59989c7d58166c7e4a451b77e56bb852"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_utilisateur.html">Utilisateur</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_bdd.html#a59989c7d58166c7e4a451b77e56bb852">rechercherUtilisateur</a> (std::string pseudo)</td></tr>
+<tr class="memdesc:a59989c7d58166c7e4a451b77e56bb852"><td class="mdescLeft">&#160;</td><td class="mdescRight">recherche l'utilisateur avec ce pseudo  <a href="#a59989c7d58166c7e4a451b77e56bb852">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a59989c7d58166c7e4a451b77e56bb852"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96636fecdc9750ebd4236b3c58aed84f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_utilisateur.html">Utilisateur</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_bdd.html#a96636fecdc9750ebd4236b3c58aed84f">rechercherUtilisateurs</a> (std::string pseudo)</td></tr>
+<tr class="memdesc:a96636fecdc9750ebd4236b3c58aed84f"><td class="mdescLeft">&#160;</td><td class="mdescRight">recherche les utilisateurs contenant ce pseudo  <a href="#a96636fecdc9750ebd4236b3c58aed84f">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a96636fecdc9750ebd4236b3c58aed84f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8c3809d6de97f0e81cd5045a4a72c7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_bdd.html#ac8c3809d6de97f0e81cd5045a4a72c7e">ajouterVente</a> (std::string n, std::string cat, float prix, unsigned int qte, bool etat)</td></tr>
+<tr class="memdesc:ac8c3809d6de97f0e81cd5045a4a72c7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ajoute un produit en vente normale avec ces caractéristiques  <a href="#ac8c3809d6de97f0e81cd5045a4a72c7e">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ac8c3809d6de97f0e81cd5045a4a72c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4e95573213751d5487464ff3e24cc98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_bdd.html#af4e95573213751d5487464ff3e24cc98">ajouterVente</a> (std::string n, std::string cat, float prix, unsigned int qte, bool etat, struct tm date)</td></tr>
+<tr class="memdesc:af4e95573213751d5487464ff3e24cc98"><td class="mdescLeft">&#160;</td><td class="mdescRight">ajoute un produit en vente aux enchères avec ces caractéristiques  <a href="#af4e95573213751d5487464ff3e24cc98">Plus de détails...</a><br/></td></tr>
+<tr class="separator:af4e95573213751d5487464ff3e24cc98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa52e1f2d076c4e3f65162e9f28ed20fa"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_produit.html">Produit</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_bdd.html#aa52e1f2d076c4e3f65162e9f28ed20fa">ventesEnCours</a> ()</td></tr>
+<tr class="memdesc:aa52e1f2d076c4e3f65162e9f28ed20fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">rtourne les ventes en cours  <a href="#aa52e1f2d076c4e3f65162e9f28ed20fa">Plus de détails...</a><br/></td></tr>
+<tr class="separator:aa52e1f2d076c4e3f65162e9f28ed20fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf0ffd54c39d6dfe431fc8d556eb5c8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_produit.html">Produit</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_bdd.html#abf0ffd54c39d6dfe431fc8d556eb5c8d">rechercherProduit</a> (std::string ref)</td></tr>
+<tr class="memdesc:abf0ffd54c39d6dfe431fc8d556eb5c8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">recherche le produit avec cette référence  <a href="#abf0ffd54c39d6dfe431fc8d556eb5c8d">Plus de détails...</a><br/></td></tr>
+<tr class="separator:abf0ffd54c39d6dfe431fc8d556eb5c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadc12bc0c3aee41bc56918e44b5d1085"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_produit.html">Produit</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_bdd.html#aadc12bc0c3aee41bc56918e44b5d1085">rechercherTags</a> (std::string t)</td></tr>
+<tr class="memdesc:aadc12bc0c3aee41bc56918e44b5d1085"><td class="mdescLeft">&#160;</td><td class="mdescRight">recherche un produit par tags (c'est à dire nom, catégorie)  <a href="#aadc12bc0c3aee41bc56918e44b5d1085">Plus de détails...</a><br/></td></tr>
+<tr class="separator:aadc12bc0c3aee41bc56918e44b5d1085"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>The <a class="el" href="class_gestion_bdd.html" title="The GestionBdd class - Gère le stockage des utilisateurs, des produits, et la mise à jour des vues...">GestionBdd</a> class - Gère le stockage des utilisateurs, des produits, et la mise à jour des vues. </p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="aec9ad935a7fafff545f62c8c1452e8db"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GestionBdd::GestionBdd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_gestion_bdd.html" title="The GestionBdd class - Gère le stockage des utilisateurs, des produits, et la mise à jour des vues...">GestionBdd</a> - constructeur. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4398ba38755e93b303635ac5bd2713c6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GestionBdd::~GestionBdd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="a34b4f9816d96e49889a6455f974e21ee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GestionBdd::acheterProduit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_produit.html">Produit</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>acheterProduit - Acheter un produit, avec suppression du produit si la quantité arrive à 0 </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>- Pointeur vers le produit à acheter </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a029ffbc385ac5bbb665101308ae82ba0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GestionBdd::addVue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_vue.html">Vue</a> *&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ajoute une vue au vector contenant les vues </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>- pointeur vers la vue à ajouter </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac8c3809d6de97f0e81cd5045a4a72c7e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GestionBdd::ajouterVente </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>cat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>prix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>qte</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>etat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ajoute un produit en vente normale avec ces caractéristiques </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>- nom du produit </td></tr>
+    <tr><td class="paramname">cat</td><td>- catégorie du produit </td></tr>
+    <tr><td class="paramname">prix</td><td>- prix du produit </td></tr>
+    <tr><td class="paramname">qte</td><td>- quantité du produit </td></tr>
+    <tr><td class="paramname">etat</td><td>- état du produit (en enchère ou non) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af4e95573213751d5487464ff3e24cc98"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GestionBdd::ajouterVente </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>cat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>prix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>qte</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>etat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct tm&#160;</td>
+          <td class="paramname"><em>date</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ajoute un produit en vente aux enchères avec ces caractéristiques </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>- nom du produit </td></tr>
+    <tr><td class="paramname">cat</td><td>- catégorie du produit </td></tr>
+    <tr><td class="paramname">prix</td><td>- prix du produit </td></tr>
+    <tr><td class="paramname">qte</td><td>- quantité du produit </td></tr>
+    <tr><td class="paramname">etat</td><td>- état du produit (enchère ou non) </td></tr>
+    <tr><td class="paramname">date</td><td>- date limite de l'enchère du produit </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a936ae71d7145692ec01ccb0f282d3b59"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GestionBdd::connecterUtilisateur </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>pseudo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>mdp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>connecte l'utilisateur avec ce pseudo et ce mot de passe s'il existe </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pseudo</td><td>- pseudo de l'utilisateur qui veut se connecter </td></tr>
+    <tr><td class="paramname">mdp</td><td>- mot de passe de l'utilisateur qui veut se connecter </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0e99ded45980647e925295e8cd828004"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GestionBdd::deconnecterUtilisateur </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>déconnecte l'utilisateur </p>
+
+</div>
+</div>
+<a class="anchor" id="a6169a8867e04bcc950fe2e0fb2a5621d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string GestionBdd::generateReference </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>génère une référence unique (version 2) </p>
+<dl class="section return"><dt>Renvoie</dt><dd>std::string - référence </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2ca66731bc3b85a279d5b140e63ba838"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_utilisateur.html">Utilisateur</a> * GestionBdd::getUtilisateurConnecte </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>récupère un pointeur vers l'utilisateur actuellement connecté </p>
+<dl class="section return"><dt>Renvoie</dt><dd>pointeur vers l'utilisateur connecté </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acdaf971b3644b2aebbbb65a75b3e6c4c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GestionBdd::incrementerRef </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>incrémente la référence pour l'attribuer à un produit et qu'elle soit unique (version 1) </p>
+
+</div>
+</div>
+<a class="anchor" id="a02f362c2dd2ca487922e00988f71281b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GestionBdd::inscrire </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>monPseudo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>monMdp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>firstname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>jourNaiss</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>moisNaiss</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>anneeNaiss</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>mail</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>adr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>codePostal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>inscrire un nouvel utilisateur et le stocker dans utilisateurs </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">monPseudo</td><td>- pseudo de l'utilisateur à inscrire </td></tr>
+    <tr><td class="paramname">monMdp</td><td>- mot de passe de l'utilisateur à inscrire </td></tr>
+    <tr><td class="paramname">name</td><td>- nom de l'utilisateur à inscrire </td></tr>
+    <tr><td class="paramname">firstname</td><td>- prenom de l'utilisateur à inscrire </td></tr>
+    <tr><td class="paramname">jourNaiss</td><td>- jour de la date de naissance de l'utilisateur à inscrire </td></tr>
+    <tr><td class="paramname">moisNaiss</td><td>- mois de la date de naissance de l'utilisateur à inscrire </td></tr>
+    <tr><td class="paramname">anneeNaiss</td><td>- année de la date de naissance de l'utilisateur à inscrire </td></tr>
+    <tr><td class="paramname">mail</td><td>- adresse mail de l'utilisateur à inscrire </td></tr>
+    <tr><td class="paramname">adr</td><td>- adresse de l'utilisateur à inscrire </td></tr>
+    <tr><td class="paramname">codePostal</td><td>- code postal de l'utilisateur à inscrire </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a86ee63900b31ef17bf487ebc1abe8634"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GestionBdd::isConnecte </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>retourne true si un utilisateur est connecté, false sinon </p>
+<dl class="section return"><dt>Renvoie</dt><dd>true si un utilisateur est connecté, false sinon </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a966846d69aa1cf0ed82ef74127e10883"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GestionBdd::modifierProfil </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>nom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>prenom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>mail</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>codePostal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>ville</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>adresse</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>modifie le profil avec ces informations </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nom</td><td>- nouveau nom </td></tr>
+    <tr><td class="paramname">prenom</td><td>- nouveau prénom </td></tr>
+    <tr><td class="paramname">mail</td><td>- nouvelle adresse mail </td></tr>
+    <tr><td class="paramname">codePostal</td><td>- nouveau code postal </td></tr>
+    <tr><td class="paramname">ville</td><td>- nouvelle ville </td></tr>
+    <tr><td class="paramname">adresse</td><td>- nouvelle adresse </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="abf0ffd54c39d6dfe431fc8d556eb5c8d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_produit.html">Produit</a> * GestionBdd::rechercherProduit </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>ref</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>recherche le produit avec cette référence </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ref</td><td>- référence du produit recherché </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>le produit recherché </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aadc12bc0c3aee41bc56918e44b5d1085"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_produit.html">Produit</a> * &gt; GestionBdd::rechercherTags </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>recherche un produit par tags (c'est à dire nom, catégorie) </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>- tags recherchés </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>un vector contenant des pointeurs sur les produits trouvés </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a59989c7d58166c7e4a451b77e56bb852"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_utilisateur.html">Utilisateur</a> * GestionBdd::rechercherUtilisateur </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>pseudo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>recherche l'utilisateur avec ce pseudo </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pseudo</td><td>- pseudo recherché </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>un pointeur vers l'utilisateur recherché </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a96636fecdc9750ebd4236b3c58aed84f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_utilisateur.html">Utilisateur</a> * &gt; GestionBdd::rechercherUtilisateurs </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>pseudo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>recherche les utilisateurs contenant ce pseudo </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pseudo</td><td>- pseudo recherché </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>vector de pointeurs vers les utilisateurs trouvés </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a518211afbda535f9bcbf718254c7a6aa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GestionBdd::update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>provoque la fonction update dans toutes les vues </p>
+
+</div>
+</div>
+<a class="anchor" id="aa52e1f2d076c4e3f65162e9f28ed20fa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_produit.html">Produit</a> * &gt; GestionBdd::ventesEnCours </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rtourne les ventes en cours </p>
+<dl class="section return"><dt>Renvoie</dt><dd>un vector contenant des pointeurs vers les produits en vente </dd></dl>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>bdd/<a class="el" href="_gestion_bdd_8h_source.html">GestionBdd.h</a></li>
+<li>bdd/<a class="el" href="_gestion_bdd_8cpp.html">GestionBdd.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_gestion_bdd.html">GestionBdd</a></li>
+    <li class="footer">Généré le Jeudi 17 Décembre 2015 23:55:11 pour EMarche par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -26,6 +26,8 @@ public:
      */
     EtatVente(bool b);
 
+    virtual ~EtatVente() {};
+
     /* ----- Fonctions get ----- */
 
     /*!
