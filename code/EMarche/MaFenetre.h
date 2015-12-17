@@ -13,6 +13,7 @@
 #include <QGridLayout>
 #include <QMessageBox>
 #include <QGroupBox>
+#include <QSpinBox>
 #include <QTimer>
 #include <QSignalMapper>
 #include <iostream>
@@ -149,6 +150,10 @@ public slots:
     //! \brief acheter - Achète le produit si on est connecté
     //!
     void acheter();
+    //!
+    //! \brief enchere - Monte les enchères si on est connecté
+    //!
+    void enchere();
 
 signals:
     //!

@@ -2,28 +2,18 @@ il faut que vous changiez votre makefile à la main changez ça :
 CXXFLAGS = -m64 -pipe -O2 -Wall -W -D_REENTRANT -fPIE -std=c++0x $(DEFINES)
 ça permet en gros d'utiliser la fonction to_string(entier)
 
-si quelqu'un a vraiment envie de s'amuser, il y a 1 bouton à faire fonctionner dans MaFenetre.cpp :
-- voirProduit qui se crée dans cette fonction : 
-/* affichage du résultat d'une recherche de produits */
-void maFenetre::afficherResProduits(vector<Produit*> v)
-et qui appelle la fonction void voirProduit(...) plus bas aussi
-
-il faut que ça ressemble à nos captures d'écrans
-
-on a des fuites de mémoire, donc si vous savez faire les destructeurs, les delete etc 
+-on a des fuites de mémoire, donc si vous savez faire les destructeurs, les delete etc 
 en utilisant valgrind ./EMarche pour vérifier 
 
+-CB autant ne pas le faire, parce qu'on ne pourra pas commencer à découper notre code en laissant la doc finie sinon
 
-Je rajoute aussi le fait qu'il faut finir le CB   <----------- BAH FAIS LE EN ECRIVANT LA DOC DES FCT QUE TU AJOUTES
-Il faut régler un problème peut-être mineur mais chiant : 
- - quand dans le main j'appelle la fonction connecte pour l'utilisateur, ça doit connecter l'utilisateur
-   (ça facilite les tests beaucoup) 
+Profil : 
+-les ventes et les achats de l'utilisateur ne sont toujours pas affichés, donc pas de possibilité d'annuler 
+une vente pour le vendeur (qui au passage est notre 1ére itération) et pas de possibilité d'annuler l'achat non plus
+-Mise à jour du profil après modification -> passer par la fonction update() en bas de MaFenetre.cpp
+-Pouvoir voir un autre profil sans être connecté : statistiques de vente visibles (pas pour les statistiques d'achats)
 
+-Enchères, choix de la quantité
 
-Quand on veut acheter un produit en vente aux enchères, on doit pouvoir enchérir, pas acheter
-
-ARRETE DE FAIRE DES GIT COMMIT -a  ET D'ENVOYER DE LA DOC GENEREE NON COMPLETE POUR RIEN
-TU FAIS GIT ADD LES FICHIERS INTERESSANTS (CEUX QUI SONT DANS code/EMarche GENERALEMENT) ET TU SUPPRIMES CHEZ TOI 
-LA DOC GENEREE INCOMPLETE POUR PAS LA RENVOYER
-PUIS UN GIT COMMIT -m "ton message"
+- découpages du projet en itérations à la fin des modifs
 
