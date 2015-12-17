@@ -3,19 +3,32 @@
 
 #include <string>
 
-class CoordsBancaires
-{
+/*!
+ * \class CoordsBancaires
+ * \brief Cette classe gère les coordonnées bancaires d'un utilisateur
+ */
+class CoordsBancaires {
+
 public:
+    /*!
+     * \brief Constructeur de coordonnées bancaires
+     */
     CoordsBancaires();
 
 private:
+    //! \brief Type de carte bancaire
     std::string type;
+    //! \brief Numéro de carte bancaire
     int numero;
+    //! \brief Cryptogramme de la carte
     int cryptogramme;
+    //! \brief Date d'expiration de la carte
     struct tm dateExpiration;
+    //! \brief Adresse de facturation
     std::string adresseFacturation;
+    //! \brief Adresse de livraison
     std::string adresseLivraison;
 
 };
 
-#endif // COORDSBANCAIRES_H
+#endif
