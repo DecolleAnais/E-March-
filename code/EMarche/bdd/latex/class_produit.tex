@@ -1,0 +1,444 @@
+\section{Produit Class Reference}
+\label{class_produit}\index{Produit@{Produit}}
+
+
+Cette classe gère le stockage d'un produit.  
+
+
+
+
+{\ttfamily \#include $<$Produit.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Produit} (std\-::string v, std\-::string n, std\-::string cat, float prix, unsigned int qte, bool etat)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \doxyref{Produit}{p.}{class_produit}. \end{DoxyCompactList}\item 
+{\bf Produit} (std\-::string v, std\-::string n, std\-::string cat, float prix, unsigned int qte, bool etat, struct tm date\-Limite)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \doxyref{Produit}{p.}{class_produit}. \end{DoxyCompactList}\item 
+{\bf $\sim$\-Produit} ()\label{class_produit_a7b789cfa3048436fd050cb565b499c03}
+
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe \doxyref{Produit}{p.}{class_produit}. \end{DoxyCompactList}\item 
+std\-::string {\bf get\-Vendeur} ()
+\begin{DoxyCompactList}\small\item\em Retourne le nom du vendeur. \end{DoxyCompactList}\item 
+unsigned int {\bf get\-Quantite} ()
+\begin{DoxyCompactList}\small\item\em Retourne la quantité en stock du produit. \end{DoxyCompactList}\item 
+float {\bf get\-Prix\-Unitaire} ()
+\begin{DoxyCompactList}\small\item\em Retourne le prix unitaire. \end{DoxyCompactList}\item 
+std\-::string {\bf get\-Reference} ()
+\begin{DoxyCompactList}\small\item\em Retourne la référence unique. \end{DoxyCompactList}\item 
+std\-::string {\bf get\-Nom} ()
+\begin{DoxyCompactList}\small\item\em Retourne le nom du produit. \end{DoxyCompactList}\item 
+std\-::string {\bf get\-Categorie} ()
+\begin{DoxyCompactList}\small\item\em Retourne la catégorie. \end{DoxyCompactList}\item 
+std\-::string {\bf get\-Date\-Depot} ()
+\begin{DoxyCompactList}\small\item\em Retourne la date de dépôt. \end{DoxyCompactList}\item 
+std\-::string {\bf get\-Date\-Achat\-Vente} ()
+\begin{DoxyCompactList}\small\item\em Retourne la date d'achat ou de vente. \end{DoxyCompactList}\item 
+std\-::string {\bf get\-Etat\-Vente} ()
+\begin{DoxyCompactList}\small\item\em Retourne le type de la vente (enchère ou normale) \end{DoxyCompactList}\item 
+float {\bf get\-Prix\-Actuel} ()
+\begin{DoxyCompactList}\small\item\em Retourne le prix actuel. \end{DoxyCompactList}\item 
+std\-::string {\bf get\-Tags} ()
+\begin{DoxyCompactList}\small\item\em Retourne les mots-\/clés qui identifient le produit. \end{DoxyCompactList}\item 
+std\-::vector$<$ std\-::string $>$ {\bfseries get\-Tags\-Vector} ()\label{class_produit_ab8b15ff1ad286eb2e8a8f9afae3194f1}
+
+\item 
+std\-::string {\bf get\-Date\-Limite} ()
+\begin{DoxyCompactList}\small\item\em Retourne la date limite de l'enchère. \end{DoxyCompactList}\item 
+void {\bf set\-Reference} (std\-::string r)
+\begin{DoxyCompactList}\small\item\em Cette fonction attribue une référence unique au produit. \end{DoxyCompactList}\item 
+void {\bf set\-Quantite} (unsigned int q)
+\begin{DoxyCompactList}\small\item\em Cette fonction fixe la quantité disponible. \end{DoxyCompactList}\item 
+void {\bf set\-Date\-Vente\-Achat} (int jour, int mois, int annee)
+\begin{DoxyCompactList}\small\item\em Cette fonction fixe la date d'achat ou de vente. \end{DoxyCompactList}\item 
+void {\bf augmenter\-Enchere} (int prix)
+\begin{DoxyCompactList}\small\item\em Cette fonction permet d'augenter le prix d'une enchère. \end{DoxyCompactList}\item 
+void {\bf ajouter\-Tag} (std\-::string t)
+\begin{DoxyCompactList}\small\item\em Ajouter un nouveau mot-\/clé pour désigner le produit. \end{DoxyCompactList}\item 
+void {\bf decrit} (std\-::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Cette méthode permet d'écrire la description d'un produit dans un flot de sortie donnée en paramètre. \end{DoxyCompactList}\item 
+std\-::string {\bf decrit} ()
+\begin{DoxyCompactList}\small\item\em Cette méthode retourne la description du produit dans une chaîne de caractères. \end{DoxyCompactList}\item 
+void {\bf affiche} (std\-::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Cette méthode permet d'afficher la description du produit, suivie d'un passage à la ligne, dans un flot de sortie donné en paramètre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Cette classe gère le stockage d'un produit. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Produit@{Produit}!Produit@{Produit}}
+\index{Produit@{Produit}!Produit@{Produit}}
+\subsubsection[{Produit}]{\setlength{\rightskip}{0pt plus 5cm}Produit\-::\-Produit (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{v, }
+\item[{std\-::string}]{n, }
+\item[{std\-::string}]{cat, }
+\item[{float}]{prix, }
+\item[{unsigned int}]{qte, }
+\item[{bool}]{etat}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_produit_a5b23bea0ed80afaa80e6e0d6b01d68a8}
+
+
+Constructeur de la classe \doxyref{Produit}{p.}{class_produit}. 
+
+Utilisé pour les ventes normales 
+\begin{DoxyParams}{Parameters}
+{\em v} & -\/ Nom du vendeur \\
+\hline
+{\em n} & -\/ Nom du produit \\
+\hline
+{\em cat} & -\/ Nom de la catégorie \\
+\hline
+{\em prix} & -\/ Prix unitaire \\
+\hline
+{\em qte} & -\/ Quantité \\
+\hline
+{\em etat} & -\/ Type de la vente (enchère ou normale) \\
+\hline
+\end{DoxyParams}
+\index{Produit@{Produit}!Produit@{Produit}}
+\index{Produit@{Produit}!Produit@{Produit}}
+\subsubsection[{Produit}]{\setlength{\rightskip}{0pt plus 5cm}Produit\-::\-Produit (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{v, }
+\item[{std\-::string}]{n, }
+\item[{std\-::string}]{cat, }
+\item[{float}]{prix, }
+\item[{unsigned int}]{qte, }
+\item[{bool}]{etat, }
+\item[{struct tm}]{date\-Limite}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_produit_ac0136c815dafc47b3959c5fd5ee763cd}
+
+
+Constructeur de la classe \doxyref{Produit}{p.}{class_produit}. 
+
+Utilisé pour les ventes aux enchères 
+\begin{DoxyParams}{Parameters}
+{\em v} & -\/ Nom du vendeur \\
+\hline
+{\em n} & -\/ Nom du produit \\
+\hline
+{\em cat} & -\/ Nom de la catégorie \\
+\hline
+{\em prix} & -\/ Prix unitaire \\
+\hline
+{\em qte} & -\/ Quantité \\
+\hline
+{\em etat} & -\/ Type de la vente (enchère ou normale) \\
+\hline
+{\em date\-Limite} & -\/ Date limite de l'enchère \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Produit@{Produit}!affiche@{affiche}}
+\index{affiche@{affiche}!Produit@{Produit}}
+\subsubsection[{affiche}]{\setlength{\rightskip}{0pt plus 5cm}void Produit\-::affiche (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_produit_a1c7bbc2a601d2aa5b7e93991c18da6d1}
+
+
+Cette méthode permet d'afficher la description du produit, suivie d'un passage à la ligne, dans un flot de sortie donné en paramètre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & -\/ le flot de sortie dans lequel la description sera affichée \\
+\hline
+\end{DoxyParams}
+\index{Produit@{Produit}!ajouter\-Tag@{ajouter\-Tag}}
+\index{ajouter\-Tag@{ajouter\-Tag}!Produit@{Produit}}
+\subsubsection[{ajouter\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}void Produit\-::ajouter\-Tag (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{t}
+\end{DoxyParamCaption}
+)}\label{class_produit_a5edb1869a3001fb320047a78ea5e715a}
+
+
+Ajouter un nouveau mot-\/clé pour désigner le produit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & -\/ Nouveau mot-\/clé \\
+\hline
+\end{DoxyParams}
+\index{Produit@{Produit}!augmenter\-Enchere@{augmenter\-Enchere}}
+\index{augmenter\-Enchere@{augmenter\-Enchere}!Produit@{Produit}}
+\subsubsection[{augmenter\-Enchere}]{\setlength{\rightskip}{0pt plus 5cm}void Produit\-::augmenter\-Enchere (
+\begin{DoxyParamCaption}
+\item[{int}]{prix}
+\end{DoxyParamCaption}
+)}\label{class_produit_aed251a51ae5ae9a99b991024434edcfb}
+
+
+Cette fonction permet d'augenter le prix d'une enchère. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prix} & -\/ Nouveau prix de l'enchère \\
+\hline
+\end{DoxyParams}
+\index{Produit@{Produit}!decrit@{decrit}}
+\index{decrit@{decrit}!Produit@{Produit}}
+\subsubsection[{decrit}]{\setlength{\rightskip}{0pt plus 5cm}void Produit\-::decrit (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_produit_a9993d668f2200f091f8215e74060d0be}
+
+
+Cette méthode permet d'écrire la description d'un produit dans un flot de sortie donnée en paramètre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & -\/ le flot de sortie dans lequel la description sera écrite \\
+\hline
+\end{DoxyParams}
+\index{Produit@{Produit}!decrit@{decrit}}
+\index{decrit@{decrit}!Produit@{Produit}}
+\subsubsection[{decrit}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::decrit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_produit_a39e7fe8ee4363f40b0397e6cf360d703}
+
+
+Cette méthode retourne la description du produit dans une chaîne de caractères. 
+
+\begin{DoxyReturn}{Returns}
+la description du produit dans une chaîne de caractères 
+\end{DoxyReturn}
+\index{Produit@{Produit}!get\-Categorie@{get\-Categorie}}
+\index{get\-Categorie@{get\-Categorie}!Produit@{Produit}}
+\subsubsection[{get\-Categorie}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::get\-Categorie (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_produit_a9eff46fd98f73089223b7797a79f1a6c}
+
+
+Retourne la catégorie. 
+
+\begin{DoxyReturn}{Returns}
+Un string contenant la catégorie 
+\end{DoxyReturn}
+\index{Produit@{Produit}!get\-Date\-Achat\-Vente@{get\-Date\-Achat\-Vente}}
+\index{get\-Date\-Achat\-Vente@{get\-Date\-Achat\-Vente}!Produit@{Produit}}
+\subsubsection[{get\-Date\-Achat\-Vente}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::get\-Date\-Achat\-Vente (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_produit_aa7f00c40483d9035023d5e2bfa3f7154}
+
+
+Retourne la date d'achat ou de vente. 
+
+\begin{DoxyReturn}{Returns}
+Un string contenant la date d'achat ou de vente 
+\end{DoxyReturn}
+\index{Produit@{Produit}!get\-Date\-Depot@{get\-Date\-Depot}}
+\index{get\-Date\-Depot@{get\-Date\-Depot}!Produit@{Produit}}
+\subsubsection[{get\-Date\-Depot}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::get\-Date\-Depot (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_produit_af4d4f3cc1b83dbc521965ef3832f55db}
+
+
+Retourne la date de dépôt. 
+
+\begin{DoxyReturn}{Returns}
+Un string contenant la date de dépôt 
+\end{DoxyReturn}
+\index{Produit@{Produit}!get\-Date\-Limite@{get\-Date\-Limite}}
+\index{get\-Date\-Limite@{get\-Date\-Limite}!Produit@{Produit}}
+\subsubsection[{get\-Date\-Limite}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::get\-Date\-Limite (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_produit_a7bd69ad69057b77be95569b597dc058d}
+
+
+Retourne la date limite de l'enchère. 
+
+\begin{DoxyReturn}{Returns}
+Un string contenant la date limite de l'enchère 
+\end{DoxyReturn}
+\index{Produit@{Produit}!get\-Etat\-Vente@{get\-Etat\-Vente}}
+\index{get\-Etat\-Vente@{get\-Etat\-Vente}!Produit@{Produit}}
+\subsubsection[{get\-Etat\-Vente}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::get\-Etat\-Vente (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_produit_aa0421a8a8a05684059fa5c26fc6b09e5}
+
+
+Retourne le type de la vente (enchère ou normale) 
+
+\begin{DoxyReturn}{Returns}
+Un string contenant l'état de la vente 
+\end{DoxyReturn}
+\index{Produit@{Produit}!get\-Nom@{get\-Nom}}
+\index{get\-Nom@{get\-Nom}!Produit@{Produit}}
+\subsubsection[{get\-Nom}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::get\-Nom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_produit_a6e4b2da75ac7c667bf1f70c124aea0ef}
+
+
+Retourne le nom du produit. 
+
+\begin{DoxyReturn}{Returns}
+Un string contenant le nom du produit 
+\end{DoxyReturn}
+\index{Produit@{Produit}!get\-Prix\-Actuel@{get\-Prix\-Actuel}}
+\index{get\-Prix\-Actuel@{get\-Prix\-Actuel}!Produit@{Produit}}
+\subsubsection[{get\-Prix\-Actuel}]{\setlength{\rightskip}{0pt plus 5cm}float Produit\-::get\-Prix\-Actuel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_produit_a8df31b7e2ca9fc0cf330cbed2efd22d0}
+
+
+Retourne le prix actuel. 
+
+\begin{DoxyReturn}{Returns}
+Un float représenant le prix actuel 
+\end{DoxyReturn}
+\index{Produit@{Produit}!get\-Prix\-Unitaire@{get\-Prix\-Unitaire}}
+\index{get\-Prix\-Unitaire@{get\-Prix\-Unitaire}!Produit@{Produit}}
+\subsubsection[{get\-Prix\-Unitaire}]{\setlength{\rightskip}{0pt plus 5cm}float Produit\-::get\-Prix\-Unitaire (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_produit_ae9e421815cd947b5ef56b751272a34ca}
+
+
+Retourne le prix unitaire. 
+
+\begin{DoxyReturn}{Returns}
+Un float représentant le prix unitaire 
+\end{DoxyReturn}
+\index{Produit@{Produit}!get\-Quantite@{get\-Quantite}}
+\index{get\-Quantite@{get\-Quantite}!Produit@{Produit}}
+\subsubsection[{get\-Quantite}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Produit\-::get\-Quantite (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_produit_a4fc3e3d0c67b9b17e6c0e20cfec70c3b}
+
+
+Retourne la quantité en stock du produit. 
+
+\begin{DoxyReturn}{Returns}
+Un entier positif représentant la quantité 
+\end{DoxyReturn}
+\index{Produit@{Produit}!get\-Reference@{get\-Reference}}
+\index{get\-Reference@{get\-Reference}!Produit@{Produit}}
+\subsubsection[{get\-Reference}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::get\-Reference (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_produit_aaad2134211bc9caebb1abcefe5e096c5}
+
+
+Retourne la référence unique. 
+
+\begin{DoxyReturn}{Returns}
+Un string contenant la référence 
+\end{DoxyReturn}
+\index{Produit@{Produit}!get\-Tags@{get\-Tags}}
+\index{get\-Tags@{get\-Tags}!Produit@{Produit}}
+\subsubsection[{get\-Tags}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::get\-Tags (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_produit_a7b44df89f061edee42a971f2c172965b}
+
+
+Retourne les mots-\/clés qui identifient le produit. 
+
+\begin{DoxyReturn}{Returns}
+Un string contenant les mots-\/clés 
+\end{DoxyReturn}
+\index{Produit@{Produit}!get\-Vendeur@{get\-Vendeur}}
+\index{get\-Vendeur@{get\-Vendeur}!Produit@{Produit}}
+\subsubsection[{get\-Vendeur}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::get\-Vendeur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_produit_abb06f356f5471dfc236f17412d4a6749}
+
+
+Retourne le nom du vendeur. 
+
+\begin{DoxyReturn}{Returns}
+Un string contenant le nom du vendeur 
+\end{DoxyReturn}
+\index{Produit@{Produit}!set\-Date\-Vente\-Achat@{set\-Date\-Vente\-Achat}}
+\index{set\-Date\-Vente\-Achat@{set\-Date\-Vente\-Achat}!Produit@{Produit}}
+\subsubsection[{set\-Date\-Vente\-Achat}]{\setlength{\rightskip}{0pt plus 5cm}void Produit\-::set\-Date\-Vente\-Achat (
+\begin{DoxyParamCaption}
+\item[{int}]{jour, }
+\item[{int}]{mois, }
+\item[{int}]{annee}
+\end{DoxyParamCaption}
+)}\label{class_produit_a609f2dfcf93cc5a41ef69f3e4ed4598f}
+
+
+Cette fonction fixe la date d'achat ou de vente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jour} & -\/ Jour \\
+\hline
+{\em mois} & -\/ Mois \\
+\hline
+{\em annee} & -\/ Année \\
+\hline
+\end{DoxyParams}
+\index{Produit@{Produit}!set\-Quantite@{set\-Quantite}}
+\index{set\-Quantite@{set\-Quantite}!Produit@{Produit}}
+\subsubsection[{set\-Quantite}]{\setlength{\rightskip}{0pt plus 5cm}void Produit\-::set\-Quantite (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{q}
+\end{DoxyParamCaption}
+)}\label{class_produit_aee71ce4e667afde2773fea21c663d816}
+
+
+Cette fonction fixe la quantité disponible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & -\/ Nouvelle quantité \\
+\hline
+\end{DoxyParams}
+\index{Produit@{Produit}!set\-Reference@{set\-Reference}}
+\index{set\-Reference@{set\-Reference}!Produit@{Produit}}
+\subsubsection[{set\-Reference}]{\setlength{\rightskip}{0pt plus 5cm}void Produit\-::set\-Reference (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{r}
+\end{DoxyParamCaption}
+)}\label{class_produit_a34da537b2544450854d932c2cb695d6d}
+
+
+Cette fonction attribue une référence unique au produit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Un string contenant la référence \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Produit.\-h\item 
+Produit.\-cpp\end{DoxyCompactItemize}

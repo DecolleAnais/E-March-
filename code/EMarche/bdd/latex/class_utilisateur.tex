@@ -1,0 +1,119 @@
+\section{Utilisateur Class Reference}
+\label{class_utilisateur}\index{Utilisateur@{Utilisateur}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Utilisateur} (std\-::string mon\-Pseudo, std\-::string mon\-Mdp, std\-::string name, std\-::string firstname, int jour\-Naiss, int mois\-Naiss, int annee\-Naiss, std\-::string mail, std\-::string adr, int c\-P)\label{class_utilisateur_ac0d1108ddcc0db26aa0000fb7c9760c4}
+
+\item 
+std\-::string {\bfseries get\-Pseudo} ()\label{class_utilisateur_ad82476a41188fecf932e48ea4cf42162}
+
+\item 
+std\-::string {\bfseries get\-Mdp} ()\label{class_utilisateur_a7e889c1cb03acd4c06413bd254469e88}
+
+\item 
+std\-::string {\bfseries get\-Nom} ()\label{class_utilisateur_a0d78519577dbde31c5cfabcc39183d31}
+
+\item 
+std\-::string {\bfseries get\-Prenom} ()\label{class_utilisateur_a764e89d2416322187982d95403c3bbb5}
+
+\item 
+std\-::string {\bfseries get\-Date\-Naissance} ()\label{class_utilisateur_af40f31803cd81eb4eaeb2ccb6e08e8e0}
+
+\item 
+std\-::string {\bfseries get\-Email} ()\label{class_utilisateur_a3ef38f8bbb06f50534bc52e4932903ee}
+
+\item 
+std\-::string {\bfseries get\-Adresse} ()\label{class_utilisateur_a50c27d83b745ce9f93c016c078ff30d2}
+
+\item 
+std\-::string {\bfseries get\-Ville} ()\label{class_utilisateur_aa2228f7d22cc9765eae522bc996b3524}
+
+\item 
+int {\bfseries get\-Code\-Postal} ()\label{class_utilisateur_ac49c4d66a37d0296e50f9b6cedf4284f}
+
+\item 
+unsigned int {\bfseries get\-Nb\-Ventes} ()\label{class_utilisateur_a54a9cce39f989f920b93ca2675d6999c}
+
+\item 
+unsigned int {\bfseries get\-Nb\-Achats} ()\label{class_utilisateur_a5fd1e4951abad29ba9ae1ac8760c726d}
+
+\item 
+unsigned int {\bfseries get\-Note} ()\label{class_utilisateur_a2727eb739e0065c9aac277b5d2703b7e}
+
+\item 
+std\-::vector$<$ {\bf Produit} $\ast$ $>$ {\bfseries get\-Les\-Achats} ()\label{class_utilisateur_ae3b7946578854df50bd2300ee2f04bdf}
+
+\item 
+std\-::vector$<$ {\bf Produit} $\ast$ $>$ {\bfseries get\-Les\-Ventes} ()\label{class_utilisateur_a76ac94b07263ba9bc902c69c5e0a4de1}
+
+\item 
+std\-::vector$<$ {\bf Avis} $>$ {\bfseries get\-Les\-Avis} ()\label{class_utilisateur_a8e5721905dee5dea491c7a0c8811aaa0}
+
+\item 
+void {\bfseries get\-Les\-Avis} (unsigned int deb, unsigned int nb)\label{class_utilisateur_af62b73aa8bca25a0aa3466339d6a97d3}
+
+\item 
+void {\bfseries set\-Pseudo} (std\-::string p)\label{class_utilisateur_a8463c077b33ccc93c8e424a47b9bc369}
+
+\item 
+void {\bfseries set\-Mdp} (std\-::string m)\label{class_utilisateur_a34f6a4cd57807390db2bfc3f880eec58}
+
+\item 
+void {\bfseries set\-Nom} (std\-::string n)\label{class_utilisateur_a20a32b47f2b080a4aead49e16bd06f44}
+
+\item 
+void {\bfseries set\-Prenom} (std\-::string p)\label{class_utilisateur_a82c09ccdcb2449ee5a9938bb716938b6}
+
+\item 
+void {\bfseries set\-Date\-Naissance} (int jour, int mois, int annee)\label{class_utilisateur_a9cb5da21a0fa7c2900c95dfb9b6c70e8}
+
+\item 
+void {\bfseries set\-Email} (std\-::string e)\label{class_utilisateur_ab2e9b7718ba138421d5de19d29131165}
+
+\item 
+void {\bfseries set\-Adresse} (std\-::string a)\label{class_utilisateur_afd7d9b7465cf7f0884e8701d785bd6c2}
+
+\item 
+void {\bfseries set\-Code\-Postal} (int i)\label{class_utilisateur_add56a5bbbb2507f5e1a5c6100c3c756a}
+
+\item 
+void {\bfseries set\-Ville} (std\-::string v)\label{class_utilisateur_a8a3b372a5f6086e009ebaf6135b570a9}
+
+\item 
+void {\bfseries set\-Nb\-Ventes} (unsigned int n)\label{class_utilisateur_a8d788360b66d30182485926d8082acef}
+
+\item 
+void {\bfseries set\-Nb\-Achats} (unsigned int n)\label{class_utilisateur_aaff8554723c390a541f223065ba68f22}
+
+\item 
+void {\bfseries set\-Note} (unsigned int n)\label{class_utilisateur_a703b2dbde2ba4e30fceefa651d4ab51f}
+
+\item 
+void {\bfseries add\-Achat} ({\bf Produit} $\ast$p)\label{class_utilisateur_a0f2ef558d9a70caf2bccfc81f15027fc}
+
+\item 
+void {\bfseries add\-Vente} ({\bf Produit} $\ast$p)\label{class_utilisateur_ac388127f7ea147a70a67ff6345ccb164}
+
+\item 
+void {\bfseries add\-Avis} ({\bf Avis} a)\label{class_utilisateur_aa8b2cad2349702cf2fa8f23fef2e5a9d}
+
+\item 
+std\-::string {\bfseries to\-String} ()\label{class_utilisateur_afae5a6088d13c5f622362f47faaa49d4}
+
+\item 
+void {\bfseries decrit} (std\-::ostream \&os)\label{class_utilisateur_ad4c1dbab122bf719cf1419b9d93a0e22}
+
+\item 
+std\-::string {\bfseries decrit} ()\label{class_utilisateur_a938eda997ac76805b7674c7ffe7e17e8}
+
+\item 
+void {\bfseries affiche} (std\-::ostream \&os)\label{class_utilisateur_a810f877d63ef4b8b2f6b18dfc1cd26f9}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Utilisateur.\-h\item 
+Utilisateur.\-cpp\end{DoxyCompactItemize}

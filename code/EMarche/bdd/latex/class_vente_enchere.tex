@@ -1,0 +1,138 @@
+\section{Vente\-Enchere Class Reference}
+\label{class_vente_enchere}\index{Vente\-Enchere@{Vente\-Enchere}}
+
+
+Cette classe gère une vente aux enchères.  
+
+
+
+
+{\ttfamily \#include $<$Vente\-Enchere.\-h$>$}
+
+Inheritance diagram for Vente\-Enchere\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_vente_enchere}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Vente\-Enchere} (bool b)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \doxyref{Vente\-Enchere}{p.}{class_vente_enchere}. \end{DoxyCompactList}\item 
+float {\bf get\-Prix\-Actuel} ()
+\begin{DoxyCompactList}\small\item\em Retourne le prix actuel de la vente. \end{DoxyCompactList}\item 
+std\-::string {\bf get\-Date\-Limite} ()
+\begin{DoxyCompactList}\small\item\em Retourne la date limite de l'enchère. \end{DoxyCompactList}\item 
+void {\bf set\-Prix\-Actuel} (float prix)
+\begin{DoxyCompactList}\small\item\em Cette fonction fixe le prix actuel. \end{DoxyCompactList}\item 
+void {\bf set\-Date\-Limite} (struct tm date)
+\begin{DoxyCompactList}\small\item\em Cette fonction fixe la date limite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Cette classe gère une vente aux enchères. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Vente\-Enchere@{Vente\-Enchere}!Vente\-Enchere@{Vente\-Enchere}}
+\index{Vente\-Enchere@{Vente\-Enchere}!VenteEnchere@{Vente\-Enchere}}
+\subsubsection[{Vente\-Enchere}]{\setlength{\rightskip}{0pt plus 5cm}Vente\-Enchere\-::\-Vente\-Enchere (
+\begin{DoxyParamCaption}
+\item[{bool}]{b}
+\end{DoxyParamCaption}
+)}\label{class_vente_enchere_a383e04cb779ed7a3223b8243a76c13c2}
+
+
+Constructeur de la classe \doxyref{Vente\-Enchere}{p.}{class_vente_enchere}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & -\/ Booléen qui donne le type de la vente \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Vente\-Enchere@{Vente\-Enchere}!get\-Date\-Limite@{get\-Date\-Limite}}
+\index{get\-Date\-Limite@{get\-Date\-Limite}!VenteEnchere@{Vente\-Enchere}}
+\subsubsection[{get\-Date\-Limite}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Vente\-Enchere\-::get\-Date\-Limite (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_vente_enchere_a2ab7fb32692d9cb1d250b81f0f87dd88}
+
+
+Retourne la date limite de l'enchère. 
+
+\begin{DoxyReturn}{Returns}
+Un string contenant la date limite de l'enchère 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf Etat\-Vente} \doxyref{}{p.}{class_etat_vente_ab466d257671a59ec97ae393c80226b7a}.
+
+\index{Vente\-Enchere@{Vente\-Enchere}!get\-Prix\-Actuel@{get\-Prix\-Actuel}}
+\index{get\-Prix\-Actuel@{get\-Prix\-Actuel}!VenteEnchere@{Vente\-Enchere}}
+\subsubsection[{get\-Prix\-Actuel}]{\setlength{\rightskip}{0pt plus 5cm}float Vente\-Enchere\-::get\-Prix\-Actuel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_vente_enchere_a53455121f689127d4daf6123af1668f3}
+
+
+Retourne le prix actuel de la vente. 
+
+\begin{DoxyReturn}{Returns}
+Un float représentant le prix actuel 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf Etat\-Vente} \doxyref{}{p.}{class_etat_vente_a0e797a253bbfe990d22f3d2827c8a318}.
+
+\index{Vente\-Enchere@{Vente\-Enchere}!set\-Date\-Limite@{set\-Date\-Limite}}
+\index{set\-Date\-Limite@{set\-Date\-Limite}!VenteEnchere@{Vente\-Enchere}}
+\subsubsection[{set\-Date\-Limite}]{\setlength{\rightskip}{0pt plus 5cm}void Vente\-Enchere\-::set\-Date\-Limite (
+\begin{DoxyParamCaption}
+\item[{struct tm}]{date}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_vente_enchere_a034150f779a519dfc4973a3fcfd0d23e}
+
+
+Cette fonction fixe la date limite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & -\/ Nouvelle date \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from {\bf Etat\-Vente} \doxyref{}{p.}{class_etat_vente_a8efa95982f7252801512df1ea16faeeb}.
+
+\index{Vente\-Enchere@{Vente\-Enchere}!set\-Prix\-Actuel@{set\-Prix\-Actuel}}
+\index{set\-Prix\-Actuel@{set\-Prix\-Actuel}!VenteEnchere@{Vente\-Enchere}}
+\subsubsection[{set\-Prix\-Actuel}]{\setlength{\rightskip}{0pt plus 5cm}void Vente\-Enchere\-::set\-Prix\-Actuel (
+\begin{DoxyParamCaption}
+\item[{float}]{prix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_vente_enchere_abad32fe0ea40ea89e1aef1621dc673e6}
+
+
+Cette fonction fixe le prix actuel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prix} & -\/ Nouveau prix \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from {\bf Etat\-Vente} \doxyref{}{p.}{class_etat_vente_a8436bb978172c8e136fa349706baef0d}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Vente\-Enchere.\-h\item 
+Vente\-Enchere.\-cpp\end{DoxyCompactItemize}
