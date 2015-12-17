@@ -5,7 +5,7 @@
 
 /*!
  * \class CoordsBancaires
- * \brief Cette classe gère les coordonnées bancaires d'un utilisateur
+ * \brief Cette classe contient les données bancaires d'un utilisateur
  */
 class CoordsBancaires {
 

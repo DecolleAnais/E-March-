@@ -14,10 +14,16 @@ on a des fuites de mémoire, donc si vous savez faire les destructeurs, les dele
 en utilisant valgrind ./EMarche pour vérifier 
 
 
-Je rajoute aussi le fait qu'il faut finir le CB
+Je rajoute aussi le fait qu'il faut finir le CB   <----------- BAH FAIS LE EN ECRIVANT LA DOC DES FCT QUE TU AJOUTES
 Il faut régler un problème peut-être mineur mais chiant : 
  - quand dans le main j'appelle la fonction connecte pour l'utilisateur, ça doit connecter l'utilisateur
-   (ça facilite les tests beaucoup)
+   (ça facilite les tests beaucoup) 
 
 
 Quand on veut acheter un produit en vente aux enchères, on doit pouvoir enchérir, pas acheter
+
+ARRETE DE FAIRE DES GIT COMMIT -a  ET D'ENVOYER DE LA DOC GENEREE NON COMPLETE POUR RIEN
+TU FAIS GIT ADD LES FICHIERS INTERESSANTS (CEUX QUI SONT DANS code/EMarche GENERALEMENT) ET TU SUPPRIMES CHEZ TOI 
+LA DOC GENEREE INCOMPLETE POUR PAS LA RENVOYER
+PUIS UN GIT COMMIT -m "ton message"
+
