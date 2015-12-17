@@ -30,13 +30,10 @@ void DialogAjouterVente::on_boutonAjouterVente_clicked()
     string categorie = ui->valCat->text().toStdString();
     float prix = ui->valPrix->value();
     unsigned int qte = ui->valQte->text().toUInt();
-    bool etat = ui->buttonGroup->checkedButton();
+    string etat = ui->buttonGroup->checkedButton()->text().toStdString();
 
     if(nom != "" && categorie != "" && prix > 0.00 && qte > 0) {
-        if(etat == 0){
-            gestionBdd->ajouterVente(nom, categorie, prix, qte, etat);
-            close();
-        } else {
+        if(etat == "Vente aux enchères") {
             QDate date = ui->valDateLimite->date();
             int year = date.year();
             int month = date.month();
@@ -45,7 +42,10 @@ void DialogAjouterVente::on_boutonAjouterVente_clicked()
             dateLimite.tm_mday = day;
             dateLimite.tm_mon = month;
             dateLimite.tm_year = year;
-            gestionBdd->ajouterVente(nom, categorie, prix, qte, etat, dateLimite);
+            gestionBdd->ajouterVente(nom, categorie, prix, qte, true, dateLimite);
+            close();
+        } else {
+            gestionBdd->ajouterVente(nom, categorie, prix, qte, false);
             close();
         }
     }
