@@ -1,0 +1,323 @@
+.TH "GestionBdd" 3 "Thu Dec 17 2015" "EMarche" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GestionBdd \- 
+.PP
+The \fBGestionBdd\fP class - Gère le stockage des utilisateurs, des produits, et la mise à jour des vues\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <GestionBdd\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGestionBdd\fP ()"
+.br
+.RI "\fI\fBGestionBdd\fP - constructeur\&. \fP"
+.ti -1c
+.RI "void \fBincrementerRef\fP ()"
+.br
+.RI "\fIincrémente la référence pour l'attribuer à un produit et qu'elle soit unique (version 1) \fP"
+.ti -1c
+.RI "std::string \fBgenerateReference\fP ()"
+.br
+.RI "\fIgénère une référence unique (version 2) \fP"
+.ti -1c
+.RI "void \fBaddVue\fP (Vue *v)"
+.br
+.RI "\fIajoute une vue au vector contenant les vues \fP"
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.RI "\fIprovoque la fonction update dans toutes les vues \fP"
+.ti -1c
+.RI "void \fBconnecterUtilisateur\fP (std::string pseudo, std::string mdp)"
+.br
+.RI "\fIconnecte l'utilisateur avec ce pseudo et ce mot de passe s'il existe \fP"
+.ti -1c
+.RI "void \fBdeconnecterUtilisateur\fP ()"
+.br
+.RI "\fIdéconnecte l'utilisateur \fP"
+.ti -1c
+.RI "bool \fBisConnecte\fP ()"
+.br
+.RI "\fIretourne true si un utilisateur est connecté, false sinon \fP"
+.ti -1c
+.RI "\fBUtilisateur\fP * \fBgetUtilisateurConnecte\fP ()"
+.br
+.RI "\fIrécupère un pointeur vers l'utilisateur actuellement connecté \fP"
+.ti -1c
+.RI "void \fBinscrire\fP (std::string monPseudo, std::string monMdp, std::string name, std::string firstname, int jourNaiss, int moisNaiss, int anneeNaiss, std::string mail, std::string adr, int codePostal)"
+.br
+.RI "\fIinscrire un nouvel utilisateur et le stocker dans utilisateurs \fP"
+.ti -1c
+.RI "void \fBmodifierProfil\fP (std::string nom, std::string prenom, std::string mail, int codePostal, std::string ville, std::string adresse)"
+.br
+.RI "\fImodifie le profil avec ces informations \fP"
+.ti -1c
+.RI "void \fBacheterProduit\fP (\fBProduit\fP *p)"
+.br
+.ti -1c
+.RI "\fBUtilisateur\fP * \fBrechercherUtilisateur\fP (std::string pseudo)"
+.br
+.RI "\fIrecherche l'utilisateur avec ce pseudo \fP"
+.ti -1c
+.RI "std::vector< \fBUtilisateur\fP * > \fBrechercherUtilisateurs\fP (std::string pseudo)"
+.br
+.RI "\fIrecherche les utilisateurs contenant ce pseudo \fP"
+.ti -1c
+.RI "void \fBajouterVente\fP (std::string n, std::string cat, float prix, unsigned int qte, bool etat)"
+.br
+.RI "\fIajoute un produit en vente normale avec ces caractéristiques \fP"
+.ti -1c
+.RI "void \fBajouterVente\fP (std::string n, std::string cat, float prix, unsigned int qte, bool etat, struct tm date)"
+.br
+.RI "\fIajoute un produit en vente aux enchères avec ces caractéristiques \fP"
+.ti -1c
+.RI "std::vector< \fBProduit\fP * > \fBventesEnCours\fP ()"
+.br
+.RI "\fIrtourne les ventes en cours \fP"
+.ti -1c
+.RI "\fBProduit\fP * \fBrechercherProduit\fP (std::string ref)"
+.br
+.RI "\fIrecherche le produit avec cette référence \fP"
+.ti -1c
+.RI "std::vector< \fBProduit\fP * > \fBrechercherTags\fP (std::string t)"
+.br
+.RI "\fIrecherche un produit par tags (c'est à dire nom, catégorie) \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBGestionBdd\fP class - Gère le stockage des utilisateurs, des produits, et la mise à jour des vues\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void GestionBdd::addVue (Vue *v)"
+
+.PP
+ajoute une vue au vector contenant les vues 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP - pointeur vers la vue à ajouter 
+.RE
+.PP
+
+.SS "void GestionBdd::ajouterVente (std::stringn, std::stringcat, floatprix, unsigned intqte, booletat)"
+
+.PP
+ajoute un produit en vente normale avec ces caractéristiques 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP - nom du produit 
+.br
+\fIcat\fP - catégorie du produit 
+.br
+\fIprix\fP - prix du produit 
+.br
+\fIqte\fP - quantité du produit 
+.br
+\fIetat\fP - état du produit (en enchère ou non) 
+.RE
+.PP
+
+.SS "void GestionBdd::ajouterVente (std::stringn, std::stringcat, floatprix, unsigned intqte, booletat, struct tmdate)"
+
+.PP
+ajoute un produit en vente aux enchères avec ces caractéristiques 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP - nom du produit 
+.br
+\fIcat\fP - catégorie du produit 
+.br
+\fIprix\fP - prix du produit 
+.br
+\fIqte\fP - quantité du produit 
+.br
+\fIetat\fP - état du produit (enchère ou non) 
+.br
+\fIdate\fP - date limite de l'enchère du produit 
+.RE
+.PP
+
+.SS "void GestionBdd::connecterUtilisateur (std::stringpseudo, std::stringmdp)"
+
+.PP
+connecte l'utilisateur avec ce pseudo et ce mot de passe s'il existe 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpseudo\fP - pseudo de l'utilisateur qui veut se connecter 
+.br
+\fImdp\fP - mot de passe de l'utilisateur qui veut se connecter 
+.RE
+.PP
+
+.SS "std::string GestionBdd::generateReference ()"
+
+.PP
+génère une référence unique (version 2) 
+.PP
+\fBReturns:\fP
+.RS 4
+std::string - référence 
+.RE
+.PP
+
+.SS "\fBUtilisateur\fP * GestionBdd::getUtilisateurConnecte ()"
+
+.PP
+récupère un pointeur vers l'utilisateur actuellement connecté 
+.PP
+\fBReturns:\fP
+.RS 4
+pointeur vers l'utilisateur connecté 
+.RE
+.PP
+
+.SS "void GestionBdd::inscrire (std::stringmonPseudo, std::stringmonMdp, std::stringname, std::stringfirstname, intjourNaiss, intmoisNaiss, intanneeNaiss, std::stringmail, std::stringadr, intcodePostal)"
+
+.PP
+inscrire un nouvel utilisateur et le stocker dans utilisateurs 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImonPseudo\fP - pseudo de l'utilisateur à inscrire 
+.br
+\fImonMdp\fP - mot de passe de l'utilisateur à inscrire 
+.br
+\fIname\fP - nom de l'utilisateur à inscrire 
+.br
+\fIfirstname\fP - prenom de l'utilisateur à inscrire 
+.br
+\fIjourNaiss\fP - jour de la date de naissance de l'utilisateur à inscrire 
+.br
+\fImoisNaiss\fP - mois de la date de naissance de l'utilisateur à inscrire 
+.br
+\fIanneeNaiss\fP - année de la date de naissance de l'utilisateur à inscrire 
+.br
+\fImail\fP - adresse mail de l'utilisateur à inscrire 
+.br
+\fIadr\fP - adresse de l'utilisateur à inscrire 
+.br
+\fIcodePostal\fP - code postal de l'utilisateur à inscrire 
+.RE
+.PP
+
+.SS "bool GestionBdd::isConnecte ()"
+
+.PP
+retourne true si un utilisateur est connecté, false sinon 
+.PP
+\fBReturns:\fP
+.RS 4
+true si un utilisateur est connecté, false sinon 
+.RE
+.PP
+
+.SS "void GestionBdd::modifierProfil (std::stringnom, std::stringprenom, std::stringmail, intcodePostal, std::stringville, std::stringadresse)"
+
+.PP
+modifie le profil avec ces informations 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInom\fP - nouveau nom 
+.br
+\fIprenom\fP - nouveau prénom 
+.br
+\fImail\fP - nouvelle adresse mail 
+.br
+\fIcodePostal\fP - nouveau code postal 
+.br
+\fIville\fP - nouvelle ville 
+.br
+\fIadresse\fP - nouvelle adresse 
+.RE
+.PP
+
+.SS "\fBProduit\fP * GestionBdd::rechercherProduit (std::stringref)"
+
+.PP
+recherche le produit avec cette référence 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIref\fP - référence du produit recherché 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+le produit recherché 
+.RE
+.PP
+
+.SS "std::vector< \fBProduit\fP * > GestionBdd::rechercherTags (std::stringt)"
+
+.PP
+recherche un produit par tags (c'est à dire nom, catégorie) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIt\fP - tags recherchés 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+un vector contenant des pointeurs sur les produits trouvés 
+.RE
+.PP
+
+.SS "\fBUtilisateur\fP * GestionBdd::rechercherUtilisateur (std::stringpseudo)"
+
+.PP
+recherche l'utilisateur avec ce pseudo 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpseudo\fP - pseudo recherché 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+un pointeur vers l'utilisateur recherché 
+.RE
+.PP
+
+.SS "std::vector< \fBUtilisateur\fP * > GestionBdd::rechercherUtilisateurs (std::stringpseudo)"
+
+.PP
+recherche les utilisateurs contenant ce pseudo 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpseudo\fP - pseudo recherché 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+vector de pointeurs vers les utilisateurs trouvés 
+.RE
+.PP
+
+.SS "std::vector< \fBProduit\fP * > GestionBdd::ventesEnCours ()"
+
+.PP
+rtourne les ventes en cours 
+.PP
+\fBReturns:\fP
+.RS 4
+un vector contenant des pointeurs vers les produits en vente 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for EMarche from the source code\&.

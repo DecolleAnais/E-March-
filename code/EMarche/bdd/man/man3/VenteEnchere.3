@@ -1,0 +1,114 @@
+.TH "VenteEnchere" 3 "Thu Dec 17 2015" "EMarche" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+VenteEnchere \- 
+.PP
+Cette classe gère une vente aux enchères\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <VenteEnchere\&.h>\fP
+.PP
+Inherits \fBEtatVente\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVenteEnchere\fP (bool b)"
+.br
+.RI "\fIConstructeur de la classe \fBVenteEnchere\fP\&. \fP"
+.ti -1c
+.RI "float \fBgetPrixActuel\fP ()"
+.br
+.RI "\fIRetourne le prix actuel de la vente\&. \fP"
+.ti -1c
+.RI "std::string \fBgetDateLimite\fP ()"
+.br
+.RI "\fIRetourne la date limite de l'enchère\&. \fP"
+.ti -1c
+.RI "void \fBsetPrixActuel\fP (float prix)"
+.br
+.RI "\fICette fonction fixe le prix actuel\&. \fP"
+.ti -1c
+.RI "void \fBsetDateLimite\fP (struct tm date)"
+.br
+.RI "\fICette fonction fixe la date limite\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Cette classe gère une vente aux enchères\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "VenteEnchere::VenteEnchere (boolb)"
+
+.PP
+Constructeur de la classe \fBVenteEnchere\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIb\fP - Booléen qui donne le type de la vente 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string VenteEnchere::getDateLimite ()\fC [virtual]\fP"
+
+.PP
+Retourne la date limite de l'enchère\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Un string contenant la date limite de l'enchère 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBEtatVente\fP\&.
+.SS "float VenteEnchere::getPrixActuel ()\fC [virtual]\fP"
+
+.PP
+Retourne le prix actuel de la vente\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Un float représentant le prix actuel 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBEtatVente\fP\&.
+.SS "void VenteEnchere::setDateLimite (struct tmdate)\fC [virtual]\fP"
+
+.PP
+Cette fonction fixe la date limite\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdate\fP - Nouvelle date 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBEtatVente\fP\&.
+.SS "void VenteEnchere::setPrixActuel (floatprix)\fC [virtual]\fP"
+
+.PP
+Cette fonction fixe le prix actuel\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprix\fP - Nouveau prix 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBEtatVente\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for EMarche from the source code\&.
