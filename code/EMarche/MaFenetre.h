@@ -142,6 +142,14 @@ public slots:
     //!
     void acheter();
     //!
+    //! \brief annulerVente - Annule la vente d'un produit
+    //!
+    void annulerVente(QString ref);
+    //!
+    //! \brief annulerAchat - Annule l'achat d'un produit
+    //!
+    void annulerAchat(QString ref);
+    //!
     //! \brief enchere - Monte les enchères si on est connecté
     //!
     void enchere();
@@ -213,6 +221,14 @@ private:
     //!
     QPushButton *boutonAchats;
     //!
+    //! \brief boutonAnnulerAchat
+    //!
+    QPushButton *boutonAnnulerAchat;
+    //!
+    //! \brief boutonAnnulerVente
+    //!
+    QPushButton *boutonAnnulerVente;
+    //!
     //! \brief boutonCompte - Affichage du profil de l'utilisateur connecté
     //!
     QPushButton *boutonCompte;
@@ -280,6 +296,14 @@ private:
     //! \brief mapperProduit
     //!
     QSignalMapper mapperProduit;
+    //!
+    //! \brief mapperAnnulerVente
+    //!
+    QSignalMapper mapperAnnulerVente;
+    //!
+    //! \brief mapperAnnulerAchat
+    //!
+    QSignalMapper mapperAnnulerAchat;
     //!
     //! \brief mapperVoirProfilAutreUtilisateur
     //!

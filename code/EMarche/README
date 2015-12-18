@@ -8,12 +8,11 @@ en utilisant valgrind ./EMarche pour vérifier
 -CB autant ne pas le faire, parce qu'on ne pourra pas commencer à découper notre code en laissant la doc finie sinon
 
 Profil : 
--les ventes et les achats de l'utilisateur ne sont toujours pas affichés, donc pas de possibilité d'annuler 
-une vente pour le vendeur (qui au passage est notre 1ére itération) et pas de possibilité d'annuler l'achat non plus
--Mise à jour du profil après modification -> passer par la fonction update() en bas de MaFenetre.cpp
+-Mise à jour du profil après modification -> passer par la fonction update() en bas de MaFenetre.cpp (MARCHE PAS)
 -Pouvoir voir un autre profil sans être connecté : statistiques de vente visibles (pas pour les statistiques d'achats)
 
 -Enchères, choix de la quantité
 
 - découpages du projet en itérations à la fin des modifs
 
+annulation de la vente en cours plante je dois juste trouver pourquoi
