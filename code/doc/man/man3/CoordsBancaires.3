@@ -1,0 +1,97 @@
+.TH "CoordsBancaires" 3 "Vendredi 18 Décembre 2015" "Version 6" "EMarche" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CoordsBancaires \- 
+.PP
+Cette classe contient les données bancaires d'un utilisateur\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CoordsBancaires\&.h>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBCoordsBancaires\fP ()"
+.br
+.RI "\fIConstructeur de coordonnées bancaires\&. \fP"
+.in -1c
+.SS "Fonctions membres protégées"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~CoordsBancaires\fP ()"
+.br
+.in -1c
+.SS "Attributs protégés"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBtype\fP"
+.br
+.RI "\fIType de carte bancaire\&. \fP"
+.ti -1c
+.RI "int \fBnumero\fP"
+.br
+.RI "\fINuméro de carte bancaire\&. \fP"
+.ti -1c
+.RI "int \fBcryptogramme\fP"
+.br
+.RI "\fICryptogramme de la carte\&. \fP"
+.ti -1c
+.RI "struct tm \fBdateExpiration\fP"
+.br
+.RI "\fIDate d'expiration de la carte\&. \fP"
+.ti -1c
+.RI "std::string \fBadresseFacturation\fP"
+.br
+.RI "\fIAdresse de facturation\&. \fP"
+.ti -1c
+.RI "std::string \fBadresseLivraison\fP"
+.br
+.RI "\fIAdresse de livraison\&. \fP"
+.in -1c
+.SH "Description détaillée"
+.PP 
+Cette classe contient les données bancaires d'un utilisateur\&. 
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "CoordsBancaires::CoordsBancaires ()"
+
+.PP
+Constructeur de coordonnées bancaires\&. 
+.SS "virtual CoordsBancaires::~CoordsBancaires ()\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.SH "Documentation des données membres"
+.PP 
+.SS "std::string CoordsBancaires::adresseFacturation\fC [protected]\fP"
+
+.PP
+Adresse de facturation\&. 
+.SS "std::string CoordsBancaires::adresseLivraison\fC [protected]\fP"
+
+.PP
+Adresse de livraison\&. 
+.SS "int CoordsBancaires::cryptogramme\fC [protected]\fP"
+
+.PP
+Cryptogramme de la carte\&. 
+.SS "struct tm CoordsBancaires::dateExpiration\fC [protected]\fP"
+
+.PP
+Date d'expiration de la carte\&. 
+.SS "int CoordsBancaires::numero\fC [protected]\fP"
+
+.PP
+Numéro de carte bancaire\&. 
+.SS "std::string CoordsBancaires::type\fC [protected]\fP"
+
+.PP
+Type de carte bancaire\&. 
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour EMarche à partir du code source\&.
