@@ -10,6 +10,7 @@
 #include "EtatVente.h"
 #include "VenteEnchere.h"
 #include "VenteNormale.h"
+#include "Avis.h"
 
 /*!
 * \class Produit
@@ -17,7 +18,7 @@
 */
 class Produit {
 
-private:
+protected:
     //! \brief Nom du vendeur
     std::string vendeur;
     //! \brief Catégorie
@@ -38,6 +39,8 @@ private:
     EtatVente *etatVente;
     //! \brief Mots-clés qui identifient le produit
     std::vector<std::string> tags;
+    //! \brief Avis donnés sur le produit
+    std::vector<Avis> lesAvis;
 
 public:
 

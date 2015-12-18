@@ -69,19 +69,6 @@ vector<Avis> Utilisateur::getLesAvis() {
     return lesAvis;
 }
 
-
-void Utilisateur::getLesAvis(unsigned int deb, unsigned int nb) {
-    vector<Avis>::iterator it;
-    if(deb < lesAvis.size()) {
-        if(deb + nb > lesAvis.size()) {
-            nb = lesAvis.size() - deb;
-        }
-        for(it = lesAvis.begin()+deb;it != lesAvis.begin()+deb+nb;it++) {
-            (*it).affiche(cout);
-        }
-    }
-}
-
 /* Fonctions set */
 void Utilisateur::setPseudo(string p) {
     pseudo = p;

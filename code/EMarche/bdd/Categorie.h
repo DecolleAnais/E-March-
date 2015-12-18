@@ -8,7 +8,7 @@
 //!
 class Categorie {
 
-private:
+protected:
 
     std::string nom;
 

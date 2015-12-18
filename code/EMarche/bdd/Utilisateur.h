@@ -13,7 +13,7 @@
 //!
 class Utilisateur {
 
-private:
+protected:
     std::string pseudo;
     std::string mdp;
     std::string nom;
@@ -170,8 +170,13 @@ public:
     //! \return un vector contenant les pointeurs vers les ventes de l'utilisateur
     //!
     std::vector<Produit*> getLesVentes();
+
+    //!
+    //! \fn std::vector<Avis> getLesAvis()
+    //! \brief getLesAvis
+    //! \return les avis sur l'utilisateur
+    //!
     std::vector<Avis> getLesAvis();
-    void getLesAvis(unsigned int deb, unsigned int nb);
 
     /* Fonctions set */
     //!

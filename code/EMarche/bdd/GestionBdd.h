@@ -15,7 +15,7 @@
 class GestionBdd
 {
 
-private:
+protected:
     LesUtilisateurs utilisateurs;
     LesProduits produits;
     std::vector<Vue*> vues;

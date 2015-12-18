@@ -1,0 +1,49 @@
+title Diagramme de classe EMarche
+
+package EMarche {
+class Vue {
+
+}
+
+class MaFenetre {
+# int largeur
+# int hauteur
+}
+
+package EMarche.bdd{
+
+
+class Produit {
+
+}
+
+class GestionBdd {
+
+}
+
+GestionBdd --"*" Vue
+
+}
+MaFenetre -left-"3" QHBoxLayout
+MaFenetre -left-"1" QVBoxLayout
+MaFenetre -left-"1" QComboBox
+MaFenetre -left-"1" QLineEdit
+MaFenetre -right-"11" QPushButton
+MaFenetre -right-"3" QLabel
+MaFenetre -right-"1" QScrollArea
+MaFenetre --"1" DialogModificationProfil
+MaFenetre --"1" DialogAjouterVente
+MaFenetre --"1" DialogConnexion
+MaFenetre --"1" GestionBdd
+MaFenetre --"1" Produit
+MaFenetre -right-"6" QSignalMapper
+MaFenetre --> QWidget
+MaFenetre --> Vue
+DialogModificationProfil --"1" GestionBdd
+DialogAjouterVente --"1" GestionBdd
+DialogConnexion --"1" GestionBdd
+DialogModificationProfil --> QDialog
+DialogAjouterVente --> QDialog
+DialogConnexion --> QDialog
+
+}

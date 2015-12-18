@@ -7,7 +7,7 @@
  */
 class EtatConnexion {
 
-private :
+protected :
     //! Booléen qui indique si un utilisateur est connecté ou non
     bool estConnecte;
 

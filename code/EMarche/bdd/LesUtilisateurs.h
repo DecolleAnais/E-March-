@@ -9,7 +9,7 @@
 //!
 class LesUtilisateurs {
 
-private:
+protected:
    std::vector<Utilisateur*> lesUtilisateurs;
    int nbUtilisateurs;
 

@@ -1,0 +1,140 @@
+title Diagramme de classe EMarche.bdd
+
+package EMarche {
+class Vue {
+
+}
+
+class MaFenetre {
+# int largeur
+# int hauteur
+}
+
+package EMarche.bdd{
+
+class Utilisateur {
+# std::string pseudo
+# std::string motDePasse
+# std::string nom
+# std::string prenom
+# struct tm dateNaissance
+# std::string email
+# std::string adresse
+# std::string ville
+# int codePostal
+# unsigned int nbVentes
+# unsigned int nbAchats
+# unsigned int nbNotes
+# unsigned int note
+}
+
+abstract class EtatConnexion {
+# bool estConnecte
+}
+
+class EtatConnecte {
+
+}
+
+class EtatDeconnecte {
+
+}
+
+class CoordsBancaires {
+# std::string typeCarte
+# int numCarte
+# int cryptogramme
+# struct tm dateExpiration
+# std::string adresseFacturation
+# std::string adresseLivraison
+}
+
+class Categorie {
+# std::string nom
+}
+
+class Produit {
+# std::string vendeur
+# std::string nom
+# std::string reference
+# float prixUnitaire
+# unsigned int quantite
+# struct tm dateDepot
+# struct tm dateAchatVente
+# std::vector<std::string> tags
+}
+
+abstract class EtatVente {
+# bool typeDeVente
+# float prixActuel
+# struct tm dateLimite
+}
+
+class VenteEnchere {
+
+}
+
+class VenteNormale {
+
+}
+
+class Avis {
+# unsigned int note
+# std::string commentaire
+# std::string auteur
+}
+
+class LesUtilisateurs {
+# int nbUtilisateurs
+}
+
+class LesProduits {
+# int nbElems
+}
+
+class GestionBdd {
+# std::string ref
+}
+
+GestionBdd --"1" LesUtilisateurs
+GestionBdd --"1" LesProduits
+GestionBdd --"1" Utilisateur
+GestionBdd --"*" Vue
+Utilisateur  "*"--"*"  Produit
+Categorie "1"--"*" Produit
+Utilisateur --"1" CoordsBancaires
+Utilisateur "1"-right-"*" Avis
+Produit "1"--"*" Avis
+VenteEnchere --> EtatVente
+VenteNormale --> EtatVente
+EtatVente "*"-- Produit
+EtatConnecte --> EtatConnexion
+EtatDeconnecte --> EtatConnexion
+EtatConnexion "*"-- Utilisateur
+LesProduits --"*" Produit
+LesUtilisateurs --"*" Utilisateur
+
+}
+MaFenetre --"3" QHBoxLayout
+MaFenetre --"1" QVBoxLayout
+MaFenetre --"1" QComboBox
+MaFenetre --"1" QLineEdit
+MaFenetre --"11" QPushButton
+MaFenetre --"3" QLabel
+MaFenetre --"1" QScrollArea
+MaFenetre --"1" DialogModificationProfil
+MaFenetre --"1" DialogAjouterVente
+MaFenetre --"1" DialogConnexion
+MaFenetre --"1" GestionBdd
+MaFenetre --"1" Produit
+MaFenetre --"6" QSignalMapper
+MaFenetre --> QWidget
+MaFenetre --> Vue
+DialogModificationProfil --"1" GestionBdd
+DialogAjouterVente --"1" GestionBdd
+DialogConnexion --"1" GestionBdd
+DialogModificationProfil --> QDialog
+DialogAjouterVente --> QDialog
+DialogConnexion --> QDialog
+
+}

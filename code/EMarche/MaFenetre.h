@@ -167,7 +167,7 @@ signals:
     //!
     void signalRechercheProduits(std::vector<Produit*> v);
 
-private:
+protected:
     //!
     //! \brief haut - Contient la barre de recherche, l'accueil, l'ajout de vente, mon profil, connexion
     //!

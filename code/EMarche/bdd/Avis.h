@@ -9,7 +9,7 @@
 //!
 class Avis {
 
-private:
+protected:
     unsigned int note;
     std::string commentaire;
     std::string auteur;

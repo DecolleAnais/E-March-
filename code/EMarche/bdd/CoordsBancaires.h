@@ -15,7 +15,7 @@ public:
      */
     CoordsBancaires();
 
-private:
+protected:
     //! \brief Type de carte bancaire
     std::string type;
     //! \brief Numéro de carte bancaire
