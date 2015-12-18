@@ -24,6 +24,9 @@ public :
      */
     bool connexionEnCours();
 
+    /* destructeur */
+    virtual ~EtatConnexion() {}
+
 };
 
 #endif

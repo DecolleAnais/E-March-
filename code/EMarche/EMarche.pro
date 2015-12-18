@@ -20,7 +20,8 @@ SOURCES += \
     bdd/GestionBdd.cpp \
     Vue.cpp \
     DialogAjouterVente.cpp \
-    bdd/CoordsBancaires.cpp
+    bdd/CoordsBancaires.cpp \
+    DialogAcheter.cpp
 
 HEADERS += \
     MaFenetre.h \
@@ -42,10 +43,12 @@ HEADERS += \
     bdd/GestionBdd.h \
     Vue.h \
     DialogAjouterVente.h \
-    bdd/CoordsBancaires.h
+    bdd/CoordsBancaires.h \
+    DialogAcheter.h
 
 FORMS += \
     DialogConnexion.ui \
     DialogInscription.ui \
     DialogAjouterVente.ui \
-    DialogModificationProfil.ui
+    DialogModificationProfil.ui \
+    DialogAcheter.ui

@@ -21,6 +21,7 @@
 #include "DialogInscription.h"
 #include "DialogAjouterVente.h"
 #include "DialogModificationProfil.h"
+#include "DialogAcheter.h"
 #include "Vue.h"
 #include "bdd/GestionBdd.h"
 #include "bdd/LesUtilisateurs.h"
@@ -116,19 +117,9 @@ public slots:
     //!
     void ventes();
     //!
-    //! \brief ventesAutreUtilisateur - Affiche les ventes d'un utilisateur
-    //! \param str - Pseudo de l'utilisateur
-    //!
-    void ventesAutreUtilisateur(QString str);
-    //!
     //! \brief achats - Affiche les achats de l'utilisateur connecté
     //!
     void achats();
-    //!
-    //! \brief achatsAutreUtilisateur - Affiche les achats d'un utilisateur
-    //! \param str
-    //!
-    void achatsAutreUtilisateur(QString str);
     //!
     //! \brief ajouterVente - Ouvre la boîte de dialogue permettant d'ajouter une vente si on est connecté
     //!
@@ -150,6 +141,14 @@ public slots:
     //! \brief acheter - Achète le produit si on est connecté
     //!
     void acheter();
+    //!
+    //! \brief annulerVente - Annule la vente d'un produit
+    //!
+    void annulerVente(QString ref);
+    //!
+    //! \brief annulerAchat - Annule l'achat d'un produit
+    //!
+    void annulerAchat(QString ref);
     //!
     //! \brief enchere - Monte les enchères si on est connecté
     //!
@@ -222,6 +221,14 @@ protected:
     //!
     QPushButton *boutonAchats;
     //!
+    //! \brief boutonAnnulerAchat
+    //!
+    QPushButton *boutonAnnulerAchat;
+    //!
+    //! \brief boutonAnnulerVente
+    //!
+    QPushButton *boutonAnnulerVente;
+    //!
     //! \brief boutonCompte - Affichage du profil de l'utilisateur connecté
     //!
     QPushButton *boutonCompte;
@@ -266,6 +273,10 @@ protected:
     //!
     DialogConnexion *connexions;
     //!
+    //! \brief achats - Boîte de dialogue d'achats
+    //!
+    DialogAcheter *acheterQuantite;
+    //!
     //! \brief largeur - largeur de la fenêtre
     //!
     int largeur;
@@ -286,6 +297,14 @@ protected:
     //!
     QSignalMapper mapperProduit;
     //!
+    //! \brief mapperAnnulerVente
+    //!
+    QSignalMapper mapperAnnulerVente;
+    //!
+    //! \brief mapperAnnulerAchat
+    //!
+    QSignalMapper mapperAnnulerAchat;
+    //!
     //! \brief mapperVoirProfilAutreUtilisateur
     //!
     QSignalMapper mapperVoirProfilAutreUtilisateur;
@@ -305,6 +324,7 @@ protected:
     //! \brief mapperAchats
     //!
     QSignalMapper mapperAchats;
+
 };
 
 #endif // MAFENETRE_H

@@ -271,7 +271,7 @@ public:
     //! \brief addAchat
     //! \param p - Pointeur vers le nouveau produit à ajouter aux achats
     //!
-    void addAchat(Produit* p);
+    void addAchat(Produit* p, int quantite);
 
     //!
     //! \fn void addVente(Produit* p)
@@ -279,6 +279,20 @@ public:
     //! \param p - Pointeur vers le nouveau produit à ajouter aux ventes
     //!
     void addVente(Produit* p);
+
+    //!
+    //! \fn void deleteAchat(Produit* p)
+    //! \brief deleteAchat
+    //! \param p - Pointeur vers le nouveau produit à supprimer des achats
+    //!
+    void deleteAchat(Produit * p);
+
+    //!
+    //! \fn void deleteVente(Produit* p)
+    //! \brief deleteVente
+    //! \param p - Pointeur vers le nouveau produit à supprimer des ventes
+    //!
+    void deleteVente(Produit* p);
 
     //!
     //! \fn void addAvis(Avis a)

@@ -31,6 +31,9 @@ public:
     //!
     Avis(std::string author, unsigned int notation, std::string com) : note(notation), commentaire(com), auteur(author) {}
 
+    /* destructeur */
+    virtual ~Avis() {}
+
     /* Fonctions get */
     //!
     //! \brief getNote

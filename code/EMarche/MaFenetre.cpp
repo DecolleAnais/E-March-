@@ -290,6 +290,12 @@ void MaFenetre::ventes() {
                 grille->addWidget(new QLabel("<b>Prix unitaire : </b>" + prix + " euros"), 0, 4);
                 grille->addWidget(new QLabel("<b>Type de vente : </b>Vente normale"), 2, 4);
             }
+            /* création d'un bouton pour annuler une vente */
+            boutonAnnulerVente = new QPushButton("Annuler la vente");
+            QObject::connect(boutonAnnulerVente, SIGNAL(clicked()), &mapperAnnulerVente, SLOT( map() ));
+            mapperAnnulerVente.setMapping(boutonAnnulerVente, ref);
+            connect(&mapperAnnulerVente, SIGNAL( mapped(QString) ), this, SLOT(annulerVente(QString)));
+            grille->addWidget(boutonAnnulerVente, 3, 0);
 
             box2->setLayout(grille);
             centre->addWidget(box2);
@@ -356,12 +362,32 @@ void MaFenetre::achats() {
                 grille->addWidget(new QLabel("<b>Prix unitaire : </b>" + prix + " euros"), 0, 4);
                 grille->addWidget(new QLabel("<b>Type de vente : </b>Vente normale"), 2, 4);
             }
+            /* création d'un bouton pour annuler un achat */
+            boutonAnnulerAchat = new QPushButton("Annuler l'achat");
+            QObject::connect(boutonAnnulerAchat, SIGNAL(clicked()), &mapperAnnulerAchat, SLOT( map() ));
+            mapperAnnulerAchat.setMapping(boutonAnnulerAchat, ref);
+            connect(&mapperAnnulerAchat, SIGNAL( mapped(QString) ), this, SLOT(annulerAchat(QString)));
+            grille->addWidget(boutonAnnulerAchat, 3, 0);
 
             box2->setLayout(grille);
             centre->addWidget(box2);
 
         }
     }
+}
+
+void MaFenetre::annulerVente(QString ref) {
+    Produit * p = gestionBdd->rechercherProduit(ref.toStdString());
+    gestionBdd->annulerVente(p);
+    QMessageBox::information(this, "Annuler une vente", "Vente annulée !");
+    centre->update();
+}
+
+void MaFenetre::annulerAchat(QString ref) {
+    Produit * p = gestionBdd->rechercherProduit(ref.toStdString());
+    gestionBdd->annulerAchat(p);
+    QMessageBox::information(this, "Annuler un achat", "Achat annulé !");
+    centre->update();
 }
 
 /* ajouter une vente */
@@ -424,7 +450,7 @@ void MaFenetre::profilAutreUtilisateur(QString pseudonyme) {
     if(!gestionBdd->isConnecte()) {
         QMessageBox::warning(this, "Consulter un profil", "Attention, vous devez être connecté pour consulter un profil !");
     } else {
-        titreSection->setText("Profil");
+        titreSection->setText("Son profil");
         clearLayout(centre);
         QHBoxLayout *box = new QHBoxLayout;
         QGroupBox *boxTxt = new QGroupBox;
@@ -443,18 +469,6 @@ void MaFenetre::profilAutreUtilisateur(QString pseudonyme) {
         mapperStatistiques.setMapping(boutonStatistiques, pseudonyme);
         connect( &mapperStatistiques, SIGNAL( mapped(QString) ), this, SLOT( statistiquesAutreUtilisateur(QString) ) );
         box->addWidget(boutonStatistiques);
-
-        boutonVentes = new QPushButton("Ventes");
-        QObject::connect(boutonVentes, SIGNAL(clicked()), &mapperVentes, SLOT( map() ));
-        mapperVentes.setMapping(boutonVentes, pseudonyme);
-        connect( &mapperVentes, SIGNAL( mapped(QString) ), this, SLOT( ventesAutreUtilisateur(QString) ) );
-        box->addWidget(boutonVentes);
-
-        boutonAchats = new QPushButton("Achats");
-        QObject::connect(boutonAchats, SIGNAL(clicked()), &mapperAchats, SLOT( map() ));
-        mapperAchats.setMapping(boutonAchats, pseudonyme);
-        connect( &mapperAchats, SIGNAL( mapped(QString) ), this, SLOT( achatsAutreUtilisateur(QString) ) );
-        box->addWidget(boutonAchats);
 
         QGridLayout *grille = new QGridLayout();
         QString pseudo = QString::fromStdString(gestionBdd->rechercherUtilisateur(pseudonyme.toStdString())->getPseudo());
@@ -480,7 +494,7 @@ void MaFenetre::statistiquesAutreUtilisateur(QString pseudonyme) {
     if(!gestionBdd->isConnecte()) {
         QMessageBox::warning(this, "Consulter un profil", "Attention, vous devez être connecté pour consulter un profil !");
     } else {
-        titreSection->setText("Mes statistiques");
+        titreSection->setText("Ses statistiques");
         clearLayout(centre);
         QHBoxLayout *box = new QHBoxLayout;
         QGroupBox *boxTxt = new QGroupBox;
@@ -497,18 +511,6 @@ void MaFenetre::statistiquesAutreUtilisateur(QString pseudonyme) {
         mapperStatistiques.setMapping(boutonStatistiques, pseudonyme);
         connect( &mapperStatistiques, SIGNAL( mapped(QString) ), this, SLOT( statistiquesAutreUtilisateur(QString) ) );
         box->addWidget(boutonStatistiques);
-
-        boutonVentes = new QPushButton("Ventes");
-        QObject::connect(boutonVentes, SIGNAL(clicked()), &mapperVentes, SLOT( map() ));
-        mapperVentes.setMapping(boutonVentes, pseudonyme);
-        connect( &mapperVentes, SIGNAL( mapped(QString) ), this, SLOT( ventesAutreUtilisateur(QString) ) );
-        box->addWidget(boutonVentes);
-
-        boutonAchats = new QPushButton("Achats");
-        QObject::connect(boutonAchats, SIGNAL(clicked()), &mapperAchats, SLOT( map() ));
-        mapperAchats.setMapping(boutonAchats, pseudonyme);
-        connect( &mapperAchats, SIGNAL( mapped(QString) ), this, SLOT( achatsAutreUtilisateur(QString) ) );
-        box->addWidget(boutonAchats);
 
         QGridLayout *grille = new QGridLayout();
         string ventes = to_string(gestionBdd->rechercherUtilisateur(pseudonyme.toStdString())->getNbVentes());
@@ -543,80 +545,6 @@ void MaFenetre::statistiquesAutreUtilisateur(QString pseudonyme) {
 
         centre->addLayout(box);
         centre->addWidget(boxTxt);
-    }
-}
-
-/* voir les ventes d'un pseudo */
-void MaFenetre::ventesAutreUtilisateur(QString pseudonyme) {
-    if(!gestionBdd->isConnecte()) {
-        QMessageBox::warning(this, "Consulter un profil", "Attention, vous devez être connecté pour consulter un profil !");
-    } else {
-        titreSection->setText("Mes ventes");
-        clearLayout(centre);
-        QHBoxLayout *box = new QHBoxLayout;
-        box->setAlignment(Qt::AlignLeft);
-        boutonProfil = new QPushButton("Profil");
-        QObject::connect(boutonProfil, SIGNAL(clicked()), &mapperProfil, SLOT( map() ));
-        mapperProfil.setMapping(boutonProfil, pseudonyme);
-        connect( &mapperProfil, SIGNAL( mapped(QString) ), this, SLOT( profilAutreUtilisateur(QString) ) );
-        box->addWidget(boutonProfil);
-
-        boutonStatistiques = new QPushButton("Statistiques");
-        QObject::connect(boutonStatistiques, SIGNAL(clicked()), &mapperStatistiques, SLOT( map() ));
-        mapperStatistiques.setMapping(boutonStatistiques, pseudonyme);
-        connect( &mapperStatistiques, SIGNAL( mapped(QString) ), this, SLOT( statistiquesAutreUtilisateur(QString) ) );
-        box->addWidget(boutonStatistiques);
-
-        boutonVentes = new QPushButton("Ventes");
-        QObject::connect(boutonVentes, SIGNAL(clicked()), &mapperVentes, SLOT( map() ));
-        mapperVentes.setMapping(boutonVentes, pseudonyme);
-        connect( &mapperVentes, SIGNAL( mapped(QString) ), this, SLOT( ventesAutreUtilisateur(QString) ) );
-        box->addWidget(boutonVentes);
-
-        boutonAchats = new QPushButton("Achats");
-        QObject::connect(boutonAchats, SIGNAL(clicked()), &mapperAchats, SLOT( map() ));
-        mapperAchats.setMapping(boutonAchats, pseudonyme);
-        connect( &mapperAchats, SIGNAL( mapped(QString) ), this, SLOT( achatsAutreUtilisateur(QString) ) );
-        box->addWidget(boutonAchats);
-
-        centre->addLayout(box);
-    }
-}
-
-/* voir les achats selon un pseudo */
-void MaFenetre::achatsAutreUtilisateur(QString pseudonyme) {
-    if(!gestionBdd->isConnecte()) {
-        QMessageBox::warning(this, "Consulter un profil", "Attention, vous devez être connecté pour consulter un profil !");
-    } else {
-        titreSection->setText("Mes achats");
-        clearLayout(centre);
-        QHBoxLayout *box = new QHBoxLayout;
-        box->setAlignment(Qt::AlignLeft);
-        boutonProfil = new QPushButton("Profil");
-        QObject::connect(boutonProfil, SIGNAL(clicked()), &mapperProfil, SLOT( map() ));
-        mapperProfil.setMapping(boutonProfil, pseudonyme);
-        connect( &mapperProfil, SIGNAL( mapped(QString) ), this, SLOT( profilAutreUtilisateur(QString) ) );
-        box->addWidget(boutonProfil);
-
-        boutonStatistiques = new QPushButton("Statistiques");
-        QObject::connect(boutonStatistiques, SIGNAL(clicked()), &mapperStatistiques, SLOT( map() ));
-        mapperStatistiques.setMapping(boutonStatistiques, pseudonyme);
-        connect( &mapperStatistiques, SIGNAL( mapped(QString) ), this, SLOT( statistiquesAutreUtilisateur(QString) ) );
-        box->addWidget(boutonStatistiques);
-
-        boutonVentes = new QPushButton("Ventes");
-        QObject::connect(boutonVentes, SIGNAL(clicked()), &mapperVentes, SLOT( map() ));
-        mapperVentes.setMapping(boutonVentes, pseudonyme);
-        connect( &mapperVentes, SIGNAL( mapped(QString) ), this, SLOT( ventesAutreUtilisateur(QString) ) );
-        box->addWidget(boutonVentes);
-
-        boutonAchats = new QPushButton("Achats");
-        QObject::connect(boutonAchats, SIGNAL(clicked()), &mapperAchats, SLOT( map() ));
-        mapperAchats.setMapping(boutonAchats, pseudonyme);
-        connect( &mapperAchats, SIGNAL( mapped(QString) ), this, SLOT( achatsAutreUtilisateur(QString) ) );
-        box->addWidget(boutonAchats);
-
-        centre->addLayout(box);
     }
 }
 
@@ -716,25 +644,23 @@ void MaFenetre::voirProduit(QString ref) {
     boxDeux->addWidget(retour);
 
     QPushButton *acheter;
+    gestionBdd->setProduitCourant(produitCourant);
     if(produitCourant->getEtatVente() == "Vente aux enchères") {
         acheter = new QPushButton("Monter les enchères");
         boxDeux->addWidget(acheter);
         QObject::connect(acheter, SIGNAL(clicked()), this, SLOT(enchere()));
     } else {
         acheter = new QPushButton("Acheter");
-        boxDeux->addWidget(acheter);
         QObject::connect(acheter, SIGNAL(clicked()), this, SLOT(acheter()));
+        boxDeux->addWidget(acheter);
     }
-    centre->addLayout(boxDeux);
 
+    centre->addLayout(boxDeux);
 }
 
 void MaFenetre::acheter(){
     if(gestionBdd->isConnecte()) {
-
-        gestionBdd->acheterProduit(produitCourant);
-        QMessageBox::information(this, "Acheter un produit", "Produit acheté !");
-        accueil();
+        acheterQuantite = new DialogAcheter(gestionBdd);
     } else {
         QMessageBox::warning(this, "Acheter un produit", "Attention, vous devez être connecté pour acheter un produit !");
     }

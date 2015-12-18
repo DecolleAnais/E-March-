@@ -21,6 +21,8 @@ protected:
     std::vector<Vue*> vues;
     Utilisateur *utilisateurConnecte;
     std::string ref;
+    int quantite;
+    Produit *produitCourant;
 
 public:
     //!
@@ -68,6 +70,34 @@ public:
     //! \brief provoque la fonction update dans toutes les vues
     //!
     void update();
+
+    //!
+    //! \fn void setQuantite(int qte)
+    //! \brief Cette fonction fixe la quantité du produit que l'on veut acheter
+    //! \param qte
+    //!
+    void setQuantite(int qte);
+
+    //!
+    //! \fn int getQuantite()
+    //! \brief Cette fonction retourne la quantité du produit que l'on veut acheter
+    //! \return Un entier
+    //!
+    int getQuantite();
+
+    //!
+    //! \fn Produit* getProduitCourant()
+    //! \brief Cette fonction retourne le produit courant
+    //! \return Le produit courant
+    //!
+    Produit* getProduitCourant();
+
+    //!
+    //! \fn void setProduitCourant(Produit *p)
+    //! \brief Cette fonction fixe le produit courant lorsque l'on consulte la fiche d'un produit
+    //! \param p - Produit consulté
+    //!
+    void setProduitCourant(Produit *p);
 
     /* connexion */
     //!
@@ -137,8 +167,23 @@ public:
     //! \fn void acheterProduit(Produit* p)
     //! \brief acheterProduit - Acheter un produit, avec suppression du produit si la quantité arrive à 0
     //! \param p - Pointeur vers le produit à acheter
+    //! \param quantite - Quantité de produit acheté
     //!
-    void acheterProduit(Produit* p);
+    void acheterProduit(Produit* p, int quantite);
+
+    //!
+    //! \fn void annulerAchat(Produit* p)
+    //! \brief annulerAchat - Annuler l'achat d'un produit
+    //! \param p - Pointeur vers l'achat à annuler
+    //!
+    void annulerAchat(Produit * p);
+
+    //!
+    //! \fn void annulerVente(Produit* p)
+    //! \brief annulerVente - Annuler la mise en vente d'un produit
+    //! \param p - Pointeur vers la vente à annuler
+    //!
+    void annulerVente(Produit * p);
 
     /* recherche utilisateur */
     //!

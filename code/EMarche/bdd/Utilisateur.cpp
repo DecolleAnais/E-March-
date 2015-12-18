@@ -122,8 +122,10 @@ void Utilisateur::setNote(unsigned int n) {
 }
 
 /* Autres fonctions */
-void Utilisateur::addAchat(Produit* p) {
-    lesAchats.push_back(p);
+void Utilisateur::addAchat(Produit* p, int quantite) {
+    Produit *q = new Produit(*p);
+    q->setQuantite(quantite);
+    lesAchats.push_back(q);
     nbAchats++;
 }
 
@@ -137,4 +139,14 @@ void Utilisateur::addAvis(Avis a) {
     nbAvis++;
     nbNotes++;
     note = (a.getNote() + note) / nbNotes;
+}
+
+void Utilisateur::deleteAchat(Produit * p) {
+    lesAchats.erase(lesAchats.begin());
+    nbAchats--;
+}
+
+void Utilisateur::deleteVente(Produit* p) {
+    lesAchats.erase(lesAchats.begin());
+    nbVentes--;
 }
