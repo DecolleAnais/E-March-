@@ -1,0 +1,269 @@
+\hypertarget{class_les_produits}{\section{Référence de la classe Les\-Produits}
+\label{class_les_produits}\index{Les\-Produits@{Les\-Produits}}
+}
+
+
+Cette classe gère la liste des produits.  
+
+
+
+
+{\ttfamily \#include $<$Les\-Produits.\-h$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_les_produits_ab8737b898ee32a9c2dc1981a0e0de4d4}{Les\-Produits} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \hyperlink{class_les_produits}{Les\-Produits}. \end{DoxyCompactList}\item 
+\hyperlink{class_les_produits_afc38b647d42702bc895a14b42569d6fd}{$\sim$\-Les\-Produits} ()
+\item 
+std\-::vector$<$ \hyperlink{class_produit}{Produit} $\ast$ $>$ \hyperlink{class_les_produits_a0661c759a71e21ed568a9be3dc94a113}{get\-List\-Produits} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction retourne le liste des produits. \end{DoxyCompactList}\item 
+int \hyperlink{class_les_produits_a471eb88643711b1c31c9c7fa1f2e4457}{size} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction retourne la taille de la liste. \end{DoxyCompactList}\item 
+void \hyperlink{class_les_produits_a3ea4175a854859e98f357f843fe68813}{add\-Produit} (\hyperlink{class_produit}{Produit} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Cette fonction permet d'ajouter un produit à la lfin de la liste. \end{DoxyCompactList}\item 
+void \hyperlink{class_les_produits_a09ff9e0b52cb6a62228a7a7f6fc04a37}{supprimer\-Produit} (std\-::string ref)
+\begin{DoxyCompactList}\small\item\em Cette fonction permet de supprimer un produit selon sa référence. \end{DoxyCompactList}\item 
+void \hyperlink{class_les_produits_acb7607cf2d8e004ed0018db6b56ebc3f}{supprimer\-Produit} (\hyperlink{class_produit}{Produit} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Cette fonction permet de supprimer un produit. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{class_produit}{Produit} $\ast$ $>$ \hyperlink{class_les_produits_aae4aa0a260d282dd98a7f6beef1cebef}{get\-Produits\-Nom} (std\-::string chaine)
+\begin{DoxyCompactList}\small\item\em Cette fonction retourne une liste de produits dont le nom contient chaine. \end{DoxyCompactList}\item 
+\hyperlink{class_produit}{Produit} $\ast$ \hyperlink{class_les_produits_a4ed0454dafdbb5ee28424bdc0bbff1de}{get\-Produit} (std\-::string ref)
+\begin{DoxyCompactList}\small\item\em Retourne le produit dont la référence est passée en paramètre. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{class_produit}{Produit} $\ast$ $>$ \hyperlink{class_les_produits_aa3e835fe433b7c350c92c4f20e4162c0}{rechercher\-Tags} (std\-::string t)
+\begin{DoxyCompactList}\small\item\em Cette fonction retourne une liste de produits tagués par t. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{class_produit}{Produit} $\ast$ $>$ \hyperlink{class_les_produits_a86a0c66d67118ec32e9b34475dd42def}{rechercher\-Categorie} (std\-::string t)
+\begin{DoxyCompactList}\small\item\em Cette fonction retourne une liste de produits de la catégorie c. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{class_produit}{Produit} $\ast$ $>$ \hyperlink{class_les_produits_a6b48c5f164b34c4d1307cb897c62bbed}{rechercher\-Tags} (std\-::vector$<$ std\-::string $>$)
+\begin{DoxyCompactList}\small\item\em Cette fonction retourne une liste de produits tagués par plusieurs mots-\/clés. \end{DoxyCompactList}\item 
+void \hyperlink{class_les_produits_a38b67c16684b150fb1b933fa025c0a09}{tri\-Prix\-Croissant} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction tri les produits par prix croissant. \end{DoxyCompactList}\item 
+void \hyperlink{class_les_produits_ab34a7b3828242179821321f34e51a70f}{to\-String} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction permet d'afficher la liste des produits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Cette classe gère la liste des produits. 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{class_les_produits_ab8737b898ee32a9c2dc1981a0e0de4d4}{\index{Les\-Produits@{Les\-Produits}!Les\-Produits@{Les\-Produits}}
+\index{Les\-Produits@{Les\-Produits}!LesProduits@{Les\-Produits}}
+\subsubsection[{Les\-Produits}]{\setlength{\rightskip}{0pt plus 5cm}Les\-Produits\-::\-Les\-Produits (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_les_produits_ab8737b898ee32a9c2dc1981a0e0de4d4}
+
+
+Constructeur de la classe \hyperlink{class_les_produits}{Les\-Produits}. 
+
+\hypertarget{class_les_produits_afc38b647d42702bc895a14b42569d6fd}{\index{Les\-Produits@{Les\-Produits}!$\sim$\-Les\-Produits@{$\sim$\-Les\-Produits}}
+\index{$\sim$\-Les\-Produits@{$\sim$\-Les\-Produits}!LesProduits@{Les\-Produits}}
+\subsubsection[{$\sim$\-Les\-Produits}]{\setlength{\rightskip}{0pt plus 5cm}Les\-Produits\-::$\sim$\-Les\-Produits (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_les_produits_afc38b647d42702bc895a14b42569d6fd}
+Destructeur de la classe Les\-Produis 
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_les_produits_a3ea4175a854859e98f357f843fe68813}{\index{Les\-Produits@{Les\-Produits}!add\-Produit@{add\-Produit}}
+\index{add\-Produit@{add\-Produit}!LesProduits@{Les\-Produits}}
+\subsubsection[{add\-Produit}]{\setlength{\rightskip}{0pt plus 5cm}void Les\-Produits\-::add\-Produit (
+\begin{DoxyParamCaption}
+\item[{{\bf Produit} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}}\label{class_les_produits_a3ea4175a854859e98f357f843fe68813}
+
+
+Cette fonction permet d'ajouter un produit à la lfin de la liste. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & -\/ Nouveau produit à ajouter \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_les_produits_a0661c759a71e21ed568a9be3dc94a113}{\index{Les\-Produits@{Les\-Produits}!get\-List\-Produits@{get\-List\-Produits}}
+\index{get\-List\-Produits@{get\-List\-Produits}!LesProduits@{Les\-Produits}}
+\subsubsection[{get\-List\-Produits}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Produit} $\ast$ $>$ Les\-Produits\-::get\-List\-Produits (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_les_produits_a0661c759a71e21ed568a9be3dc94a113}
+
+
+Cette fonction retourne le liste des produits. 
+
+\begin{DoxyReturn}{Renvoie}
+Un vector contenant la liste des produits 
+\end{DoxyReturn}
+\hypertarget{class_les_produits_a4ed0454dafdbb5ee28424bdc0bbff1de}{\index{Les\-Produits@{Les\-Produits}!get\-Produit@{get\-Produit}}
+\index{get\-Produit@{get\-Produit}!LesProduits@{Les\-Produits}}
+\subsubsection[{get\-Produit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Produit} $\ast$ Les\-Produits\-::get\-Produit (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{ref}
+\end{DoxyParamCaption}
+)}}\label{class_les_produits_a4ed0454dafdbb5ee28424bdc0bbff1de}
+
+
+Retourne le produit dont la référence est passée en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ref} & -\/ Référence du produit à rechercher \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un produit 
+\end{DoxyReturn}
+\hypertarget{class_les_produits_aae4aa0a260d282dd98a7f6beef1cebef}{\index{Les\-Produits@{Les\-Produits}!get\-Produits\-Nom@{get\-Produits\-Nom}}
+\index{get\-Produits\-Nom@{get\-Produits\-Nom}!LesProduits@{Les\-Produits}}
+\subsubsection[{get\-Produits\-Nom}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Produit} $\ast$ $>$ Les\-Produits\-::get\-Produits\-Nom (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{chaine}
+\end{DoxyParamCaption}
+)}}\label{class_les_produits_aae4aa0a260d282dd98a7f6beef1cebef}
+
+
+Cette fonction retourne une liste de produits dont le nom contient chaine. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em chaine} & -\/ Nom du produit à rechercher \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un vector de produits 
+\end{DoxyReturn}
+\hypertarget{class_les_produits_a86a0c66d67118ec32e9b34475dd42def}{\index{Les\-Produits@{Les\-Produits}!rechercher\-Categorie@{rechercher\-Categorie}}
+\index{rechercher\-Categorie@{rechercher\-Categorie}!LesProduits@{Les\-Produits}}
+\subsubsection[{rechercher\-Categorie}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Produit} $\ast$ $>$ Les\-Produits\-::rechercher\-Categorie (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{t}
+\end{DoxyParamCaption}
+)}}\label{class_les_produits_a86a0c66d67118ec32e9b34475dd42def}
+
+
+Cette fonction retourne une liste de produits de la catégorie c. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em t} & -\/ Catégorie à rechercher \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un vector de produits 
+\end{DoxyReturn}
+\hypertarget{class_les_produits_aa3e835fe433b7c350c92c4f20e4162c0}{\index{Les\-Produits@{Les\-Produits}!rechercher\-Tags@{rechercher\-Tags}}
+\index{rechercher\-Tags@{rechercher\-Tags}!LesProduits@{Les\-Produits}}
+\subsubsection[{rechercher\-Tags}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Produit}$\ast$$>$ Les\-Produits\-::rechercher\-Tags (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{t}
+\end{DoxyParamCaption}
+)}}\label{class_les_produits_aa3e835fe433b7c350c92c4f20e4162c0}
+
+
+Cette fonction retourne une liste de produits tagués par t. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em t} & -\/ Tags à rechercher \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un vector de produits 
+\end{DoxyReturn}
+\hypertarget{class_les_produits_a6b48c5f164b34c4d1307cb897c62bbed}{\index{Les\-Produits@{Les\-Produits}!rechercher\-Tags@{rechercher\-Tags}}
+\index{rechercher\-Tags@{rechercher\-Tags}!LesProduits@{Les\-Produits}}
+\subsubsection[{rechercher\-Tags}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Produit}$\ast$$>$ Les\-Produits\-::rechercher\-Tags (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::string $>$}]{}
+\end{DoxyParamCaption}
+)}}\label{class_les_produits_a6b48c5f164b34c4d1307cb897c62bbed}
+
+
+Cette fonction retourne une liste de produits tagués par plusieurs mots-\/clés. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em t} & -\/ Liste de tags à rechercher \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un vector de produits 
+\end{DoxyReturn}
+\hypertarget{class_les_produits_a471eb88643711b1c31c9c7fa1f2e4457}{\index{Les\-Produits@{Les\-Produits}!size@{size}}
+\index{size@{size}!LesProduits@{Les\-Produits}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}int Les\-Produits\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_les_produits_a471eb88643711b1c31c9c7fa1f2e4457}
+
+
+Cette fonction retourne la taille de la liste. 
+
+Elle correspond également au nombre de produits \begin{DoxyReturn}{Renvoie}
+
+\end{DoxyReturn}
+\hypertarget{class_les_produits_a09ff9e0b52cb6a62228a7a7f6fc04a37}{\index{Les\-Produits@{Les\-Produits}!supprimer\-Produit@{supprimer\-Produit}}
+\index{supprimer\-Produit@{supprimer\-Produit}!LesProduits@{Les\-Produits}}
+\subsubsection[{supprimer\-Produit}]{\setlength{\rightskip}{0pt plus 5cm}void Les\-Produits\-::supprimer\-Produit (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{ref}
+\end{DoxyParamCaption}
+)}}\label{class_les_produits_a09ff9e0b52cb6a62228a7a7f6fc04a37}
+
+
+Cette fonction permet de supprimer un produit selon sa référence. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ref} & -\/ Référence du produit à supprimer \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_les_produits_acb7607cf2d8e004ed0018db6b56ebc3f}{\index{Les\-Produits@{Les\-Produits}!supprimer\-Produit@{supprimer\-Produit}}
+\index{supprimer\-Produit@{supprimer\-Produit}!LesProduits@{Les\-Produits}}
+\subsubsection[{supprimer\-Produit}]{\setlength{\rightskip}{0pt plus 5cm}void Les\-Produits\-::supprimer\-Produit (
+\begin{DoxyParamCaption}
+\item[{{\bf Produit} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}}\label{class_les_produits_acb7607cf2d8e004ed0018db6b56ebc3f}
+
+
+Cette fonction permet de supprimer un produit. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & -\/ \hyperlink{class_produit}{Produit} à supprimer \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_les_produits_ab34a7b3828242179821321f34e51a70f}{\index{Les\-Produits@{Les\-Produits}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!LesProduits@{Les\-Produits}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}void Les\-Produits\-::to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_les_produits_ab34a7b3828242179821321f34e51a70f}
+
+
+Cette fonction permet d'afficher la liste des produits. 
+
+\hypertarget{class_les_produits_a38b67c16684b150fb1b933fa025c0a09}{\index{Les\-Produits@{Les\-Produits}!tri\-Prix\-Croissant@{tri\-Prix\-Croissant}}
+\index{tri\-Prix\-Croissant@{tri\-Prix\-Croissant}!LesProduits@{Les\-Produits}}
+\subsubsection[{tri\-Prix\-Croissant}]{\setlength{\rightskip}{0pt plus 5cm}void Les\-Produits\-::tri\-Prix\-Croissant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_les_produits_a38b67c16684b150fb1b933fa025c0a09}
+
+
+Cette fonction tri les produits par prix croissant. 
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+/home/magalie/\-Bureau/\-S5/\-C\-P\-O\-O\-A/\-Projet/\-E-\/\-Marche-\//iterations/itération5/\-E\-Marche/bdd/\hyperlink{_les_produits_8h}{Les\-Produits.\-h}\item 
+/home/magalie/\-Bureau/\-S5/\-C\-P\-O\-O\-A/\-Projet/\-E-\/\-Marche-\//iterations/itération5/\-E\-Marche/bdd/\hyperlink{_les_produits_8cpp}{Les\-Produits.\-cpp}\end{DoxyCompactItemize}

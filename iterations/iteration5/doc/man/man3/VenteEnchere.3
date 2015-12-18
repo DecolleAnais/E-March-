@@ -1,0 +1,119 @@
+.TH "VenteEnchere" 3 "Vendredi 18 Décembre 2015" "Version 5" "EMarche" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+VenteEnchere \- 
+.PP
+Cette classe gère une vente aux enchères\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <VenteEnchere\&.h>\fP
+.PP
+Est dérivée de \fBEtatVente\fP\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBVenteEnchere\fP (bool b)"
+.br
+.RI "\fIConstructeur de la classe \fBVenteEnchere\fP\&. \fP"
+.ti -1c
+.RI "\fB~VenteEnchere\fP ()"
+.br
+.ti -1c
+.RI "float \fBgetPrixActuel\fP ()"
+.br
+.RI "\fIRetourne le prix actuel de la vente\&. \fP"
+.ti -1c
+.RI "std::string \fBgetDateLimite\fP ()"
+.br
+.RI "\fIRetourne la date limite de l'enchère\&. \fP"
+.ti -1c
+.RI "void \fBsetPrixActuel\fP (float prix)"
+.br
+.RI "\fICette fonction fixe le prix actuel\&. \fP"
+.ti -1c
+.RI "void \fBsetDateLimite\fP (struct tm date)"
+.br
+.RI "\fICette fonction fixe la date limite\&. \fP"
+.in -1c
+.SS "Membres hérités additionnels"
+.SH "Description détaillée"
+.PP 
+Cette classe gère une vente aux enchères\&. 
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "VenteEnchere::VenteEnchere (boolb)"
+
+.PP
+Constructeur de la classe \fBVenteEnchere\fP\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIb\fP - Booléen qui donne le type de la vente 
+.RE
+.PP
+
+.SS "VenteEnchere::~VenteEnchere ()\fC [inline]\fP"
+
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "std::string VenteEnchere::getDateLimite ()\fC [virtual]\fP"
+
+.PP
+Retourne la date limite de l'enchère\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un string contenant la date limite de l'enchère 
+.RE
+.PP
+
+.PP
+Réimplémentée à partir de \fBEtatVente\fP\&.
+.SS "float VenteEnchere::getPrixActuel ()\fC [virtual]\fP"
+
+.PP
+Retourne le prix actuel de la vente\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un float représentant le prix actuel 
+.RE
+.PP
+
+.PP
+Réimplémentée à partir de \fBEtatVente\fP\&.
+.SS "void VenteEnchere::setDateLimite (struct tmdate)\fC [virtual]\fP"
+
+.PP
+Cette fonction fixe la date limite\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIdate\fP - Nouvelle date 
+.RE
+.PP
+
+.PP
+Réimplémentée à partir de \fBEtatVente\fP\&.
+.SS "void VenteEnchere::setPrixActuel (floatprix)\fC [virtual]\fP"
+
+.PP
+Cette fonction fixe le prix actuel\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIprix\fP - Nouveau prix 
+.RE
+.PP
+
+.PP
+Réimplémentée à partir de \fBEtatVente\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour EMarche à partir du code source\&.

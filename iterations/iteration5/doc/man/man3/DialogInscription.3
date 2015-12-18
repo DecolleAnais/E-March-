@@ -1,0 +1,64 @@
+.TH "DialogInscription" 3 "Vendredi 18 Décembre 2015" "Version 5" "EMarche" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DialogInscription \- 
+.PP
+The \fBDialogInscription\fP class - Boîte de dialogue permettant d'inscrire un nouvel utilisateur\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DialogInscription\&.h>\fP
+.PP
+Est dérivée de QDialog\&.
+.SS "Connecteurs publics"
+
+.in +1c
+.ti -1c
+.RI "void \fBouvrir\fP ()"
+.br
+.RI "\fIouvrir - Slot affichant cette boîte de dialogue \fP"
+.in -1c
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBDialogInscription\fP (\fBGestionBdd\fP *bdd, QWidget *parent=0)"
+.br
+.RI "\fI\fBDialogInscription\fP - Constructeur\&. \fP"
+.ti -1c
+.RI "\fB~DialogInscription\fP ()"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+The \fBDialogInscription\fP class - Boîte de dialogue permettant d'inscrire un nouvel utilisateur\&. 
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "DialogInscription::DialogInscription (\fBGestionBdd\fP *bdd, QWidget *parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+\fBDialogInscription\fP - Constructeur\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIbdd\fP - Lien vers \fBGestionBdd\fP qui contient toutes les données 
+.br
+\fIparent\fP - Lien vers le widget parent 
+.RE
+.PP
+
+.SS "DialogInscription::~DialogInscription ()"
+
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "void DialogInscription::ouvrir ()\fC [slot]\fP"
+
+.PP
+ouvrir - Slot affichant cette boîte de dialogue 
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour EMarche à partir du code source\&.

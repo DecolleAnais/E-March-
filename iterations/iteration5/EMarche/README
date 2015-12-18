@@ -1,0 +1,18 @@
+il faut que vous changiez votre makefile à la main changez ça :
+CXXFLAGS = -m64 -pipe -O2 -Wall -W -D_REENTRANT -fPIE -std=c++0x $(DEFINES)
+ça permet en gros d'utiliser la fonction to_string(entier)
+
+-on a des fuites de mémoire, donc si vous savez faire les destructeurs, les delete etc 
+en utilisant valgrind ./EMarche pour vérifier 
+
+-CB autant ne pas le faire, parce qu'on ne pourra pas commencer à découper notre code en laissant la doc finie sinon
+
+Profil : 
+-Mise à jour du profil après modification -> passer par la fonction update() en bas de MaFenetre.cpp (MARCHE PAS)
+-Pouvoir voir un autre profil sans être connecté : statistiques de vente visibles (pas pour les statistiques d'achats)
+
+-Enchères, choix de la quantité
+
+- découpages du projet en itérations à la fin des modifs
+
+annulation de la vente en cours plante je dois juste trouver pourquoi
