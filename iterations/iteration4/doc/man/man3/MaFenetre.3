@@ -1,0 +1,490 @@
+.TH "MaFenetre" 3 "Vendredi 18 Décembre 2015" "Version 4" "EMarche" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MaFenetre \- 
+.PP
+The \fBMaFenetre\fP class - Affichage principal de l'application\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MaFenetre\&.h>\fP
+.PP
+Est dérivée de QWidget, et \fBVue\fP\&.
+.SS "Connecteurs publics"
+
+.in +1c
+.ti -1c
+.RI "void \fBafficherResProduits\fP (std::vector< \fBProduit\fP * > v)"
+.br
+.RI "\fIafficherResProduits - Affiche le résultat d'une recherche de produit \fP"
+.ti -1c
+.RI "void \fBrechercher\fP ()"
+.br
+.RI "\fIrechercher - Redirige vers l'affichage d'utilisateurs ou de produits selon le type de recherche lancé \fP"
+.ti -1c
+.RI "void \fBaccueil\fP ()"
+.br
+.RI "\fIaccueil - Affiche les produits en vente actuellement \fP"
+.ti -1c
+.RI "void \fBprofil\fP ()"
+.br
+.RI "\fIprofil - Affiche le profil de l'utilisateur connecté \fP"
+.ti -1c
+.RI "void \fBstatistiques\fP ()"
+.br
+.RI "\fIstatistiques - Affiche les statistiques de l'utilisateur connecté \fP"
+.ti -1c
+.RI "void \fBventes\fP ()"
+.br
+.RI "\fIventes - Affiche les ventes de l'utilisateur connecté \fP"
+.ti -1c
+.RI "void \fBachats\fP ()"
+.br
+.RI "\fIachats - Affiche les achats de l'utilisateur connecté \fP"
+.ti -1c
+.RI "void \fBajouterVente\fP ()"
+.br
+.RI "\fIajouterVente - Ouvre la boîte de dialogue permettant d'ajouter une vente si on est connecté \fP"
+.ti -1c
+.RI "void \fBconnexion\fP ()"
+.br
+.RI "\fIconnexion - Ouvre la boîte de dialogue de connexion \fP"
+.ti -1c
+.RI "void \fBmodificationProfil\fP ()"
+.br
+.RI "\fImodificationProfil - Ouvre la boîte de dialogue de modification de profil de l'utilisateur connecté \fP"
+.ti -1c
+.RI "void \fBvoirProduit\fP (QString ref)"
+.br
+.RI "\fIvoirProduit - Affiche les données du produit et permet de l'acheter \fP"
+.ti -1c
+.RI "void \fBacheter\fP ()"
+.br
+.RI "\fIacheter - Achète le produit si on est connecté \fP"
+.in -1c
+.SS "Signaux"
+
+.in +1c
+.ti -1c
+.RI "void \fBsignalRechercheProduits\fP (std::vector< \fBProduit\fP * > v)"
+.br
+.RI "\fIsignalRechercheProduits - Signale qu'il s'agit d'une recherche de produits \fP"
+.in -1c
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBMaFenetre\fP (int l, int h, \fBGestionBdd\fP *bdd)"
+.br
+.RI "\fI\fBMaFenetre\fP - Constructeur\&. \fP"
+.ti -1c
+.RI "\fB~MaFenetre\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.RI "\fIupdate - Mets à jour la fenêtre principal \fP"
+.ti -1c
+.RI "void \fBclearLayout\fP (QLayout *layout)"
+.br
+.RI "\fIclearLayout - Vide un layout entré en paramètre \fP"
+.in -1c
+.SS "Attributs protégés"
+
+.in +1c
+.ti -1c
+.RI "QHBoxLayout * \fBhaut\fP"
+.br
+.RI "\fIhaut - Contient la barre de recherche, l'accueil, l'ajout de vente, mon profil, connexion \fP"
+.ti -1c
+.RI "QVBoxLayout * \fBcentre\fP"
+.br
+.RI "\fIcentre - Contient le titre de ce qu'on affiche au centre et les affichages \fP"
+.ti -1c
+.RI "QHBoxLayout * \fBcentreProfil\fP"
+.br
+.RI "\fIcentreProfil - Contient l'affichage du profil \fP"
+.ti -1c
+.RI "QHBoxLayout * \fBbas\fP"
+.br
+.RI "\fIbas - Contient le changement de pages \fP"
+.ti -1c
+.RI "QComboBox * \fBtypeRecherche\fP"
+.br
+.RI "\fItypeRecherche - Type de la recherche : \fBProduit\fP ou \fBUtilisateur\fP \fP"
+.ti -1c
+.RI "QLineEdit * \fBvalRecherche\fP"
+.br
+.RI "\fIvalRecherche - Ce que l'on veut rechercher \fP"
+.ti -1c
+.RI "QPushButton * \fBboutonRecherche\fP"
+.br
+.RI "\fIboutonRecherche - Lancement de la recherche \fP"
+.ti -1c
+.RI "QPushButton * \fBboutonAccueil\fP"
+.br
+.RI "\fIboutonAccueil - Affichage des ventes en cours \fP"
+.ti -1c
+.RI "QPushButton * \fBboutonProfil\fP"
+.br
+.RI "\fIboutonProfil - Affichage du profil de l'utilisateur \fP"
+.ti -1c
+.RI "QPushButton * \fBboutonAjouterVente\fP"
+.br
+.RI "\fIboutonAjouterVente - Permet d'ajouter un produit en vente \fP"
+.ti -1c
+.RI "QPushButton * \fBboutonStatistiques\fP"
+.br
+.RI "\fIboutonStatistiques - Affichage des statistiques utilisateur \fP"
+.ti -1c
+.RI "QPushButton * \fBboutonVentes\fP"
+.br
+.RI "\fIboutonVentes - Affichage des ventes utilisateur \fP"
+.ti -1c
+.RI "QPushButton * \fBboutonAchats\fP"
+.br
+.RI "\fIboutonAchats - Affichage des achats utilisateurs \fP"
+.ti -1c
+.RI "QPushButton * \fBboutonCompte\fP"
+.br
+.RI "\fIboutonCompte - Affichage du profil de l'utilisateur connecté \fP"
+.ti -1c
+.RI "QLabel * \fBpseudoConnecte\fP"
+.br
+.RI "\fIpseudoConnecte - Affichage du pseudo de l'utilisateur connecté \fP"
+.ti -1c
+.RI "QPushButton * \fBboutonConnexion\fP"
+.br
+.RI "\fIboutonConnexion - Permet de se connecter/déconnecter \fP"
+.ti -1c
+.RI "QLabel * \fBtitreSection\fP"
+.br
+.RI "\fItitreSection - Affiche le titre de ce qu'on affiche au centre \fP"
+.ti -1c
+.RI "QScrollArea * \fBbarreDefile\fP"
+.br
+.RI "\fIbarreDefile - 'Cadre' du centre de l'affichage \fP"
+.ti -1c
+.RI "QPushButton * \fBboutonPrecedent\fP"
+.br
+.RI "\fIboutonPrecedent - Permet de passer à la page précédente \fP"
+.ti -1c
+.RI "QPushButton * \fBboutonSuivant\fP"
+.br
+.RI "\fIboutonSuivant - Permet de passer à la page suivante \fP"
+.ti -1c
+.RI "QLabel * \fBnumPage\fP"
+.br
+.RI "\fInumPage - Affiche le numéro de page actuel \fP"
+.ti -1c
+.RI "\fBDialogModificationProfil\fP * \fBmodifProfil\fP"
+.br
+.RI "\fImodifProfil - Boîte de dilaogue de modification de profil \fP"
+.ti -1c
+.RI "\fBDialogAjouterVente\fP * \fBajouterVentes\fP"
+.br
+.RI "\fIajouterVentes - Boîte de dialogue d'ajout de vente \fP"
+.ti -1c
+.RI "\fBDialogConnexion\fP * \fBconnexions\fP"
+.br
+.RI "\fIconnexions - Boîte de dialogue de connexion \fP"
+.ti -1c
+.RI "\fBDialogAcheter\fP * \fBacheterQuantite\fP"
+.br
+.RI "\fIachats - Boîte de dialogue d'achats \fP"
+.ti -1c
+.RI "int \fBlargeur\fP"
+.br
+.RI "\fIlargeur - largeur de la fenêtre \fP"
+.ti -1c
+.RI "int \fBhauteur\fP"
+.br
+.RI "\fIhauteur - hauteur de la fenêtre \fP"
+.ti -1c
+.RI "\fBGestionBdd\fP * \fBgestionBdd\fP"
+.br
+.RI "\fIgestionBdd - Lien vers \fBGestionBdd\fP qui contient toutes les données \fP"
+.ti -1c
+.RI "\fBProduit\fP * \fBproduitCourant\fP"
+.br
+.RI "\fIproduitCourant - Poduit sélectionné via 'Voir produit' \fP"
+.ti -1c
+.RI "QSignalMapper \fBmapperProduit\fP"
+.br
+.RI "\fImapperProduit \fP"
+.ti -1c
+.RI "QSignalMapper \fBmapperProfil\fP"
+.br
+.RI "\fImapperProfil \fP"
+.ti -1c
+.RI "QSignalMapper \fBmapperStatistiques\fP"
+.br
+.RI "\fImapperStatistiques \fP"
+.ti -1c
+.RI "QSignalMapper \fBmapperVentes\fP"
+.br
+.RI "\fImapperVentes \fP"
+.ti -1c
+.RI "QSignalMapper \fBmapperAchats\fP"
+.br
+.RI "\fImapperAchats \fP"
+.in -1c
+.SH "Description détaillée"
+.PP 
+The \fBMaFenetre\fP class - Affichage principal de l'application\&. 
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "MaFenetre::MaFenetre (intl, inth, \fBGestionBdd\fP *bdd)"
+
+.PP
+\fBMaFenetre\fP - Constructeur\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIl\fP - largeur 
+.br
+\fIh\fP - hauteur 
+.br
+\fIbdd\fP - Lien vers \fBGestionBdd\fP qui contient toutes les données 
+.RE
+.PP
+
+.SS "MaFenetre::~MaFenetre ()\fC [inline]\fP"
+
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "void MaFenetre::accueil ()\fC [slot]\fP"
+
+.PP
+accueil - Affiche les produits en vente actuellement 
+.SS "void MaFenetre::achats ()\fC [slot]\fP"
+
+.PP
+achats - Affiche les achats de l'utilisateur connecté 
+.SS "void MaFenetre::acheter ()\fC [slot]\fP"
+
+.PP
+acheter - Achète le produit si on est connecté 
+.SS "void MaFenetre::afficherResProduits (std::vector< \fBProduit\fP * >v)\fC [slot]\fP"
+
+.PP
+afficherResProduits - Affiche le résultat d'une recherche de produit 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIv\fP - Produits à afficher 
+.RE
+.PP
+
+.SS "void MaFenetre::ajouterVente ()\fC [slot]\fP"
+
+.PP
+ajouterVente - Ouvre la boîte de dialogue permettant d'ajouter une vente si on est connecté 
+.SS "void MaFenetre::clearLayout (QLayout *layout)"
+
+.PP
+clearLayout - Vide un layout entré en paramètre 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIlayout\fP 
+.RE
+.PP
+
+.SS "void MaFenetre::connexion ()\fC [slot]\fP"
+
+.PP
+connexion - Ouvre la boîte de dialogue de connexion 
+.SS "void MaFenetre::modificationProfil ()\fC [slot]\fP"
+
+.PP
+modificationProfil - Ouvre la boîte de dialogue de modification de profil de l'utilisateur connecté 
+.SS "void MaFenetre::profil ()\fC [slot]\fP"
+
+.PP
+profil - Affiche le profil de l'utilisateur connecté 
+.SS "void MaFenetre::rechercher ()\fC [slot]\fP"
+
+.PP
+rechercher - Redirige vers l'affichage d'utilisateurs ou de produits selon le type de recherche lancé 
+.SS "void MaFenetre::signalRechercheProduits (std::vector< \fBProduit\fP * >v)\fC [signal]\fP"
+
+.PP
+signalRechercheProduits - Signale qu'il s'agit d'une recherche de produits 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIv\fP - Produits à afficher 
+.RE
+.PP
+
+.SS "void MaFenetre::statistiques ()\fC [slot]\fP"
+
+.PP
+statistiques - Affiche les statistiques de l'utilisateur connecté 
+.SS "void MaFenetre::update ()\fC [virtual]\fP"
+
+.PP
+update - Mets à jour la fenêtre principal 
+.PP
+Implémente \fBVue\fP\&.
+.SS "void MaFenetre::ventes ()\fC [slot]\fP"
+
+.PP
+ventes - Affiche les ventes de l'utilisateur connecté 
+.SS "void MaFenetre::voirProduit (QStringref)\fC [slot]\fP"
+
+.PP
+voirProduit - Affiche les données du produit et permet de l'acheter 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIref\fP 
+.RE
+.PP
+
+.SH "Documentation des données membres"
+.PP 
+.SS "\fBDialogAcheter\fP* MaFenetre::acheterQuantite\fC [protected]\fP"
+
+.PP
+achats - Boîte de dialogue d'achats 
+.SS "\fBDialogAjouterVente\fP* MaFenetre::ajouterVentes\fC [protected]\fP"
+
+.PP
+ajouterVentes - Boîte de dialogue d'ajout de vente 
+.SS "QScrollArea* MaFenetre::barreDefile\fC [protected]\fP"
+
+.PP
+barreDefile - 'Cadre' du centre de l'affichage 
+.SS "QHBoxLayout* MaFenetre::bas\fC [protected]\fP"
+
+.PP
+bas - Contient le changement de pages 
+.SS "QPushButton* MaFenetre::boutonAccueil\fC [protected]\fP"
+
+.PP
+boutonAccueil - Affichage des ventes en cours 
+.SS "QPushButton* MaFenetre::boutonAchats\fC [protected]\fP"
+
+.PP
+boutonAchats - Affichage des achats utilisateurs 
+.SS "QPushButton* MaFenetre::boutonAjouterVente\fC [protected]\fP"
+
+.PP
+boutonAjouterVente - Permet d'ajouter un produit en vente 
+.SS "QPushButton* MaFenetre::boutonCompte\fC [protected]\fP"
+
+.PP
+boutonCompte - Affichage du profil de l'utilisateur connecté 
+.SS "QPushButton* MaFenetre::boutonConnexion\fC [protected]\fP"
+
+.PP
+boutonConnexion - Permet de se connecter/déconnecter 
+.SS "QPushButton* MaFenetre::boutonPrecedent\fC [protected]\fP"
+
+.PP
+boutonPrecedent - Permet de passer à la page précédente 
+.SS "QPushButton* MaFenetre::boutonProfil\fC [protected]\fP"
+
+.PP
+boutonProfil - Affichage du profil de l'utilisateur 
+.SS "QPushButton* MaFenetre::boutonRecherche\fC [protected]\fP"
+
+.PP
+boutonRecherche - Lancement de la recherche 
+.SS "QPushButton* MaFenetre::boutonStatistiques\fC [protected]\fP"
+
+.PP
+boutonStatistiques - Affichage des statistiques utilisateur 
+.SS "QPushButton* MaFenetre::boutonSuivant\fC [protected]\fP"
+
+.PP
+boutonSuivant - Permet de passer à la page suivante 
+.SS "QPushButton* MaFenetre::boutonVentes\fC [protected]\fP"
+
+.PP
+boutonVentes - Affichage des ventes utilisateur 
+.SS "QVBoxLayout* MaFenetre::centre\fC [protected]\fP"
+
+.PP
+centre - Contient le titre de ce qu'on affiche au centre et les affichages 
+.SS "QHBoxLayout* MaFenetre::centreProfil\fC [protected]\fP"
+
+.PP
+centreProfil - Contient l'affichage du profil 
+.SS "\fBDialogConnexion\fP* MaFenetre::connexions\fC [protected]\fP"
+
+.PP
+connexions - Boîte de dialogue de connexion 
+.SS "\fBGestionBdd\fP* MaFenetre::gestionBdd\fC [protected]\fP"
+
+.PP
+gestionBdd - Lien vers \fBGestionBdd\fP qui contient toutes les données 
+.SS "QHBoxLayout* MaFenetre::haut\fC [protected]\fP"
+
+.PP
+haut - Contient la barre de recherche, l'accueil, l'ajout de vente, mon profil, connexion 
+.SS "int MaFenetre::hauteur\fC [protected]\fP"
+
+.PP
+hauteur - hauteur de la fenêtre 
+.SS "int MaFenetre::largeur\fC [protected]\fP"
+
+.PP
+largeur - largeur de la fenêtre 
+.SS "QSignalMapper MaFenetre::mapperAchats\fC [protected]\fP"
+
+.PP
+mapperAchats 
+.SS "QSignalMapper MaFenetre::mapperProduit\fC [protected]\fP"
+
+.PP
+mapperProduit 
+.SS "QSignalMapper MaFenetre::mapperProfil\fC [protected]\fP"
+
+.PP
+mapperProfil 
+.SS "QSignalMapper MaFenetre::mapperStatistiques\fC [protected]\fP"
+
+.PP
+mapperStatistiques 
+.SS "QSignalMapper MaFenetre::mapperVentes\fC [protected]\fP"
+
+.PP
+mapperVentes 
+.SS "\fBDialogModificationProfil\fP* MaFenetre::modifProfil\fC [protected]\fP"
+
+.PP
+modifProfil - Boîte de dilaogue de modification de profil 
+.SS "QLabel* MaFenetre::numPage\fC [protected]\fP"
+
+.PP
+numPage - Affiche le numéro de page actuel 
+.SS "\fBProduit\fP* MaFenetre::produitCourant\fC [protected]\fP"
+
+.PP
+produitCourant - Poduit sélectionné via 'Voir produit' 
+.SS "QLabel* MaFenetre::pseudoConnecte\fC [protected]\fP"
+
+.PP
+pseudoConnecte - Affichage du pseudo de l'utilisateur connecté 
+.SS "QLabel* MaFenetre::titreSection\fC [protected]\fP"
+
+.PP
+titreSection - Affiche le titre de ce qu'on affiche au centre 
+.SS "QComboBox* MaFenetre::typeRecherche\fC [protected]\fP"
+
+.PP
+typeRecherche - Type de la recherche : \fBProduit\fP ou \fBUtilisateur\fP 
+.SS "QLineEdit* MaFenetre::valRecherche\fC [protected]\fP"
+
+.PP
+valRecherche - Ce que l'on veut rechercher 
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour EMarche à partir du code source\&.

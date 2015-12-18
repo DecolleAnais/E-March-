@@ -1,0 +1,528 @@
+\hypertarget{class_gestion_bdd}{\section{Référence de la classe Gestion\-Bdd}
+\label{class_gestion_bdd}\index{Gestion\-Bdd@{Gestion\-Bdd}}
+}
+
+
+The \hyperlink{class_gestion_bdd}{Gestion\-Bdd} class -\/ Gère le stockage des utilisateurs, des produits, et la mise à jour des vues.  
+
+
+
+
+{\ttfamily \#include $<$Gestion\-Bdd.\-h$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_gestion_bdd_aec9ad935a7fafff545f62c8c1452e8db}{Gestion\-Bdd} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_gestion_bdd}{Gestion\-Bdd} -\/ constructeur. \end{DoxyCompactList}\item 
+\hyperlink{class_gestion_bdd_a4398ba38755e93b303635ac5bd2713c6}{$\sim$\-Gestion\-Bdd} ()
+\item 
+void \hyperlink{class_gestion_bdd_acdaf971b3644b2aebbbb65a75b3e6c4c}{incrementer\-Ref} ()
+\begin{DoxyCompactList}\small\item\em incrémente la référence pour l'attribuer à un produit et qu'elle soit unique (version 1) \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_gestion_bdd_a6169a8867e04bcc950fe2e0fb2a5621d}{generate\-Reference} ()
+\begin{DoxyCompactList}\small\item\em génère une référence unique (version 2) \end{DoxyCompactList}\item 
+void \hyperlink{class_gestion_bdd_a029ffbc385ac5bbb665101308ae82ba0}{add\-Vue} (\hyperlink{class_vue}{Vue} $\ast$v)
+\begin{DoxyCompactList}\small\item\em ajoute une vue au vector contenant les vues \end{DoxyCompactList}\item 
+void \hyperlink{class_gestion_bdd_a518211afbda535f9bcbf718254c7a6aa}{update} ()
+\begin{DoxyCompactList}\small\item\em provoque la fonction update dans toutes les vues \end{DoxyCompactList}\item 
+void \hyperlink{class_gestion_bdd_ae1beeb1b627cbf2e6d0b044c9821d05a}{set\-Quantite} (int qte)
+\begin{DoxyCompactList}\small\item\em Cette fonction fixe la quantité du produit que l'on veut acheter. \end{DoxyCompactList}\item 
+int \hyperlink{class_gestion_bdd_ad0e14c4312471baad8d525ae9c3b0952}{get\-Quantite} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction retourne la quantité du produit que l'on veut acheter. \end{DoxyCompactList}\item 
+\hyperlink{class_produit}{Produit} $\ast$ \hyperlink{class_gestion_bdd_a247c81f14899ebdc9666f62e9da73361}{get\-Produit\-Courant} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction retourne le produit courant. \end{DoxyCompactList}\item 
+void \hyperlink{class_gestion_bdd_acdf8fc7e874b0c24408aaf1121aafda6}{set\-Produit\-Courant} (\hyperlink{class_produit}{Produit} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Cette fonction fixe le produit courant lorsque l'on consulte la fiche d'un produit. \end{DoxyCompactList}\item 
+void \hyperlink{class_gestion_bdd_a936ae71d7145692ec01ccb0f282d3b59}{connecter\-Utilisateur} (std\-::string pseudo, std\-::string mdp)
+\begin{DoxyCompactList}\small\item\em connecte l'utilisateur avec ce pseudo et ce mot de passe s'il existe \end{DoxyCompactList}\item 
+void \hyperlink{class_gestion_bdd_a0e99ded45980647e925295e8cd828004}{deconnecter\-Utilisateur} ()
+\begin{DoxyCompactList}\small\item\em déconnecte l'utilisateur \end{DoxyCompactList}\item 
+bool \hyperlink{class_gestion_bdd_a86ee63900b31ef17bf487ebc1abe8634}{is\-Connecte} ()
+\begin{DoxyCompactList}\small\item\em retourne true si un utilisateur est connecté, false sinon \end{DoxyCompactList}\item 
+\hyperlink{class_utilisateur}{Utilisateur} $\ast$ \hyperlink{class_gestion_bdd_a2ca66731bc3b85a279d5b140e63ba838}{get\-Utilisateur\-Connecte} ()
+\begin{DoxyCompactList}\small\item\em récupère un pointeur vers l'utilisateur actuellement connecté \end{DoxyCompactList}\item 
+void \hyperlink{class_gestion_bdd_a02f362c2dd2ca487922e00988f71281b}{inscrire} (std\-::string mon\-Pseudo, std\-::string mon\-Mdp, std\-::string name, std\-::string firstname, int jour\-Naiss, int mois\-Naiss, int annee\-Naiss, std\-::string mail, std\-::string adr, int code\-Postal)
+\begin{DoxyCompactList}\small\item\em inscrire un nouvel utilisateur et le stocker dans utilisateurs \end{DoxyCompactList}\item 
+void \hyperlink{class_gestion_bdd_a966846d69aa1cf0ed82ef74127e10883}{modifier\-Profil} (std\-::string nom, std\-::string prenom, std\-::string mail, int code\-Postal, std\-::string ville, std\-::string adresse)
+\begin{DoxyCompactList}\small\item\em modifie le profil avec ces informations \end{DoxyCompactList}\item 
+void \hyperlink{class_gestion_bdd_a039afce368e1b90cbc26334cb8c7d065}{acheter\-Produit} (\hyperlink{class_produit}{Produit} $\ast$p, int \hyperlink{class_gestion_bdd_aea2dfb9c9690c8aef62feb9936426588}{quantite})
+\begin{DoxyCompactList}\small\item\em acheter\-Produit -\/ Acheter un produit, avec suppression du produit si la quantité arrive à 0 \end{DoxyCompactList}\item 
+\hyperlink{class_utilisateur}{Utilisateur} $\ast$ \hyperlink{class_gestion_bdd_a59989c7d58166c7e4a451b77e56bb852}{rechercher\-Utilisateur} (std\-::string pseudo)
+\begin{DoxyCompactList}\small\item\em recherche l'utilisateur avec ce pseudo \end{DoxyCompactList}\item 
+void \hyperlink{class_gestion_bdd_ac8c3809d6de97f0e81cd5045a4a72c7e}{ajouter\-Vente} (std\-::string n, std\-::string cat, float prix, unsigned int qte, bool etat)
+\begin{DoxyCompactList}\small\item\em ajoute un produit en vente normale avec ces caractéristiques \end{DoxyCompactList}\item 
+void \hyperlink{class_gestion_bdd_af4e95573213751d5487464ff3e24cc98}{ajouter\-Vente} (std\-::string n, std\-::string cat, float prix, unsigned int qte, bool etat, struct tm date)
+\begin{DoxyCompactList}\small\item\em ajoute un produit en vente aux enchères avec ces caractéristiques \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{class_produit}{Produit} $\ast$ $>$ \hyperlink{class_gestion_bdd_aa52e1f2d076c4e3f65162e9f28ed20fa}{ventes\-En\-Cours} ()
+\begin{DoxyCompactList}\small\item\em rtourne les ventes en cours \end{DoxyCompactList}\item 
+\hyperlink{class_produit}{Produit} $\ast$ \hyperlink{class_gestion_bdd_abf0ffd54c39d6dfe431fc8d556eb5c8d}{rechercher\-Produit} (std\-::string \hyperlink{class_gestion_bdd_ae9e26a2043f3e10fb773107809bfc007}{ref})
+\begin{DoxyCompactList}\small\item\em recherche le produit avec cette référence \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{class_produit}{Produit} $\ast$ $>$ \hyperlink{class_gestion_bdd_aadc12bc0c3aee41bc56918e44b5d1085}{rechercher\-Tags} (std\-::string t)
+\begin{DoxyCompactList}\small\item\em recherche un produit par tags (c'est à dire nom, catégorie) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_les_utilisateurs}{Les\-Utilisateurs} \hyperlink{class_gestion_bdd_a43b0bcad5d1eb6ff51c78ceb6cdd972c}{utilisateurs}
+\item 
+\hyperlink{class_les_produits}{Les\-Produits} \hyperlink{class_gestion_bdd_a3d8399948251d113edf841e5122c51b8}{produits}
+\item 
+std\-::vector$<$ \hyperlink{class_vue}{Vue} $\ast$ $>$ \hyperlink{class_gestion_bdd_a44ea1efd29c4996b1dcba0bf428051a7}{vues}
+\item 
+\hyperlink{class_utilisateur}{Utilisateur} $\ast$ \hyperlink{class_gestion_bdd_adb07bb1f3015855aef7bcfe0b278ebd7}{utilisateur\-Connecte}
+\item 
+std\-::string \hyperlink{class_gestion_bdd_ae9e26a2043f3e10fb773107809bfc007}{ref}
+\item 
+int \hyperlink{class_gestion_bdd_aea2dfb9c9690c8aef62feb9936426588}{quantite}
+\item 
+\hyperlink{class_produit}{Produit} $\ast$ \hyperlink{class_gestion_bdd_a892f50933d1226a389b561276bd0ca93}{produit\-Courant}
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+The \hyperlink{class_gestion_bdd}{Gestion\-Bdd} class -\/ Gère le stockage des utilisateurs, des produits, et la mise à jour des vues. 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{class_gestion_bdd_aec9ad935a7fafff545f62c8c1452e8db}{\index{Gestion\-Bdd@{Gestion\-Bdd}!Gestion\-Bdd@{Gestion\-Bdd}}
+\index{Gestion\-Bdd@{Gestion\-Bdd}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{Gestion\-Bdd}]{\setlength{\rightskip}{0pt plus 5cm}Gestion\-Bdd\-::\-Gestion\-Bdd (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_aec9ad935a7fafff545f62c8c1452e8db}
+
+
+\hyperlink{class_gestion_bdd}{Gestion\-Bdd} -\/ constructeur. 
+
+\hypertarget{class_gestion_bdd_a4398ba38755e93b303635ac5bd2713c6}{\index{Gestion\-Bdd@{Gestion\-Bdd}!$\sim$\-Gestion\-Bdd@{$\sim$\-Gestion\-Bdd}}
+\index{$\sim$\-Gestion\-Bdd@{$\sim$\-Gestion\-Bdd}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{$\sim$\-Gestion\-Bdd}]{\setlength{\rightskip}{0pt plus 5cm}Gestion\-Bdd\-::$\sim$\-Gestion\-Bdd (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_gestion_bdd_a4398ba38755e93b303635ac5bd2713c6}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_gestion_bdd_a039afce368e1b90cbc26334cb8c7d065}{\index{Gestion\-Bdd@{Gestion\-Bdd}!acheter\-Produit@{acheter\-Produit}}
+\index{acheter\-Produit@{acheter\-Produit}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{acheter\-Produit}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\-Bdd\-::acheter\-Produit (
+\begin{DoxyParamCaption}
+\item[{{\bf Produit} $\ast$}]{p, }
+\item[{int}]{quantite}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_a039afce368e1b90cbc26334cb8c7d065}
+
+
+acheter\-Produit -\/ Acheter un produit, avec suppression du produit si la quantité arrive à 0 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & -\/ Pointeur vers le produit à acheter \\
+\hline
+{\em quantite} & -\/ Quantité de produit acheté \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_gestion_bdd_a029ffbc385ac5bbb665101308ae82ba0}{\index{Gestion\-Bdd@{Gestion\-Bdd}!add\-Vue@{add\-Vue}}
+\index{add\-Vue@{add\-Vue}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{add\-Vue}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\-Bdd\-::add\-Vue (
+\begin{DoxyParamCaption}
+\item[{{\bf Vue} $\ast$}]{v}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_a029ffbc385ac5bbb665101308ae82ba0}
+
+
+ajoute une vue au vector contenant les vues 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em v} & -\/ pointeur vers la vue à ajouter \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_gestion_bdd_ac8c3809d6de97f0e81cd5045a4a72c7e}{\index{Gestion\-Bdd@{Gestion\-Bdd}!ajouter\-Vente@{ajouter\-Vente}}
+\index{ajouter\-Vente@{ajouter\-Vente}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{ajouter\-Vente}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\-Bdd\-::ajouter\-Vente (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{n, }
+\item[{std\-::string}]{cat, }
+\item[{float}]{prix, }
+\item[{unsigned int}]{qte, }
+\item[{bool}]{etat}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_ac8c3809d6de97f0e81cd5045a4a72c7e}
+
+
+ajoute un produit en vente normale avec ces caractéristiques 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em n} & -\/ nom du produit \\
+\hline
+{\em cat} & -\/ catégorie du produit \\
+\hline
+{\em prix} & -\/ prix du produit \\
+\hline
+{\em qte} & -\/ quantité du produit \\
+\hline
+{\em etat} & -\/ état du produit (en enchère ou non) \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_gestion_bdd_af4e95573213751d5487464ff3e24cc98}{\index{Gestion\-Bdd@{Gestion\-Bdd}!ajouter\-Vente@{ajouter\-Vente}}
+\index{ajouter\-Vente@{ajouter\-Vente}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{ajouter\-Vente}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\-Bdd\-::ajouter\-Vente (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{n, }
+\item[{std\-::string}]{cat, }
+\item[{float}]{prix, }
+\item[{unsigned int}]{qte, }
+\item[{bool}]{etat, }
+\item[{struct tm}]{date}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_af4e95573213751d5487464ff3e24cc98}
+
+
+ajoute un produit en vente aux enchères avec ces caractéristiques 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em n} & -\/ nom du produit \\
+\hline
+{\em cat} & -\/ catégorie du produit \\
+\hline
+{\em prix} & -\/ prix du produit \\
+\hline
+{\em qte} & -\/ quantité du produit \\
+\hline
+{\em etat} & -\/ état du produit (enchère ou non) \\
+\hline
+{\em date} & -\/ date limite de l'enchère du produit \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_gestion_bdd_a936ae71d7145692ec01ccb0f282d3b59}{\index{Gestion\-Bdd@{Gestion\-Bdd}!connecter\-Utilisateur@{connecter\-Utilisateur}}
+\index{connecter\-Utilisateur@{connecter\-Utilisateur}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{connecter\-Utilisateur}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\-Bdd\-::connecter\-Utilisateur (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{pseudo, }
+\item[{std\-::string}]{mdp}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_a936ae71d7145692ec01ccb0f282d3b59}
+
+
+connecte l'utilisateur avec ce pseudo et ce mot de passe s'il existe 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em pseudo} & -\/ pseudo de l'utilisateur qui veut se connecter \\
+\hline
+{\em mdp} & -\/ mot de passe de l'utilisateur qui veut se connecter \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_gestion_bdd_a0e99ded45980647e925295e8cd828004}{\index{Gestion\-Bdd@{Gestion\-Bdd}!deconnecter\-Utilisateur@{deconnecter\-Utilisateur}}
+\index{deconnecter\-Utilisateur@{deconnecter\-Utilisateur}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{deconnecter\-Utilisateur}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\-Bdd\-::deconnecter\-Utilisateur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_a0e99ded45980647e925295e8cd828004}
+
+
+déconnecte l'utilisateur 
+
+\hypertarget{class_gestion_bdd_a6169a8867e04bcc950fe2e0fb2a5621d}{\index{Gestion\-Bdd@{Gestion\-Bdd}!generate\-Reference@{generate\-Reference}}
+\index{generate\-Reference@{generate\-Reference}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{generate\-Reference}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gestion\-Bdd\-::generate\-Reference (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_a6169a8867e04bcc950fe2e0fb2a5621d}
+
+
+génère une référence unique (version 2) 
+
+\begin{DoxyReturn}{Renvoie}
+std\-::string -\/ référence 
+\end{DoxyReturn}
+\hypertarget{class_gestion_bdd_a247c81f14899ebdc9666f62e9da73361}{\index{Gestion\-Bdd@{Gestion\-Bdd}!get\-Produit\-Courant@{get\-Produit\-Courant}}
+\index{get\-Produit\-Courant@{get\-Produit\-Courant}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{get\-Produit\-Courant}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Produit} $\ast$ Gestion\-Bdd\-::get\-Produit\-Courant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_a247c81f14899ebdc9666f62e9da73361}
+
+
+Cette fonction retourne le produit courant. 
+
+\begin{DoxyReturn}{Renvoie}
+Le produit courant 
+\end{DoxyReturn}
+\hypertarget{class_gestion_bdd_ad0e14c4312471baad8d525ae9c3b0952}{\index{Gestion\-Bdd@{Gestion\-Bdd}!get\-Quantite@{get\-Quantite}}
+\index{get\-Quantite@{get\-Quantite}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{get\-Quantite}]{\setlength{\rightskip}{0pt plus 5cm}int Gestion\-Bdd\-::get\-Quantite (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_ad0e14c4312471baad8d525ae9c3b0952}
+
+
+Cette fonction retourne la quantité du produit que l'on veut acheter. 
+
+\begin{DoxyReturn}{Renvoie}
+Un entier 
+\end{DoxyReturn}
+\hypertarget{class_gestion_bdd_a2ca66731bc3b85a279d5b140e63ba838}{\index{Gestion\-Bdd@{Gestion\-Bdd}!get\-Utilisateur\-Connecte@{get\-Utilisateur\-Connecte}}
+\index{get\-Utilisateur\-Connecte@{get\-Utilisateur\-Connecte}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{get\-Utilisateur\-Connecte}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Utilisateur} $\ast$ Gestion\-Bdd\-::get\-Utilisateur\-Connecte (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_a2ca66731bc3b85a279d5b140e63ba838}
+
+
+récupère un pointeur vers l'utilisateur actuellement connecté 
+
+\begin{DoxyReturn}{Renvoie}
+pointeur vers l'utilisateur connecté 
+\end{DoxyReturn}
+\hypertarget{class_gestion_bdd_acdaf971b3644b2aebbbb65a75b3e6c4c}{\index{Gestion\-Bdd@{Gestion\-Bdd}!incrementer\-Ref@{incrementer\-Ref}}
+\index{incrementer\-Ref@{incrementer\-Ref}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{incrementer\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\-Bdd\-::incrementer\-Ref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_acdaf971b3644b2aebbbb65a75b3e6c4c}
+
+
+incrémente la référence pour l'attribuer à un produit et qu'elle soit unique (version 1) 
+
+\hypertarget{class_gestion_bdd_a02f362c2dd2ca487922e00988f71281b}{\index{Gestion\-Bdd@{Gestion\-Bdd}!inscrire@{inscrire}}
+\index{inscrire@{inscrire}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{inscrire}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\-Bdd\-::inscrire (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{mon\-Pseudo, }
+\item[{std\-::string}]{mon\-Mdp, }
+\item[{std\-::string}]{name, }
+\item[{std\-::string}]{firstname, }
+\item[{int}]{jour\-Naiss, }
+\item[{int}]{mois\-Naiss, }
+\item[{int}]{annee\-Naiss, }
+\item[{std\-::string}]{mail, }
+\item[{std\-::string}]{adr, }
+\item[{int}]{code\-Postal}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_a02f362c2dd2ca487922e00988f71281b}
+
+
+inscrire un nouvel utilisateur et le stocker dans utilisateurs 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em mon\-Pseudo} & -\/ pseudo de l'utilisateur à inscrire \\
+\hline
+{\em mon\-Mdp} & -\/ mot de passe de l'utilisateur à inscrire \\
+\hline
+{\em name} & -\/ nom de l'utilisateur à inscrire \\
+\hline
+{\em firstname} & -\/ prenom de l'utilisateur à inscrire \\
+\hline
+{\em jour\-Naiss} & -\/ jour de la date de naissance de l'utilisateur à inscrire \\
+\hline
+{\em mois\-Naiss} & -\/ mois de la date de naissance de l'utilisateur à inscrire \\
+\hline
+{\em annee\-Naiss} & -\/ année de la date de naissance de l'utilisateur à inscrire \\
+\hline
+{\em mail} & -\/ adresse mail de l'utilisateur à inscrire \\
+\hline
+{\em adr} & -\/ adresse de l'utilisateur à inscrire \\
+\hline
+{\em code\-Postal} & -\/ code postal de l'utilisateur à inscrire \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_gestion_bdd_a86ee63900b31ef17bf487ebc1abe8634}{\index{Gestion\-Bdd@{Gestion\-Bdd}!is\-Connecte@{is\-Connecte}}
+\index{is\-Connecte@{is\-Connecte}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{is\-Connecte}]{\setlength{\rightskip}{0pt plus 5cm}bool Gestion\-Bdd\-::is\-Connecte (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_a86ee63900b31ef17bf487ebc1abe8634}
+
+
+retourne true si un utilisateur est connecté, false sinon 
+
+\begin{DoxyReturn}{Renvoie}
+true si un utilisateur est connecté, false sinon 
+\end{DoxyReturn}
+\hypertarget{class_gestion_bdd_a966846d69aa1cf0ed82ef74127e10883}{\index{Gestion\-Bdd@{Gestion\-Bdd}!modifier\-Profil@{modifier\-Profil}}
+\index{modifier\-Profil@{modifier\-Profil}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{modifier\-Profil}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\-Bdd\-::modifier\-Profil (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{nom, }
+\item[{std\-::string}]{prenom, }
+\item[{std\-::string}]{mail, }
+\item[{int}]{code\-Postal, }
+\item[{std\-::string}]{ville, }
+\item[{std\-::string}]{adresse}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_a966846d69aa1cf0ed82ef74127e10883}
+
+
+modifie le profil avec ces informations 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom} & -\/ nouveau nom \\
+\hline
+{\em prenom} & -\/ nouveau prénom \\
+\hline
+{\em mail} & -\/ nouvelle adresse mail \\
+\hline
+{\em code\-Postal} & -\/ nouveau code postal \\
+\hline
+{\em ville} & -\/ nouvelle ville \\
+\hline
+{\em adresse} & -\/ nouvelle adresse \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_gestion_bdd_abf0ffd54c39d6dfe431fc8d556eb5c8d}{\index{Gestion\-Bdd@{Gestion\-Bdd}!rechercher\-Produit@{rechercher\-Produit}}
+\index{rechercher\-Produit@{rechercher\-Produit}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{rechercher\-Produit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Produit} $\ast$ Gestion\-Bdd\-::rechercher\-Produit (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{ref}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_abf0ffd54c39d6dfe431fc8d556eb5c8d}
+
+
+recherche le produit avec cette référence 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ref} & -\/ référence du produit recherché \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+le produit recherché 
+\end{DoxyReturn}
+\hypertarget{class_gestion_bdd_aadc12bc0c3aee41bc56918e44b5d1085}{\index{Gestion\-Bdd@{Gestion\-Bdd}!rechercher\-Tags@{rechercher\-Tags}}
+\index{rechercher\-Tags@{rechercher\-Tags}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{rechercher\-Tags}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Produit} $\ast$ $>$ Gestion\-Bdd\-::rechercher\-Tags (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{t}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_aadc12bc0c3aee41bc56918e44b5d1085}
+
+
+recherche un produit par tags (c'est à dire nom, catégorie) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em t} & -\/ tags recherchés \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un vector contenant des pointeurs sur les produits trouvés 
+\end{DoxyReturn}
+\hypertarget{class_gestion_bdd_a59989c7d58166c7e4a451b77e56bb852}{\index{Gestion\-Bdd@{Gestion\-Bdd}!rechercher\-Utilisateur@{rechercher\-Utilisateur}}
+\index{rechercher\-Utilisateur@{rechercher\-Utilisateur}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{rechercher\-Utilisateur}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Utilisateur} $\ast$ Gestion\-Bdd\-::rechercher\-Utilisateur (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{pseudo}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_a59989c7d58166c7e4a451b77e56bb852}
+
+
+recherche l'utilisateur avec ce pseudo 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em pseudo} & -\/ pseudo recherché \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un pointeur vers l'utilisateur recherché 
+\end{DoxyReturn}
+\hypertarget{class_gestion_bdd_acdf8fc7e874b0c24408aaf1121aafda6}{\index{Gestion\-Bdd@{Gestion\-Bdd}!set\-Produit\-Courant@{set\-Produit\-Courant}}
+\index{set\-Produit\-Courant@{set\-Produit\-Courant}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{set\-Produit\-Courant}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\-Bdd\-::set\-Produit\-Courant (
+\begin{DoxyParamCaption}
+\item[{{\bf Produit} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_acdf8fc7e874b0c24408aaf1121aafda6}
+
+
+Cette fonction fixe le produit courant lorsque l'on consulte la fiche d'un produit. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & -\/ \hyperlink{class_produit}{Produit} consulté \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_gestion_bdd_ae1beeb1b627cbf2e6d0b044c9821d05a}{\index{Gestion\-Bdd@{Gestion\-Bdd}!set\-Quantite@{set\-Quantite}}
+\index{set\-Quantite@{set\-Quantite}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{set\-Quantite}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\-Bdd\-::set\-Quantite (
+\begin{DoxyParamCaption}
+\item[{int}]{qte}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_ae1beeb1b627cbf2e6d0b044c9821d05a}
+
+
+Cette fonction fixe la quantité du produit que l'on veut acheter. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em qte} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_gestion_bdd_a518211afbda535f9bcbf718254c7a6aa}{\index{Gestion\-Bdd@{Gestion\-Bdd}!update@{update}}
+\index{update@{update}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\-Bdd\-::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_a518211afbda535f9bcbf718254c7a6aa}
+
+
+provoque la fonction update dans toutes les vues 
+
+\hypertarget{class_gestion_bdd_aa52e1f2d076c4e3f65162e9f28ed20fa}{\index{Gestion\-Bdd@{Gestion\-Bdd}!ventes\-En\-Cours@{ventes\-En\-Cours}}
+\index{ventes\-En\-Cours@{ventes\-En\-Cours}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{ventes\-En\-Cours}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Produit} $\ast$ $>$ Gestion\-Bdd\-::ventes\-En\-Cours (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_gestion_bdd_aa52e1f2d076c4e3f65162e9f28ed20fa}
+
+
+rtourne les ventes en cours 
+
+\begin{DoxyReturn}{Renvoie}
+un vector contenant des pointeurs vers les produits en vente 
+\end{DoxyReturn}
+
+
+\subsection{Documentation des données membres}
+\hypertarget{class_gestion_bdd_a892f50933d1226a389b561276bd0ca93}{\index{Gestion\-Bdd@{Gestion\-Bdd}!produit\-Courant@{produit\-Courant}}
+\index{produit\-Courant@{produit\-Courant}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{produit\-Courant}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Produit}$\ast$ Gestion\-Bdd\-::produit\-Courant\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_gestion_bdd_a892f50933d1226a389b561276bd0ca93}
+\hypertarget{class_gestion_bdd_a3d8399948251d113edf841e5122c51b8}{\index{Gestion\-Bdd@{Gestion\-Bdd}!produits@{produits}}
+\index{produits@{produits}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{produits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Les\-Produits} Gestion\-Bdd\-::produits\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_gestion_bdd_a3d8399948251d113edf841e5122c51b8}
+\hypertarget{class_gestion_bdd_aea2dfb9c9690c8aef62feb9936426588}{\index{Gestion\-Bdd@{Gestion\-Bdd}!quantite@{quantite}}
+\index{quantite@{quantite}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{quantite}]{\setlength{\rightskip}{0pt plus 5cm}int Gestion\-Bdd\-::quantite\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_gestion_bdd_aea2dfb9c9690c8aef62feb9936426588}
+\hypertarget{class_gestion_bdd_ae9e26a2043f3e10fb773107809bfc007}{\index{Gestion\-Bdd@{Gestion\-Bdd}!ref@{ref}}
+\index{ref@{ref}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{ref}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gestion\-Bdd\-::ref\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_gestion_bdd_ae9e26a2043f3e10fb773107809bfc007}
+\hypertarget{class_gestion_bdd_adb07bb1f3015855aef7bcfe0b278ebd7}{\index{Gestion\-Bdd@{Gestion\-Bdd}!utilisateur\-Connecte@{utilisateur\-Connecte}}
+\index{utilisateur\-Connecte@{utilisateur\-Connecte}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{utilisateur\-Connecte}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Utilisateur}$\ast$ Gestion\-Bdd\-::utilisateur\-Connecte\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_gestion_bdd_adb07bb1f3015855aef7bcfe0b278ebd7}
+\hypertarget{class_gestion_bdd_a43b0bcad5d1eb6ff51c78ceb6cdd972c}{\index{Gestion\-Bdd@{Gestion\-Bdd}!utilisateurs@{utilisateurs}}
+\index{utilisateurs@{utilisateurs}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{utilisateurs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Les\-Utilisateurs} Gestion\-Bdd\-::utilisateurs\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_gestion_bdd_a43b0bcad5d1eb6ff51c78ceb6cdd972c}
+\hypertarget{class_gestion_bdd_a44ea1efd29c4996b1dcba0bf428051a7}{\index{Gestion\-Bdd@{Gestion\-Bdd}!vues@{vues}}
+\index{vues@{vues}!GestionBdd@{Gestion\-Bdd}}
+\subsubsection[{vues}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Vue}$\ast$$>$ Gestion\-Bdd\-::vues\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_gestion_bdd_a44ea1efd29c4996b1dcba0bf428051a7}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+/home/magalie/\-Bureau/\-S5/\-C\-P\-O\-O\-A/\-Projet/\-E-\/\-Marche-\//iterations/iteration4/\-E\-Marche/bdd/\hyperlink{_gestion_bdd_8h}{Gestion\-Bdd.\-h}\item 
+/home/magalie/\-Bureau/\-S5/\-C\-P\-O\-O\-A/\-Projet/\-E-\/\-Marche-\//iterations/iteration4/\-E\-Marche/bdd/\hyperlink{_gestion_bdd_8cpp}{Gestion\-Bdd.\-cpp}\end{DoxyCompactItemize}

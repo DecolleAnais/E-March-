@@ -1,0 +1,584 @@
+\hypertarget{class_produit}{\section{Référence de la classe Produit}
+\label{class_produit}\index{Produit@{Produit}}
+}
+
+
+Cette classe gère le stockage d'un produit.  
+
+
+
+
+{\ttfamily \#include $<$Produit.\-h$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_produit_a5b23bea0ed80afaa80e6e0d6b01d68a8}{Produit} (std\-::string v, std\-::string n, std\-::string cat, float prix, unsigned int qte, bool etat)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \hyperlink{class_produit}{Produit}. \end{DoxyCompactList}\item 
+\hyperlink{class_produit_ac0136c815dafc47b3959c5fd5ee763cd}{Produit} (std\-::string v, std\-::string n, std\-::string cat, float prix, unsigned int qte, bool etat, struct tm date\-Limite)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \hyperlink{class_produit}{Produit}. \end{DoxyCompactList}\item 
+\hyperlink{class_produit_a0b056e8aa75a367e0ba3d80fc0055e2c}{Produit} (\hyperlink{class_produit}{Produit} \&instance)
+\begin{DoxyCompactList}\small\item\em Constructeur de copie de produit. \end{DoxyCompactList}\item 
+\hyperlink{class_produit_a7b789cfa3048436fd050cb565b499c03}{$\sim$\-Produit} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe \hyperlink{class_produit}{Produit}. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_produit_abb06f356f5471dfc236f17412d4a6749}{get\-Vendeur} ()
+\begin{DoxyCompactList}\small\item\em Retourne le nom du vendeur. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_produit_a4fc3e3d0c67b9b17e6c0e20cfec70c3b}{get\-Quantite} ()
+\begin{DoxyCompactList}\small\item\em Retourne la quantité en stock du produit. \end{DoxyCompactList}\item 
+float \hyperlink{class_produit_ae9e421815cd947b5ef56b751272a34ca}{get\-Prix\-Unitaire} ()
+\begin{DoxyCompactList}\small\item\em Retourne le prix unitaire. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_produit_aaad2134211bc9caebb1abcefe5e096c5}{get\-Reference} ()
+\begin{DoxyCompactList}\small\item\em Retourne la référence unique. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_produit_a6e4b2da75ac7c667bf1f70c124aea0ef}{get\-Nom} ()
+\begin{DoxyCompactList}\small\item\em Retourne le nom du produit. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_produit_a9eff46fd98f73089223b7797a79f1a6c}{get\-Categorie} ()
+\begin{DoxyCompactList}\small\item\em Retourne la catégorie. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_produit_af4d4f3cc1b83dbc521965ef3832f55db}{get\-Date\-Depot} ()
+\begin{DoxyCompactList}\small\item\em Retourne la date de dépôt. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_produit_aa7f00c40483d9035023d5e2bfa3f7154}{get\-Date\-Achat\-Vente} ()
+\begin{DoxyCompactList}\small\item\em Retourne la date d'achat ou de vente. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_produit_aa0421a8a8a05684059fa5c26fc6b09e5}{get\-Etat\-Vente} ()
+\begin{DoxyCompactList}\small\item\em Retourne le type de la vente (enchère ou normale) \end{DoxyCompactList}\item 
+float \hyperlink{class_produit_a8df31b7e2ca9fc0cf330cbed2efd22d0}{get\-Prix\-Actuel} ()
+\begin{DoxyCompactList}\small\item\em Retourne le prix actuel. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_produit_a7b44df89f061edee42a971f2c172965b}{get\-Tags} ()
+\begin{DoxyCompactList}\small\item\em Retourne les mots-\/clés qui identifient le produit. \end{DoxyCompactList}\item 
+std\-::vector$<$ std\-::string $>$ \hyperlink{class_produit_ab8b15ff1ad286eb2e8a8f9afae3194f1}{get\-Tags\-Vector} ()
+\item 
+std\-::string \hyperlink{class_produit_a7bd69ad69057b77be95569b597dc058d}{get\-Date\-Limite} ()
+\begin{DoxyCompactList}\small\item\em Retourne la date limite de l'enchère. \end{DoxyCompactList}\item 
+void \hyperlink{class_produit_a34da537b2544450854d932c2cb695d6d}{set\-Reference} (std\-::string r)
+\begin{DoxyCompactList}\small\item\em Cette fonction attribue une référence unique au produit. \end{DoxyCompactList}\item 
+void \hyperlink{class_produit_aee71ce4e667afde2773fea21c663d816}{set\-Quantite} (unsigned int q)
+\begin{DoxyCompactList}\small\item\em Cette fonction fixe la quantité disponible. \end{DoxyCompactList}\item 
+void \hyperlink{class_produit_a609f2dfcf93cc5a41ef69f3e4ed4598f}{set\-Date\-Vente\-Achat} (int jour, int mois, int annee)
+\begin{DoxyCompactList}\small\item\em Cette fonction fixe la date d'achat ou de vente. \end{DoxyCompactList}\item 
+void \hyperlink{class_produit_aed251a51ae5ae9a99b991024434edcfb}{augmenter\-Enchere} (int prix)
+\begin{DoxyCompactList}\small\item\em Cette fonction permet d'augenter le prix d'une enchère. \end{DoxyCompactList}\item 
+void \hyperlink{class_produit_a5edb1869a3001fb320047a78ea5e715a}{ajouter\-Tag} (std\-::string t)
+\begin{DoxyCompactList}\small\item\em Ajouter un nouveau mot-\/clé pour désigner le produit. \end{DoxyCompactList}\item 
+void \hyperlink{class_produit_a9993d668f2200f091f8215e74060d0be}{decrit} (std\-::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Cette méthode permet d'écrire la description d'un produit dans un flot de sortie donnée en paramètre. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_produit_a39e7fe8ee4363f40b0397e6cf360d703}{decrit} ()
+\begin{DoxyCompactList}\small\item\em Cette méthode retourne la description du produit dans une chaîne de caractères. \end{DoxyCompactList}\item 
+void \hyperlink{class_produit_a1c7bbc2a601d2aa5b7e93991c18da6d1}{affiche} (std\-::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Cette méthode permet d'afficher la description du produit, suivie d'un passage à la ligne, dans un flot de sortie donné en paramètre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{class_produit_a176eb59190cd9b761814fd5c68a8353b}{vendeur}
+\begin{DoxyCompactList}\small\item\em Nom du vendeur. \end{DoxyCompactList}\item 
+\hyperlink{class_categorie}{Categorie} $\ast$ \hyperlink{class_produit_a27756eb9e95c2a37dad2f73c3c3fa2e3}{categorie}
+\begin{DoxyCompactList}\small\item\em Catégorie. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_produit_acb895352487797b4b9189b8fde1f8c58}{nom}
+\begin{DoxyCompactList}\small\item\em Nom du produit. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_produit_a373d0a18812023e675ae981ca9618209}{reference}
+\begin{DoxyCompactList}\small\item\em Référence unique. \end{DoxyCompactList}\item 
+float \hyperlink{class_produit_ac4432cc25a56757fce7300232046243a}{prix\-Unitaire}
+\begin{DoxyCompactList}\small\item\em Prix unitaire. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_produit_a6c569e4c47aed9ee050bb0aa9455dd62}{quantite}
+\begin{DoxyCompactList}\small\item\em Quantité \end{DoxyCompactList}\item 
+struct tm \hyperlink{class_produit_ad1e7e307209f7ef6ad7cf407801fb5e6}{date\-Depot}
+\begin{DoxyCompactList}\small\item\em Date de dépôt sur le site. \end{DoxyCompactList}\item 
+struct tm \hyperlink{class_produit_af97688d1cf1ed5b59b248f688b42bc47}{date\-Achat\-Vente}
+\begin{DoxyCompactList}\small\item\em Date d'achat ou de vente. \end{DoxyCompactList}\item 
+\hyperlink{class_etat_vente}{Etat\-Vente} $\ast$ \hyperlink{class_produit_af2965a92ffaf42af6e0a67951f9d44f7}{etat\-Vente}
+\begin{DoxyCompactList}\small\item\em Etat du produit (enchères ou normale) \end{DoxyCompactList}\item 
+std\-::vector$<$ std\-::string $>$ \hyperlink{class_produit_a0fe989b845422996d650da8e5cc09fcf}{tags}
+\begin{DoxyCompactList}\small\item\em Mots-\/clés qui identifient le produit. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{class_avis}{Avis} $>$ \hyperlink{class_produit_a0de1409220ab37c7d582772912c88ac7}{les\-Avis}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_avis}{Avis} donnés sur le produit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Cette classe gère le stockage d'un produit. 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{class_produit_a5b23bea0ed80afaa80e6e0d6b01d68a8}{\index{Produit@{Produit}!Produit@{Produit}}
+\index{Produit@{Produit}!Produit@{Produit}}
+\subsubsection[{Produit}]{\setlength{\rightskip}{0pt plus 5cm}Produit\-::\-Produit (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{v, }
+\item[{std\-::string}]{n, }
+\item[{std\-::string}]{cat, }
+\item[{float}]{prix, }
+\item[{unsigned int}]{qte, }
+\item[{bool}]{etat}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_produit_a5b23bea0ed80afaa80e6e0d6b01d68a8}
+
+
+Constructeur de la classe \hyperlink{class_produit}{Produit}. 
+
+Utilisé pour les ventes normales 
+\begin{DoxyParams}{Paramètres}
+{\em v} & -\/ Nom du vendeur \\
+\hline
+{\em n} & -\/ Nom du produit \\
+\hline
+{\em cat} & -\/ Nom de la catégorie \\
+\hline
+{\em prix} & -\/ Prix unitaire \\
+\hline
+{\em qte} & -\/ Quantité \\
+\hline
+{\em etat} & -\/ Type de la vente (enchère ou normale) \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_produit_ac0136c815dafc47b3959c5fd5ee763cd}{\index{Produit@{Produit}!Produit@{Produit}}
+\index{Produit@{Produit}!Produit@{Produit}}
+\subsubsection[{Produit}]{\setlength{\rightskip}{0pt plus 5cm}Produit\-::\-Produit (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{v, }
+\item[{std\-::string}]{n, }
+\item[{std\-::string}]{cat, }
+\item[{float}]{prix, }
+\item[{unsigned int}]{qte, }
+\item[{bool}]{etat, }
+\item[{struct tm}]{date\-Limite}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_produit_ac0136c815dafc47b3959c5fd5ee763cd}
+
+
+Constructeur de la classe \hyperlink{class_produit}{Produit}. 
+
+Utilisé pour les ventes aux enchères 
+\begin{DoxyParams}{Paramètres}
+{\em v} & -\/ Nom du vendeur \\
+\hline
+{\em n} & -\/ Nom du produit \\
+\hline
+{\em cat} & -\/ Nom de la catégorie \\
+\hline
+{\em prix} & -\/ Prix unitaire \\
+\hline
+{\em qte} & -\/ Quantité \\
+\hline
+{\em etat} & -\/ Type de la vente (enchère ou normale) \\
+\hline
+{\em date\-Limite} & -\/ Date limite de l'enchère \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_produit_a0b056e8aa75a367e0ba3d80fc0055e2c}{\index{Produit@{Produit}!Produit@{Produit}}
+\index{Produit@{Produit}!Produit@{Produit}}
+\subsubsection[{Produit}]{\setlength{\rightskip}{0pt plus 5cm}Produit\-::\-Produit (
+\begin{DoxyParamCaption}
+\item[{{\bf Produit} \&}]{instance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_produit_a0b056e8aa75a367e0ba3d80fc0055e2c}
+
+
+Constructeur de copie de produit. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em instance} & -\/ \hyperlink{class_produit}{Produit} à copier \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_produit_a7b789cfa3048436fd050cb565b499c03}{\index{Produit@{Produit}!$\sim$\-Produit@{$\sim$\-Produit}}
+\index{$\sim$\-Produit@{$\sim$\-Produit}!Produit@{Produit}}
+\subsubsection[{$\sim$\-Produit}]{\setlength{\rightskip}{0pt plus 5cm}Produit\-::$\sim$\-Produit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_produit_a7b789cfa3048436fd050cb565b499c03}
+
+
+Destructeur de la classe \hyperlink{class_produit}{Produit}. 
+
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_produit_a1c7bbc2a601d2aa5b7e93991c18da6d1}{\index{Produit@{Produit}!affiche@{affiche}}
+\index{affiche@{affiche}!Produit@{Produit}}
+\subsubsection[{affiche}]{\setlength{\rightskip}{0pt plus 5cm}void Produit\-::affiche (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_produit_a1c7bbc2a601d2aa5b7e93991c18da6d1}
+
+
+Cette méthode permet d'afficher la description du produit, suivie d'un passage à la ligne, dans un flot de sortie donné en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em os} & -\/ le flot de sortie dans lequel la description sera affichée \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_produit_a5edb1869a3001fb320047a78ea5e715a}{\index{Produit@{Produit}!ajouter\-Tag@{ajouter\-Tag}}
+\index{ajouter\-Tag@{ajouter\-Tag}!Produit@{Produit}}
+\subsubsection[{ajouter\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}void Produit\-::ajouter\-Tag (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{t}
+\end{DoxyParamCaption}
+)}}\label{class_produit_a5edb1869a3001fb320047a78ea5e715a}
+
+
+Ajouter un nouveau mot-\/clé pour désigner le produit. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em t} & -\/ Nouveau mot-\/clé \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_produit_aed251a51ae5ae9a99b991024434edcfb}{\index{Produit@{Produit}!augmenter\-Enchere@{augmenter\-Enchere}}
+\index{augmenter\-Enchere@{augmenter\-Enchere}!Produit@{Produit}}
+\subsubsection[{augmenter\-Enchere}]{\setlength{\rightskip}{0pt plus 5cm}void Produit\-::augmenter\-Enchere (
+\begin{DoxyParamCaption}
+\item[{int}]{prix}
+\end{DoxyParamCaption}
+)}}\label{class_produit_aed251a51ae5ae9a99b991024434edcfb}
+
+
+Cette fonction permet d'augenter le prix d'une enchère. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em prix} & -\/ Nouveau prix de l'enchère \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_produit_a9993d668f2200f091f8215e74060d0be}{\index{Produit@{Produit}!decrit@{decrit}}
+\index{decrit@{decrit}!Produit@{Produit}}
+\subsubsection[{decrit}]{\setlength{\rightskip}{0pt plus 5cm}void Produit\-::decrit (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_produit_a9993d668f2200f091f8215e74060d0be}
+
+
+Cette méthode permet d'écrire la description d'un produit dans un flot de sortie donnée en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em os} & -\/ le flot de sortie dans lequel la description sera écrite \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_produit_a39e7fe8ee4363f40b0397e6cf360d703}{\index{Produit@{Produit}!decrit@{decrit}}
+\index{decrit@{decrit}!Produit@{Produit}}
+\subsubsection[{decrit}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::decrit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_produit_a39e7fe8ee4363f40b0397e6cf360d703}
+
+
+Cette méthode retourne la description du produit dans une chaîne de caractères. 
+
+\begin{DoxyReturn}{Renvoie}
+la description du produit dans une chaîne de caractères 
+\end{DoxyReturn}
+\hypertarget{class_produit_a9eff46fd98f73089223b7797a79f1a6c}{\index{Produit@{Produit}!get\-Categorie@{get\-Categorie}}
+\index{get\-Categorie@{get\-Categorie}!Produit@{Produit}}
+\subsubsection[{get\-Categorie}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::get\-Categorie (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_produit_a9eff46fd98f73089223b7797a79f1a6c}
+
+
+Retourne la catégorie. 
+
+\begin{DoxyReturn}{Renvoie}
+Un string contenant la catégorie 
+\end{DoxyReturn}
+\hypertarget{class_produit_aa7f00c40483d9035023d5e2bfa3f7154}{\index{Produit@{Produit}!get\-Date\-Achat\-Vente@{get\-Date\-Achat\-Vente}}
+\index{get\-Date\-Achat\-Vente@{get\-Date\-Achat\-Vente}!Produit@{Produit}}
+\subsubsection[{get\-Date\-Achat\-Vente}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::get\-Date\-Achat\-Vente (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_produit_aa7f00c40483d9035023d5e2bfa3f7154}
+
+
+Retourne la date d'achat ou de vente. 
+
+\begin{DoxyReturn}{Renvoie}
+Un string contenant la date d'achat ou de vente 
+\end{DoxyReturn}
+\hypertarget{class_produit_af4d4f3cc1b83dbc521965ef3832f55db}{\index{Produit@{Produit}!get\-Date\-Depot@{get\-Date\-Depot}}
+\index{get\-Date\-Depot@{get\-Date\-Depot}!Produit@{Produit}}
+\subsubsection[{get\-Date\-Depot}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::get\-Date\-Depot (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_produit_af4d4f3cc1b83dbc521965ef3832f55db}
+
+
+Retourne la date de dépôt. 
+
+\begin{DoxyReturn}{Renvoie}
+Un string contenant la date de dépôt 
+\end{DoxyReturn}
+\hypertarget{class_produit_a7bd69ad69057b77be95569b597dc058d}{\index{Produit@{Produit}!get\-Date\-Limite@{get\-Date\-Limite}}
+\index{get\-Date\-Limite@{get\-Date\-Limite}!Produit@{Produit}}
+\subsubsection[{get\-Date\-Limite}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::get\-Date\-Limite (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_produit_a7bd69ad69057b77be95569b597dc058d}
+
+
+Retourne la date limite de l'enchère. 
+
+\begin{DoxyReturn}{Renvoie}
+Un string contenant la date limite de l'enchère 
+\end{DoxyReturn}
+\hypertarget{class_produit_aa0421a8a8a05684059fa5c26fc6b09e5}{\index{Produit@{Produit}!get\-Etat\-Vente@{get\-Etat\-Vente}}
+\index{get\-Etat\-Vente@{get\-Etat\-Vente}!Produit@{Produit}}
+\subsubsection[{get\-Etat\-Vente}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::get\-Etat\-Vente (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_produit_aa0421a8a8a05684059fa5c26fc6b09e5}
+
+
+Retourne le type de la vente (enchère ou normale) 
+
+\begin{DoxyReturn}{Renvoie}
+Un string contenant l'état de la vente 
+\end{DoxyReturn}
+\hypertarget{class_produit_a6e4b2da75ac7c667bf1f70c124aea0ef}{\index{Produit@{Produit}!get\-Nom@{get\-Nom}}
+\index{get\-Nom@{get\-Nom}!Produit@{Produit}}
+\subsubsection[{get\-Nom}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::get\-Nom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_produit_a6e4b2da75ac7c667bf1f70c124aea0ef}
+
+
+Retourne le nom du produit. 
+
+\begin{DoxyReturn}{Renvoie}
+Un string contenant le nom du produit 
+\end{DoxyReturn}
+\hypertarget{class_produit_a8df31b7e2ca9fc0cf330cbed2efd22d0}{\index{Produit@{Produit}!get\-Prix\-Actuel@{get\-Prix\-Actuel}}
+\index{get\-Prix\-Actuel@{get\-Prix\-Actuel}!Produit@{Produit}}
+\subsubsection[{get\-Prix\-Actuel}]{\setlength{\rightskip}{0pt plus 5cm}float Produit\-::get\-Prix\-Actuel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_produit_a8df31b7e2ca9fc0cf330cbed2efd22d0}
+
+
+Retourne le prix actuel. 
+
+\begin{DoxyReturn}{Renvoie}
+Un float représenant le prix actuel 
+\end{DoxyReturn}
+\hypertarget{class_produit_ae9e421815cd947b5ef56b751272a34ca}{\index{Produit@{Produit}!get\-Prix\-Unitaire@{get\-Prix\-Unitaire}}
+\index{get\-Prix\-Unitaire@{get\-Prix\-Unitaire}!Produit@{Produit}}
+\subsubsection[{get\-Prix\-Unitaire}]{\setlength{\rightskip}{0pt plus 5cm}float Produit\-::get\-Prix\-Unitaire (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_produit_ae9e421815cd947b5ef56b751272a34ca}
+
+
+Retourne le prix unitaire. 
+
+\begin{DoxyReturn}{Renvoie}
+Un float représentant le prix unitaire 
+\end{DoxyReturn}
+\hypertarget{class_produit_a4fc3e3d0c67b9b17e6c0e20cfec70c3b}{\index{Produit@{Produit}!get\-Quantite@{get\-Quantite}}
+\index{get\-Quantite@{get\-Quantite}!Produit@{Produit}}
+\subsubsection[{get\-Quantite}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Produit\-::get\-Quantite (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_produit_a4fc3e3d0c67b9b17e6c0e20cfec70c3b}
+
+
+Retourne la quantité en stock du produit. 
+
+\begin{DoxyReturn}{Renvoie}
+Un entier positif représentant la quantité 
+\end{DoxyReturn}
+\hypertarget{class_produit_aaad2134211bc9caebb1abcefe5e096c5}{\index{Produit@{Produit}!get\-Reference@{get\-Reference}}
+\index{get\-Reference@{get\-Reference}!Produit@{Produit}}
+\subsubsection[{get\-Reference}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::get\-Reference (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_produit_aaad2134211bc9caebb1abcefe5e096c5}
+
+
+Retourne la référence unique. 
+
+\begin{DoxyReturn}{Renvoie}
+Un string contenant la référence 
+\end{DoxyReturn}
+\hypertarget{class_produit_a7b44df89f061edee42a971f2c172965b}{\index{Produit@{Produit}!get\-Tags@{get\-Tags}}
+\index{get\-Tags@{get\-Tags}!Produit@{Produit}}
+\subsubsection[{get\-Tags}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::get\-Tags (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_produit_a7b44df89f061edee42a971f2c172965b}
+
+
+Retourne les mots-\/clés qui identifient le produit. 
+
+\begin{DoxyReturn}{Renvoie}
+Un string contenant les mots-\/clés 
+\end{DoxyReturn}
+\hypertarget{class_produit_ab8b15ff1ad286eb2e8a8f9afae3194f1}{\index{Produit@{Produit}!get\-Tags\-Vector@{get\-Tags\-Vector}}
+\index{get\-Tags\-Vector@{get\-Tags\-Vector}!Produit@{Produit}}
+\subsubsection[{get\-Tags\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ string $>$ Produit\-::get\-Tags\-Vector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_produit_ab8b15ff1ad286eb2e8a8f9afae3194f1}
+\hypertarget{class_produit_abb06f356f5471dfc236f17412d4a6749}{\index{Produit@{Produit}!get\-Vendeur@{get\-Vendeur}}
+\index{get\-Vendeur@{get\-Vendeur}!Produit@{Produit}}
+\subsubsection[{get\-Vendeur}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::get\-Vendeur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_produit_abb06f356f5471dfc236f17412d4a6749}
+
+
+Retourne le nom du vendeur. 
+
+\begin{DoxyReturn}{Renvoie}
+Un string contenant le nom du vendeur 
+\end{DoxyReturn}
+\hypertarget{class_produit_a609f2dfcf93cc5a41ef69f3e4ed4598f}{\index{Produit@{Produit}!set\-Date\-Vente\-Achat@{set\-Date\-Vente\-Achat}}
+\index{set\-Date\-Vente\-Achat@{set\-Date\-Vente\-Achat}!Produit@{Produit}}
+\subsubsection[{set\-Date\-Vente\-Achat}]{\setlength{\rightskip}{0pt plus 5cm}void Produit\-::set\-Date\-Vente\-Achat (
+\begin{DoxyParamCaption}
+\item[{int}]{jour, }
+\item[{int}]{mois, }
+\item[{int}]{annee}
+\end{DoxyParamCaption}
+)}}\label{class_produit_a609f2dfcf93cc5a41ef69f3e4ed4598f}
+
+
+Cette fonction fixe la date d'achat ou de vente. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em jour} & -\/ Jour \\
+\hline
+{\em mois} & -\/ Mois \\
+\hline
+{\em annee} & -\/ Année \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_produit_aee71ce4e667afde2773fea21c663d816}{\index{Produit@{Produit}!set\-Quantite@{set\-Quantite}}
+\index{set\-Quantite@{set\-Quantite}!Produit@{Produit}}
+\subsubsection[{set\-Quantite}]{\setlength{\rightskip}{0pt plus 5cm}void Produit\-::set\-Quantite (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{q}
+\end{DoxyParamCaption}
+)}}\label{class_produit_aee71ce4e667afde2773fea21c663d816}
+
+
+Cette fonction fixe la quantité disponible. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em q} & -\/ Nouvelle quantité \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_produit_a34da537b2544450854d932c2cb695d6d}{\index{Produit@{Produit}!set\-Reference@{set\-Reference}}
+\index{set\-Reference@{set\-Reference}!Produit@{Produit}}
+\subsubsection[{set\-Reference}]{\setlength{\rightskip}{0pt plus 5cm}void Produit\-::set\-Reference (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{r}
+\end{DoxyParamCaption}
+)}}\label{class_produit_a34da537b2544450854d932c2cb695d6d}
+
+
+Cette fonction attribue une référence unique au produit. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em r} & Un string contenant la référence \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des données membres}
+\hypertarget{class_produit_a27756eb9e95c2a37dad2f73c3c3fa2e3}{\index{Produit@{Produit}!categorie@{categorie}}
+\index{categorie@{categorie}!Produit@{Produit}}
+\subsubsection[{categorie}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Categorie}$\ast$ Produit\-::categorie\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_produit_a27756eb9e95c2a37dad2f73c3c3fa2e3}
+
+
+Catégorie. 
+
+\hypertarget{class_produit_af97688d1cf1ed5b59b248f688b42bc47}{\index{Produit@{Produit}!date\-Achat\-Vente@{date\-Achat\-Vente}}
+\index{date\-Achat\-Vente@{date\-Achat\-Vente}!Produit@{Produit}}
+\subsubsection[{date\-Achat\-Vente}]{\setlength{\rightskip}{0pt plus 5cm}struct tm Produit\-::date\-Achat\-Vente\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_produit_af97688d1cf1ed5b59b248f688b42bc47}
+
+
+Date d'achat ou de vente. 
+
+\hypertarget{class_produit_ad1e7e307209f7ef6ad7cf407801fb5e6}{\index{Produit@{Produit}!date\-Depot@{date\-Depot}}
+\index{date\-Depot@{date\-Depot}!Produit@{Produit}}
+\subsubsection[{date\-Depot}]{\setlength{\rightskip}{0pt plus 5cm}struct tm Produit\-::date\-Depot\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_produit_ad1e7e307209f7ef6ad7cf407801fb5e6}
+
+
+Date de dépôt sur le site. 
+
+\hypertarget{class_produit_af2965a92ffaf42af6e0a67951f9d44f7}{\index{Produit@{Produit}!etat\-Vente@{etat\-Vente}}
+\index{etat\-Vente@{etat\-Vente}!Produit@{Produit}}
+\subsubsection[{etat\-Vente}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Etat\-Vente}$\ast$ Produit\-::etat\-Vente\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_produit_af2965a92ffaf42af6e0a67951f9d44f7}
+
+
+Etat du produit (enchères ou normale) 
+
+\hypertarget{class_produit_a0de1409220ab37c7d582772912c88ac7}{\index{Produit@{Produit}!les\-Avis@{les\-Avis}}
+\index{les\-Avis@{les\-Avis}!Produit@{Produit}}
+\subsubsection[{les\-Avis}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Avis}$>$ Produit\-::les\-Avis\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_produit_a0de1409220ab37c7d582772912c88ac7}
+
+
+\hyperlink{class_avis}{Avis} donnés sur le produit. 
+
+\hypertarget{class_produit_acb895352487797b4b9189b8fde1f8c58}{\index{Produit@{Produit}!nom@{nom}}
+\index{nom@{nom}!Produit@{Produit}}
+\subsubsection[{nom}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::nom\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_produit_acb895352487797b4b9189b8fde1f8c58}
+
+
+Nom du produit. 
+
+\hypertarget{class_produit_ac4432cc25a56757fce7300232046243a}{\index{Produit@{Produit}!prix\-Unitaire@{prix\-Unitaire}}
+\index{prix\-Unitaire@{prix\-Unitaire}!Produit@{Produit}}
+\subsubsection[{prix\-Unitaire}]{\setlength{\rightskip}{0pt plus 5cm}float Produit\-::prix\-Unitaire\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_produit_ac4432cc25a56757fce7300232046243a}
+
+
+Prix unitaire. 
+
+\hypertarget{class_produit_a6c569e4c47aed9ee050bb0aa9455dd62}{\index{Produit@{Produit}!quantite@{quantite}}
+\index{quantite@{quantite}!Produit@{Produit}}
+\subsubsection[{quantite}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Produit\-::quantite\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_produit_a6c569e4c47aed9ee050bb0aa9455dd62}
+
+
+Quantité 
+
+\hypertarget{class_produit_a373d0a18812023e675ae981ca9618209}{\index{Produit@{Produit}!reference@{reference}}
+\index{reference@{reference}!Produit@{Produit}}
+\subsubsection[{reference}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::reference\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_produit_a373d0a18812023e675ae981ca9618209}
+
+
+Référence unique. 
+
+\hypertarget{class_produit_a0fe989b845422996d650da8e5cc09fcf}{\index{Produit@{Produit}!tags@{tags}}
+\index{tags@{tags}!Produit@{Produit}}
+\subsubsection[{tags}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$std\-::string$>$ Produit\-::tags\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_produit_a0fe989b845422996d650da8e5cc09fcf}
+
+
+Mots-\/clés qui identifient le produit. 
+
+\hypertarget{class_produit_a176eb59190cd9b761814fd5c68a8353b}{\index{Produit@{Produit}!vendeur@{vendeur}}
+\index{vendeur@{vendeur}!Produit@{Produit}}
+\subsubsection[{vendeur}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Produit\-::vendeur\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_produit_a176eb59190cd9b761814fd5c68a8353b}
+
+
+Nom du vendeur. 
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+/home/magalie/\-Bureau/\-S5/\-C\-P\-O\-O\-A/\-Projet/\-E-\/\-Marche-\//iterations/iteration4/\-E\-Marche/bdd/\hyperlink{_produit_8h}{Produit.\-h}\item 
+/home/magalie/\-Bureau/\-S5/\-C\-P\-O\-O\-A/\-Projet/\-E-\/\-Marche-\//iterations/iteration4/\-E\-Marche/bdd/\hyperlink{_produit_8cpp}{Produit.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,205 @@
+\hypertarget{class_avis}{\section{Référence de la classe Avis}
+\label{class_avis}\index{Avis@{Avis}}
+}
+
+
+The \hyperlink{class_avis}{Avis} class -\/ Représente un avis donné par un utilisateur sur un autre utilisateur ou un produit, avec un commentaire et une note.  
+
+
+
+
+{\ttfamily \#include $<$Avis.\-h$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_avis_a93b6b6e8ce6e399a9dc017284063a841}{Avis} (std\-::string author, unsigned int notation)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_avis}{Avis} -\/ Note sans commentaire. \end{DoxyCompactList}\item 
+\hyperlink{class_avis_ada1766d4665eded0f8d582b366f56bfe}{Avis} (std\-::string author, unsigned int notation, std\-::string com)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_avis}{Avis} -\/ Note et commentaire. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_avis_a00990e98a8bae6b1a40a5ff70fb1c62c}{$\sim$\-Avis} ()
+\item 
+unsigned int \hyperlink{class_avis_a38aac72b52990bbe4f7bcec663c560c6}{get\-Note} ()
+\begin{DoxyCompactList}\small\item\em get\-Note \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_avis_ae03e2b620c88bcc258821b8247529425}{get\-Commentaire} ()
+\begin{DoxyCompactList}\small\item\em get\-Commentaire \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_avis_a291d331943b1bcb18ee4290624f5a178}{get\-Auteur} ()
+\begin{DoxyCompactList}\small\item\em get\-Auteur \end{DoxyCompactList}\item 
+void \hyperlink{class_avis_abbab76777e1327d7f88d20fce541c7a5}{decrit} (std\-::ostream \&os)
+\begin{DoxyCompactList}\small\item\em decrit -\/ Ecrit toutes les données de l'avis dans un flux donné en paramètre \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_avis_a517878e3f5196c23cc179f3fe5a1a98d}{decrit} ()
+\begin{DoxyCompactList}\small\item\em decrit -\/ convertit un flux en string \end{DoxyCompactList}\item 
+void \hyperlink{class_avis_af94b335023000d4ded81528c90e86c32}{affiche} (std\-::ostream \&os)
+\begin{DoxyCompactList}\small\item\em affiche -\/ Ecrit toutes les données d'un avis d'un flux vers une sortie \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{class_avis_ab1833bedfe52d33098e2bde7170ba476}{note}
+\item 
+std\-::string \hyperlink{class_avis_ac0bfa4072b5f6a9e232de92311933f9c}{commentaire}
+\item 
+std\-::string \hyperlink{class_avis_a4cb88a456146bc552646a5648f7761f8}{auteur}
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+The \hyperlink{class_avis}{Avis} class -\/ Représente un avis donné par un utilisateur sur un autre utilisateur ou un produit, avec un commentaire et une note. 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{class_avis_a93b6b6e8ce6e399a9dc017284063a841}{\index{Avis@{Avis}!Avis@{Avis}}
+\index{Avis@{Avis}!Avis@{Avis}}
+\subsubsection[{Avis}]{\setlength{\rightskip}{0pt plus 5cm}Avis\-::\-Avis (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{author, }
+\item[{unsigned int}]{notation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_avis_a93b6b6e8ce6e399a9dc017284063a841}
+
+
+\hyperlink{class_avis}{Avis} -\/ Note sans commentaire. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em author} & -\/ Auteur de l'avis \\
+\hline
+{\em notation} & -\/ Note donnée \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_avis_ada1766d4665eded0f8d582b366f56bfe}{\index{Avis@{Avis}!Avis@{Avis}}
+\index{Avis@{Avis}!Avis@{Avis}}
+\subsubsection[{Avis}]{\setlength{\rightskip}{0pt plus 5cm}Avis\-::\-Avis (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{author, }
+\item[{unsigned int}]{notation, }
+\item[{std\-::string}]{com}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_avis_ada1766d4665eded0f8d582b366f56bfe}
+
+
+\hyperlink{class_avis}{Avis} -\/ Note et commentaire. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em author} & -\/ Auteur de l'avis \\
+\hline
+{\em notation} & -\/ Note donnée \\
+\hline
+{\em com} & -\/ Commentaire donné \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_avis_a00990e98a8bae6b1a40a5ff70fb1c62c}{\index{Avis@{Avis}!$\sim$\-Avis@{$\sim$\-Avis}}
+\index{$\sim$\-Avis@{$\sim$\-Avis}!Avis@{Avis}}
+\subsubsection[{$\sim$\-Avis}]{\setlength{\rightskip}{0pt plus 5cm}virtual Avis\-::$\sim$\-Avis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_avis_a00990e98a8bae6b1a40a5ff70fb1c62c}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_avis_af94b335023000d4ded81528c90e86c32}{\index{Avis@{Avis}!affiche@{affiche}}
+\index{affiche@{affiche}!Avis@{Avis}}
+\subsubsection[{affiche}]{\setlength{\rightskip}{0pt plus 5cm}void Avis\-::affiche (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_avis_af94b335023000d4ded81528c90e86c32}
+
+
+affiche -\/ Ecrit toutes les données d'un avis d'un flux vers une sortie 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em os} & -\/ Sortie, par exemple \-: cout \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_avis_abbab76777e1327d7f88d20fce541c7a5}{\index{Avis@{Avis}!decrit@{decrit}}
+\index{decrit@{decrit}!Avis@{Avis}}
+\subsubsection[{decrit}]{\setlength{\rightskip}{0pt plus 5cm}void Avis\-::decrit (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_avis_abbab76777e1327d7f88d20fce541c7a5}
+
+
+decrit -\/ Ecrit toutes les données de l'avis dans un flux donné en paramètre 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em os} & -\/ Flux \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_avis_a517878e3f5196c23cc179f3fe5a1a98d}{\index{Avis@{Avis}!decrit@{decrit}}
+\index{decrit@{decrit}!Avis@{Avis}}
+\subsubsection[{decrit}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Avis\-::decrit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_avis_a517878e3f5196c23cc179f3fe5a1a98d}
+
+
+decrit -\/ convertit un flux en string 
+
+\begin{DoxyReturn}{Renvoie}
+un string à partir d'un flux 
+\end{DoxyReturn}
+\hypertarget{class_avis_a291d331943b1bcb18ee4290624f5a178}{\index{Avis@{Avis}!get\-Auteur@{get\-Auteur}}
+\index{get\-Auteur@{get\-Auteur}!Avis@{Avis}}
+\subsubsection[{get\-Auteur}]{\setlength{\rightskip}{0pt plus 5cm}string Avis\-::get\-Auteur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_avis_a291d331943b1bcb18ee4290624f5a178}
+
+
+get\-Auteur 
+
+\begin{DoxyReturn}{Renvoie}
+l'auteur de l'avis 
+\end{DoxyReturn}
+\hypertarget{class_avis_ae03e2b620c88bcc258821b8247529425}{\index{Avis@{Avis}!get\-Commentaire@{get\-Commentaire}}
+\index{get\-Commentaire@{get\-Commentaire}!Avis@{Avis}}
+\subsubsection[{get\-Commentaire}]{\setlength{\rightskip}{0pt plus 5cm}string Avis\-::get\-Commentaire (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_avis_ae03e2b620c88bcc258821b8247529425}
+
+
+get\-Commentaire 
+
+\begin{DoxyReturn}{Renvoie}
+le commentaire de l'avis 
+\end{DoxyReturn}
+\hypertarget{class_avis_a38aac72b52990bbe4f7bcec663c560c6}{\index{Avis@{Avis}!get\-Note@{get\-Note}}
+\index{get\-Note@{get\-Note}!Avis@{Avis}}
+\subsubsection[{get\-Note}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Avis\-::get\-Note (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_avis_a38aac72b52990bbe4f7bcec663c560c6}
+
+
+get\-Note 
+
+\begin{DoxyReturn}{Renvoie}
+la note de l'avis 
+\end{DoxyReturn}
+
+
+\subsection{Documentation des données membres}
+\hypertarget{class_avis_a4cb88a456146bc552646a5648f7761f8}{\index{Avis@{Avis}!auteur@{auteur}}
+\index{auteur@{auteur}!Avis@{Avis}}
+\subsubsection[{auteur}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Avis\-::auteur\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_avis_a4cb88a456146bc552646a5648f7761f8}
+\hypertarget{class_avis_ac0bfa4072b5f6a9e232de92311933f9c}{\index{Avis@{Avis}!commentaire@{commentaire}}
+\index{commentaire@{commentaire}!Avis@{Avis}}
+\subsubsection[{commentaire}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Avis\-::commentaire\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_avis_ac0bfa4072b5f6a9e232de92311933f9c}
+\hypertarget{class_avis_ab1833bedfe52d33098e2bde7170ba476}{\index{Avis@{Avis}!note@{note}}
+\index{note@{note}!Avis@{Avis}}
+\subsubsection[{note}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Avis\-::note\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_avis_ab1833bedfe52d33098e2bde7170ba476}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+/home/magalie/\-Bureau/\-S5/\-C\-P\-O\-O\-A/\-Projet/\-E-\/\-Marche-\//iterations/iteration4/\-E\-Marche/bdd/\hyperlink{_avis_8h}{Avis.\-h}\item 
+/home/magalie/\-Bureau/\-S5/\-C\-P\-O\-O\-A/\-Projet/\-E-\/\-Marche-\//iterations/iteration4/\-E\-Marche/bdd/\hyperlink{_avis_8cpp}{Avis.\-cpp}\end{DoxyCompactItemize}

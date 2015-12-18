@@ -1,0 +1,757 @@
+\hypertarget{class_utilisateur}{\section{Référence de la classe Utilisateur}
+\label{class_utilisateur}\index{Utilisateur@{Utilisateur}}
+}
+
+
+The \hyperlink{class_utilisateur}{Utilisateur} class -\/ Contient toutes les informations personnelles d'un utilisateur.  
+
+
+
+
+{\ttfamily \#include $<$Utilisateur.\-h$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_utilisateur_ac0d1108ddcc0db26aa0000fb7c9760c4}{Utilisateur} (std\-::string mon\-Pseudo, std\-::string mon\-Mdp, std\-::string name, std\-::string firstname, int jour\-Naiss, int mois\-Naiss, int annee\-Naiss, std\-::string mail, std\-::string adr, int c\-P)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_utilisateur}{Utilisateur} -\/ Constructeur. \end{DoxyCompactList}\item 
+\hyperlink{class_utilisateur_ae76433a6d353c5f5ad0c6a6af64022ad}{Utilisateur} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_utilisateur}{Utilisateur} -\/ Constructeur vide. \end{DoxyCompactList}\item 
+\hyperlink{class_utilisateur_a6631539ceecd6140fe525eb91485537b}{$\sim$\-Utilisateur} ()
+\item 
+std\-::string \hyperlink{class_utilisateur_a02ffb896b7d7d34ced83b8caeea0aadd}{get\-Pseudo} ()
+\begin{DoxyCompactList}\small\item\em get\-Pseudo \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_utilisateur_ab42b795fd2bffc3f9be4b4833bd42973}{get\-Mdp} ()
+\begin{DoxyCompactList}\small\item\em get\-Mdp \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_utilisateur_a01193c02978c04db73159956766d16f7}{get\-Nom} ()
+\begin{DoxyCompactList}\small\item\em get\-Nom \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_utilisateur_a5dc57c74e8a7fc4b48cfb2e87e86c475}{get\-Prenom} ()
+\begin{DoxyCompactList}\small\item\em get\-Prenom \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_utilisateur_a5f708e481078a52e437fd803fb2754c3}{get\-Date\-Naissance} ()
+\begin{DoxyCompactList}\small\item\em get\-Date\-Naissance \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_utilisateur_a32500914e95bff7890687684e9123c81}{get\-Email} ()
+\begin{DoxyCompactList}\small\item\em get\-Email \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_utilisateur_a6a710d004e4ec1a8ab44affd3cf479d5}{get\-Adresse} ()
+\begin{DoxyCompactList}\small\item\em get\-Adresse \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_utilisateur_a92ea3c0723ec1303026b9c99b98d70ce}{get\-Ville} ()
+\begin{DoxyCompactList}\small\item\em get\-Ville \end{DoxyCompactList}\item 
+int \hyperlink{class_utilisateur_ac49c4d66a37d0296e50f9b6cedf4284f}{get\-Code\-Postal} ()
+\begin{DoxyCompactList}\small\item\em get\-Code\-Postal \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_utilisateur_a54a9cce39f989f920b93ca2675d6999c}{get\-Nb\-Ventes} ()
+\begin{DoxyCompactList}\small\item\em get\-Nb\-Ventes \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_utilisateur_a5fd1e4951abad29ba9ae1ac8760c726d}{get\-Nb\-Achats} ()
+\begin{DoxyCompactList}\small\item\em get\-Nb\-Achats \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_utilisateur_a2727eb739e0065c9aac277b5d2703b7e}{get\-Note} ()
+\begin{DoxyCompactList}\small\item\em get\-Note \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{class_produit}{Produit} $\ast$ $>$ \hyperlink{class_utilisateur_a98c52de15b6cb4cd90ab9843887ebea4}{get\-Les\-Achats} ()
+\begin{DoxyCompactList}\small\item\em get\-Les\-Achats \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{class_produit}{Produit} $\ast$ $>$ \hyperlink{class_utilisateur_a1b40d3e45c297b261321c3846fb0c214}{get\-Les\-Ventes} ()
+\begin{DoxyCompactList}\small\item\em get\-Les\-Ventes \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{class_avis}{Avis} $>$ \hyperlink{class_utilisateur_ae4bbe39c0dd8baccf7fcb1e706df9ceb}{get\-Les\-Avis} ()
+\begin{DoxyCompactList}\small\item\em get\-Les\-Avis \end{DoxyCompactList}\item 
+void \hyperlink{class_utilisateur_a8463c077b33ccc93c8e424a47b9bc369}{set\-Pseudo} (std\-::string p)
+\begin{DoxyCompactList}\small\item\em set\-Pseudo \end{DoxyCompactList}\item 
+void \hyperlink{class_utilisateur_a34f6a4cd57807390db2bfc3f880eec58}{set\-Mdp} (std\-::string m)
+\begin{DoxyCompactList}\small\item\em set\-Mdp \end{DoxyCompactList}\item 
+void \hyperlink{class_utilisateur_a20a32b47f2b080a4aead49e16bd06f44}{set\-Nom} (std\-::string n)
+\begin{DoxyCompactList}\small\item\em set\-Nom \end{DoxyCompactList}\item 
+void \hyperlink{class_utilisateur_a82c09ccdcb2449ee5a9938bb716938b6}{set\-Prenom} (std\-::string p)
+\begin{DoxyCompactList}\small\item\em set\-Prenom \end{DoxyCompactList}\item 
+void \hyperlink{class_utilisateur_a9cb5da21a0fa7c2900c95dfb9b6c70e8}{set\-Date\-Naissance} (int jour, int mois, int annee)
+\begin{DoxyCompactList}\small\item\em set\-Date\-Naissance \end{DoxyCompactList}\item 
+void \hyperlink{class_utilisateur_ab2e9b7718ba138421d5de19d29131165}{set\-Email} (std\-::string e)
+\begin{DoxyCompactList}\small\item\em set\-Email \end{DoxyCompactList}\item 
+void \hyperlink{class_utilisateur_afd7d9b7465cf7f0884e8701d785bd6c2}{set\-Adresse} (std\-::string a)
+\begin{DoxyCompactList}\small\item\em set\-Adresse \end{DoxyCompactList}\item 
+void \hyperlink{class_utilisateur_add56a5bbbb2507f5e1a5c6100c3c756a}{set\-Code\-Postal} (int i)
+\begin{DoxyCompactList}\small\item\em set\-Code\-Postal \end{DoxyCompactList}\item 
+void \hyperlink{class_utilisateur_a8a3b372a5f6086e009ebaf6135b570a9}{set\-Ville} (std\-::string v)
+\begin{DoxyCompactList}\small\item\em set\-Ville \end{DoxyCompactList}\item 
+void \hyperlink{class_utilisateur_a8d788360b66d30182485926d8082acef}{set\-Nb\-Ventes} (unsigned int n)
+\begin{DoxyCompactList}\small\item\em set\-Nb\-Ventes \end{DoxyCompactList}\item 
+void \hyperlink{class_utilisateur_aaff8554723c390a541f223065ba68f22}{set\-Nb\-Achats} (unsigned int n)
+\begin{DoxyCompactList}\small\item\em set\-Nb\-Achats \end{DoxyCompactList}\item 
+void \hyperlink{class_utilisateur_a703b2dbde2ba4e30fceefa651d4ab51f}{set\-Note} (unsigned int n)
+\begin{DoxyCompactList}\small\item\em set\-Note \end{DoxyCompactList}\item 
+void \hyperlink{class_utilisateur_aa38d52a678907e9159417a162970b7da}{add\-Achat} (\hyperlink{class_produit}{Produit} $\ast$p, int quantite)
+\begin{DoxyCompactList}\small\item\em add\-Achat \end{DoxyCompactList}\item 
+void \hyperlink{class_utilisateur_ac388127f7ea147a70a67ff6345ccb164}{add\-Vente} (\hyperlink{class_produit}{Produit} $\ast$p)
+\begin{DoxyCompactList}\small\item\em add\-Vente \end{DoxyCompactList}\item 
+void \hyperlink{class_utilisateur_aa8b2cad2349702cf2fa8f23fef2e5a9d}{add\-Avis} (\hyperlink{class_avis}{Avis} a)
+\begin{DoxyCompactList}\small\item\em add\-Avis \end{DoxyCompactList}\item 
+void \hyperlink{class_utilisateur_ad4c1dbab122bf719cf1419b9d93a0e22}{decrit} (std\-::ostream \&os)
+\begin{DoxyCompactList}\small\item\em decrit -\/ Ecrit toutes les données utilisateur dans un flux donné en paramètre \end{DoxyCompactList}\item 
+std\-::string \hyperlink{class_utilisateur_a938eda997ac76805b7674c7ffe7e17e8}{decrit} ()
+\begin{DoxyCompactList}\small\item\em decrit -\/ convertit un flux en string \end{DoxyCompactList}\item 
+void \hyperlink{class_utilisateur_a810f877d63ef4b8b2f6b18dfc1cd26f9}{affiche} (std\-::ostream \&os)
+\begin{DoxyCompactList}\small\item\em affiche -\/ Ecrit toutes les données utilisateur d'un flux vers une sortie \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{class_utilisateur_acefb31a3f7e204657236a73770e4b36c}{pseudo}
+\item 
+std\-::string \hyperlink{class_utilisateur_a49dcd340777b84cfd397c1249e7521d5}{mdp}
+\item 
+std\-::string \hyperlink{class_utilisateur_a04d1879dcf1e157f8606cc97b44b0cf6}{nom}
+\item 
+std\-::string \hyperlink{class_utilisateur_a7cbd4b405cdff4fed665d74ddca1a61f}{prenom}
+\item 
+struct tm \hyperlink{class_utilisateur_a1e39a6fceaafa481ff806f6aca19965c}{date\-Naissance}
+\item 
+std\-::string \hyperlink{class_utilisateur_ac8b4c8a7164bcd8d2d342d976ea27c56}{email}
+\item 
+std\-::string \hyperlink{class_utilisateur_a6a969b59bb72c45ab1022f9b231cd7ad}{adresse}
+\item 
+std\-::string \hyperlink{class_utilisateur_ad5a26fdf60b16be6d077aecd582edaab}{ville}
+\item 
+unsigned int \hyperlink{class_utilisateur_a8413b98e8caf03d4060d24f09adff967}{nb\-Ventes}
+\item 
+unsigned int \hyperlink{class_utilisateur_a12f9c472690ddfe7a17a2dee00eab0e6}{nb\-Achats}
+\item 
+unsigned int \hyperlink{class_utilisateur_a0b6f703af0a667e2b90dc71025e9c830}{nb\-Avis}
+\item 
+unsigned int \hyperlink{class_utilisateur_a451a871639deff66e5d32542edad615e}{note}
+\item 
+unsigned int \hyperlink{class_utilisateur_a3efa7d3004dcd24137e062465154c05c}{nb\-Notes}
+\item 
+int \hyperlink{class_utilisateur_aeff227b441e9a3b159e6718d027d9479}{code\-Postal}
+\item 
+std\-::vector$<$ \hyperlink{class_produit}{Produit} $\ast$ $>$ \hyperlink{class_utilisateur_a7cdc5e73be88d64fd1bc15bd8df9746f}{les\-Achats}
+\item 
+std\-::vector$<$ \hyperlink{class_produit}{Produit} $\ast$ $>$ \hyperlink{class_utilisateur_a27e40b56beed1756aebce85196bea0a7}{les\-Ventes}
+\item 
+std\-::vector$<$ \hyperlink{class_avis}{Avis} $>$ \hyperlink{class_utilisateur_acbe89c0fc475ee566102c6054fe2037d}{les\-Avis}
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+The \hyperlink{class_utilisateur}{Utilisateur} class -\/ Contient toutes les informations personnelles d'un utilisateur. 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{class_utilisateur_ac0d1108ddcc0db26aa0000fb7c9760c4}{\index{Utilisateur@{Utilisateur}!Utilisateur@{Utilisateur}}
+\index{Utilisateur@{Utilisateur}!Utilisateur@{Utilisateur}}
+\subsubsection[{Utilisateur}]{\setlength{\rightskip}{0pt plus 5cm}Utilisateur\-::\-Utilisateur (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{mon\-Pseudo, }
+\item[{std\-::string}]{mon\-Mdp, }
+\item[{std\-::string}]{name, }
+\item[{std\-::string}]{firstname, }
+\item[{int}]{jour\-Naiss, }
+\item[{int}]{mois\-Naiss, }
+\item[{int}]{annee\-Naiss, }
+\item[{std\-::string}]{mail, }
+\item[{std\-::string}]{adr, }
+\item[{int}]{c\-P}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_utilisateur_ac0d1108ddcc0db26aa0000fb7c9760c4}
+
+
+\hyperlink{class_utilisateur}{Utilisateur} -\/ Constructeur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em mon\-Pseudo} & -\/ Pseudo de l'utilisateur \\
+\hline
+{\em mon\-Mdp} & -\/ Mot de passe de l'utilisateur \\
+\hline
+{\em name} & -\/ Nom de l'utilisateur \\
+\hline
+{\em firstname} & -\/ Prénom de l'utilisateur \\
+\hline
+{\em jour\-Naiss} & -\/ Jour de naissance de l'utilisateur \\
+\hline
+{\em mois\-Naiss} & -\/ Mois de naissance de l'utilisateur \\
+\hline
+{\em annee\-Naiss} & -\/ Année de naissance de l'utilisateur \\
+\hline
+{\em mail} & -\/ Adresse mail de l'utilisateur \\
+\hline
+{\em adr} & -\/ Adresse de l'utilisateur \\
+\hline
+{\em c\-P} & -\/ Code postal de l'utilisateur \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilisateur_ae76433a6d353c5f5ad0c6a6af64022ad}{\index{Utilisateur@{Utilisateur}!Utilisateur@{Utilisateur}}
+\index{Utilisateur@{Utilisateur}!Utilisateur@{Utilisateur}}
+\subsubsection[{Utilisateur}]{\setlength{\rightskip}{0pt plus 5cm}Utilisateur\-::\-Utilisateur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_utilisateur_ae76433a6d353c5f5ad0c6a6af64022ad}
+
+
+\hyperlink{class_utilisateur}{Utilisateur} -\/ Constructeur vide. 
+
+\hypertarget{class_utilisateur_a6631539ceecd6140fe525eb91485537b}{\index{Utilisateur@{Utilisateur}!$\sim$\-Utilisateur@{$\sim$\-Utilisateur}}
+\index{$\sim$\-Utilisateur@{$\sim$\-Utilisateur}!Utilisateur@{Utilisateur}}
+\subsubsection[{$\sim$\-Utilisateur}]{\setlength{\rightskip}{0pt plus 5cm}Utilisateur\-::$\sim$\-Utilisateur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_utilisateur_a6631539ceecd6140fe525eb91485537b}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_utilisateur_aa38d52a678907e9159417a162970b7da}{\index{Utilisateur@{Utilisateur}!add\-Achat@{add\-Achat}}
+\index{add\-Achat@{add\-Achat}!Utilisateur@{Utilisateur}}
+\subsubsection[{add\-Achat}]{\setlength{\rightskip}{0pt plus 5cm}void Utilisateur\-::add\-Achat (
+\begin{DoxyParamCaption}
+\item[{{\bf Produit} $\ast$}]{p, }
+\item[{int}]{quantite}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_aa38d52a678907e9159417a162970b7da}
+
+
+add\-Achat 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & -\/ Pointeur vers le nouveau produit à ajouter aux achats \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilisateur_aa8b2cad2349702cf2fa8f23fef2e5a9d}{\index{Utilisateur@{Utilisateur}!add\-Avis@{add\-Avis}}
+\index{add\-Avis@{add\-Avis}!Utilisateur@{Utilisateur}}
+\subsubsection[{add\-Avis}]{\setlength{\rightskip}{0pt plus 5cm}void Utilisateur\-::add\-Avis (
+\begin{DoxyParamCaption}
+\item[{{\bf Avis}}]{a}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_aa8b2cad2349702cf2fa8f23fef2e5a9d}
+
+
+add\-Avis 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a} & -\/ \hyperlink{class_avis}{Avis} à ajouter à l'utilisateur dans le vector les\-Avis \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilisateur_ac388127f7ea147a70a67ff6345ccb164}{\index{Utilisateur@{Utilisateur}!add\-Vente@{add\-Vente}}
+\index{add\-Vente@{add\-Vente}!Utilisateur@{Utilisateur}}
+\subsubsection[{add\-Vente}]{\setlength{\rightskip}{0pt plus 5cm}void Utilisateur\-::add\-Vente (
+\begin{DoxyParamCaption}
+\item[{{\bf Produit} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_ac388127f7ea147a70a67ff6345ccb164}
+
+
+add\-Vente 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & -\/ Pointeur vers le nouveau produit à ajouter aux ventes \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilisateur_a810f877d63ef4b8b2f6b18dfc1cd26f9}{\index{Utilisateur@{Utilisateur}!affiche@{affiche}}
+\index{affiche@{affiche}!Utilisateur@{Utilisateur}}
+\subsubsection[{affiche}]{\setlength{\rightskip}{0pt plus 5cm}void Utilisateur\-::affiche (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_utilisateur_a810f877d63ef4b8b2f6b18dfc1cd26f9}
+
+
+affiche -\/ Ecrit toutes les données utilisateur d'un flux vers une sortie 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em os} & -\/ Sortie, par exemple \-: cout \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilisateur_ad4c1dbab122bf719cf1419b9d93a0e22}{\index{Utilisateur@{Utilisateur}!decrit@{decrit}}
+\index{decrit@{decrit}!Utilisateur@{Utilisateur}}
+\subsubsection[{decrit}]{\setlength{\rightskip}{0pt plus 5cm}void Utilisateur\-::decrit (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_utilisateur_ad4c1dbab122bf719cf1419b9d93a0e22}
+
+
+decrit -\/ Ecrit toutes les données utilisateur dans un flux donné en paramètre 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em os} & -\/ Flux \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilisateur_a938eda997ac76805b7674c7ffe7e17e8}{\index{Utilisateur@{Utilisateur}!decrit@{decrit}}
+\index{decrit@{decrit}!Utilisateur@{Utilisateur}}
+\subsubsection[{decrit}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Utilisateur\-::decrit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_utilisateur_a938eda997ac76805b7674c7ffe7e17e8}
+
+
+decrit -\/ convertit un flux en string 
+
+\begin{DoxyReturn}{Renvoie}
+un string à partir d'un flux 
+\end{DoxyReturn}
+\hypertarget{class_utilisateur_a6a710d004e4ec1a8ab44affd3cf479d5}{\index{Utilisateur@{Utilisateur}!get\-Adresse@{get\-Adresse}}
+\index{get\-Adresse@{get\-Adresse}!Utilisateur@{Utilisateur}}
+\subsubsection[{get\-Adresse}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Utilisateur\-::get\-Adresse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_a6a710d004e4ec1a8ab44affd3cf479d5}
+
+
+get\-Adresse 
+
+\begin{DoxyReturn}{Renvoie}
+l'adresse de l'utilisateur 
+\end{DoxyReturn}
+\hypertarget{class_utilisateur_ac49c4d66a37d0296e50f9b6cedf4284f}{\index{Utilisateur@{Utilisateur}!get\-Code\-Postal@{get\-Code\-Postal}}
+\index{get\-Code\-Postal@{get\-Code\-Postal}!Utilisateur@{Utilisateur}}
+\subsubsection[{get\-Code\-Postal}]{\setlength{\rightskip}{0pt plus 5cm}int Utilisateur\-::get\-Code\-Postal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_ac49c4d66a37d0296e50f9b6cedf4284f}
+
+
+get\-Code\-Postal 
+
+\begin{DoxyReturn}{Renvoie}
+le code postal de l'utilisateur 
+\end{DoxyReturn}
+\hypertarget{class_utilisateur_a5f708e481078a52e437fd803fb2754c3}{\index{Utilisateur@{Utilisateur}!get\-Date\-Naissance@{get\-Date\-Naissance}}
+\index{get\-Date\-Naissance@{get\-Date\-Naissance}!Utilisateur@{Utilisateur}}
+\subsubsection[{get\-Date\-Naissance}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Utilisateur\-::get\-Date\-Naissance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_a5f708e481078a52e437fd803fb2754c3}
+
+
+get\-Date\-Naissance 
+
+\begin{DoxyReturn}{Renvoie}
+la date de naissance de l'utilisateur sous forme de string 
+\end{DoxyReturn}
+\hypertarget{class_utilisateur_a32500914e95bff7890687684e9123c81}{\index{Utilisateur@{Utilisateur}!get\-Email@{get\-Email}}
+\index{get\-Email@{get\-Email}!Utilisateur@{Utilisateur}}
+\subsubsection[{get\-Email}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Utilisateur\-::get\-Email (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_a32500914e95bff7890687684e9123c81}
+
+
+get\-Email 
+
+\begin{DoxyReturn}{Renvoie}
+l'adresse e-\/mail de l'utilisatueur 
+\end{DoxyReturn}
+\hypertarget{class_utilisateur_a98c52de15b6cb4cd90ab9843887ebea4}{\index{Utilisateur@{Utilisateur}!get\-Les\-Achats@{get\-Les\-Achats}}
+\index{get\-Les\-Achats@{get\-Les\-Achats}!Utilisateur@{Utilisateur}}
+\subsubsection[{get\-Les\-Achats}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Produit} $\ast$ $>$ Utilisateur\-::get\-Les\-Achats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_a98c52de15b6cb4cd90ab9843887ebea4}
+
+
+get\-Les\-Achats 
+
+\begin{DoxyReturn}{Renvoie}
+un vector contenant les pointeurs vers les achats de l'utilisateur 
+\end{DoxyReturn}
+\hypertarget{class_utilisateur_ae4bbe39c0dd8baccf7fcb1e706df9ceb}{\index{Utilisateur@{Utilisateur}!get\-Les\-Avis@{get\-Les\-Avis}}
+\index{get\-Les\-Avis@{get\-Les\-Avis}!Utilisateur@{Utilisateur}}
+\subsubsection[{get\-Les\-Avis}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Avis} $>$ Utilisateur\-::get\-Les\-Avis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_ae4bbe39c0dd8baccf7fcb1e706df9ceb}
+
+
+get\-Les\-Avis 
+
+\begin{DoxyReturn}{Renvoie}
+les avis sur l'utilisateur 
+\end{DoxyReturn}
+\hypertarget{class_utilisateur_a1b40d3e45c297b261321c3846fb0c214}{\index{Utilisateur@{Utilisateur}!get\-Les\-Ventes@{get\-Les\-Ventes}}
+\index{get\-Les\-Ventes@{get\-Les\-Ventes}!Utilisateur@{Utilisateur}}
+\subsubsection[{get\-Les\-Ventes}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Produit} $\ast$ $>$ Utilisateur\-::get\-Les\-Ventes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_a1b40d3e45c297b261321c3846fb0c214}
+
+
+get\-Les\-Ventes 
+
+\begin{DoxyReturn}{Renvoie}
+un vector contenant les pointeurs vers les ventes de l'utilisateur 
+\end{DoxyReturn}
+\hypertarget{class_utilisateur_ab42b795fd2bffc3f9be4b4833bd42973}{\index{Utilisateur@{Utilisateur}!get\-Mdp@{get\-Mdp}}
+\index{get\-Mdp@{get\-Mdp}!Utilisateur@{Utilisateur}}
+\subsubsection[{get\-Mdp}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Utilisateur\-::get\-Mdp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_ab42b795fd2bffc3f9be4b4833bd42973}
+
+
+get\-Mdp 
+
+\begin{DoxyReturn}{Renvoie}
+le mot de passe de l'utilisateur 
+\end{DoxyReturn}
+\hypertarget{class_utilisateur_a5fd1e4951abad29ba9ae1ac8760c726d}{\index{Utilisateur@{Utilisateur}!get\-Nb\-Achats@{get\-Nb\-Achats}}
+\index{get\-Nb\-Achats@{get\-Nb\-Achats}!Utilisateur@{Utilisateur}}
+\subsubsection[{get\-Nb\-Achats}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Utilisateur\-::get\-Nb\-Achats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_a5fd1e4951abad29ba9ae1ac8760c726d}
+
+
+get\-Nb\-Achats 
+
+\begin{DoxyReturn}{Renvoie}
+le nombre d'achats de l'utilisateur 
+\end{DoxyReturn}
+\hypertarget{class_utilisateur_a54a9cce39f989f920b93ca2675d6999c}{\index{Utilisateur@{Utilisateur}!get\-Nb\-Ventes@{get\-Nb\-Ventes}}
+\index{get\-Nb\-Ventes@{get\-Nb\-Ventes}!Utilisateur@{Utilisateur}}
+\subsubsection[{get\-Nb\-Ventes}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Utilisateur\-::get\-Nb\-Ventes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_a54a9cce39f989f920b93ca2675d6999c}
+
+
+get\-Nb\-Ventes 
+
+\begin{DoxyReturn}{Renvoie}
+le nombre de ventes de l'utilisateur 
+\end{DoxyReturn}
+\hypertarget{class_utilisateur_a01193c02978c04db73159956766d16f7}{\index{Utilisateur@{Utilisateur}!get\-Nom@{get\-Nom}}
+\index{get\-Nom@{get\-Nom}!Utilisateur@{Utilisateur}}
+\subsubsection[{get\-Nom}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Utilisateur\-::get\-Nom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_a01193c02978c04db73159956766d16f7}
+
+
+get\-Nom 
+
+\begin{DoxyReturn}{Renvoie}
+le nom de l'utilisateur 
+\end{DoxyReturn}
+\hypertarget{class_utilisateur_a2727eb739e0065c9aac277b5d2703b7e}{\index{Utilisateur@{Utilisateur}!get\-Note@{get\-Note}}
+\index{get\-Note@{get\-Note}!Utilisateur@{Utilisateur}}
+\subsubsection[{get\-Note}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Utilisateur\-::get\-Note (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_a2727eb739e0065c9aac277b5d2703b7e}
+
+
+get\-Note 
+
+\begin{DoxyReturn}{Renvoie}
+la note de l'utilisateur attribuée par les autres utilisateurs 
+\end{DoxyReturn}
+\hypertarget{class_utilisateur_a5dc57c74e8a7fc4b48cfb2e87e86c475}{\index{Utilisateur@{Utilisateur}!get\-Prenom@{get\-Prenom}}
+\index{get\-Prenom@{get\-Prenom}!Utilisateur@{Utilisateur}}
+\subsubsection[{get\-Prenom}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Utilisateur\-::get\-Prenom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_a5dc57c74e8a7fc4b48cfb2e87e86c475}
+
+
+get\-Prenom 
+
+\begin{DoxyReturn}{Renvoie}
+le prénom de l'utilisateur 
+\end{DoxyReturn}
+\hypertarget{class_utilisateur_a02ffb896b7d7d34ced83b8caeea0aadd}{\index{Utilisateur@{Utilisateur}!get\-Pseudo@{get\-Pseudo}}
+\index{get\-Pseudo@{get\-Pseudo}!Utilisateur@{Utilisateur}}
+\subsubsection[{get\-Pseudo}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Utilisateur\-::get\-Pseudo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_a02ffb896b7d7d34ced83b8caeea0aadd}
+
+
+get\-Pseudo 
+
+\begin{DoxyReturn}{Renvoie}
+le pseudo de l'utilisateur 
+\end{DoxyReturn}
+\hypertarget{class_utilisateur_a92ea3c0723ec1303026b9c99b98d70ce}{\index{Utilisateur@{Utilisateur}!get\-Ville@{get\-Ville}}
+\index{get\-Ville@{get\-Ville}!Utilisateur@{Utilisateur}}
+\subsubsection[{get\-Ville}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Utilisateur\-::get\-Ville (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_a92ea3c0723ec1303026b9c99b98d70ce}
+
+
+get\-Ville 
+
+\begin{DoxyReturn}{Renvoie}
+la ville de l'utilisateur 
+\end{DoxyReturn}
+\hypertarget{class_utilisateur_afd7d9b7465cf7f0884e8701d785bd6c2}{\index{Utilisateur@{Utilisateur}!set\-Adresse@{set\-Adresse}}
+\index{set\-Adresse@{set\-Adresse}!Utilisateur@{Utilisateur}}
+\subsubsection[{set\-Adresse}]{\setlength{\rightskip}{0pt plus 5cm}void Utilisateur\-::set\-Adresse (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{a}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_afd7d9b7465cf7f0884e8701d785bd6c2}
+
+
+set\-Adresse 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a} & -\/ nouvelle adresse \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilisateur_add56a5bbbb2507f5e1a5c6100c3c756a}{\index{Utilisateur@{Utilisateur}!set\-Code\-Postal@{set\-Code\-Postal}}
+\index{set\-Code\-Postal@{set\-Code\-Postal}!Utilisateur@{Utilisateur}}
+\subsubsection[{set\-Code\-Postal}]{\setlength{\rightskip}{0pt plus 5cm}void Utilisateur\-::set\-Code\-Postal (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_add56a5bbbb2507f5e1a5c6100c3c756a}
+
+
+set\-Code\-Postal 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & -\/ nouveau code postal \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilisateur_a9cb5da21a0fa7c2900c95dfb9b6c70e8}{\index{Utilisateur@{Utilisateur}!set\-Date\-Naissance@{set\-Date\-Naissance}}
+\index{set\-Date\-Naissance@{set\-Date\-Naissance}!Utilisateur@{Utilisateur}}
+\subsubsection[{set\-Date\-Naissance}]{\setlength{\rightskip}{0pt plus 5cm}void Utilisateur\-::set\-Date\-Naissance (
+\begin{DoxyParamCaption}
+\item[{int}]{jour, }
+\item[{int}]{mois, }
+\item[{int}]{annee}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_a9cb5da21a0fa7c2900c95dfb9b6c70e8}
+
+
+set\-Date\-Naissance 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em jour} & -\/ nouveau jour de naissance \\
+\hline
+{\em mois} & -\/ nouveau mois de naissance \\
+\hline
+{\em annee} & -\/ nouvelle année de naissance \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilisateur_ab2e9b7718ba138421d5de19d29131165}{\index{Utilisateur@{Utilisateur}!set\-Email@{set\-Email}}
+\index{set\-Email@{set\-Email}!Utilisateur@{Utilisateur}}
+\subsubsection[{set\-Email}]{\setlength{\rightskip}{0pt plus 5cm}void Utilisateur\-::set\-Email (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{e}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_ab2e9b7718ba138421d5de19d29131165}
+
+
+set\-Email 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em e} & -\/ nouvelle adresse e-\/mail \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilisateur_a34f6a4cd57807390db2bfc3f880eec58}{\index{Utilisateur@{Utilisateur}!set\-Mdp@{set\-Mdp}}
+\index{set\-Mdp@{set\-Mdp}!Utilisateur@{Utilisateur}}
+\subsubsection[{set\-Mdp}]{\setlength{\rightskip}{0pt plus 5cm}void Utilisateur\-::set\-Mdp (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{m}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_a34f6a4cd57807390db2bfc3f880eec58}
+
+
+set\-Mdp 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em m} & -\/ nouveau mot de passe \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilisateur_aaff8554723c390a541f223065ba68f22}{\index{Utilisateur@{Utilisateur}!set\-Nb\-Achats@{set\-Nb\-Achats}}
+\index{set\-Nb\-Achats@{set\-Nb\-Achats}!Utilisateur@{Utilisateur}}
+\subsubsection[{set\-Nb\-Achats}]{\setlength{\rightskip}{0pt plus 5cm}void Utilisateur\-::set\-Nb\-Achats (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{n}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_aaff8554723c390a541f223065ba68f22}
+
+
+set\-Nb\-Achats 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em n} & -\/ nouveau nombre d'achats \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilisateur_a8d788360b66d30182485926d8082acef}{\index{Utilisateur@{Utilisateur}!set\-Nb\-Ventes@{set\-Nb\-Ventes}}
+\index{set\-Nb\-Ventes@{set\-Nb\-Ventes}!Utilisateur@{Utilisateur}}
+\subsubsection[{set\-Nb\-Ventes}]{\setlength{\rightskip}{0pt plus 5cm}void Utilisateur\-::set\-Nb\-Ventes (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{n}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_a8d788360b66d30182485926d8082acef}
+
+
+set\-Nb\-Ventes 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em n} & -\/ nouveau nombre de ventes \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilisateur_a20a32b47f2b080a4aead49e16bd06f44}{\index{Utilisateur@{Utilisateur}!set\-Nom@{set\-Nom}}
+\index{set\-Nom@{set\-Nom}!Utilisateur@{Utilisateur}}
+\subsubsection[{set\-Nom}]{\setlength{\rightskip}{0pt plus 5cm}void Utilisateur\-::set\-Nom (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{n}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_a20a32b47f2b080a4aead49e16bd06f44}
+
+
+set\-Nom 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em n} & -\/ nouveau nom \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilisateur_a703b2dbde2ba4e30fceefa651d4ab51f}{\index{Utilisateur@{Utilisateur}!set\-Note@{set\-Note}}
+\index{set\-Note@{set\-Note}!Utilisateur@{Utilisateur}}
+\subsubsection[{set\-Note}]{\setlength{\rightskip}{0pt plus 5cm}void Utilisateur\-::set\-Note (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{n}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_a703b2dbde2ba4e30fceefa651d4ab51f}
+
+
+set\-Note 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em n} & -\/ nouvelle note \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilisateur_a82c09ccdcb2449ee5a9938bb716938b6}{\index{Utilisateur@{Utilisateur}!set\-Prenom@{set\-Prenom}}
+\index{set\-Prenom@{set\-Prenom}!Utilisateur@{Utilisateur}}
+\subsubsection[{set\-Prenom}]{\setlength{\rightskip}{0pt plus 5cm}void Utilisateur\-::set\-Prenom (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{p}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_a82c09ccdcb2449ee5a9938bb716938b6}
+
+
+set\-Prenom 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & -\/ nouveau prénom \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilisateur_a8463c077b33ccc93c8e424a47b9bc369}{\index{Utilisateur@{Utilisateur}!set\-Pseudo@{set\-Pseudo}}
+\index{set\-Pseudo@{set\-Pseudo}!Utilisateur@{Utilisateur}}
+\subsubsection[{set\-Pseudo}]{\setlength{\rightskip}{0pt plus 5cm}void Utilisateur\-::set\-Pseudo (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{p}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_a8463c077b33ccc93c8e424a47b9bc369}
+
+
+set\-Pseudo 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & -\/ nouveau pseudo \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_utilisateur_a8a3b372a5f6086e009ebaf6135b570a9}{\index{Utilisateur@{Utilisateur}!set\-Ville@{set\-Ville}}
+\index{set\-Ville@{set\-Ville}!Utilisateur@{Utilisateur}}
+\subsubsection[{set\-Ville}]{\setlength{\rightskip}{0pt plus 5cm}void Utilisateur\-::set\-Ville (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{v}
+\end{DoxyParamCaption}
+)}}\label{class_utilisateur_a8a3b372a5f6086e009ebaf6135b570a9}
+
+
+set\-Ville 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em v} & -\/ nouvelle ville \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des données membres}
+\hypertarget{class_utilisateur_a6a969b59bb72c45ab1022f9b231cd7ad}{\index{Utilisateur@{Utilisateur}!adresse@{adresse}}
+\index{adresse@{adresse}!Utilisateur@{Utilisateur}}
+\subsubsection[{adresse}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Utilisateur\-::adresse\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_utilisateur_a6a969b59bb72c45ab1022f9b231cd7ad}
+\hypertarget{class_utilisateur_aeff227b441e9a3b159e6718d027d9479}{\index{Utilisateur@{Utilisateur}!code\-Postal@{code\-Postal}}
+\index{code\-Postal@{code\-Postal}!Utilisateur@{Utilisateur}}
+\subsubsection[{code\-Postal}]{\setlength{\rightskip}{0pt plus 5cm}int Utilisateur\-::code\-Postal\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_utilisateur_aeff227b441e9a3b159e6718d027d9479}
+\hypertarget{class_utilisateur_a1e39a6fceaafa481ff806f6aca19965c}{\index{Utilisateur@{Utilisateur}!date\-Naissance@{date\-Naissance}}
+\index{date\-Naissance@{date\-Naissance}!Utilisateur@{Utilisateur}}
+\subsubsection[{date\-Naissance}]{\setlength{\rightskip}{0pt plus 5cm}struct tm Utilisateur\-::date\-Naissance\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_utilisateur_a1e39a6fceaafa481ff806f6aca19965c}
+\hypertarget{class_utilisateur_ac8b4c8a7164bcd8d2d342d976ea27c56}{\index{Utilisateur@{Utilisateur}!email@{email}}
+\index{email@{email}!Utilisateur@{Utilisateur}}
+\subsubsection[{email}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Utilisateur\-::email\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_utilisateur_ac8b4c8a7164bcd8d2d342d976ea27c56}
+\hypertarget{class_utilisateur_a7cdc5e73be88d64fd1bc15bd8df9746f}{\index{Utilisateur@{Utilisateur}!les\-Achats@{les\-Achats}}
+\index{les\-Achats@{les\-Achats}!Utilisateur@{Utilisateur}}
+\subsubsection[{les\-Achats}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Produit}$\ast$$>$ Utilisateur\-::les\-Achats\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_utilisateur_a7cdc5e73be88d64fd1bc15bd8df9746f}
+\hypertarget{class_utilisateur_acbe89c0fc475ee566102c6054fe2037d}{\index{Utilisateur@{Utilisateur}!les\-Avis@{les\-Avis}}
+\index{les\-Avis@{les\-Avis}!Utilisateur@{Utilisateur}}
+\subsubsection[{les\-Avis}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Avis}$>$ Utilisateur\-::les\-Avis\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_utilisateur_acbe89c0fc475ee566102c6054fe2037d}
+\hypertarget{class_utilisateur_a27e40b56beed1756aebce85196bea0a7}{\index{Utilisateur@{Utilisateur}!les\-Ventes@{les\-Ventes}}
+\index{les\-Ventes@{les\-Ventes}!Utilisateur@{Utilisateur}}
+\subsubsection[{les\-Ventes}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Produit}$\ast$$>$ Utilisateur\-::les\-Ventes\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_utilisateur_a27e40b56beed1756aebce85196bea0a7}
+\hypertarget{class_utilisateur_a49dcd340777b84cfd397c1249e7521d5}{\index{Utilisateur@{Utilisateur}!mdp@{mdp}}
+\index{mdp@{mdp}!Utilisateur@{Utilisateur}}
+\subsubsection[{mdp}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Utilisateur\-::mdp\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_utilisateur_a49dcd340777b84cfd397c1249e7521d5}
+\hypertarget{class_utilisateur_a12f9c472690ddfe7a17a2dee00eab0e6}{\index{Utilisateur@{Utilisateur}!nb\-Achats@{nb\-Achats}}
+\index{nb\-Achats@{nb\-Achats}!Utilisateur@{Utilisateur}}
+\subsubsection[{nb\-Achats}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Utilisateur\-::nb\-Achats\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_utilisateur_a12f9c472690ddfe7a17a2dee00eab0e6}
+\hypertarget{class_utilisateur_a0b6f703af0a667e2b90dc71025e9c830}{\index{Utilisateur@{Utilisateur}!nb\-Avis@{nb\-Avis}}
+\index{nb\-Avis@{nb\-Avis}!Utilisateur@{Utilisateur}}
+\subsubsection[{nb\-Avis}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Utilisateur\-::nb\-Avis\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_utilisateur_a0b6f703af0a667e2b90dc71025e9c830}
+\hypertarget{class_utilisateur_a3efa7d3004dcd24137e062465154c05c}{\index{Utilisateur@{Utilisateur}!nb\-Notes@{nb\-Notes}}
+\index{nb\-Notes@{nb\-Notes}!Utilisateur@{Utilisateur}}
+\subsubsection[{nb\-Notes}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Utilisateur\-::nb\-Notes\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_utilisateur_a3efa7d3004dcd24137e062465154c05c}
+\hypertarget{class_utilisateur_a8413b98e8caf03d4060d24f09adff967}{\index{Utilisateur@{Utilisateur}!nb\-Ventes@{nb\-Ventes}}
+\index{nb\-Ventes@{nb\-Ventes}!Utilisateur@{Utilisateur}}
+\subsubsection[{nb\-Ventes}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Utilisateur\-::nb\-Ventes\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_utilisateur_a8413b98e8caf03d4060d24f09adff967}
+\hypertarget{class_utilisateur_a04d1879dcf1e157f8606cc97b44b0cf6}{\index{Utilisateur@{Utilisateur}!nom@{nom}}
+\index{nom@{nom}!Utilisateur@{Utilisateur}}
+\subsubsection[{nom}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Utilisateur\-::nom\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_utilisateur_a04d1879dcf1e157f8606cc97b44b0cf6}
+\hypertarget{class_utilisateur_a451a871639deff66e5d32542edad615e}{\index{Utilisateur@{Utilisateur}!note@{note}}
+\index{note@{note}!Utilisateur@{Utilisateur}}
+\subsubsection[{note}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Utilisateur\-::note\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_utilisateur_a451a871639deff66e5d32542edad615e}
+\hypertarget{class_utilisateur_a7cbd4b405cdff4fed665d74ddca1a61f}{\index{Utilisateur@{Utilisateur}!prenom@{prenom}}
+\index{prenom@{prenom}!Utilisateur@{Utilisateur}}
+\subsubsection[{prenom}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Utilisateur\-::prenom\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_utilisateur_a7cbd4b405cdff4fed665d74ddca1a61f}
+\hypertarget{class_utilisateur_acefb31a3f7e204657236a73770e4b36c}{\index{Utilisateur@{Utilisateur}!pseudo@{pseudo}}
+\index{pseudo@{pseudo}!Utilisateur@{Utilisateur}}
+\subsubsection[{pseudo}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Utilisateur\-::pseudo\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_utilisateur_acefb31a3f7e204657236a73770e4b36c}
+\hypertarget{class_utilisateur_ad5a26fdf60b16be6d077aecd582edaab}{\index{Utilisateur@{Utilisateur}!ville@{ville}}
+\index{ville@{ville}!Utilisateur@{Utilisateur}}
+\subsubsection[{ville}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Utilisateur\-::ville\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_utilisateur_ad5a26fdf60b16be6d077aecd582edaab}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+/home/magalie/\-Bureau/\-S5/\-C\-P\-O\-O\-A/\-Projet/\-E-\/\-Marche-\//iterations/iteration4/\-E\-Marche/bdd/\hyperlink{_utilisateur_8h}{Utilisateur.\-h}\item 
+/home/magalie/\-Bureau/\-S5/\-C\-P\-O\-O\-A/\-Projet/\-E-\/\-Marche-\//iterations/iteration4/\-E\-Marche/bdd/\hyperlink{_utilisateur_8cpp}{Utilisateur.\-cpp}\end{DoxyCompactItemize}

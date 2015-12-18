@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>EMarche:  Fichier source de /home/magalie/Bureau/S5/CPOOA/Projet/E-Marche-/iterations/iteration4/EMarche/bdd/Produit.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">EMarche
+   &#160;<span id="projectnumber">4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_produit_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Produit.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_produit_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PRODUIT_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PRODUIT_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_categorie_8h.html">Categorie.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_etat_vente_8h.html">EtatVente.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_vente_enchere_8h.html">VenteEnchere.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_vente_normale_8h.html">VenteNormale.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_avis_8h.html">Avis.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_produit.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_produit.html">Produit</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_produit.html#a176eb59190cd9b761814fd5c68a8353b">   23</a></span>&#160;    std::string <a class="code" href="class_produit.html#a176eb59190cd9b761814fd5c68a8353b">vendeur</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_produit.html#a27756eb9e95c2a37dad2f73c3c3fa2e3">   25</a></span>&#160;    <a class="code" href="class_categorie.html">Categorie</a> *<a class="code" href="class_produit.html#a27756eb9e95c2a37dad2f73c3c3fa2e3">categorie</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_produit.html#acb895352487797b4b9189b8fde1f8c58">   27</a></span>&#160;    std::string <a class="code" href="class_produit.html#acb895352487797b4b9189b8fde1f8c58">nom</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_produit.html#a373d0a18812023e675ae981ca9618209">   29</a></span>&#160;    std::string <a class="code" href="class_produit.html#a373d0a18812023e675ae981ca9618209">reference</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_produit.html#ac4432cc25a56757fce7300232046243a">   31</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_produit.html#ac4432cc25a56757fce7300232046243a">prixUnitaire</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_produit.html#a6c569e4c47aed9ee050bb0aa9455dd62">   33</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_produit.html#a6c569e4c47aed9ee050bb0aa9455dd62">quantite</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_produit.html#ad1e7e307209f7ef6ad7cf407801fb5e6">   35</a></span>&#160;    <span class="keyword">struct </span>tm <a class="code" href="class_produit.html#ad1e7e307209f7ef6ad7cf407801fb5e6">dateDepot</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_produit.html#af97688d1cf1ed5b59b248f688b42bc47">   37</a></span>&#160;    <span class="keyword">struct </span>tm <a class="code" href="class_produit.html#af97688d1cf1ed5b59b248f688b42bc47">dateAchatVente</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_produit.html#af2965a92ffaf42af6e0a67951f9d44f7">   39</a></span>&#160;    <a class="code" href="class_etat_vente.html">EtatVente</a> *<a class="code" href="class_produit.html#af2965a92ffaf42af6e0a67951f9d44f7">etatVente</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_produit.html#a0fe989b845422996d650da8e5cc09fcf">   41</a></span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="class_produit.html#a0fe989b845422996d650da8e5cc09fcf">tags</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_produit.html#a0de1409220ab37c7d582772912c88ac7">   43</a></span>&#160;    std::vector&lt;Avis&gt; <a class="code" href="class_produit.html#a0de1409220ab37c7d582772912c88ac7">lesAvis</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_produit.html#a5b23bea0ed80afaa80e6e0d6b01d68a8">   57</a></span>&#160;    <a class="code" href="class_produit.html#a5b23bea0ed80afaa80e6e0d6b01d68a8">Produit</a>(std::string v, std::string n, std::string cat, <span class="keywordtype">float</span> prix,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> qte, <span class="keywordtype">bool</span> etat) : <a class="code" href="class_produit.html#a176eb59190cd9b761814fd5c68a8353b">vendeur</a>(v), <a class="code" href="class_produit.html#acb895352487797b4b9189b8fde1f8c58">nom</a>(n),</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="class_produit.html#ac4432cc25a56757fce7300232046243a">prixUnitaire</a>(prix), <a class="code" href="class_produit.html#a6c569e4c47aed9ee050bb0aa9455dd62">quantite</a>(qte) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">// Initialisation de l&#39;état de vente</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">if</span>(etat == 0){ <span class="comment">// cas d&#39;une vente normale</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <a class="code" href="class_produit.html#af2965a92ffaf42af6e0a67951f9d44f7">etatVente</a> = <span class="keyword">new</span> <a class="code" href="class_vente_normale.html">VenteNormale</a>(etat);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <a class="code" href="class_produit.html#af2965a92ffaf42af6e0a67951f9d44f7">etatVente</a> = <span class="keyword">new</span> <a class="code" href="class_vente_enchere.html">VenteEnchere</a>(etat);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <a class="code" href="class_produit.html#af2965a92ffaf42af6e0a67951f9d44f7">etatVente</a>-&gt;<a class="code" href="class_etat_vente.html#a8436bb978172c8e136fa349706baef0d">setPrixActuel</a>(prix);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="comment">// Initialisation de la catégorie</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="class_produit.html#a27756eb9e95c2a37dad2f73c3c3fa2e3">categorie</a> = <span class="keyword">new</span> <a class="code" href="class_categorie.html">Categorie</a>(cat);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="comment">// Initialisation de la date de dépôt au jour actuel</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        time_t maintenant;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        time(&amp;maintenant);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="class_produit.html#ad1e7e307209f7ef6ad7cf407801fb5e6">dateDepot</a> = *localtime(&amp;maintenant);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="class_produit.html#ad1e7e307209f7ef6ad7cf407801fb5e6">dateDepot</a>.tm_year = <a class="code" href="class_produit.html#ad1e7e307209f7ef6ad7cf407801fb5e6">dateDepot</a>.tm_year + 1900;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment">// Initialisation de dateVenteAchat</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="class_produit.html#af97688d1cf1ed5b59b248f688b42bc47">dateAchatVente</a>.tm_mday = 0;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="class_produit.html#af97688d1cf1ed5b59b248f688b42bc47">dateAchatVente</a>.tm_mon = 0;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="class_produit.html#af97688d1cf1ed5b59b248f688b42bc47">dateAchatVente</a>.tm_year = 0;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="comment">// Ajout des tags (nom et catégorie)</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="class_produit.html#a5edb1869a3001fb320047a78ea5e715a">ajouterTag</a>(n);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="class_produit.html#a5edb1869a3001fb320047a78ea5e715a">ajouterTag</a>(<a class="code" href="class_produit.html#a27756eb9e95c2a37dad2f73c3c3fa2e3">categorie</a>-&gt;<a class="code" href="class_categorie.html#af6bde3e082e8bf1991616ef7021326d7">getNom</a>());</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="class_produit.html#ac0136c815dafc47b3959c5fd5ee763cd">   94</a></span>&#160;    <a class="code" href="class_produit.html#ac0136c815dafc47b3959c5fd5ee763cd">Produit</a>(std::string v,std::string n, std::string cat, <span class="keywordtype">float</span> prix,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> qte, <span class="keywordtype">bool</span> etat, <span class="keyword">struct</span> tm dateLimite) : <a class="code" href="class_produit.html#a176eb59190cd9b761814fd5c68a8353b">vendeur</a>(v),</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="class_produit.html#acb895352487797b4b9189b8fde1f8c58">nom</a>(n), <a class="code" href="class_produit.html#ac4432cc25a56757fce7300232046243a">prixUnitaire</a>(prix), <a class="code" href="class_produit.html#a6c569e4c47aed9ee050bb0aa9455dd62">quantite</a>(qte) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">// Initialisation de l&#39;état de vente</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">if</span>(etat == 0){ <span class="comment">// cas d&#39;une vente normale</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <a class="code" href="class_produit.html#af2965a92ffaf42af6e0a67951f9d44f7">etatVente</a> = <span class="keyword">new</span> <a class="code" href="class_vente_normale.html">VenteNormale</a>(etat);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        } <span class="keywordflow">else</span> { <span class="comment">// sinon, vente aux enchères</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <a class="code" href="class_produit.html#af2965a92ffaf42af6e0a67951f9d44f7">etatVente</a> = <span class="keyword">new</span> <a class="code" href="class_vente_enchere.html">VenteEnchere</a>(etat);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <a class="code" href="class_produit.html#af2965a92ffaf42af6e0a67951f9d44f7">etatVente</a>-&gt;<a class="code" href="class_etat_vente.html#a8efa95982f7252801512df1ea16faeeb">setDateLimite</a>(dateLimite);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <a class="code" href="class_produit.html#af2965a92ffaf42af6e0a67951f9d44f7">etatVente</a>-&gt;<a class="code" href="class_etat_vente.html#a8436bb978172c8e136fa349706baef0d">setPrixActuel</a>(prix);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="comment">// Initialisation de la catégorie</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="class_produit.html#a27756eb9e95c2a37dad2f73c3c3fa2e3">categorie</a> = <span class="keyword">new</span> <a class="code" href="class_categorie.html">Categorie</a>(cat);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="comment">// Initialisation de la date de dépôt au jour actuel</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        time_t maintenant;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        time(&amp;maintenant);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <a class="code" href="class_produit.html#ad1e7e307209f7ef6ad7cf407801fb5e6">dateDepot</a> = *localtime(&amp;maintenant);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <a class="code" href="class_produit.html#ad1e7e307209f7ef6ad7cf407801fb5e6">dateDepot</a>.tm_year = <a class="code" href="class_produit.html#ad1e7e307209f7ef6ad7cf407801fb5e6">dateDepot</a>.tm_year + 1900;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="comment">// Initialisation de dateVenteAchat</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <a class="code" href="class_produit.html#af97688d1cf1ed5b59b248f688b42bc47">dateAchatVente</a>.tm_mday = 0;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="class_produit.html#af97688d1cf1ed5b59b248f688b42bc47">dateAchatVente</a>.tm_mon = 0;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="class_produit.html#af97688d1cf1ed5b59b248f688b42bc47">dateAchatVente</a>.tm_year = 0;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="comment">// Ajout des tags (nom et catégorie)</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <a class="code" href="class_produit.html#a5edb1869a3001fb320047a78ea5e715a">ajouterTag</a>(n);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <a class="code" href="class_produit.html#a5edb1869a3001fb320047a78ea5e715a">ajouterTag</a>(<a class="code" href="class_produit.html#a27756eb9e95c2a37dad2f73c3c3fa2e3">categorie</a>-&gt;<a class="code" href="class_categorie.html#af6bde3e082e8bf1991616ef7021326d7">getNom</a>());</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="class_produit.html#a0b056e8aa75a367e0ba3d80fc0055e2c">  125</a></span>&#160;    <a class="code" href="class_produit.html#a0b056e8aa75a367e0ba3d80fc0055e2c">Produit</a>(<a class="code" href="class_produit.html">Produit</a> &amp;instance) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <a class="code" href="class_produit.html#a176eb59190cd9b761814fd5c68a8353b">vendeur</a> = instance.<a class="code" href="class_produit.html#a176eb59190cd9b761814fd5c68a8353b">vendeur</a>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <a class="code" href="class_produit.html#a27756eb9e95c2a37dad2f73c3c3fa2e3">categorie</a> = instance.<a class="code" href="class_produit.html#a27756eb9e95c2a37dad2f73c3c3fa2e3">categorie</a>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <a class="code" href="class_produit.html#acb895352487797b4b9189b8fde1f8c58">nom</a> = instance.<a class="code" href="class_produit.html#acb895352487797b4b9189b8fde1f8c58">nom</a>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <a class="code" href="class_produit.html#a373d0a18812023e675ae981ca9618209">reference</a> = instance.<a class="code" href="class_produit.html#a373d0a18812023e675ae981ca9618209">reference</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="class_produit.html#ac4432cc25a56757fce7300232046243a">prixUnitaire</a> = instance.<a class="code" href="class_produit.html#ac4432cc25a56757fce7300232046243a">prixUnitaire</a>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="class_produit.html#a6c569e4c47aed9ee050bb0aa9455dd62">quantite</a> = instance.<a class="code" href="class_produit.html#a6c569e4c47aed9ee050bb0aa9455dd62">quantite</a>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <a class="code" href="class_produit.html#ad1e7e307209f7ef6ad7cf407801fb5e6">dateDepot</a> = instance.<a class="code" href="class_produit.html#ad1e7e307209f7ef6ad7cf407801fb5e6">dateDepot</a>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <a class="code" href="class_produit.html#af97688d1cf1ed5b59b248f688b42bc47">dateAchatVente</a> = instance.<a class="code" href="class_produit.html#af97688d1cf1ed5b59b248f688b42bc47">dateAchatVente</a>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <a class="code" href="class_produit.html#af2965a92ffaf42af6e0a67951f9d44f7">etatVente</a> = instance.<a class="code" href="class_produit.html#af2965a92ffaf42af6e0a67951f9d44f7">etatVente</a>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <a class="code" href="class_produit.html#a0fe989b845422996d650da8e5cc09fcf">tags</a> = instance.<a class="code" href="class_produit.html#a0fe989b845422996d650da8e5cc09fcf">tags</a>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="class_produit.html#a7b789cfa3048436fd050cb565b499c03">  141</a></span>&#160;    <a class="code" href="class_produit.html#a7b789cfa3048436fd050cb565b499c03">~Produit</a>() {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keyword">delete</span>(<a class="code" href="class_produit.html#a27756eb9e95c2a37dad2f73c3c3fa2e3">categorie</a>);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keyword">delete</span>(<a class="code" href="class_produit.html#af2965a92ffaf42af6e0a67951f9d44f7">etatVente</a>);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">/* ----- Fonctions get ----- */</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    std::string <a class="code" href="class_produit.html#abb06f356f5471dfc236f17412d4a6749">getVendeur</a>();</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_produit.html#a4fc3e3d0c67b9b17e6c0e20cfec70c3b">getQuantite</a>();</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_produit.html#ae9e421815cd947b5ef56b751272a34ca">getPrixUnitaire</a>();</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    std::string <a class="code" href="class_produit.html#aaad2134211bc9caebb1abcefe5e096c5">getReference</a>();</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    std::string <a class="code" href="class_produit.html#a6e4b2da75ac7c667bf1f70c124aea0ef">getNom</a>();</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    std::string <a class="code" href="class_produit.html#a9eff46fd98f73089223b7797a79f1a6c">getCategorie</a>();</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    std::string <a class="code" href="class_produit.html#af4d4f3cc1b83dbc521965ef3832f55db">getDateDepot</a>();</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    std::string <a class="code" href="class_produit.html#aa7f00c40483d9035023d5e2bfa3f7154">getDateAchatVente</a>();</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    std::string <a class="code" href="class_produit.html#aa0421a8a8a05684059fa5c26fc6b09e5">getEtatVente</a>();</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_produit.html#a8df31b7e2ca9fc0cf330cbed2efd22d0">getPrixActuel</a>();</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    std::string <a class="code" href="class_produit.html#a7b44df89f061edee42a971f2c172965b">getTags</a>();</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="class_produit.html#ab8b15ff1ad286eb2e8a8f9afae3194f1">getTagsVector</a>();</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    std::string <a class="code" href="class_produit.html#a7bd69ad69057b77be95569b597dc058d">getDateLimite</a>();</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="comment">/* ----- Fonctions set ----- */</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_produit.html#a34da537b2544450854d932c2cb695d6d">setReference</a>(std::string r);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_produit.html#aee71ce4e667afde2773fea21c663d816">setQuantite</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> q);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_produit.html#a609f2dfcf93cc5a41ef69f3e4ed4598f">setDateVenteAchat</a>(<span class="keywordtype">int</span> jour, <span class="keywordtype">int</span> mois, <span class="keywordtype">int</span> annee);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="comment">/* ----- Fonctions ----- */</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_produit.html#aed251a51ae5ae9a99b991024434edcfb">augmenterEnchere</a>(<span class="keywordtype">int</span> prix);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_produit.html#a5edb1869a3001fb320047a78ea5e715a">ajouterTag</a>(std::string t);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="comment">/* ----- Fonctions d&#39;affichage ----- */</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
+<div class="line"><a name="l00288"></a><span class="lineno"><a class="line" href="class_produit.html#a9993d668f2200f091f8215e74060d0be">  288</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_produit.html#a9993d668f2200f091f8215e74060d0be">decrit</a>(std::ostream &amp;os) {</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        os &lt;&lt; <span class="stringliteral">&quot;------Fiche produit-------\nReference : &quot;</span> &lt;&lt; <a class="code" href="class_produit.html#aaad2134211bc9caebb1abcefe5e096c5">getReference</a>()</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;           &lt;&lt; <span class="stringliteral">&quot;\nNom : &quot;</span> &lt;&lt; <a class="code" href="class_produit.html#a6e4b2da75ac7c667bf1f70c124aea0ef">getNom</a>() &lt;&lt; <span class="stringliteral">&quot;\nCategorie : &quot;</span> &lt;&lt; <a class="code" href="class_produit.html#a9eff46fd98f73089223b7797a79f1a6c">getCategorie</a>()</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;           &lt;&lt; <span class="stringliteral">&quot;\nPrix unitaire : &quot;</span> &lt;&lt; <a class="code" href="class_produit.html#ae9e421815cd947b5ef56b751272a34ca">getPrixUnitaire</a>() &lt;&lt; <span class="stringliteral">&quot;\nType de vente : &quot;</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;           &lt;&lt; <a class="code" href="class_produit.html#aa0421a8a8a05684059fa5c26fc6b09e5">getEtatVente</a>() &lt;&lt; <span class="stringliteral">&quot;\nQuantite : &quot;</span> &lt;&lt; <a class="code" href="class_produit.html#a4fc3e3d0c67b9b17e6c0e20cfec70c3b">getQuantite</a>()</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;           &lt;&lt; <span class="stringliteral">&quot;\nDate de depot : &quot;</span> &lt;&lt; <a class="code" href="class_produit.html#af4d4f3cc1b83dbc521965ef3832f55db">getDateDepot</a>();</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="comment">// Si le produit est aux enchères, on ajoute les éléments spécifiques aux enchères</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_produit.html#af2965a92ffaf42af6e0a67951f9d44f7">etatVente</a>-&gt;<a class="code" href="class_etat_vente.html#acecfe3b215062d9a835831989e420ccd">typeVente</a>() == <span class="keyword">true</span>){</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            os &lt;&lt; <span class="stringliteral">&quot;\nPrix actuel : &quot;</span> &lt;&lt; <a class="code" href="class_produit.html#a8df31b7e2ca9fc0cf330cbed2efd22d0">getPrixActuel</a>() &lt;&lt; <span class="stringliteral">&quot;\nDate limite de l&#39;enchère : &quot;</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;               &lt;&lt; <a class="code" href="class_produit.html#af2965a92ffaf42af6e0a67951f9d44f7">etatVente</a>-&gt;<a class="code" href="class_etat_vente.html#ab466d257671a59ec97ae393c80226b7a">getDateLimite</a>();</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        }</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        os &lt;&lt; <span class="stringliteral">&quot;\nTags : &quot;</span> &lt;&lt; <a class="code" href="class_produit.html#a7b44df89f061edee42a971f2c172965b">getTags</a>();</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    }</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div>
+<div class="line"><a name="l00310"></a><span class="lineno"><a class="line" href="class_produit.html#a39e7fe8ee4363f40b0397e6cf360d703">  310</a></span>&#160;    std::string <a class="code" href="class_produit.html#a39e7fe8ee4363f40b0397e6cf360d703">decrit</a>() {</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        std::ostringstream os;  <a class="code" href="class_produit.html#a39e7fe8ee4363f40b0397e6cf360d703">decrit</a>(os);  <span class="keywordflow">return</span> os.str();</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    }</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;</div>
+<div class="line"><a name="l00320"></a><span class="lineno"><a class="line" href="class_produit.html#a1c7bbc2a601d2aa5b7e93991c18da6d1">  320</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_produit.html#a1c7bbc2a601d2aa5b7e93991c18da6d1">affiche</a>(std::ostream &amp;os) {</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <a class="code" href="class_produit.html#a39e7fe8ee4363f40b0397e6cf360d703">decrit</a>(os); os &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    }</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;};</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_produit_html_a6c569e4c47aed9ee050bb0aa9455dd62"><div class="ttname"><a href="class_produit.html#a6c569e4c47aed9ee050bb0aa9455dd62">Produit::quantite</a></div><div class="ttdeci">unsigned int quantite</div><div class="ttdoc">Quantité </div><div class="ttdef"><b>Definition:</b> Produit.h:33</div></div>
+<div class="ttc" id="class_produit_html_a8df31b7e2ca9fc0cf330cbed2efd22d0"><div class="ttname"><a href="class_produit.html#a8df31b7e2ca9fc0cf330cbed2efd22d0">Produit::getPrixActuel</a></div><div class="ttdeci">float getPrixActuel()</div><div class="ttdoc">Retourne le prix actuel. </div><div class="ttdef"><b>Definition:</b> Produit.cpp:57</div></div>
+<div class="ttc" id="class_etat_vente_html_acecfe3b215062d9a835831989e420ccd"><div class="ttname"><a href="class_etat_vente.html#acecfe3b215062d9a835831989e420ccd">EtatVente::typeVente</a></div><div class="ttdeci">bool typeVente()</div><div class="ttdoc">Cette fonction indique la type de la vente. Si elle retourne true, c&#39;est une vente aux enchères...</div><div class="ttdef"><b>Definition:</b> EtatVente.cpp:9</div></div>
+<div class="ttc" id="class_produit_html_ab8b15ff1ad286eb2e8a8f9afae3194f1"><div class="ttname"><a href="class_produit.html#ab8b15ff1ad286eb2e8a8f9afae3194f1">Produit::getTagsVector</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getTagsVector()</div><div class="ttdef"><b>Definition:</b> Produit.cpp:78</div></div>
+<div class="ttc" id="class_produit_html_aee71ce4e667afde2773fea21c663d816"><div class="ttname"><a href="class_produit.html#aee71ce4e667afde2773fea21c663d816">Produit::setQuantite</a></div><div class="ttdeci">void setQuantite(unsigned int q)</div><div class="ttdoc">Cette fonction fixe la quantité disponible. </div><div class="ttdef"><b>Definition:</b> Produit.cpp:93</div></div>
+<div class="ttc" id="class_produit_html_aaad2134211bc9caebb1abcefe5e096c5"><div class="ttname"><a href="class_produit.html#aaad2134211bc9caebb1abcefe5e096c5">Produit::getReference</a></div><div class="ttdeci">std::string getReference()</div><div class="ttdoc">Retourne la référence unique. </div><div class="ttdef"><b>Definition:</b> Produit.cpp:17</div></div>
+<div class="ttc" id="_vente_enchere_8h_html"><div class="ttname"><a href="_vente_enchere_8h.html">VenteEnchere.h</a></div></div>
+<div class="ttc" id="class_produit_html_a27756eb9e95c2a37dad2f73c3c3fa2e3"><div class="ttname"><a href="class_produit.html#a27756eb9e95c2a37dad2f73c3c3fa2e3">Produit::categorie</a></div><div class="ttdeci">Categorie * categorie</div><div class="ttdoc">Catégorie. </div><div class="ttdef"><b>Definition:</b> Produit.h:25</div></div>
+<div class="ttc" id="class_etat_vente_html_ab466d257671a59ec97ae393c80226b7a"><div class="ttname"><a href="class_etat_vente.html#ab466d257671a59ec97ae393c80226b7a">EtatVente::getDateLimite</a></div><div class="ttdeci">virtual std::string getDateLimite()</div><div class="ttdoc">Cette fonction virtuelle retourne la date limite de l&#39;enchère. </div><div class="ttdef"><b>Definition:</b> EtatVente.cpp:17</div></div>
+<div class="ttc" id="class_produit_html_a0b056e8aa75a367e0ba3d80fc0055e2c"><div class="ttname"><a href="class_produit.html#a0b056e8aa75a367e0ba3d80fc0055e2c">Produit::Produit</a></div><div class="ttdeci">Produit(Produit &amp;instance)</div><div class="ttdoc">Constructeur de copie de produit. </div><div class="ttdef"><b>Definition:</b> Produit.h:125</div></div>
+<div class="ttc" id="class_produit_html_aa7f00c40483d9035023d5e2bfa3f7154"><div class="ttname"><a href="class_produit.html#aa7f00c40483d9035023d5e2bfa3f7154">Produit::getDateAchatVente</a></div><div class="ttdeci">std::string getDateAchatVente()</div><div class="ttdoc">Retourne la date d&#39;achat ou de vente. </div><div class="ttdef"><b>Definition:</b> Produit.cpp:39</div></div>
+<div class="ttc" id="class_produit_html_a6e4b2da75ac7c667bf1f70c124aea0ef"><div class="ttname"><a href="class_produit.html#a6e4b2da75ac7c667bf1f70c124aea0ef">Produit::getNom</a></div><div class="ttdeci">std::string getNom()</div><div class="ttdoc">Retourne le nom du produit. </div><div class="ttdef"><b>Definition:</b> Produit.cpp:21</div></div>
+<div class="ttc" id="class_produit_html_ad1e7e307209f7ef6ad7cf407801fb5e6"><div class="ttname"><a href="class_produit.html#ad1e7e307209f7ef6ad7cf407801fb5e6">Produit::dateDepot</a></div><div class="ttdeci">struct tm dateDepot</div><div class="ttdoc">Date de dépôt sur le site. </div><div class="ttdef"><b>Definition:</b> Produit.h:35</div></div>
+<div class="ttc" id="class_produit_html_a373d0a18812023e675ae981ca9618209"><div class="ttname"><a href="class_produit.html#a373d0a18812023e675ae981ca9618209">Produit::reference</a></div><div class="ttdeci">std::string reference</div><div class="ttdoc">Référence unique. </div><div class="ttdef"><b>Definition:</b> Produit.h:29</div></div>
+<div class="ttc" id="class_produit_html_a7bd69ad69057b77be95569b597dc058d"><div class="ttname"><a href="class_produit.html#a7bd69ad69057b77be95569b597dc058d">Produit::getDateLimite</a></div><div class="ttdeci">std::string getDateLimite()</div><div class="ttdoc">Retourne la date limite de l&#39;enchère. </div><div class="ttdef"><b>Definition:</b> Produit.cpp:82</div></div>
+<div class="ttc" id="class_produit_html_aed251a51ae5ae9a99b991024434edcfb"><div class="ttname"><a href="class_produit.html#aed251a51ae5ae9a99b991024434edcfb">Produit::augmenterEnchere</a></div><div class="ttdeci">void augmenterEnchere(int prix)</div><div class="ttdoc">Cette fonction permet d&#39;augenter le prix d&#39;une enchère. </div><div class="ttdef"><b>Definition:</b> Produit.cpp:103</div></div>
+<div class="ttc" id="class_produit_html_a0de1409220ab37c7d582772912c88ac7"><div class="ttname"><a href="class_produit.html#a0de1409220ab37c7d582772912c88ac7">Produit::lesAvis</a></div><div class="ttdeci">std::vector&lt; Avis &gt; lesAvis</div><div class="ttdoc">Avis donnés sur le produit. </div><div class="ttdef"><b>Definition:</b> Produit.h:43</div></div>
+<div class="ttc" id="class_produit_html_af4d4f3cc1b83dbc521965ef3832f55db"><div class="ttname"><a href="class_produit.html#af4d4f3cc1b83dbc521965ef3832f55db">Produit::getDateDepot</a></div><div class="ttdeci">std::string getDateDepot()</div><div class="ttdoc">Retourne la date de dépôt. </div><div class="ttdef"><b>Definition:</b> Produit.cpp:29</div></div>
+<div class="ttc" id="class_produit_html_aa0421a8a8a05684059fa5c26fc6b09e5"><div class="ttname"><a href="class_produit.html#aa0421a8a8a05684059fa5c26fc6b09e5">Produit::getEtatVente</a></div><div class="ttdeci">std::string getEtatVente()</div><div class="ttdoc">Retourne le type de la vente (enchère ou normale) </div><div class="ttdef"><b>Definition:</b> Produit.cpp:49</div></div>
+<div class="ttc" id="class_produit_html_ac0136c815dafc47b3959c5fd5ee763cd"><div class="ttname"><a href="class_produit.html#ac0136c815dafc47b3959c5fd5ee763cd">Produit::Produit</a></div><div class="ttdeci">Produit(std::string v, std::string n, std::string cat, float prix, unsigned int qte, bool etat, struct tm dateLimite)</div><div class="ttdoc">Constructeur de la classe Produit. </div><div class="ttdef"><b>Definition:</b> Produit.h:94</div></div>
+<div class="ttc" id="_avis_8h_html"><div class="ttname"><a href="_avis_8h.html">Avis.h</a></div></div>
+<div class="ttc" id="class_produit_html_ae9e421815cd947b5ef56b751272a34ca"><div class="ttname"><a href="class_produit.html#ae9e421815cd947b5ef56b751272a34ca">Produit::getPrixUnitaire</a></div><div class="ttdeci">float getPrixUnitaire()</div><div class="ttdoc">Retourne le prix unitaire. </div><div class="ttdef"><b>Definition:</b> Produit.cpp:13</div></div>
+<div class="ttc" id="class_produit_html_a5edb1869a3001fb320047a78ea5e715a"><div class="ttname"><a href="class_produit.html#a5edb1869a3001fb320047a78ea5e715a">Produit::ajouterTag</a></div><div class="ttdeci">void ajouterTag(std::string t)</div><div class="ttdoc">Ajouter un nouveau mot-clé pour désigner le produit. </div><div class="ttdef"><b>Definition:</b> Produit.cpp:109</div></div>
+<div class="ttc" id="class_categorie_html"><div class="ttname"><a href="class_categorie.html">Categorie</a></div><div class="ttdoc">The Categorie class - Représente une catégorie de produits. </div><div class="ttdef"><b>Definition:</b> Categorie.h:9</div></div>
+<div class="ttc" id="class_produit_html_a176eb59190cd9b761814fd5c68a8353b"><div class="ttname"><a href="class_produit.html#a176eb59190cd9b761814fd5c68a8353b">Produit::vendeur</a></div><div class="ttdeci">std::string vendeur</div><div class="ttdoc">Nom du vendeur. </div><div class="ttdef"><b>Definition:</b> Produit.h:23</div></div>
+<div class="ttc" id="class_produit_html_a39e7fe8ee4363f40b0397e6cf360d703"><div class="ttname"><a href="class_produit.html#a39e7fe8ee4363f40b0397e6cf360d703">Produit::decrit</a></div><div class="ttdeci">std::string decrit()</div><div class="ttdoc">Cette méthode retourne la description du produit dans une chaîne de caractères. </div><div class="ttdef"><b>Definition:</b> Produit.h:310</div></div>
+<div class="ttc" id="class_produit_html_a5b23bea0ed80afaa80e6e0d6b01d68a8"><div class="ttname"><a href="class_produit.html#a5b23bea0ed80afaa80e6e0d6b01d68a8">Produit::Produit</a></div><div class="ttdeci">Produit(std::string v, std::string n, std::string cat, float prix, unsigned int qte, bool etat)</div><div class="ttdoc">Constructeur de la classe Produit. </div><div class="ttdef"><b>Definition:</b> Produit.h:57</div></div>
+<div class="ttc" id="class_produit_html_a609f2dfcf93cc5a41ef69f3e4ed4598f"><div class="ttname"><a href="class_produit.html#a609f2dfcf93cc5a41ef69f3e4ed4598f">Produit::setDateVenteAchat</a></div><div class="ttdeci">void setDateVenteAchat(int jour, int mois, int annee)</div><div class="ttdoc">Cette fonction fixe la date d&#39;achat ou de vente. </div><div class="ttdef"><b>Definition:</b> Produit.cpp:97</div></div>
+<div class="ttc" id="class_produit_html_af97688d1cf1ed5b59b248f688b42bc47"><div class="ttname"><a href="class_produit.html#af97688d1cf1ed5b59b248f688b42bc47">Produit::dateAchatVente</a></div><div class="ttdeci">struct tm dateAchatVente</div><div class="ttdoc">Date d&#39;achat ou de vente. </div><div class="ttdef"><b>Definition:</b> Produit.h:37</div></div>
+<div class="ttc" id="class_produit_html_a7b44df89f061edee42a971f2c172965b"><div class="ttname"><a href="class_produit.html#a7b44df89f061edee42a971f2c172965b">Produit::getTags</a></div><div class="ttdeci">std::string getTags()</div><div class="ttdoc">Retourne les mots-clés qui identifient le produit. </div><div class="ttdef"><b>Definition:</b> Produit.cpp:64</div></div>
+<div class="ttc" id="_categorie_8h_html"><div class="ttname"><a href="_categorie_8h.html">Categorie.h</a></div></div>
+<div class="ttc" id="_etat_vente_8h_html"><div class="ttname"><a href="_etat_vente_8h.html">EtatVente.h</a></div></div>
+<div class="ttc" id="class_produit_html_abb06f356f5471dfc236f17412d4a6749"><div class="ttname"><a href="class_produit.html#abb06f356f5471dfc236f17412d4a6749">Produit::getVendeur</a></div><div class="ttdeci">std::string getVendeur()</div><div class="ttdoc">Retourne le nom du vendeur. </div><div class="ttdef"><b>Definition:</b> Produit.cpp:5</div></div>
+<div class="ttc" id="class_etat_vente_html_a8efa95982f7252801512df1ea16faeeb"><div class="ttname"><a href="class_etat_vente.html#a8efa95982f7252801512df1ea16faeeb">EtatVente::setDateLimite</a></div><div class="ttdeci">virtual void setDateLimite(struct tm date)</div><div class="ttdoc">Cette fonction virtuelle fixe la date limite. </div><div class="ttdef"><b>Definition:</b> EtatVente.cpp:31</div></div>
+<div class="ttc" id="class_produit_html_a34da537b2544450854d932c2cb695d6d"><div class="ttname"><a href="class_produit.html#a34da537b2544450854d932c2cb695d6d">Produit::setReference</a></div><div class="ttdeci">void setReference(std::string r)</div><div class="ttdoc">Cette fonction attribue une référence unique au produit. </div><div class="ttdef"><b>Definition:</b> Produit.cpp:89</div></div>
+<div class="ttc" id="_vente_normale_8h_html"><div class="ttname"><a href="_vente_normale_8h.html">VenteNormale.h</a></div></div>
+<div class="ttc" id="class_produit_html_acb895352487797b4b9189b8fde1f8c58"><div class="ttname"><a href="class_produit.html#acb895352487797b4b9189b8fde1f8c58">Produit::nom</a></div><div class="ttdeci">std::string nom</div><div class="ttdoc">Nom du produit. </div><div class="ttdef"><b>Definition:</b> Produit.h:27</div></div>
+<div class="ttc" id="class_produit_html_af2965a92ffaf42af6e0a67951f9d44f7"><div class="ttname"><a href="class_produit.html#af2965a92ffaf42af6e0a67951f9d44f7">Produit::etatVente</a></div><div class="ttdeci">EtatVente * etatVente</div><div class="ttdoc">Etat du produit (enchères ou normale) </div><div class="ttdef"><b>Definition:</b> Produit.h:39</div></div>
+<div class="ttc" id="class_vente_enchere_html"><div class="ttname"><a href="class_vente_enchere.html">VenteEnchere</a></div><div class="ttdoc">Cette classe gère une vente aux enchères. </div><div class="ttdef"><b>Definition:</b> VenteEnchere.h:10</div></div>
+<div class="ttc" id="class_produit_html"><div class="ttname"><a href="class_produit.html">Produit</a></div><div class="ttdoc">Cette classe gère le stockage d&#39;un produit. </div><div class="ttdef"><b>Definition:</b> Produit.h:19</div></div>
+<div class="ttc" id="class_produit_html_a4fc3e3d0c67b9b17e6c0e20cfec70c3b"><div class="ttname"><a href="class_produit.html#a4fc3e3d0c67b9b17e6c0e20cfec70c3b">Produit::getQuantite</a></div><div class="ttdeci">unsigned int getQuantite()</div><div class="ttdoc">Retourne la quantité en stock du produit. </div><div class="ttdef"><b>Definition:</b> Produit.cpp:9</div></div>
+<div class="ttc" id="class_produit_html_a7b789cfa3048436fd050cb565b499c03"><div class="ttname"><a href="class_produit.html#a7b789cfa3048436fd050cb565b499c03">Produit::~Produit</a></div><div class="ttdeci">~Produit()</div><div class="ttdoc">Destructeur de la classe Produit. </div><div class="ttdef"><b>Definition:</b> Produit.h:141</div></div>
+<div class="ttc" id="class_produit_html_ac4432cc25a56757fce7300232046243a"><div class="ttname"><a href="class_produit.html#ac4432cc25a56757fce7300232046243a">Produit::prixUnitaire</a></div><div class="ttdeci">float prixUnitaire</div><div class="ttdoc">Prix unitaire. </div><div class="ttdef"><b>Definition:</b> Produit.h:31</div></div>
+<div class="ttc" id="class_etat_vente_html_a8436bb978172c8e136fa349706baef0d"><div class="ttname"><a href="class_etat_vente.html#a8436bb978172c8e136fa349706baef0d">EtatVente::setPrixActuel</a></div><div class="ttdeci">virtual void setPrixActuel(float prix)</div><div class="ttdoc">Cette fonction virtuelle fixe le prix actuel. </div><div class="ttdef"><b>Definition:</b> EtatVente.cpp:27</div></div>
+<div class="ttc" id="class_produit_html_a9eff46fd98f73089223b7797a79f1a6c"><div class="ttname"><a href="class_produit.html#a9eff46fd98f73089223b7797a79f1a6c">Produit::getCategorie</a></div><div class="ttdeci">std::string getCategorie()</div><div class="ttdoc">Retourne la catégorie. </div><div class="ttdef"><b>Definition:</b> Produit.cpp:25</div></div>
+<div class="ttc" id="class_produit_html_a9993d668f2200f091f8215e74060d0be"><div class="ttname"><a href="class_produit.html#a9993d668f2200f091f8215e74060d0be">Produit::decrit</a></div><div class="ttdeci">void decrit(std::ostream &amp;os)</div><div class="ttdoc">Cette méthode permet d&#39;écrire la description d&#39;un produit dans un flot de sortie donnée en paramètre...</div><div class="ttdef"><b>Definition:</b> Produit.h:288</div></div>
+<div class="ttc" id="class_etat_vente_html"><div class="ttname"><a href="class_etat_vente.html">EtatVente</a></div><div class="ttdoc">Cette classe gère l&#39;état d&#39;une vente (enchère ou normale) </div><div class="ttdef"><b>Definition:</b> EtatVente.h:12</div></div>
+<div class="ttc" id="class_categorie_html_af6bde3e082e8bf1991616ef7021326d7"><div class="ttname"><a href="class_categorie.html#af6bde3e082e8bf1991616ef7021326d7">Categorie::getNom</a></div><div class="ttdeci">std::string getNom()</div><div class="ttdoc">getNom </div><div class="ttdef"><b>Definition:</b> Categorie.cpp:6</div></div>
+<div class="ttc" id="class_vente_normale_html"><div class="ttname"><a href="class_vente_normale.html">VenteNormale</a></div><div class="ttdoc">Cette classe gère une vente normale. </div><div class="ttdef"><b>Definition:</b> VenteNormale.h:10</div></div>
+<div class="ttc" id="class_produit_html_a0fe989b845422996d650da8e5cc09fcf"><div class="ttname"><a href="class_produit.html#a0fe989b845422996d650da8e5cc09fcf">Produit::tags</a></div><div class="ttdeci">std::vector&lt; std::string &gt; tags</div><div class="ttdoc">Mots-clés qui identifient le produit. </div><div class="ttdef"><b>Definition:</b> Produit.h:41</div></div>
+<div class="ttc" id="class_produit_html_a1c7bbc2a601d2aa5b7e93991c18da6d1"><div class="ttname"><a href="class_produit.html#a1c7bbc2a601d2aa5b7e93991c18da6d1">Produit::affiche</a></div><div class="ttdeci">void affiche(std::ostream &amp;os)</div><div class="ttdoc">Cette méthode permet d&#39;afficher la description du produit, suivie d&#39;un passage à la ligne...</div><div class="ttdef"><b>Definition:</b> Produit.h:320</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_6d696c25b5b6567271dc5624cc0e43a3.html">EMarche</a></li><li class="navelem"><a class="el" href="dir_2970cbdeecbe6b1206ef6be3522e638d.html">bdd</a></li><li class="navelem"><a class="el" href="_produit_8h.html">Produit.h</a></li>
+    <li class="footer">Généré le Vendredi 18 Décembre 2015 14:43:07 pour EMarche par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>
