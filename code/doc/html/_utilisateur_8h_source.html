@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>EMarche:  Fichier source de bdd/Utilisateur.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">EMarche
+   &#160;<span id="projectnumber">dernière version</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_utilisateur_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Utilisateur.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_utilisateur_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef UTILISATEUR_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define UTILISATEUR_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_produit_8h.html">Produit.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_avis_8h.html">Avis.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_utilisateur.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_utilisateur.html">Utilisateur</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    std::string pseudo;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::string mdp;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::string nom;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::string prenom;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">struct </span>tm dateNaissance;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    std::string email;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    std::string adresse;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    std::string ville;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nbVentes;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nbAchats;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nbAvis;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> note;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nbNotes;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> codePostal;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::vector&lt;Produit*&gt; lesAchats;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::vector&lt;Produit*&gt; lesVentes;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    std::vector&lt;Avis&gt; lesAvis;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">/* Constructeur */</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_utilisateur.html#ac0d1108ddcc0db26aa0000fb7c9760c4">   51</a></span>&#160;    <a class="code" href="class_utilisateur.html#ac0d1108ddcc0db26aa0000fb7c9760c4">Utilisateur</a>(std::string monPseudo, std::string monMdp, std::string name, std::string firstname, <span class="keywordtype">int</span> jourNaiss, <span class="keywordtype">int</span> moisNaiss, <span class="keywordtype">int</span> anneeNaiss, std::string mail, std::string adr, <span class="keywordtype">int</span> cP) :</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        pseudo(monPseudo), mdp(monMdp), nom(name), prenom(firstname), email(mail), adresse(adr), nbVentes(0), nbAchats(0), nbAvis(0), note(0), nbNotes(0), codePostal(cP) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        dateNaissance.tm_mday = jourNaiss;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        dateNaissance.tm_mon = moisNaiss;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        dateNaissance.tm_year = anneeNaiss;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="class_utilisateur.html#ae76433a6d353c5f5ad0c6a6af64022ad">   62</a></span>&#160;    <a class="code" href="class_utilisateur.html#ae76433a6d353c5f5ad0c6a6af64022ad">Utilisateur</a>() : pseudo(<span class="stringliteral">&quot;&quot;</span>){}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">/* Destructeur */</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_utilisateur.html#a6631539ceecd6140fe525eb91485537b">   65</a></span>&#160;    <a class="code" href="class_utilisateur.html#a6631539ceecd6140fe525eb91485537b">~Utilisateur</a>() {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        std::vector&lt;Produit*&gt;::iterator it;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">for</span>(it = lesAchats.begin(); it != lesAchats.end();it++) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keyword">delete</span>(*it);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">for</span>(it = lesVentes.begin(); it != lesVentes.end();it++) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keyword">delete</span>(*it);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">/* Fonctions get */</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    std::string <a class="code" href="class_utilisateur.html#a02ffb896b7d7d34ced83b8caeea0aadd">getPseudo</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    std::string <a class="code" href="class_utilisateur.html#ab42b795fd2bffc3f9be4b4833bd42973">getMdp</a>();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    std::string <a class="code" href="class_utilisateur.html#a01193c02978c04db73159956766d16f7">getNom</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    std::string <a class="code" href="class_utilisateur.html#a5dc57c74e8a7fc4b48cfb2e87e86c475">getPrenom</a>();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    std::string <a class="code" href="class_utilisateur.html#a5f708e481078a52e437fd803fb2754c3">getDateNaissance</a>();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    std::string <a class="code" href="class_utilisateur.html#a32500914e95bff7890687684e9123c81">getEmail</a>();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    std::string <a class="code" href="class_utilisateur.html#a6a710d004e4ec1a8ab44affd3cf479d5">getAdresse</a>();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    std::string <a class="code" href="class_utilisateur.html#a92ea3c0723ec1303026b9c99b98d70ce">getVille</a>();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_utilisateur.html#ac49c4d66a37d0296e50f9b6cedf4284f">getCodePostal</a>();</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_utilisateur.html#a54a9cce39f989f920b93ca2675d6999c">getNbVentes</a>();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_utilisateur.html#a5fd1e4951abad29ba9ae1ac8760c726d">getNbAchats</a>();</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_utilisateur.html#a2727eb739e0065c9aac277b5d2703b7e">getNote</a>();</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    std::vector&lt;Produit*&gt; <a class="code" href="class_utilisateur.html#a98c52de15b6cb4cd90ab9843887ebea4">getLesAchats</a>();</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    std::vector&lt;Produit*&gt; <a class="code" href="class_utilisateur.html#a1b40d3e45c297b261321c3846fb0c214">getLesVentes</a>();</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    std::vector&lt;Avis&gt; <a class="code" href="class_utilisateur.html#a8e5721905dee5dea491c7a0c8811aaa0">getLesAvis</a>();</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_utilisateur.html#a8e5721905dee5dea491c7a0c8811aaa0">getLesAvis</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> deb, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nb);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment">/* Fonctions set */</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_utilisateur.html#a8463c077b33ccc93c8e424a47b9bc369">setPseudo</a>(std::string p);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_utilisateur.html#a34f6a4cd57807390db2bfc3f880eec58">setMdp</a>(std::string m);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_utilisateur.html#a20a32b47f2b080a4aead49e16bd06f44">setNom</a>(std::string n);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_utilisateur.html#a82c09ccdcb2449ee5a9938bb716938b6">setPrenom</a>(std::string p);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_utilisateur.html#a9cb5da21a0fa7c2900c95dfb9b6c70e8">setDateNaissance</a>(<span class="keywordtype">int</span> jour, <span class="keywordtype">int</span> mois, <span class="keywordtype">int</span> annee);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_utilisateur.html#ab2e9b7718ba138421d5de19d29131165">setEmail</a>(std::string e);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_utilisateur.html#afd7d9b7465cf7f0884e8701d785bd6c2">setAdresse</a>(std::string a);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_utilisateur.html#add56a5bbbb2507f5e1a5c6100c3c756a">setCodePostal</a>(<span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_utilisateur.html#a8a3b372a5f6086e009ebaf6135b570a9">setVille</a>(std::string v);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_utilisateur.html#a8d788360b66d30182485926d8082acef">setNbVentes</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_utilisateur.html#aaff8554723c390a541f223065ba68f22">setNbAchats</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_utilisateur.html#a703b2dbde2ba4e30fceefa651d4ab51f">setNote</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="comment">/* Autres fonctions */</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_utilisateur.html#a0f2ef558d9a70caf2bccfc81f15027fc">addAchat</a>(<a class="code" href="class_produit.html">Produit</a>* p);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_utilisateur.html#ac388127f7ea147a70a67ff6345ccb164">addVente</a>(<a class="code" href="class_produit.html">Produit</a>* p);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_utilisateur.html#aa8b2cad2349702cf2fa8f23fef2e5a9d">addAvis</a>(<a class="code" href="class_avis.html">Avis</a> a);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="comment">/* Fonctions d&#39;affichage */</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno"><a class="line" href="class_utilisateur.html#ad4c1dbab122bf719cf1419b9d93a0e22">  291</a></span>&#160;    <span class="keywordtype">void</span>   <a class="code" href="class_utilisateur.html#ad4c1dbab122bf719cf1419b9d93a0e22">decrit</a>(std::ostream &amp;os) {</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        os &lt;&lt; <span class="stringliteral">&quot;------Utilisateur &quot;</span> &lt;&lt; <a class="code" href="class_utilisateur.html#a02ffb896b7d7d34ced83b8caeea0aadd">getPseudo</a>() &lt;&lt; <span class="stringliteral">&quot;-------\n&quot;</span> &lt;&lt; <a class="code" href="class_utilisateur.html#a5dc57c74e8a7fc4b48cfb2e87e86c475">getPrenom</a>() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="class_utilisateur.html#a01193c02978c04db73159956766d16f7">getNom</a>() &lt;&lt; <span class="stringliteral">&quot;\nMot de passe : &quot;</span> &lt;&lt; <a class="code" href="class_utilisateur.html#ab42b795fd2bffc3f9be4b4833bd42973">getMdp</a>()</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;           &lt;&lt; <span class="stringliteral">&quot;\nDate de naissance : &quot;</span> &lt;&lt; <a class="code" href="class_utilisateur.html#a5f708e481078a52e437fd803fb2754c3">getDateNaissance</a>() &lt;&lt; <span class="stringliteral">&quot;\nEmail : &quot;</span> &lt;&lt; <a class="code" href="class_utilisateur.html#a32500914e95bff7890687684e9123c81">getEmail</a>() &lt;&lt; <span class="stringliteral">&quot;\nAdresse : &quot;</span> &lt;&lt; <a class="code" href="class_utilisateur.html#a6a710d004e4ec1a8ab44affd3cf479d5">getAdresse</a>()</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;           &lt;&lt; <span class="stringliteral">&quot;\nNombre de ventes : &quot;</span> &lt;&lt; <a class="code" href="class_utilisateur.html#a54a9cce39f989f920b93ca2675d6999c">getNbVentes</a>() &lt;&lt; <span class="stringliteral">&quot;  Nombre d&#39;achats : &quot;</span> &lt;&lt; <a class="code" href="class_utilisateur.html#a5fd1e4951abad29ba9ae1ac8760c726d">getNbAchats</a>() &lt;&lt; <span class="stringliteral">&quot;\nNote : &quot;</span> &lt;&lt; <a class="code" href="class_utilisateur.html#a2727eb739e0065c9aac277b5d2703b7e">getNote</a>();</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    }</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div>
+<div class="line"><a name="l00302"></a><span class="lineno"><a class="line" href="class_utilisateur.html#a938eda997ac76805b7674c7ffe7e17e8">  302</a></span>&#160;    std::string <a class="code" href="class_utilisateur.html#a938eda997ac76805b7674c7ffe7e17e8">decrit</a>() {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        std::ostringstream os;  <a class="code" href="class_utilisateur.html#a938eda997ac76805b7674c7ffe7e17e8">decrit</a>(os);  <span class="keywordflow">return</span> os.str();</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    }</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;</div>
+<div class="line"><a name="l00311"></a><span class="lineno"><a class="line" href="class_utilisateur.html#a810f877d63ef4b8b2f6b18dfc1cd26f9">  311</a></span>&#160;    <span class="keywordtype">void</span>  <a class="code" href="class_utilisateur.html#a810f877d63ef4b8b2f6b18dfc1cd26f9">affiche</a>(std::ostream &amp;os) {</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <a class="code" href="class_utilisateur.html#a938eda997ac76805b7674c7ffe7e17e8">decrit</a>(os); os &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    }</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;};</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="preprocessor">#endif // UTILISATEUR_H</span></div>
+<div class="ttc" id="class_utilisateur_html_a92ea3c0723ec1303026b9c99b98d70ce"><div class="ttname"><a href="class_utilisateur.html#a92ea3c0723ec1303026b9c99b98d70ce">Utilisateur::getVille</a></div><div class="ttdeci">std::string getVille()</div><div class="ttdoc">getVille </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:44</div></div>
+<div class="ttc" id="class_utilisateur_html_a02ffb896b7d7d34ced83b8caeea0aadd"><div class="ttname"><a href="class_utilisateur.html#a02ffb896b7d7d34ced83b8caeea0aadd">Utilisateur::getPseudo</a></div><div class="ttdeci">std::string getPseudo()</div><div class="ttdoc">getPseudo </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:6</div></div>
+<div class="ttc" id="class_utilisateur_html_add56a5bbbb2507f5e1a5c6100c3c756a"><div class="ttname"><a href="class_utilisateur.html#add56a5bbbb2507f5e1a5c6100c3c756a">Utilisateur::setCodePostal</a></div><div class="ttdeci">void setCodePostal(int i)</div><div class="ttdoc">setCodePostal </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:116</div></div>
+<div class="ttc" id="class_utilisateur_html_a82c09ccdcb2449ee5a9938bb716938b6"><div class="ttname"><a href="class_utilisateur.html#a82c09ccdcb2449ee5a9938bb716938b6">Utilisateur::setPrenom</a></div><div class="ttdeci">void setPrenom(std::string p)</div><div class="ttdoc">setPrenom </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:98</div></div>
+<div class="ttc" id="class_utilisateur_html_ab42b795fd2bffc3f9be4b4833bd42973"><div class="ttname"><a href="class_utilisateur.html#ab42b795fd2bffc3f9be4b4833bd42973">Utilisateur::getMdp</a></div><div class="ttdeci">std::string getMdp()</div><div class="ttdoc">getMdp </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:10</div></div>
+<div class="ttc" id="class_utilisateur_html_ac0d1108ddcc0db26aa0000fb7c9760c4"><div class="ttname"><a href="class_utilisateur.html#ac0d1108ddcc0db26aa0000fb7c9760c4">Utilisateur::Utilisateur</a></div><div class="ttdeci">Utilisateur(std::string monPseudo, std::string monMdp, std::string name, std::string firstname, int jourNaiss, int moisNaiss, int anneeNaiss, std::string mail, std::string adr, int cP)</div><div class="ttdoc">Utilisateur - Constructeur. </div><div class="ttdef"><b>Definition:</b> Utilisateur.h:51</div></div>
+<div class="ttc" id="class_utilisateur_html_a2727eb739e0065c9aac277b5d2703b7e"><div class="ttname"><a href="class_utilisateur.html#a2727eb739e0065c9aac277b5d2703b7e">Utilisateur::getNote</a></div><div class="ttdeci">unsigned int getNote()</div><div class="ttdoc">getNote </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:56</div></div>
+<div class="ttc" id="class_utilisateur_html_ac49c4d66a37d0296e50f9b6cedf4284f"><div class="ttname"><a href="class_utilisateur.html#ac49c4d66a37d0296e50f9b6cedf4284f">Utilisateur::getCodePostal</a></div><div class="ttdeci">int getCodePostal()</div><div class="ttdoc">getCodePostal </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:40</div></div>
+<div class="ttc" id="class_utilisateur_html_aa8b2cad2349702cf2fa8f23fef2e5a9d"><div class="ttname"><a href="class_utilisateur.html#aa8b2cad2349702cf2fa8f23fef2e5a9d">Utilisateur::addAvis</a></div><div class="ttdeci">void addAvis(Avis a)</div><div class="ttdoc">addAvis </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:148</div></div>
+<div class="ttc" id="class_utilisateur_html_a938eda997ac76805b7674c7ffe7e17e8"><div class="ttname"><a href="class_utilisateur.html#a938eda997ac76805b7674c7ffe7e17e8">Utilisateur::decrit</a></div><div class="ttdeci">std::string decrit()</div><div class="ttdoc">decrit - convertit un flux en string </div><div class="ttdef"><b>Definition:</b> Utilisateur.h:302</div></div>
+<div class="ttc" id="class_utilisateur_html_a5fd1e4951abad29ba9ae1ac8760c726d"><div class="ttname"><a href="class_utilisateur.html#a5fd1e4951abad29ba9ae1ac8760c726d">Utilisateur::getNbAchats</a></div><div class="ttdeci">unsigned int getNbAchats()</div><div class="ttdoc">getNbAchats </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:52</div></div>
+<div class="ttc" id="class_utilisateur_html_a34f6a4cd57807390db2bfc3f880eec58"><div class="ttname"><a href="class_utilisateur.html#a34f6a4cd57807390db2bfc3f880eec58">Utilisateur::setMdp</a></div><div class="ttdeci">void setMdp(std::string m)</div><div class="ttdoc">setMdp </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:90</div></div>
+<div class="ttc" id="class_utilisateur_html_a0f2ef558d9a70caf2bccfc81f15027fc"><div class="ttname"><a href="class_utilisateur.html#a0f2ef558d9a70caf2bccfc81f15027fc">Utilisateur::addAchat</a></div><div class="ttdeci">void addAchat(Produit *p)</div><div class="ttdoc">addAchat </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:138</div></div>
+<div class="ttc" id="_avis_8h_html"><div class="ttname"><a href="_avis_8h.html">Avis.h</a></div></div>
+<div class="ttc" id="_produit_8h_html"><div class="ttname"><a href="_produit_8h.html">Produit.h</a></div></div>
+<div class="ttc" id="class_utilisateur_html_a01193c02978c04db73159956766d16f7"><div class="ttname"><a href="class_utilisateur.html#a01193c02978c04db73159956766d16f7">Utilisateur::getNom</a></div><div class="ttdeci">std::string getNom()</div><div class="ttdoc">getNom </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:14</div></div>
+<div class="ttc" id="class_utilisateur_html_a6631539ceecd6140fe525eb91485537b"><div class="ttname"><a href="class_utilisateur.html#a6631539ceecd6140fe525eb91485537b">Utilisateur::~Utilisateur</a></div><div class="ttdeci">~Utilisateur()</div><div class="ttdef"><b>Definition:</b> Utilisateur.h:65</div></div>
+<div class="ttc" id="class_utilisateur_html_a9cb5da21a0fa7c2900c95dfb9b6c70e8"><div class="ttname"><a href="class_utilisateur.html#a9cb5da21a0fa7c2900c95dfb9b6c70e8">Utilisateur::setDateNaissance</a></div><div class="ttdeci">void setDateNaissance(int jour, int mois, int annee)</div><div class="ttdoc">setDateNaissance </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:102</div></div>
+<div class="ttc" id="class_utilisateur_html_ac388127f7ea147a70a67ff6345ccb164"><div class="ttname"><a href="class_utilisateur.html#ac388127f7ea147a70a67ff6345ccb164">Utilisateur::addVente</a></div><div class="ttdeci">void addVente(Produit *p)</div><div class="ttdoc">addVente </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:143</div></div>
+<div class="ttc" id="class_avis_html"><div class="ttname"><a href="class_avis.html">Avis</a></div><div class="ttdoc">The Avis class - Représente un avis donné par un utilisateur sur un autre utilisateur ou un produit...</div><div class="ttdef"><b>Definition:</b> Avis.h:10</div></div>
+<div class="ttc" id="class_utilisateur_html_a1b40d3e45c297b261321c3846fb0c214"><div class="ttname"><a href="class_utilisateur.html#a1b40d3e45c297b261321c3846fb0c214">Utilisateur::getLesVentes</a></div><div class="ttdeci">std::vector&lt; Produit * &gt; getLesVentes()</div><div class="ttdoc">getLesVentes </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:64</div></div>
+<div class="ttc" id="class_utilisateur_html_a810f877d63ef4b8b2f6b18dfc1cd26f9"><div class="ttname"><a href="class_utilisateur.html#a810f877d63ef4b8b2f6b18dfc1cd26f9">Utilisateur::affiche</a></div><div class="ttdeci">void affiche(std::ostream &amp;os)</div><div class="ttdoc">affiche - Ecrit toutes les données utilisateur d&#39;un flux vers une sortie </div><div class="ttdef"><b>Definition:</b> Utilisateur.h:311</div></div>
+<div class="ttc" id="class_utilisateur_html_a98c52de15b6cb4cd90ab9843887ebea4"><div class="ttname"><a href="class_utilisateur.html#a98c52de15b6cb4cd90ab9843887ebea4">Utilisateur::getLesAchats</a></div><div class="ttdeci">std::vector&lt; Produit * &gt; getLesAchats()</div><div class="ttdoc">getLesAchats </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:60</div></div>
+<div class="ttc" id="class_utilisateur_html_a5f708e481078a52e437fd803fb2754c3"><div class="ttname"><a href="class_utilisateur.html#a5f708e481078a52e437fd803fb2754c3">Utilisateur::getDateNaissance</a></div><div class="ttdeci">std::string getDateNaissance()</div><div class="ttdoc">getDateNaissance </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:22</div></div>
+<div class="ttc" id="class_utilisateur_html_a8a3b372a5f6086e009ebaf6135b570a9"><div class="ttname"><a href="class_utilisateur.html#a8a3b372a5f6086e009ebaf6135b570a9">Utilisateur::setVille</a></div><div class="ttdeci">void setVille(std::string v)</div><div class="ttdoc">setVille </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:120</div></div>
+<div class="ttc" id="class_utilisateur_html_a8463c077b33ccc93c8e424a47b9bc369"><div class="ttname"><a href="class_utilisateur.html#a8463c077b33ccc93c8e424a47b9bc369">Utilisateur::setPseudo</a></div><div class="ttdeci">void setPseudo(std::string p)</div><div class="ttdoc">setPseudo </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:86</div></div>
+<div class="ttc" id="class_utilisateur_html_ae76433a6d353c5f5ad0c6a6af64022ad"><div class="ttname"><a href="class_utilisateur.html#ae76433a6d353c5f5ad0c6a6af64022ad">Utilisateur::Utilisateur</a></div><div class="ttdeci">Utilisateur()</div><div class="ttdoc">Utilisateur - Constructeur vide. </div><div class="ttdef"><b>Definition:</b> Utilisateur.h:62</div></div>
+<div class="ttc" id="class_produit_html"><div class="ttname"><a href="class_produit.html">Produit</a></div><div class="ttdoc">Cette classe gère le stockage d&#39;un produit. </div><div class="ttdef"><b>Definition:</b> Produit.h:18</div></div>
+<div class="ttc" id="class_utilisateur_html_a6a710d004e4ec1a8ab44affd3cf479d5"><div class="ttname"><a href="class_utilisateur.html#a6a710d004e4ec1a8ab44affd3cf479d5">Utilisateur::getAdresse</a></div><div class="ttdeci">std::string getAdresse()</div><div class="ttdoc">getAdresse </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:36</div></div>
+<div class="ttc" id="class_utilisateur_html"><div class="ttname"><a href="class_utilisateur.html">Utilisateur</a></div><div class="ttdoc">The Utilisateur class - Contient toutes les informations personnelles d&#39;un utilisateur. </div><div class="ttdef"><b>Definition:</b> Utilisateur.h:14</div></div>
+<div class="ttc" id="class_utilisateur_html_a54a9cce39f989f920b93ca2675d6999c"><div class="ttname"><a href="class_utilisateur.html#a54a9cce39f989f920b93ca2675d6999c">Utilisateur::getNbVentes</a></div><div class="ttdeci">unsigned int getNbVentes()</div><div class="ttdoc">getNbVentes </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:48</div></div>
+<div class="ttc" id="class_utilisateur_html_aaff8554723c390a541f223065ba68f22"><div class="ttname"><a href="class_utilisateur.html#aaff8554723c390a541f223065ba68f22">Utilisateur::setNbAchats</a></div><div class="ttdeci">void setNbAchats(unsigned int n)</div><div class="ttdoc">setNbAchats </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:129</div></div>
+<div class="ttc" id="class_utilisateur_html_a20a32b47f2b080a4aead49e16bd06f44"><div class="ttname"><a href="class_utilisateur.html#a20a32b47f2b080a4aead49e16bd06f44">Utilisateur::setNom</a></div><div class="ttdeci">void setNom(std::string n)</div><div class="ttdoc">setNom </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:94</div></div>
+<div class="ttc" id="class_utilisateur_html_ad4c1dbab122bf719cf1419b9d93a0e22"><div class="ttname"><a href="class_utilisateur.html#ad4c1dbab122bf719cf1419b9d93a0e22">Utilisateur::decrit</a></div><div class="ttdeci">void decrit(std::ostream &amp;os)</div><div class="ttdoc">decrit - Ecrit toutes les données utilisateur dans un flux donné en paramètre </div><div class="ttdef"><b>Definition:</b> Utilisateur.h:291</div></div>
+<div class="ttc" id="class_utilisateur_html_a5dc57c74e8a7fc4b48cfb2e87e86c475"><div class="ttname"><a href="class_utilisateur.html#a5dc57c74e8a7fc4b48cfb2e87e86c475">Utilisateur::getPrenom</a></div><div class="ttdeci">std::string getPrenom()</div><div class="ttdoc">getPrenom </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:18</div></div>
+<div class="ttc" id="class_utilisateur_html_a703b2dbde2ba4e30fceefa651d4ab51f"><div class="ttname"><a href="class_utilisateur.html#a703b2dbde2ba4e30fceefa651d4ab51f">Utilisateur::setNote</a></div><div class="ttdeci">void setNote(unsigned int n)</div><div class="ttdoc">setNote </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:133</div></div>
+<div class="ttc" id="class_utilisateur_html_a32500914e95bff7890687684e9123c81"><div class="ttname"><a href="class_utilisateur.html#a32500914e95bff7890687684e9123c81">Utilisateur::getEmail</a></div><div class="ttdeci">std::string getEmail()</div><div class="ttdoc">getEmail </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:32</div></div>
+<div class="ttc" id="class_utilisateur_html_a8d788360b66d30182485926d8082acef"><div class="ttname"><a href="class_utilisateur.html#a8d788360b66d30182485926d8082acef">Utilisateur::setNbVentes</a></div><div class="ttdeci">void setNbVentes(unsigned int n)</div><div class="ttdoc">setNbVentes </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:125</div></div>
+<div class="ttc" id="class_utilisateur_html_a8e5721905dee5dea491c7a0c8811aaa0"><div class="ttname"><a href="class_utilisateur.html#a8e5721905dee5dea491c7a0c8811aaa0">Utilisateur::getLesAvis</a></div><div class="ttdeci">std::vector&lt; Avis &gt; getLesAvis()</div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:68</div></div>
+<div class="ttc" id="class_utilisateur_html_afd7d9b7465cf7f0884e8701d785bd6c2"><div class="ttname"><a href="class_utilisateur.html#afd7d9b7465cf7f0884e8701d785bd6c2">Utilisateur::setAdresse</a></div><div class="ttdeci">void setAdresse(std::string a)</div><div class="ttdoc">setAdresse </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:112</div></div>
+<div class="ttc" id="class_utilisateur_html_ab2e9b7718ba138421d5de19d29131165"><div class="ttname"><a href="class_utilisateur.html#ab2e9b7718ba138421d5de19d29131165">Utilisateur::setEmail</a></div><div class="ttdeci">void setEmail(std::string e)</div><div class="ttdoc">setEmail </div><div class="ttdef"><b>Definition:</b> Utilisateur.cpp:108</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d4f0df69e2a6490471d12df9fd1b1341.html">bdd</a></li><li class="navelem"><a class="el" href="_utilisateur_8h.html">Utilisateur.h</a></li>
+    <li class="footer">Généré le Jeudi 17 Décembre 2015 23:55:11 pour EMarche par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

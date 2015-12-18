@@ -5,6 +5,14 @@
   <property name="windowModality">
    <enum>Qt::NonModal</enum>
   </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>486</width>
+    <height>217</height>
+   </rect>
+  </property>
   <property name="maximumSize">
    <size>
     <width>550</width>
@@ -51,6 +59,9 @@
    <property name="text">
     <string>Se connecter</string>
    </property>
+   <property name="autoDefault">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="boutonSInscrire">
    <property name="geometry">
@@ -64,8 +75,11 @@
    <property name="text">
     <string>S'inscrire</string>
    </property>
+   <property name="autoDefault">
+    <bool>true</bool>
+   </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -93,7 +107,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>60</x>

@@ -56,11 +56,11 @@ public:
         delete(boutonConnexion);
 
         delete(titreSection);
+        delete(barreDefile);
 
         delete(boutonPrecedent);
         delete(boutonSuivant);
         delete(numPage);
-
     }
 
     //!

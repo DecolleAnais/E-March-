@@ -133,6 +133,11 @@ public:
     void modifierProfil(std::string nom, std::string prenom, std::string mail,
                         int codePostal, std::string ville, std::string adresse);
 
+    //!
+    //! \fn void acheterProduit(Produit* p)
+    //! \brief acheterProduit - Acheter un produit, avec suppression du produit si la quantité arrive à 0
+    //! \param p - Pointeur vers le produit à acheter
+    //!
     void acheterProduit(Produit* p);
 
     /* recherche utilisateur */

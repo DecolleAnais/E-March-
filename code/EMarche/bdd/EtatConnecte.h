@@ -17,6 +17,9 @@ public:
      */
     EtatConnecte(bool b) : EtatConnexion(b) {}
 
+    /* destructeur */
+    virtual ~EtatConnecte() {}
+
 };
 
 #endif

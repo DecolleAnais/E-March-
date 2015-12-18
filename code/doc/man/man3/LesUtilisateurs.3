@@ -1,0 +1,156 @@
+.TH "LesUtilisateurs" 3 "Jeudi 17 Décembre 2015" "Version dernière version" "EMarche" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LesUtilisateurs \- 
+.PP
+The \fBLesUtilisateurs\fP class - Gère un vector de pointeurs vers des utilisateurs\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <LesUtilisateurs\&.h>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBLesUtilisateurs\fP ()"
+.br
+.RI "\fI\fBLesUtilisateurs\fP - Constructeur\&. \fP"
+.ti -1c
+.RI "\fB~LesUtilisateurs\fP ()"
+.br
+.ti -1c
+.RI "void \fBadd\fP (\fBUtilisateur\fP *u)"
+.br
+.RI "\fIadd - Ajoute un pointeur vers un utilisateur dans le vector lesUtilisateurs \fP"
+.ti -1c
+.RI "void \fBsupprimer\fP (std::string pseudo)"
+.br
+.RI "\fIsupprimer - Supprime un utilisateur du vector lesUtilisateurs via son pseudo \fP"
+.ti -1c
+.RI "\fBUtilisateur\fP * \fBgetUtilisateur\fP (std::string pseudo)"
+.br
+.RI "\fIgetUtilisateur - Retourne un pointeur vers un utilisateur du vector lesUtilisateurs via son pseudo \fP"
+.ti -1c
+.RI "std::vector< \fBUtilisateur\fP * > \fBgetUtilisateurs\fP (std::string chaine)"
+.br
+.RI "\fIgetUtilisateurs - Retourne le vector lesUtilisateurs contenant les pointeurs vers les utilisateurs recherchés \fP"
+.ti -1c
+.RI "bool \fBexisteUtilisateur\fP (std::string pseudo, std::string mdp)"
+.br
+.RI "\fIexisteUtilisateur dit si l'utilisateur existe ou non via son pseudo et mot de passe \fP"
+.ti -1c
+.RI "int \fBgetNbUtilisateurs\fP ()"
+.br
+.RI "\fIgetNbUtilisateurs \fP"
+.ti -1c
+.RI "void \fBaffiche\fP ()"
+.br
+.RI "\fIaffiche tous les utilisateurs \fP"
+.in -1c
+.SH "Description détaillée"
+.PP 
+The \fBLesUtilisateurs\fP class - Gère un vector de pointeurs vers des utilisateurs\&. 
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "LesUtilisateurs::LesUtilisateurs ()\fC [inline]\fP"
+
+.PP
+\fBLesUtilisateurs\fP - Constructeur\&. 
+.SS "LesUtilisateurs::~LesUtilisateurs ()\fC [inline]\fP"
+
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "void LesUtilisateurs::add (\fBUtilisateur\fP *u)"
+
+.PP
+add - Ajoute un pointeur vers un utilisateur dans le vector lesUtilisateurs 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIu\fP - Pointeur vers l'utilisateur à ajouter 
+.RE
+.PP
+
+.SS "void LesUtilisateurs::affiche ()"
+
+.PP
+affiche tous les utilisateurs 
+.SS "bool LesUtilisateurs::existeUtilisateur (std::stringpseudo, std::stringmdp)"
+
+.PP
+existeUtilisateur dit si l'utilisateur existe ou non via son pseudo et mot de passe 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIpseudo\fP - Pseudo de l'utilisateur recherché 
+.br
+\fImdp\fP - Mot de passe de l'utilisateur recherché 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+true si l'utilisateur existe, false sinon 
+.RE
+.PP
+
+.SS "int LesUtilisateurs::getNbUtilisateurs ()"
+
+.PP
+getNbUtilisateurs 
+.PP
+\fBRenvoie:\fP
+.RS 4
+
+.RE
+.PP
+
+.SS "\fBUtilisateur\fP * LesUtilisateurs::getUtilisateur (std::stringpseudo)"
+
+.PP
+getUtilisateur - Retourne un pointeur vers un utilisateur du vector lesUtilisateurs via son pseudo 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIpseudo\fP - Pseudo de l'utilisateur à renvoyer 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+un pointeur vers l'utilisateur recherché 
+.RE
+.PP
+
+.SS "std::vector< \fBUtilisateur\fP * > LesUtilisateurs::getUtilisateurs (std::stringchaine)"
+
+.PP
+getUtilisateurs - Retourne le vector lesUtilisateurs contenant les pointeurs vers les utilisateurs recherchés 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIchaine\fP - Chaîne testée avec le pseudo des utilisateurs 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+un vector contenant ls pointeurs vers les utilisateurs dont le pseudo contient la chaîne 
+.RE
+.PP
+
+.SS "void LesUtilisateurs::supprimer (std::stringpseudo)"
+
+.PP
+supprimer - Supprime un utilisateur du vector lesUtilisateurs via son pseudo 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIpseudo\fP - Pseudo de l'utilisateur à supprimer 
+.RE
+.PP
+
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour EMarche à partir du code source\&.

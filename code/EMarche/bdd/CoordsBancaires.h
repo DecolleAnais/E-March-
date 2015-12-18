@@ -29,6 +29,9 @@ private:
     //! \brief Adresse de livraison
     std::string adresseLivraison;
 
+    /* destructeur */
+    virtual ~CoordsBancaires() {}
+
 };
 
 #endif

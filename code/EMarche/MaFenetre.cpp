@@ -70,8 +70,8 @@ MaFenetre::MaFenetre(int l, int h, GestionBdd *bdd) : largeur(l), hauteur(h), ge
 
     /* Titre de la section */
     titreSection = new QLabel("Ventes en cours", this);
-    QScrollArea *defile = new QScrollArea;
-    defile->setLayout(centre);
+    barreDefile = new QScrollArea;
+    barreDefile->setLayout(centre);
     emit signalRechercheProduits(gestionBdd->ventesEnCours());
 
     /*********************************************
@@ -91,7 +91,7 @@ MaFenetre::MaFenetre(int l, int h, GestionBdd *bdd) : largeur(l), hauteur(h), ge
     /* Alignement vertical */
     vLayout->addLayout(haut);
     vLayout->addWidget(titreSection);
-    vLayout->addWidget(defile);
+    vLayout->addWidget(barreDefile);
     vLayout->addLayout(bas);
 
     setLayout(vLayout);
@@ -416,7 +416,6 @@ void MaFenetre::afficherResUtilisateurs(vector<Utilisateur*> v) {
         /* création d'un bouton pour accéder au profil concerné */
         QPushButton *voirProfil = new QPushButton("Voir profil");
         QObject::connect(voirProfil, SIGNAL(clicked()), &mapperVoirProfilAutreUtilisateur, SLOT( map() ));
-        //QObject::connect(voirProfil, SIGNAL(clicked()), this, SLOT(voirProfil(string pseudoStr)));
         mapperVoirProfilAutreUtilisateur.setMapping(voirProfil, pseudo);
         box->addWidget(voirProfil);
         centre->addLayout(box);

@@ -118,7 +118,10 @@ public:
     /*!
      * \brief Destructeur de la classe Produit
      */
-    ~Produit() {}
+    ~Produit() {
+        delete(categorie);
+        delete(etatVente);
+    }
 
     /* ----- Fonctions get ----- */
 
