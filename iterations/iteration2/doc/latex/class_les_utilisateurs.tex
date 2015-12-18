@@ -1,0 +1,178 @@
+\hypertarget{class_les_utilisateurs}{\section{Référence de la classe Les\-Utilisateurs}
+\label{class_les_utilisateurs}\index{Les\-Utilisateurs@{Les\-Utilisateurs}}
+}
+
+
+The \hyperlink{class_les_utilisateurs}{Les\-Utilisateurs} class -\/ Gère un vector de pointeurs vers des utilisateurs.  
+
+
+
+
+{\ttfamily \#include $<$Les\-Utilisateurs.\-h$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_les_utilisateurs_a259a566889379f68f0e7f51fd2f4937b}{Les\-Utilisateurs} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_les_utilisateurs}{Les\-Utilisateurs} -\/ Constructeur. \end{DoxyCompactList}\item 
+\hyperlink{class_les_utilisateurs_a6968c708c6df8a1667da075d53a70758}{$\sim$\-Les\-Utilisateurs} ()
+\item 
+void \hyperlink{class_les_utilisateurs_ab5c478d010984c3357b3d6ea67460b8e}{add} (\hyperlink{class_utilisateur}{Utilisateur} $\ast$u)
+\begin{DoxyCompactList}\small\item\em add -\/ Ajoute un pointeur vers un utilisateur dans le vector les\-Utilisateurs \end{DoxyCompactList}\item 
+void \hyperlink{class_les_utilisateurs_a3ce112f12307d71f0d9cb74bc2cb506a}{supprimer} (std\-::string pseudo)
+\begin{DoxyCompactList}\small\item\em supprimer -\/ Supprime un utilisateur du vector les\-Utilisateurs via son pseudo \end{DoxyCompactList}\item 
+\hyperlink{class_utilisateur}{Utilisateur} $\ast$ \hyperlink{class_les_utilisateurs_a7246fbe92f69bf2940a713430c56aa31}{get\-Utilisateur} (std\-::string pseudo)
+\begin{DoxyCompactList}\small\item\em get\-Utilisateur -\/ Retourne un pointeur vers un utilisateur du vector les\-Utilisateurs via son pseudo \end{DoxyCompactList}\item 
+bool \hyperlink{class_les_utilisateurs_a0a06030c9a660be944b00a9300ae2044}{existe\-Utilisateur} (std\-::string pseudo, std\-::string mdp)
+\begin{DoxyCompactList}\small\item\em existe\-Utilisateur dit si l'utilisateur existe ou non via son pseudo et mot de passe \end{DoxyCompactList}\item 
+int \hyperlink{class_les_utilisateurs_ad825cc92534444913bf5f42416abd562}{get\-Nb\-Utilisateurs} ()
+\begin{DoxyCompactList}\small\item\em get\-Nb\-Utilisateurs \end{DoxyCompactList}\item 
+void \hyperlink{class_les_utilisateurs_a88613e64e91ce36d0566cc7dfd3ed12d}{affiche} ()
+\begin{DoxyCompactList}\small\item\em affiche tous les utilisateurs \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ \hyperlink{class_utilisateur}{Utilisateur} $\ast$ $>$ \hyperlink{class_les_utilisateurs_a311d424c48490d8d4fdf5171ad6e593e}{les\-Utilisateurs}
+\item 
+int \hyperlink{class_les_utilisateurs_af6f356c083f88d9d71f531eae0fcb9f3}{nb\-Utilisateurs}
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+The \hyperlink{class_les_utilisateurs}{Les\-Utilisateurs} class -\/ Gère un vector de pointeurs vers des utilisateurs. 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{class_les_utilisateurs_a259a566889379f68f0e7f51fd2f4937b}{\index{Les\-Utilisateurs@{Les\-Utilisateurs}!Les\-Utilisateurs@{Les\-Utilisateurs}}
+\index{Les\-Utilisateurs@{Les\-Utilisateurs}!LesUtilisateurs@{Les\-Utilisateurs}}
+\subsubsection[{Les\-Utilisateurs}]{\setlength{\rightskip}{0pt plus 5cm}Les\-Utilisateurs\-::\-Les\-Utilisateurs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_les_utilisateurs_a259a566889379f68f0e7f51fd2f4937b}
+
+
+\hyperlink{class_les_utilisateurs}{Les\-Utilisateurs} -\/ Constructeur. 
+
+\hypertarget{class_les_utilisateurs_a6968c708c6df8a1667da075d53a70758}{\index{Les\-Utilisateurs@{Les\-Utilisateurs}!$\sim$\-Les\-Utilisateurs@{$\sim$\-Les\-Utilisateurs}}
+\index{$\sim$\-Les\-Utilisateurs@{$\sim$\-Les\-Utilisateurs}!LesUtilisateurs@{Les\-Utilisateurs}}
+\subsubsection[{$\sim$\-Les\-Utilisateurs}]{\setlength{\rightskip}{0pt plus 5cm}Les\-Utilisateurs\-::$\sim$\-Les\-Utilisateurs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_les_utilisateurs_a6968c708c6df8a1667da075d53a70758}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_les_utilisateurs_ab5c478d010984c3357b3d6ea67460b8e}{\index{Les\-Utilisateurs@{Les\-Utilisateurs}!add@{add}}
+\index{add@{add}!LesUtilisateurs@{Les\-Utilisateurs}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void Les\-Utilisateurs\-::add (
+\begin{DoxyParamCaption}
+\item[{{\bf Utilisateur} $\ast$}]{u}
+\end{DoxyParamCaption}
+)}}\label{class_les_utilisateurs_ab5c478d010984c3357b3d6ea67460b8e}
+
+
+add -\/ Ajoute un pointeur vers un utilisateur dans le vector les\-Utilisateurs 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em u} & -\/ Pointeur vers l'utilisateur à ajouter \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_les_utilisateurs_a88613e64e91ce36d0566cc7dfd3ed12d}{\index{Les\-Utilisateurs@{Les\-Utilisateurs}!affiche@{affiche}}
+\index{affiche@{affiche}!LesUtilisateurs@{Les\-Utilisateurs}}
+\subsubsection[{affiche}]{\setlength{\rightskip}{0pt plus 5cm}void Les\-Utilisateurs\-::affiche (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_les_utilisateurs_a88613e64e91ce36d0566cc7dfd3ed12d}
+
+
+affiche tous les utilisateurs 
+
+\hypertarget{class_les_utilisateurs_a0a06030c9a660be944b00a9300ae2044}{\index{Les\-Utilisateurs@{Les\-Utilisateurs}!existe\-Utilisateur@{existe\-Utilisateur}}
+\index{existe\-Utilisateur@{existe\-Utilisateur}!LesUtilisateurs@{Les\-Utilisateurs}}
+\subsubsection[{existe\-Utilisateur}]{\setlength{\rightskip}{0pt plus 5cm}bool Les\-Utilisateurs\-::existe\-Utilisateur (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{pseudo, }
+\item[{std\-::string}]{mdp}
+\end{DoxyParamCaption}
+)}}\label{class_les_utilisateurs_a0a06030c9a660be944b00a9300ae2044}
+
+
+existe\-Utilisateur dit si l'utilisateur existe ou non via son pseudo et mot de passe 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em pseudo} & -\/ Pseudo de l'utilisateur recherché \\
+\hline
+{\em mdp} & -\/ Mot de passe de l'utilisateur recherché \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true si l'utilisateur existe, false sinon 
+\end{DoxyReturn}
+\hypertarget{class_les_utilisateurs_ad825cc92534444913bf5f42416abd562}{\index{Les\-Utilisateurs@{Les\-Utilisateurs}!get\-Nb\-Utilisateurs@{get\-Nb\-Utilisateurs}}
+\index{get\-Nb\-Utilisateurs@{get\-Nb\-Utilisateurs}!LesUtilisateurs@{Les\-Utilisateurs}}
+\subsubsection[{get\-Nb\-Utilisateurs}]{\setlength{\rightskip}{0pt plus 5cm}int Les\-Utilisateurs\-::get\-Nb\-Utilisateurs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_les_utilisateurs_ad825cc92534444913bf5f42416abd562}
+
+
+get\-Nb\-Utilisateurs 
+
+\begin{DoxyReturn}{Renvoie}
+
+\end{DoxyReturn}
+\hypertarget{class_les_utilisateurs_a7246fbe92f69bf2940a713430c56aa31}{\index{Les\-Utilisateurs@{Les\-Utilisateurs}!get\-Utilisateur@{get\-Utilisateur}}
+\index{get\-Utilisateur@{get\-Utilisateur}!LesUtilisateurs@{Les\-Utilisateurs}}
+\subsubsection[{get\-Utilisateur}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Utilisateur} $\ast$ Les\-Utilisateurs\-::get\-Utilisateur (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{pseudo}
+\end{DoxyParamCaption}
+)}}\label{class_les_utilisateurs_a7246fbe92f69bf2940a713430c56aa31}
+
+
+get\-Utilisateur -\/ Retourne un pointeur vers un utilisateur du vector les\-Utilisateurs via son pseudo 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em pseudo} & -\/ Pseudo de l'utilisateur à renvoyer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un pointeur vers l'utilisateur recherché 
+\end{DoxyReturn}
+\hypertarget{class_les_utilisateurs_a3ce112f12307d71f0d9cb74bc2cb506a}{\index{Les\-Utilisateurs@{Les\-Utilisateurs}!supprimer@{supprimer}}
+\index{supprimer@{supprimer}!LesUtilisateurs@{Les\-Utilisateurs}}
+\subsubsection[{supprimer}]{\setlength{\rightskip}{0pt plus 5cm}void Les\-Utilisateurs\-::supprimer (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{pseudo}
+\end{DoxyParamCaption}
+)}}\label{class_les_utilisateurs_a3ce112f12307d71f0d9cb74bc2cb506a}
+
+
+supprimer -\/ Supprime un utilisateur du vector les\-Utilisateurs via son pseudo 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em pseudo} & -\/ Pseudo de l'utilisateur à supprimer \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des données membres}
+\hypertarget{class_les_utilisateurs_a311d424c48490d8d4fdf5171ad6e593e}{\index{Les\-Utilisateurs@{Les\-Utilisateurs}!les\-Utilisateurs@{les\-Utilisateurs}}
+\index{les\-Utilisateurs@{les\-Utilisateurs}!LesUtilisateurs@{Les\-Utilisateurs}}
+\subsubsection[{les\-Utilisateurs}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Utilisateur}$\ast$$>$ Les\-Utilisateurs\-::les\-Utilisateurs\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_les_utilisateurs_a311d424c48490d8d4fdf5171ad6e593e}
+\hypertarget{class_les_utilisateurs_af6f356c083f88d9d71f531eae0fcb9f3}{\index{Les\-Utilisateurs@{Les\-Utilisateurs}!nb\-Utilisateurs@{nb\-Utilisateurs}}
+\index{nb\-Utilisateurs@{nb\-Utilisateurs}!LesUtilisateurs@{Les\-Utilisateurs}}
+\subsubsection[{nb\-Utilisateurs}]{\setlength{\rightskip}{0pt plus 5cm}int Les\-Utilisateurs\-::nb\-Utilisateurs\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_les_utilisateurs_af6f356c083f88d9d71f531eae0fcb9f3}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+/home/magalie/\-Bureau/\-S5/\-C\-P\-O\-O\-A/\-Projet/\-E-\/\-Marche-\//iterations/iteration2/\-E\-Marche/bdd/\hyperlink{_les_utilisateurs_8h}{Les\-Utilisateurs.\-h}\item 
+/home/magalie/\-Bureau/\-S5/\-C\-P\-O\-O\-A/\-Projet/\-E-\/\-Marche-\//iterations/iteration2/\-E\-Marche/bdd/\hyperlink{_les_utilisateurs_8cpp}{Les\-Utilisateurs.\-cpp}\end{DoxyCompactItemize}

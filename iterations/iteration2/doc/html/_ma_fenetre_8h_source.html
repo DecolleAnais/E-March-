@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>EMarche:  Fichier source de /home/magalie/Bureau/S5/CPOOA/Projet/E-Marche-/iterations/iteration2/EMarche/MaFenetre.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">EMarche
+   &#160;<span id="projectnumber">2</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_ma_fenetre_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">MaFenetre.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_ma_fenetre_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MAFENETRE_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MAFENETRE_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QPushButton&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QComboBox&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QLineEdit&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QLabel&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QScrollArea&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QCoreApplication&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QHBoxLayout&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;QVBoxLayout&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;QGridLayout&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;QMessageBox&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;QGroupBox&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;QSpinBox&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;QTimer&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;QSignalMapper&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_dialog_connexion_8h.html">DialogConnexion.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_dialog_ajouter_vente_8h.html">DialogAjouterVente.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_vue_8h.html">Vue.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_gestion_bdd_8h.html">bdd/GestionBdd.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_les_utilisateurs_8h.html">bdd/LesUtilisateurs.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">/* Fenêtre principale de l&#39;application */</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_ma_fenetre.html">MaFenetre</a> : <span class="keyword">public</span> QWidget, <span class="keyword">public</span> <a class="code" href="class_vue.html">Vue</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="class_ma_fenetre.html#ae39212ca7a4d4b4c99a13b1d5eb063fa">MaFenetre</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> h, <a class="code" href="class_gestion_bdd.html">GestionBdd</a> *bdd);</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html#a2396ba2918e49df8d0c4a8c70f927151">   43</a></span>&#160;    <a class="code" href="class_ma_fenetre.html#a2396ba2918e49df8d0c4a8c70f927151">~MaFenetre</a>() {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">delete</span>(<a class="code" href="class_ma_fenetre.html#acd485d3f85c155925df773f028f9e537">haut</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">delete</span>(<a class="code" href="class_ma_fenetre.html#aff3315e53711db117feadab319660cee">bas</a>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">delete</span>(<a class="code" href="class_ma_fenetre.html#aefa40adcb6099816353c31ea230ec1af">centre</a>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">delete</span>(<a class="code" href="class_ma_fenetre.html#a3df6a320b8835369da88bf94b701ae76">typeRecherche</a>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">delete</span>(<a class="code" href="class_ma_fenetre.html#a37836681a6d48a32dcd379b11447f579">valRecherche</a>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">delete</span>(<a class="code" href="class_ma_fenetre.html#afe6e47d40e487fccd18d4bcc3c57e64e">boutonRecherche</a>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">delete</span>(<a class="code" href="class_ma_fenetre.html#a0316aa06b89b812a8528a8ccbe81561a">boutonAccueil</a>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">delete</span>(<a class="code" href="class_ma_fenetre.html#a422d1e619aa51ff42b5ecd2c5476ce19">boutonAjouterVente</a>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">delete</span>(<a class="code" href="class_ma_fenetre.html#ae7932944c172401e793af721335e7c3d">pseudoConnecte</a>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">delete</span>(<a class="code" href="class_ma_fenetre.html#a6654bb6885a843d1a6ad9399eb7d0c36">boutonConnexion</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">delete</span>(<a class="code" href="class_ma_fenetre.html#ac4749f9608f7c8d6e5d60434ddbedfc5">titreSection</a>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">delete</span>(<a class="code" href="class_ma_fenetre.html#a4f199f65ae682c48c837875a486d2f3f">barreDefile</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">delete</span>(<a class="code" href="class_ma_fenetre.html#a53b01801ba121b8240df4f1f8c9330b3">boutonPrecedent</a>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">delete</span>(<a class="code" href="class_ma_fenetre.html#a54110f455a71febc15224b68470dd80e">boutonSuivant</a>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">delete</span>(<a class="code" href="class_ma_fenetre.html#a941eff753d1e20d0ef212aa875570330">numPage</a>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ma_fenetre.html#a342da912af9b611d47229fd190d68522">update</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ma_fenetre.html#a4bc520a56473760bb8433a1de67da378">clearLayout</a>(QLayout *layout);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ma_fenetre.html#a115348adbe409a24a0d381e1fcc62fe7">afficherResProduits</a>(std::vector&lt;Produit*&gt; v);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ma_fenetre.html#a8107c2666807db431962fdcd4e942c69">rechercher</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ma_fenetre.html#abc0a097122f161ced271718b254206cd">accueil</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ma_fenetre.html#abd8cb1d6b536873f3d369457073270c4">ajouterVente</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ma_fenetre.html#a65270bfc0eeecb1003c6abc9a1199f32">connexion</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;signals:</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ma_fenetre.html#a75cd895beb38fe68a4319eb6c37ac8ee">signalRechercheProduits</a>(std::vector&lt;Produit*&gt; v);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html#acd485d3f85c155925df773f028f9e537">  108</a></span>&#160;    QHBoxLayout *<a class="code" href="class_ma_fenetre.html#acd485d3f85c155925df773f028f9e537">haut</a>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html#aefa40adcb6099816353c31ea230ec1af">  112</a></span>&#160;    QVBoxLayout *<a class="code" href="class_ma_fenetre.html#aefa40adcb6099816353c31ea230ec1af">centre</a>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html#aff3315e53711db117feadab319660cee">  116</a></span>&#160;    QHBoxLayout *<a class="code" href="class_ma_fenetre.html#aff3315e53711db117feadab319660cee">bas</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html#a3df6a320b8835369da88bf94b701ae76">  121</a></span>&#160;    QComboBox *<a class="code" href="class_ma_fenetre.html#a3df6a320b8835369da88bf94b701ae76">typeRecherche</a>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html#a37836681a6d48a32dcd379b11447f579">  125</a></span>&#160;    QLineEdit *<a class="code" href="class_ma_fenetre.html#a37836681a6d48a32dcd379b11447f579">valRecherche</a>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html#afe6e47d40e487fccd18d4bcc3c57e64e">  129</a></span>&#160;    QPushButton *<a class="code" href="class_ma_fenetre.html#afe6e47d40e487fccd18d4bcc3c57e64e">boutonRecherche</a>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html#a0316aa06b89b812a8528a8ccbe81561a">  133</a></span>&#160;    QPushButton *<a class="code" href="class_ma_fenetre.html#a0316aa06b89b812a8528a8ccbe81561a">boutonAccueil</a>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html#a422d1e619aa51ff42b5ecd2c5476ce19">  137</a></span>&#160;    QPushButton *<a class="code" href="class_ma_fenetre.html#a422d1e619aa51ff42b5ecd2c5476ce19">boutonAjouterVente</a>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html#ae7932944c172401e793af721335e7c3d">  141</a></span>&#160;    QLabel *<a class="code" href="class_ma_fenetre.html#ae7932944c172401e793af721335e7c3d">pseudoConnecte</a>;</div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html#a6654bb6885a843d1a6ad9399eb7d0c36">  145</a></span>&#160;    QPushButton *<a class="code" href="class_ma_fenetre.html#a6654bb6885a843d1a6ad9399eb7d0c36">boutonConnexion</a>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html#ac4749f9608f7c8d6e5d60434ddbedfc5">  149</a></span>&#160;    QLabel *<a class="code" href="class_ma_fenetre.html#ac4749f9608f7c8d6e5d60434ddbedfc5">titreSection</a>;</div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html#a4f199f65ae682c48c837875a486d2f3f">  153</a></span>&#160;    QScrollArea *<a class="code" href="class_ma_fenetre.html#a4f199f65ae682c48c837875a486d2f3f">barreDefile</a>;</div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html#a53b01801ba121b8240df4f1f8c9330b3">  157</a></span>&#160;    QPushButton *<a class="code" href="class_ma_fenetre.html#a53b01801ba121b8240df4f1f8c9330b3">boutonPrecedent</a>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html#a54110f455a71febc15224b68470dd80e">  161</a></span>&#160;    QPushButton *<a class="code" href="class_ma_fenetre.html#a54110f455a71febc15224b68470dd80e">boutonSuivant</a>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html#a941eff753d1e20d0ef212aa875570330">  165</a></span>&#160;    QLabel *<a class="code" href="class_ma_fenetre.html#a941eff753d1e20d0ef212aa875570330">numPage</a>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html#a2332279c45b76ac1c9daf739c0bb3958">  169</a></span>&#160;    <a class="code" href="class_dialog_ajouter_vente.html">DialogAjouterVente</a> *<a class="code" href="class_ma_fenetre.html#a2332279c45b76ac1c9daf739c0bb3958">ajouterVentes</a>;</div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html#a3c115601ad85a01422813dcdf48eb44d">  173</a></span>&#160;    <a class="code" href="class_dialog_connexion.html">DialogConnexion</a> *<a class="code" href="class_ma_fenetre.html#a3c115601ad85a01422813dcdf48eb44d">connexions</a>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html#abe37db89fd8895cc34ccc0f5cda67aaf">  177</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_ma_fenetre.html#abe37db89fd8895cc34ccc0f5cda67aaf">largeur</a>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html#ae1a802d46705239d08d3bf06cd99b802">  181</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_ma_fenetre.html#ae1a802d46705239d08d3bf06cd99b802">hauteur</a>;</div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="class_ma_fenetre.html#a34d71a96cedb508c72afb02c70ff9609">  185</a></span>&#160;    <a class="code" href="class_gestion_bdd.html">GestionBdd</a> *<a class="code" href="class_ma_fenetre.html#a34d71a96cedb508c72afb02c70ff9609">gestionBdd</a>;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;};</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">#endif // MAFENETRE_H</span></div>
+<div class="ttc" id="class_ma_fenetre_html_abc0a097122f161ced271718b254206cd"><div class="ttname"><a href="class_ma_fenetre.html#abc0a097122f161ced271718b254206cd">MaFenetre::accueil</a></div><div class="ttdeci">void accueil()</div><div class="ttdoc">accueil - Affiche les produits en vente actuellement </div><div class="ttdef"><b>Definition:</b> MaFenetre.cpp:109</div></div>
+<div class="ttc" id="class_dialog_connexion_html"><div class="ttname"><a href="class_dialog_connexion.html">DialogConnexion</a></div><div class="ttdoc">The DialogConnexion class - Boîte de dialogue permettant de se connecter. </div><div class="ttdef"><b>Definition:</b> DialogConnexion.h:17</div></div>
+<div class="ttc" id="class_ma_fenetre_html_a75cd895beb38fe68a4319eb6c37ac8ee"><div class="ttname"><a href="class_ma_fenetre.html#a75cd895beb38fe68a4319eb6c37ac8ee">MaFenetre::signalRechercheProduits</a></div><div class="ttdeci">void signalRechercheProduits(std::vector&lt; Produit * &gt; v)</div><div class="ttdoc">signalRechercheProduits - Signale qu&#39;il s&#39;agit d&#39;une recherche de produits </div></div>
+<div class="ttc" id="class_ma_fenetre_html_a342da912af9b611d47229fd190d68522"><div class="ttname"><a href="class_ma_fenetre.html#a342da912af9b611d47229fd190d68522">MaFenetre::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">update - Mets à jour la fenêtre principal </div><div class="ttdef"><b>Definition:</b> MaFenetre.cpp:179</div></div>
+<div class="ttc" id="class_ma_fenetre_html_abd8cb1d6b536873f3d369457073270c4"><div class="ttname"><a href="class_ma_fenetre.html#abd8cb1d6b536873f3d369457073270c4">MaFenetre::ajouterVente</a></div><div class="ttdeci">void ajouterVente()</div><div class="ttdoc">ajouterVente - Ouvre la boîte de dialogue permettant d&#39;ajouter une vente si on est connecté ...</div><div class="ttdef"><b>Definition:</b> MaFenetre.cpp:115</div></div>
+<div class="ttc" id="class_ma_fenetre_html_a37836681a6d48a32dcd379b11447f579"><div class="ttname"><a href="class_ma_fenetre.html#a37836681a6d48a32dcd379b11447f579">MaFenetre::valRecherche</a></div><div class="ttdeci">QLineEdit * valRecherche</div><div class="ttdoc">valRecherche - Ce que l&#39;on veut rechercher </div><div class="ttdef"><b>Definition:</b> MaFenetre.h:125</div></div>
+<div class="ttc" id="class_ma_fenetre_html_ac4749f9608f7c8d6e5d60434ddbedfc5"><div class="ttname"><a href="class_ma_fenetre.html#ac4749f9608f7c8d6e5d60434ddbedfc5">MaFenetre::titreSection</a></div><div class="ttdeci">QLabel * titreSection</div><div class="ttdoc">titreSection - Affiche le titre de ce qu&#39;on affiche au centre </div><div class="ttdef"><b>Definition:</b> MaFenetre.h:149</div></div>
+<div class="ttc" id="class_vue_html"><div class="ttname"><a href="class_vue.html">Vue</a></div><div class="ttdoc">The Vue class - Permet la mise à jour des vues. </div><div class="ttdef"><b>Definition:</b> Vue.h:7</div></div>
+<div class="ttc" id="class_ma_fenetre_html_ae7932944c172401e793af721335e7c3d"><div class="ttname"><a href="class_ma_fenetre.html#ae7932944c172401e793af721335e7c3d">MaFenetre::pseudoConnecte</a></div><div class="ttdeci">QLabel * pseudoConnecte</div><div class="ttdoc">pseudoConnecte - Affichage du pseudo de l&#39;utilisateur connecté </div><div class="ttdef"><b>Definition:</b> MaFenetre.h:141</div></div>
+<div class="ttc" id="class_ma_fenetre_html_a2332279c45b76ac1c9daf739c0bb3958"><div class="ttname"><a href="class_ma_fenetre.html#a2332279c45b76ac1c9daf739c0bb3958">MaFenetre::ajouterVentes</a></div><div class="ttdeci">DialogAjouterVente * ajouterVentes</div><div class="ttdoc">ajouterVentes - Boîte de dialogue d&#39;ajout de vente </div><div class="ttdef"><b>Definition:</b> MaFenetre.h:169</div></div>
+<div class="ttc" id="class_ma_fenetre_html_a54110f455a71febc15224b68470dd80e"><div class="ttname"><a href="class_ma_fenetre.html#a54110f455a71febc15224b68470dd80e">MaFenetre::boutonSuivant</a></div><div class="ttdeci">QPushButton * boutonSuivant</div><div class="ttdoc">boutonSuivant - Permet de passer à la page suivante </div><div class="ttdef"><b>Definition:</b> MaFenetre.h:161</div></div>
+<div class="ttc" id="class_ma_fenetre_html_a53b01801ba121b8240df4f1f8c9330b3"><div class="ttname"><a href="class_ma_fenetre.html#a53b01801ba121b8240df4f1f8c9330b3">MaFenetre::boutonPrecedent</a></div><div class="ttdeci">QPushButton * boutonPrecedent</div><div class="ttdoc">boutonPrecedent - Permet de passer à la page précédente </div><div class="ttdef"><b>Definition:</b> MaFenetre.h:157</div></div>
+<div class="ttc" id="_les_utilisateurs_8h_html"><div class="ttname"><a href="_les_utilisateurs_8h.html">LesUtilisateurs.h</a></div></div>
+<div class="ttc" id="class_ma_fenetre_html_aefa40adcb6099816353c31ea230ec1af"><div class="ttname"><a href="class_ma_fenetre.html#aefa40adcb6099816353c31ea230ec1af">MaFenetre::centre</a></div><div class="ttdeci">QVBoxLayout * centre</div><div class="ttdoc">centre - Contient le titre de ce qu&#39;on affiche au centre et les affichages </div><div class="ttdef"><b>Definition:</b> MaFenetre.h:112</div></div>
+<div class="ttc" id="class_gestion_bdd_html"><div class="ttname"><a href="class_gestion_bdd.html">GestionBdd</a></div><div class="ttdoc">The GestionBdd class - Gère le stockage des utilisateurs, des produits, et la mise à jour des vues...</div><div class="ttdef"><b>Definition:</b> GestionBdd.h:15</div></div>
+<div class="ttc" id="class_ma_fenetre_html_a8107c2666807db431962fdcd4e942c69"><div class="ttname"><a href="class_ma_fenetre.html#a8107c2666807db431962fdcd4e942c69">MaFenetre::rechercher</a></div><div class="ttdeci">void rechercher()</div><div class="ttdoc">rechercher - Redirige vers l&#39;affichage d&#39;utilisateurs ou de produits selon le type de recherche lancé...</div><div class="ttdef"><b>Definition:</b> MaFenetre.cpp:98</div></div>
+<div class="ttc" id="_dialog_connexion_8h_html"><div class="ttname"><a href="_dialog_connexion_8h.html">DialogConnexion.h</a></div></div>
+<div class="ttc" id="class_ma_fenetre_html_a3c115601ad85a01422813dcdf48eb44d"><div class="ttname"><a href="class_ma_fenetre.html#a3c115601ad85a01422813dcdf48eb44d">MaFenetre::connexions</a></div><div class="ttdeci">DialogConnexion * connexions</div><div class="ttdoc">connexions - Boîte de dialogue de connexion </div><div class="ttdef"><b>Definition:</b> MaFenetre.h:173</div></div>
+<div class="ttc" id="class_ma_fenetre_html_a0316aa06b89b812a8528a8ccbe81561a"><div class="ttname"><a href="class_ma_fenetre.html#a0316aa06b89b812a8528a8ccbe81561a">MaFenetre::boutonAccueil</a></div><div class="ttdeci">QPushButton * boutonAccueil</div><div class="ttdoc">boutonAccueil - Affichage des ventes en cours </div><div class="ttdef"><b>Definition:</b> MaFenetre.h:133</div></div>
+<div class="ttc" id="class_ma_fenetre_html_a941eff753d1e20d0ef212aa875570330"><div class="ttname"><a href="class_ma_fenetre.html#a941eff753d1e20d0ef212aa875570330">MaFenetre::numPage</a></div><div class="ttdeci">QLabel * numPage</div><div class="ttdoc">numPage - Affiche le numéro de page actuel </div><div class="ttdef"><b>Definition:</b> MaFenetre.h:165</div></div>
+<div class="ttc" id="class_dialog_ajouter_vente_html"><div class="ttname"><a href="class_dialog_ajouter_vente.html">DialogAjouterVente</a></div><div class="ttdoc">The DialogAjouterVente class - Boîte de dialoque permettant l&#39;ajout d&#39;un produit en vente...</div><div class="ttdef"><b>Definition:</b> DialogAjouterVente.h:14</div></div>
+<div class="ttc" id="class_ma_fenetre_html_ae39212ca7a4d4b4c99a13b1d5eb063fa"><div class="ttname"><a href="class_ma_fenetre.html#ae39212ca7a4d4b4c99a13b1d5eb063fa">MaFenetre::MaFenetre</a></div><div class="ttdeci">MaFenetre(int l, int h, GestionBdd *bdd)</div><div class="ttdoc">MaFenetre - Constructeur. </div><div class="ttdef"><b>Definition:</b> MaFenetre.cpp:5</div></div>
+<div class="ttc" id="class_ma_fenetre_html_a65270bfc0eeecb1003c6abc9a1199f32"><div class="ttname"><a href="class_ma_fenetre.html#a65270bfc0eeecb1003c6abc9a1199f32">MaFenetre::connexion</a></div><div class="ttdeci">void connexion()</div><div class="ttdoc">connexion - Ouvre la boîte de dialogue de connexion </div><div class="ttdef"><b>Definition:</b> MaFenetre.cpp:124</div></div>
+<div class="ttc" id="class_ma_fenetre_html_a2396ba2918e49df8d0c4a8c70f927151"><div class="ttname"><a href="class_ma_fenetre.html#a2396ba2918e49df8d0c4a8c70f927151">MaFenetre::~MaFenetre</a></div><div class="ttdeci">~MaFenetre()</div><div class="ttdef"><b>Definition:</b> MaFenetre.h:43</div></div>
+<div class="ttc" id="class_ma_fenetre_html_a115348adbe409a24a0d381e1fcc62fe7"><div class="ttname"><a href="class_ma_fenetre.html#a115348adbe409a24a0d381e1fcc62fe7">MaFenetre::afficherResProduits</a></div><div class="ttdeci">void afficherResProduits(std::vector&lt; Produit * &gt; v)</div><div class="ttdoc">afficherResProduits - Affiche le résultat d&#39;une recherche de produit </div><div class="ttdef"><b>Definition:</b> MaFenetre.cpp:135</div></div>
+<div class="ttc" id="_dialog_ajouter_vente_8h_html"><div class="ttname"><a href="_dialog_ajouter_vente_8h.html">DialogAjouterVente.h</a></div></div>
+<div class="ttc" id="class_ma_fenetre_html_a4f199f65ae682c48c837875a486d2f3f"><div class="ttname"><a href="class_ma_fenetre.html#a4f199f65ae682c48c837875a486d2f3f">MaFenetre::barreDefile</a></div><div class="ttdeci">QScrollArea * barreDefile</div><div class="ttdoc">barreDefile - &quot;Cadre&quot; du centre de l&#39;affichage </div><div class="ttdef"><b>Definition:</b> MaFenetre.h:153</div></div>
+<div class="ttc" id="class_ma_fenetre_html_a4bc520a56473760bb8433a1de67da378"><div class="ttname"><a href="class_ma_fenetre.html#a4bc520a56473760bb8433a1de67da378">MaFenetre::clearLayout</a></div><div class="ttdeci">void clearLayout(QLayout *layout)</div><div class="ttdoc">clearLayout - Vide un layout entré en paramètre </div><div class="ttdef"><b>Definition:</b> MaFenetre.cpp:192</div></div>
+<div class="ttc" id="class_ma_fenetre_html_a34d71a96cedb508c72afb02c70ff9609"><div class="ttname"><a href="class_ma_fenetre.html#a34d71a96cedb508c72afb02c70ff9609">MaFenetre::gestionBdd</a></div><div class="ttdeci">GestionBdd * gestionBdd</div><div class="ttdoc">gestionBdd - Lien vers GestionBdd qui contient toutes les données </div><div class="ttdef"><b>Definition:</b> MaFenetre.h:185</div></div>
+<div class="ttc" id="class_ma_fenetre_html_acd485d3f85c155925df773f028f9e537"><div class="ttname"><a href="class_ma_fenetre.html#acd485d3f85c155925df773f028f9e537">MaFenetre::haut</a></div><div class="ttdeci">QHBoxLayout * haut</div><div class="ttdoc">haut - Contient la barre de recherche, l&#39;accueil, l&#39;ajout de vente, mon profil, connexion ...</div><div class="ttdef"><b>Definition:</b> MaFenetre.h:108</div></div>
+<div class="ttc" id="class_ma_fenetre_html_aff3315e53711db117feadab319660cee"><div class="ttname"><a href="class_ma_fenetre.html#aff3315e53711db117feadab319660cee">MaFenetre::bas</a></div><div class="ttdeci">QHBoxLayout * bas</div><div class="ttdoc">bas - Contient le changement de pages </div><div class="ttdef"><b>Definition:</b> MaFenetre.h:116</div></div>
+<div class="ttc" id="class_ma_fenetre_html"><div class="ttname"><a href="class_ma_fenetre.html">MaFenetre</a></div><div class="ttdoc">The MaFenetre class - Affichage principal de l&#39;application. </div><div class="ttdef"><b>Definition:</b> MaFenetre.h:31</div></div>
+<div class="ttc" id="_gestion_bdd_8h_html"><div class="ttname"><a href="_gestion_bdd_8h.html">GestionBdd.h</a></div></div>
+<div class="ttc" id="_vue_8h_html"><div class="ttname"><a href="_vue_8h.html">Vue.h</a></div></div>
+<div class="ttc" id="class_ma_fenetre_html_afe6e47d40e487fccd18d4bcc3c57e64e"><div class="ttname"><a href="class_ma_fenetre.html#afe6e47d40e487fccd18d4bcc3c57e64e">MaFenetre::boutonRecherche</a></div><div class="ttdeci">QPushButton * boutonRecherche</div><div class="ttdoc">boutonRecherche - Lancement de la recherche </div><div class="ttdef"><b>Definition:</b> MaFenetre.h:129</div></div>
+<div class="ttc" id="class_ma_fenetre_html_a422d1e619aa51ff42b5ecd2c5476ce19"><div class="ttname"><a href="class_ma_fenetre.html#a422d1e619aa51ff42b5ecd2c5476ce19">MaFenetre::boutonAjouterVente</a></div><div class="ttdeci">QPushButton * boutonAjouterVente</div><div class="ttdoc">boutonAjouterVente - Permet d&#39;ajouter un produit en vente </div><div class="ttdef"><b>Definition:</b> MaFenetre.h:137</div></div>
+<div class="ttc" id="class_ma_fenetre_html_a3df6a320b8835369da88bf94b701ae76"><div class="ttname"><a href="class_ma_fenetre.html#a3df6a320b8835369da88bf94b701ae76">MaFenetre::typeRecherche</a></div><div class="ttdeci">QComboBox * typeRecherche</div><div class="ttdoc">typeRecherche - Type de la recherche : Produit ou Utilisateur </div><div class="ttdef"><b>Definition:</b> MaFenetre.h:121</div></div>
+<div class="ttc" id="class_ma_fenetre_html_ae1a802d46705239d08d3bf06cd99b802"><div class="ttname"><a href="class_ma_fenetre.html#ae1a802d46705239d08d3bf06cd99b802">MaFenetre::hauteur</a></div><div class="ttdeci">int hauteur</div><div class="ttdoc">hauteur - hauteur de la fenêtre </div><div class="ttdef"><b>Definition:</b> MaFenetre.h:181</div></div>
+<div class="ttc" id="class_ma_fenetre_html_a6654bb6885a843d1a6ad9399eb7d0c36"><div class="ttname"><a href="class_ma_fenetre.html#a6654bb6885a843d1a6ad9399eb7d0c36">MaFenetre::boutonConnexion</a></div><div class="ttdeci">QPushButton * boutonConnexion</div><div class="ttdoc">boutonConnexion - Permet de se connecter/déconnecter </div><div class="ttdef"><b>Definition:</b> MaFenetre.h:145</div></div>
+<div class="ttc" id="class_ma_fenetre_html_abe37db89fd8895cc34ccc0f5cda67aaf"><div class="ttname"><a href="class_ma_fenetre.html#abe37db89fd8895cc34ccc0f5cda67aaf">MaFenetre::largeur</a></div><div class="ttdeci">int largeur</div><div class="ttdoc">largeur - largeur de la fenêtre </div><div class="ttdef"><b>Definition:</b> MaFenetre.h:177</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_6d696c25b5b6567271dc5624cc0e43a3.html">EMarche</a></li><li class="navelem"><a class="el" href="_ma_fenetre_8h.html">MaFenetre.h</a></li>
+    <li class="footer">Généré le Vendredi 18 Décembre 2015 15:08:48 pour EMarche par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

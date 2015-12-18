@@ -1,0 +1,180 @@
+.TH "Avis" 3 "Vendredi 18 Décembre 2015" "Version 2" "EMarche" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Avis \- 
+.PP
+The \fBAvis\fP class - Représente un avis donné par un utilisateur sur un autre utilisateur ou un produit, avec un commentaire et une note\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Avis\&.h>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBAvis\fP (std::string author, unsigned int notation)"
+.br
+.RI "\fI\fBAvis\fP - Note sans commentaire\&. \fP"
+.ti -1c
+.RI "\fBAvis\fP (std::string author, unsigned int notation, std::string com)"
+.br
+.RI "\fI\fBAvis\fP - Note et commentaire\&. \fP"
+.ti -1c
+.RI "virtual \fB~Avis\fP ()"
+.br
+.ti -1c
+.RI "unsigned int \fBgetNote\fP ()"
+.br
+.RI "\fIgetNote \fP"
+.ti -1c
+.RI "std::string \fBgetCommentaire\fP ()"
+.br
+.RI "\fIgetCommentaire \fP"
+.ti -1c
+.RI "std::string \fBgetAuteur\fP ()"
+.br
+.RI "\fIgetAuteur \fP"
+.ti -1c
+.RI "void \fBdecrit\fP (std::ostream &os)"
+.br
+.RI "\fIdecrit - Ecrit toutes les données de l'avis dans un flux donné en paramètre \fP"
+.ti -1c
+.RI "std::string \fBdecrit\fP ()"
+.br
+.RI "\fIdecrit - convertit un flux en string \fP"
+.ti -1c
+.RI "void \fBaffiche\fP (std::ostream &os)"
+.br
+.RI "\fIaffiche - Ecrit toutes les données d'un avis d'un flux vers une sortie \fP"
+.in -1c
+.SS "Attributs protégés"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fBnote\fP"
+.br
+.ti -1c
+.RI "std::string \fBcommentaire\fP"
+.br
+.ti -1c
+.RI "std::string \fBauteur\fP"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+The \fBAvis\fP class - Représente un avis donné par un utilisateur sur un autre utilisateur ou un produit, avec un commentaire et une note\&. 
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "Avis::Avis (std::stringauthor, unsigned intnotation)\fC [inline]\fP"
+
+.PP
+\fBAvis\fP - Note sans commentaire\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIauthor\fP - Auteur de l'avis 
+.br
+\fInotation\fP - Note donnée 
+.RE
+.PP
+
+.SS "Avis::Avis (std::stringauthor, unsigned intnotation, std::stringcom)\fC [inline]\fP"
+
+.PP
+\fBAvis\fP - Note et commentaire\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIauthor\fP - Auteur de l'avis 
+.br
+\fInotation\fP - Note donnée 
+.br
+\fIcom\fP - Commentaire donné 
+.RE
+.PP
+
+.SS "virtual Avis::~Avis ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "void Avis::affiche (std::ostream &os)\fC [inline]\fP"
+
+.PP
+affiche - Ecrit toutes les données d'un avis d'un flux vers une sortie 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIos\fP - Sortie, par exemple : cout 
+.RE
+.PP
+
+.SS "void Avis::decrit (std::ostream &os)\fC [inline]\fP"
+
+.PP
+decrit - Ecrit toutes les données de l'avis dans un flux donné en paramètre 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIos\fP - Flux 
+.RE
+.PP
+
+.SS "std::string Avis::decrit ()\fC [inline]\fP"
+
+.PP
+decrit - convertit un flux en string 
+.PP
+\fBRenvoie:\fP
+.RS 4
+un string à partir d'un flux 
+.RE
+.PP
+
+.SS "string Avis::getAuteur ()"
+
+.PP
+getAuteur 
+.PP
+\fBRenvoie:\fP
+.RS 4
+l'auteur de l'avis 
+.RE
+.PP
+
+.SS "string Avis::getCommentaire ()"
+
+.PP
+getCommentaire 
+.PP
+\fBRenvoie:\fP
+.RS 4
+le commentaire de l'avis 
+.RE
+.PP
+
+.SS "unsigned int Avis::getNote ()"
+
+.PP
+getNote 
+.PP
+\fBRenvoie:\fP
+.RS 4
+la note de l'avis 
+.RE
+.PP
+
+.SH "Documentation des données membres"
+.PP 
+.SS "std::string Avis::auteur\fC [protected]\fP"
+
+.SS "std::string Avis::commentaire\fC [protected]\fP"
+
+.SS "unsigned int Avis::note\fC [protected]\fP"
+
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour EMarche à partir du code source\&.
