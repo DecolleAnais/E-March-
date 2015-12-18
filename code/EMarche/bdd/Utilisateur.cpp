@@ -151,3 +151,13 @@ void Utilisateur::addAvis(Avis a) {
     nbNotes++;
     note = (a.getNote() + note) / nbNotes;
 }
+
+void Utilisateur::deleteAchat(Produit * p) {
+    lesAchats.erase(lesAchats.begin());
+    nbAchats--;
+}
+
+void Utilisateur::deleteVente(Produit* p) {
+    lesAchats.erase(lesAchats.begin());
+    nbVentes--;
+}

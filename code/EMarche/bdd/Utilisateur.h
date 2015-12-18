@@ -276,6 +276,20 @@ public:
     void addVente(Produit* p);
 
     //!
+    //! \fn void deleteAchat(Produit* p)
+    //! \brief deleteAchat
+    //! \param p - Pointeur vers le nouveau produit à supprimer des achats
+    //!
+    void deleteAchat(Produit * p);
+
+    //!
+    //! \fn void deleteVente(Produit* p)
+    //! \brief deleteVente
+    //! \param p - Pointeur vers le nouveau produit à supprimer des ventes
+    //!
+    void deleteVente(Produit* p);
+
+    //!
     //! \fn void addAvis(Avis a)
     //! \brief addAvis
     //! \param a - Avis à ajouter à l'utilisateur dans le vector lesAvis
