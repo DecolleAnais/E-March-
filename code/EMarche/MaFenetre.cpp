@@ -290,6 +290,12 @@ void MaFenetre::ventes() {
                 grille->addWidget(new QLabel("<b>Prix unitaire : </b>" + prix + " euros"), 0, 4);
                 grille->addWidget(new QLabel("<b>Type de vente : </b>Vente normale"), 2, 4);
             }
+            /* création d'un bouton pour annuler une vente */
+                                QPushButton *boutonAnnuler = new QPushButton("Annuler la vente");
+                                QObject::connect(boutonAnnuler, SIGNAL(clicked()),&mapperProduit, SLOT(map()));
+                                mapperProduit.setMapping(boutonAnnuler, ref);
+                                grille->addWidget(boutonAnnuler, 2, 5);
+                                gestionBdd->acheterProduit(produitCourant);
 
             box2->setLayout(grille);
             centre->addWidget(box2);
@@ -579,6 +585,8 @@ void MaFenetre::ventesAutreUtilisateur(QString pseudonyme) {
         mapperAchats.setMapping(boutonAchats, pseudonyme);
         connect( &mapperAchats, SIGNAL( mapped(QString) ), this, SLOT( achatsAutreUtilisateur(QString) ) );
         box->addWidget(boutonAchats);
+
+
 
         centre->addLayout(box);
     }

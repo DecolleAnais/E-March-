@@ -16,6 +16,9 @@ public :
      */
     VenteNormale(bool b);
 
+    /* destructeur */
+    virtual ~VenteNormale() {}
+
 };
 
 #endif

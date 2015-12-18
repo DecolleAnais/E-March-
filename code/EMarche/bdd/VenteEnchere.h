@@ -16,6 +16,9 @@ public:
      */
     VenteEnchere(bool b);
 
+    /* destructeur */
+    virtual ~VenteEnchere() {}
+
     /* ----- Fonctions get ----- */
 
     /*!
