@@ -266,7 +266,7 @@ public:
     //! \brief addAchat
     //! \param p - Pointeur vers le nouveau produit à ajouter aux achats
     //!
-    void addAchat(Produit* p);
+    void addAchat(Produit* p, int quantite);
 
     //!
     //! \fn void addVente(Produit* p)

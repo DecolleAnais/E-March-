@@ -16,7 +16,7 @@ public :
      */
     VenteNormale(bool b);
 
-    ~VenteNormale() {};
+    ~VenteNormale() {}
 
 };
 

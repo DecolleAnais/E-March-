@@ -116,6 +116,23 @@ public:
     }
 
     /*!
+     * \brief Constructeur de copie de produit
+     * \param instance - Produit à copier
+     */
+    Produit(Produit &instance) {
+        vendeur = instance.vendeur;
+        categorie = instance.categorie;
+        nom = instance.nom;
+        reference = instance.reference;
+        prixUnitaire = instance.prixUnitaire;
+        quantite = instance.quantite;
+        dateDepot = instance.dateDepot;
+        dateAchatVente = instance.dateAchatVente;
+        etatVente = instance.etatVente;
+        tags = instance.tags;
+    }
+
+    /*!
      * \brief Destructeur de la classe Produit
      */
     ~Produit() {

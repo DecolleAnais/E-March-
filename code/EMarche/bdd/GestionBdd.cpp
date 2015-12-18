@@ -48,6 +48,14 @@ void GestionBdd::update() {
         vues[i]->update();
 }
 
+void GestionBdd::setQuantite(int qte){
+    quantite = qte;
+}
+
+int GestionBdd::getQuantite(){
+    return quantite;
+}
+
 /* PARTIE UTILISATEURS */
 
 /* connexion */
@@ -95,16 +103,24 @@ void GestionBdd::modifierProfil(string nom, string prenom, string mail,
     update();
 }
 
-void GestionBdd::acheterProduit(Produit* p){
+Produit* GestionBdd::getProduitCourant(){
+    return produitCourant;
+}
+
+void GestionBdd::setProduitCourant(Produit *p){
+    produitCourant = p;
+}
+
+void GestionBdd::acheterProduit(Produit* p, int quantite){
     // Ajout du produit dans la liste des achats
-    utilisateurConnecte->addAchat(p);
+    utilisateurConnecte->addAchat(p, quantite);
 
     // Mise à jour de la liste des produits
     int qte = produits.getProduit(p->getReference())->getQuantite();
-    if(qte == 1){
+    if((qte-quantite) == 0){
         produits.supprimerProduit(p);
     } else {
-        produits.getProduit(p->getReference())->setQuantite(qte-1);
+        produits.getProduit(p->getReference())->setQuantite(qte-quantite);
     }
 }
 
