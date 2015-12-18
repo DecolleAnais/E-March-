@@ -1,0 +1,79 @@
+.TH "EtatConnexion" 3 "Vendredi 18 Décembre 2015" "Version 3" "EMarche" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EtatConnexion \- 
+.PP
+Cette classe gère les états de connexion d'un utilisateur (connecté ou déconnecté)  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <EtatConnexion\&.h>\fP
+.PP
+Dérivée par \fBEtatConnecte\fP, et \fBEtatDeconnecte\fP\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBEtatConnexion\fP (bool b)"
+.br
+.RI "\fIConstructeur de la classe \fBEtatConnexion\fP\&. \fP"
+.ti -1c
+.RI "bool \fBconnexionEnCours\fP ()"
+.br
+.RI "\fICette fonction indique l'état de connexion d'un utilisateur\&. \fP"
+.ti -1c
+.RI "virtual \fB~EtatConnexion\fP ()"
+.br
+.in -1c
+.SS "Attributs protégés"
+
+.in +1c
+.ti -1c
+.RI "bool \fBestConnecte\fP"
+.br
+.RI "\fIBooléen qui indique si un utilisateur est connecté ou non\&. \fP"
+.in -1c
+.SH "Description détaillée"
+.PP 
+Cette classe gère les états de connexion d'un utilisateur (connecté ou déconnecté) 
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "EtatConnexion::EtatConnexion (boolb)"
+
+.PP
+Constructeur de la classe \fBEtatConnexion\fP\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIb\fP - Nouvel état de connexion 
+.RE
+.PP
+
+.SS "virtual EtatConnexion::~EtatConnexion ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "bool EtatConnexion::connexionEnCours ()"
+
+.PP
+Cette fonction indique l'état de connexion d'un utilisateur\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+true si l'utilisateur est connecté, false sinon 
+.RE
+.PP
+
+.SH "Documentation des données membres"
+.PP 
+.SS "bool EtatConnexion::estConnecte\fC [protected]\fP"
+
+.PP
+Booléen qui indique si un utilisateur est connecté ou non\&. 
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour EMarche à partir du code source\&.

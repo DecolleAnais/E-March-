@@ -1,0 +1,506 @@
+.TH "Produit" 3 "Vendredi 18 Décembre 2015" "Version 3" "EMarche" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Produit \- 
+.PP
+Cette classe gère le stockage d'un produit\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Produit\&.h>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBProduit\fP (std::string v, std::string n, std::string cat, float prix, unsigned int qte, bool etat)"
+.br
+.RI "\fIConstructeur de la classe \fBProduit\fP\&. \fP"
+.ti -1c
+.RI "\fBProduit\fP (std::string v, std::string n, std::string cat, float prix, unsigned int qte, bool etat, struct tm dateLimite)"
+.br
+.RI "\fIConstructeur de la classe \fBProduit\fP\&. \fP"
+.ti -1c
+.RI "\fBProduit\fP (\fBProduit\fP &instance)"
+.br
+.RI "\fIConstructeur de copie de produit\&. \fP"
+.ti -1c
+.RI "\fB~Produit\fP ()"
+.br
+.RI "\fIDestructeur de la classe \fBProduit\fP\&. \fP"
+.ti -1c
+.RI "std::string \fBgetVendeur\fP ()"
+.br
+.RI "\fIRetourne le nom du vendeur\&. \fP"
+.ti -1c
+.RI "unsigned int \fBgetQuantite\fP ()"
+.br
+.RI "\fIRetourne la quantité en stock du produit\&. \fP"
+.ti -1c
+.RI "float \fBgetPrixUnitaire\fP ()"
+.br
+.RI "\fIRetourne le prix unitaire\&. \fP"
+.ti -1c
+.RI "std::string \fBgetReference\fP ()"
+.br
+.RI "\fIRetourne la référence unique\&. \fP"
+.ti -1c
+.RI "std::string \fBgetNom\fP ()"
+.br
+.RI "\fIRetourne le nom du produit\&. \fP"
+.ti -1c
+.RI "std::string \fBgetCategorie\fP ()"
+.br
+.RI "\fIRetourne la catégorie\&. \fP"
+.ti -1c
+.RI "std::string \fBgetDateDepot\fP ()"
+.br
+.RI "\fIRetourne la date de dépôt\&. \fP"
+.ti -1c
+.RI "std::string \fBgetDateAchatVente\fP ()"
+.br
+.RI "\fIRetourne la date d'achat ou de vente\&. \fP"
+.ti -1c
+.RI "std::string \fBgetEtatVente\fP ()"
+.br
+.RI "\fIRetourne le type de la vente (enchère ou normale) \fP"
+.ti -1c
+.RI "float \fBgetPrixActuel\fP ()"
+.br
+.RI "\fIRetourne le prix actuel\&. \fP"
+.ti -1c
+.RI "std::string \fBgetTags\fP ()"
+.br
+.RI "\fIRetourne les mots-clés qui identifient le produit\&. \fP"
+.ti -1c
+.RI "std::vector< std::string > \fBgetTagsVector\fP ()"
+.br
+.ti -1c
+.RI "std::string \fBgetDateLimite\fP ()"
+.br
+.RI "\fIRetourne la date limite de l'enchère\&. \fP"
+.ti -1c
+.RI "void \fBsetReference\fP (std::string r)"
+.br
+.RI "\fICette fonction attribue une référence unique au produit\&. \fP"
+.ti -1c
+.RI "void \fBsetQuantite\fP (unsigned int q)"
+.br
+.RI "\fICette fonction fixe la quantité disponible\&. \fP"
+.ti -1c
+.RI "void \fBsetDateVenteAchat\fP (int jour, int mois, int annee)"
+.br
+.RI "\fICette fonction fixe la date d'achat ou de vente\&. \fP"
+.ti -1c
+.RI "void \fBaugmenterEnchere\fP (int prix)"
+.br
+.RI "\fICette fonction permet d'augenter le prix d'une enchère\&. \fP"
+.ti -1c
+.RI "void \fBajouterTag\fP (std::string t)"
+.br
+.RI "\fIAjouter un nouveau mot-clé pour désigner le produit\&. \fP"
+.ti -1c
+.RI "void \fBdecrit\fP (std::ostream &os)"
+.br
+.RI "\fICette méthode permet d'écrire la description d'un produit dans un flot de sortie donnée en paramètre\&. \fP"
+.ti -1c
+.RI "std::string \fBdecrit\fP ()"
+.br
+.RI "\fICette méthode retourne la description du produit dans une chaîne de caractères\&. \fP"
+.ti -1c
+.RI "void \fBaffiche\fP (std::ostream &os)"
+.br
+.RI "\fICette méthode permet d'afficher la description du produit, suivie d'un passage à la ligne, dans un flot de sortie donné en paramètre\&. \fP"
+.in -1c
+.SS "Attributs protégés"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBvendeur\fP"
+.br
+.RI "\fINom du vendeur\&. \fP"
+.ti -1c
+.RI "\fBCategorie\fP * \fBcategorie\fP"
+.br
+.RI "\fICatégorie\&. \fP"
+.ti -1c
+.RI "std::string \fBnom\fP"
+.br
+.RI "\fINom du produit\&. \fP"
+.ti -1c
+.RI "std::string \fBreference\fP"
+.br
+.RI "\fIRéférence unique\&. \fP"
+.ti -1c
+.RI "float \fBprixUnitaire\fP"
+.br
+.RI "\fIPrix unitaire\&. \fP"
+.ti -1c
+.RI "unsigned int \fBquantite\fP"
+.br
+.RI "\fIQuantité \fP"
+.ti -1c
+.RI "struct tm \fBdateDepot\fP"
+.br
+.RI "\fIDate de dépôt sur le site\&. \fP"
+.ti -1c
+.RI "struct tm \fBdateAchatVente\fP"
+.br
+.RI "\fIDate d'achat ou de vente\&. \fP"
+.ti -1c
+.RI "\fBEtatVente\fP * \fBetatVente\fP"
+.br
+.RI "\fIEtat du produit (enchères ou normale) \fP"
+.ti -1c
+.RI "std::vector< std::string > \fBtags\fP"
+.br
+.RI "\fIMots-clés qui identifient le produit\&. \fP"
+.ti -1c
+.RI "std::vector< \fBAvis\fP > \fBlesAvis\fP"
+.br
+.RI "\fI\fBAvis\fP donnés sur le produit\&. \fP"
+.in -1c
+.SH "Description détaillée"
+.PP 
+Cette classe gère le stockage d'un produit\&. 
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "Produit::Produit (std::stringv, std::stringn, std::stringcat, floatprix, unsigned intqte, booletat)\fC [inline]\fP"
+
+.PP
+Constructeur de la classe \fBProduit\fP\&. Utilisé pour les ventes normales 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIv\fP - Nom du vendeur 
+.br
+\fIn\fP - Nom du produit 
+.br
+\fIcat\fP - Nom de la catégorie 
+.br
+\fIprix\fP - Prix unitaire 
+.br
+\fIqte\fP - Quantité 
+.br
+\fIetat\fP - Type de la vente (enchère ou normale) 
+.RE
+.PP
+
+.SS "Produit::Produit (std::stringv, std::stringn, std::stringcat, floatprix, unsigned intqte, booletat, struct tmdateLimite)\fC [inline]\fP"
+
+.PP
+Constructeur de la classe \fBProduit\fP\&. Utilisé pour les ventes aux enchères 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIv\fP - Nom du vendeur 
+.br
+\fIn\fP - Nom du produit 
+.br
+\fIcat\fP - Nom de la catégorie 
+.br
+\fIprix\fP - Prix unitaire 
+.br
+\fIqte\fP - Quantité 
+.br
+\fIetat\fP - Type de la vente (enchère ou normale) 
+.br
+\fIdateLimite\fP - Date limite de l'enchère 
+.RE
+.PP
+
+.SS "Produit::Produit (\fBProduit\fP &instance)\fC [inline]\fP"
+
+.PP
+Constructeur de copie de produit\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIinstance\fP - \fBProduit\fP à copier 
+.RE
+.PP
+
+.SS "Produit::~Produit ()\fC [inline]\fP"
+
+.PP
+Destructeur de la classe \fBProduit\fP\&. 
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "void Produit::affiche (std::ostream &os)\fC [inline]\fP"
+
+.PP
+Cette méthode permet d'afficher la description du produit, suivie d'un passage à la ligne, dans un flot de sortie donné en paramètre\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIos\fP - le flot de sortie dans lequel la description sera affichée 
+.RE
+.PP
+
+.SS "void Produit::ajouterTag (std::stringt)"
+
+.PP
+Ajouter un nouveau mot-clé pour désigner le produit\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIt\fP - Nouveau mot-clé 
+.RE
+.PP
+
+.SS "void Produit::augmenterEnchere (intprix)"
+
+.PP
+Cette fonction permet d'augenter le prix d'une enchère\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIprix\fP - Nouveau prix de l'enchère 
+.RE
+.PP
+
+.SS "void Produit::decrit (std::ostream &os)\fC [inline]\fP"
+
+.PP
+Cette méthode permet d'écrire la description d'un produit dans un flot de sortie donnée en paramètre\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIos\fP - le flot de sortie dans lequel la description sera écrite 
+.RE
+.PP
+
+.SS "std::string Produit::decrit ()\fC [inline]\fP"
+
+.PP
+Cette méthode retourne la description du produit dans une chaîne de caractères\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+la description du produit dans une chaîne de caractères 
+.RE
+.PP
+
+.SS "std::string Produit::getCategorie ()"
+
+.PP
+Retourne la catégorie\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un string contenant la catégorie 
+.RE
+.PP
+
+.SS "std::string Produit::getDateAchatVente ()"
+
+.PP
+Retourne la date d'achat ou de vente\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un string contenant la date d'achat ou de vente 
+.RE
+.PP
+
+.SS "std::string Produit::getDateDepot ()"
+
+.PP
+Retourne la date de dépôt\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un string contenant la date de dépôt 
+.RE
+.PP
+
+.SS "std::string Produit::getDateLimite ()"
+
+.PP
+Retourne la date limite de l'enchère\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un string contenant la date limite de l'enchère 
+.RE
+.PP
+
+.SS "std::string Produit::getEtatVente ()"
+
+.PP
+Retourne le type de la vente (enchère ou normale) 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un string contenant l'état de la vente 
+.RE
+.PP
+
+.SS "std::string Produit::getNom ()"
+
+.PP
+Retourne le nom du produit\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un string contenant le nom du produit 
+.RE
+.PP
+
+.SS "float Produit::getPrixActuel ()"
+
+.PP
+Retourne le prix actuel\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un float représenant le prix actuel 
+.RE
+.PP
+
+.SS "float Produit::getPrixUnitaire ()"
+
+.PP
+Retourne le prix unitaire\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un float représentant le prix unitaire 
+.RE
+.PP
+
+.SS "unsigned int Produit::getQuantite ()"
+
+.PP
+Retourne la quantité en stock du produit\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un entier positif représentant la quantité 
+.RE
+.PP
+
+.SS "std::string Produit::getReference ()"
+
+.PP
+Retourne la référence unique\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un string contenant la référence 
+.RE
+.PP
+
+.SS "std::string Produit::getTags ()"
+
+.PP
+Retourne les mots-clés qui identifient le produit\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un string contenant les mots-clés 
+.RE
+.PP
+
+.SS "vector< string > Produit::getTagsVector ()"
+
+.SS "std::string Produit::getVendeur ()"
+
+.PP
+Retourne le nom du vendeur\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un string contenant le nom du vendeur 
+.RE
+.PP
+
+.SS "void Produit::setDateVenteAchat (intjour, intmois, intannee)"
+
+.PP
+Cette fonction fixe la date d'achat ou de vente\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIjour\fP - Jour 
+.br
+\fImois\fP - Mois 
+.br
+\fIannee\fP - Année 
+.RE
+.PP
+
+.SS "void Produit::setQuantite (unsigned intq)"
+
+.PP
+Cette fonction fixe la quantité disponible\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIq\fP - Nouvelle quantité 
+.RE
+.PP
+
+.SS "void Produit::setReference (std::stringr)"
+
+.PP
+Cette fonction attribue une référence unique au produit\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIr\fP Un string contenant la référence 
+.RE
+.PP
+
+.SH "Documentation des données membres"
+.PP 
+.SS "\fBCategorie\fP* Produit::categorie\fC [protected]\fP"
+
+.PP
+Catégorie\&. 
+.SS "struct tm Produit::dateAchatVente\fC [protected]\fP"
+
+.PP
+Date d'achat ou de vente\&. 
+.SS "struct tm Produit::dateDepot\fC [protected]\fP"
+
+.PP
+Date de dépôt sur le site\&. 
+.SS "\fBEtatVente\fP* Produit::etatVente\fC [protected]\fP"
+
+.PP
+Etat du produit (enchères ou normale) 
+.SS "std::vector<\fBAvis\fP> Produit::lesAvis\fC [protected]\fP"
+
+.PP
+\fBAvis\fP donnés sur le produit\&. 
+.SS "std::string Produit::nom\fC [protected]\fP"
+
+.PP
+Nom du produit\&. 
+.SS "float Produit::prixUnitaire\fC [protected]\fP"
+
+.PP
+Prix unitaire\&. 
+.SS "unsigned int Produit::quantite\fC [protected]\fP"
+
+.PP
+Quantité 
+.SS "std::string Produit::reference\fC [protected]\fP"
+
+.PP
+Référence unique\&. 
+.SS "std::vector<std::string> Produit::tags\fC [protected]\fP"
+
+.PP
+Mots-clés qui identifient le produit\&. 
+.SS "std::string Produit::vendeur\fC [protected]\fP"
+
+.PP
+Nom du vendeur\&. 
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour EMarche à partir du code source\&.

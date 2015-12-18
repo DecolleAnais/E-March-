@@ -1,0 +1,416 @@
+.TH "GestionBdd" 3 "Vendredi 18 Décembre 2015" "Version 3" "EMarche" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GestionBdd \- 
+.PP
+The \fBGestionBdd\fP class - Gère le stockage des utilisateurs, des produits, et la mise à jour des vues\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <GestionBdd\&.h>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBGestionBdd\fP ()"
+.br
+.RI "\fI\fBGestionBdd\fP - constructeur\&. \fP"
+.ti -1c
+.RI "\fB~GestionBdd\fP ()"
+.br
+.ti -1c
+.RI "void \fBincrementerRef\fP ()"
+.br
+.RI "\fIincrémente la référence pour l'attribuer à un produit et qu'elle soit unique (version 1) \fP"
+.ti -1c
+.RI "std::string \fBgenerateReference\fP ()"
+.br
+.RI "\fIgénère une référence unique (version 2) \fP"
+.ti -1c
+.RI "void \fBaddVue\fP (\fBVue\fP *v)"
+.br
+.RI "\fIajoute une vue au vector contenant les vues \fP"
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.RI "\fIprovoque la fonction update dans toutes les vues \fP"
+.ti -1c
+.RI "void \fBsetQuantite\fP (int qte)"
+.br
+.RI "\fICette fonction fixe la quantité du produit que l'on veut acheter\&. \fP"
+.ti -1c
+.RI "int \fBgetQuantite\fP ()"
+.br
+.RI "\fICette fonction retourne la quantité du produit que l'on veut acheter\&. \fP"
+.ti -1c
+.RI "\fBProduit\fP * \fBgetProduitCourant\fP ()"
+.br
+.RI "\fICette fonction retourne le produit courant\&. \fP"
+.ti -1c
+.RI "void \fBsetProduitCourant\fP (\fBProduit\fP *p)"
+.br
+.RI "\fICette fonction fixe le produit courant lorsque l'on consulte la fiche d'un produit\&. \fP"
+.ti -1c
+.RI "void \fBconnecterUtilisateur\fP (std::string pseudo, std::string mdp)"
+.br
+.RI "\fIconnecte l'utilisateur avec ce pseudo et ce mot de passe s'il existe \fP"
+.ti -1c
+.RI "void \fBdeconnecterUtilisateur\fP ()"
+.br
+.RI "\fIdéconnecte l'utilisateur \fP"
+.ti -1c
+.RI "bool \fBisConnecte\fP ()"
+.br
+.RI "\fIretourne true si un utilisateur est connecté, false sinon \fP"
+.ti -1c
+.RI "\fBUtilisateur\fP * \fBgetUtilisateurConnecte\fP ()"
+.br
+.RI "\fIrécupère un pointeur vers l'utilisateur actuellement connecté \fP"
+.ti -1c
+.RI "void \fBinscrire\fP (std::string monPseudo, std::string monMdp, std::string name, std::string firstname, int jourNaiss, int moisNaiss, int anneeNaiss, std::string mail, std::string adr, int codePostal)"
+.br
+.RI "\fIinscrire un nouvel utilisateur et le stocker dans utilisateurs \fP"
+.ti -1c
+.RI "void \fBacheterProduit\fP (\fBProduit\fP *p, int \fBquantite\fP)"
+.br
+.RI "\fIacheterProduit - Acheter un produit, avec suppression du produit si la quantité arrive à 0 \fP"
+.ti -1c
+.RI "\fBUtilisateur\fP * \fBrechercherUtilisateur\fP (std::string pseudo)"
+.br
+.RI "\fIrecherche l'utilisateur avec ce pseudo \fP"
+.ti -1c
+.RI "void \fBajouterVente\fP (std::string n, std::string cat, float prix, unsigned int qte, bool etat)"
+.br
+.RI "\fIajoute un produit en vente normale avec ces caractéristiques \fP"
+.ti -1c
+.RI "void \fBajouterVente\fP (std::string n, std::string cat, float prix, unsigned int qte, bool etat, struct tm date)"
+.br
+.RI "\fIajoute un produit en vente aux enchères avec ces caractéristiques \fP"
+.ti -1c
+.RI "std::vector< \fBProduit\fP * > \fBventesEnCours\fP ()"
+.br
+.RI "\fIrtourne les ventes en cours \fP"
+.ti -1c
+.RI "\fBProduit\fP * \fBrechercherProduit\fP (std::string \fBref\fP)"
+.br
+.RI "\fIrecherche le produit avec cette référence \fP"
+.ti -1c
+.RI "std::vector< \fBProduit\fP * > \fBrechercherTags\fP (std::string t)"
+.br
+.RI "\fIrecherche un produit par tags (c'est à dire nom, catégorie) \fP"
+.in -1c
+.SS "Attributs protégés"
+
+.in +1c
+.ti -1c
+.RI "\fBLesUtilisateurs\fP \fButilisateurs\fP"
+.br
+.ti -1c
+.RI "\fBLesProduits\fP \fBproduits\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBVue\fP * > \fBvues\fP"
+.br
+.ti -1c
+.RI "\fBUtilisateur\fP * \fButilisateurConnecte\fP"
+.br
+.ti -1c
+.RI "std::string \fBref\fP"
+.br
+.ti -1c
+.RI "int \fBquantite\fP"
+.br
+.ti -1c
+.RI "\fBProduit\fP * \fBproduitCourant\fP"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+The \fBGestionBdd\fP class - Gère le stockage des utilisateurs, des produits, et la mise à jour des vues\&. 
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "GestionBdd::GestionBdd ()"
+
+.PP
+\fBGestionBdd\fP - constructeur\&. 
+.SS "GestionBdd::~GestionBdd ()\fC [inline]\fP"
+
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "void GestionBdd::acheterProduit (\fBProduit\fP *p, intquantite)"
+
+.PP
+acheterProduit - Acheter un produit, avec suppression du produit si la quantité arrive à 0 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIp\fP - Pointeur vers le produit à acheter 
+.br
+\fIquantite\fP - Quantité de produit acheté 
+.RE
+.PP
+
+.SS "void GestionBdd::addVue (\fBVue\fP *v)"
+
+.PP
+ajoute une vue au vector contenant les vues 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIv\fP - pointeur vers la vue à ajouter 
+.RE
+.PP
+
+.SS "void GestionBdd::ajouterVente (std::stringn, std::stringcat, floatprix, unsigned intqte, booletat)"
+
+.PP
+ajoute un produit en vente normale avec ces caractéristiques 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIn\fP - nom du produit 
+.br
+\fIcat\fP - catégorie du produit 
+.br
+\fIprix\fP - prix du produit 
+.br
+\fIqte\fP - quantité du produit 
+.br
+\fIetat\fP - état du produit (en enchère ou non) 
+.RE
+.PP
+
+.SS "void GestionBdd::ajouterVente (std::stringn, std::stringcat, floatprix, unsigned intqte, booletat, struct tmdate)"
+
+.PP
+ajoute un produit en vente aux enchères avec ces caractéristiques 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIn\fP - nom du produit 
+.br
+\fIcat\fP - catégorie du produit 
+.br
+\fIprix\fP - prix du produit 
+.br
+\fIqte\fP - quantité du produit 
+.br
+\fIetat\fP - état du produit (enchère ou non) 
+.br
+\fIdate\fP - date limite de l'enchère du produit 
+.RE
+.PP
+
+.SS "void GestionBdd::connecterUtilisateur (std::stringpseudo, std::stringmdp)"
+
+.PP
+connecte l'utilisateur avec ce pseudo et ce mot de passe s'il existe 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIpseudo\fP - pseudo de l'utilisateur qui veut se connecter 
+.br
+\fImdp\fP - mot de passe de l'utilisateur qui veut se connecter 
+.RE
+.PP
+
+.SS "void GestionBdd::deconnecterUtilisateur ()"
+
+.PP
+déconnecte l'utilisateur 
+.SS "std::string GestionBdd::generateReference ()"
+
+.PP
+génère une référence unique (version 2) 
+.PP
+\fBRenvoie:\fP
+.RS 4
+std::string - référence 
+.RE
+.PP
+
+.SS "\fBProduit\fP * GestionBdd::getProduitCourant ()"
+
+.PP
+Cette fonction retourne le produit courant\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Le produit courant 
+.RE
+.PP
+
+.SS "int GestionBdd::getQuantite ()"
+
+.PP
+Cette fonction retourne la quantité du produit que l'on veut acheter\&. 
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un entier 
+.RE
+.PP
+
+.SS "\fBUtilisateur\fP * GestionBdd::getUtilisateurConnecte ()"
+
+.PP
+récupère un pointeur vers l'utilisateur actuellement connecté 
+.PP
+\fBRenvoie:\fP
+.RS 4
+pointeur vers l'utilisateur connecté 
+.RE
+.PP
+
+.SS "void GestionBdd::incrementerRef ()"
+
+.PP
+incrémente la référence pour l'attribuer à un produit et qu'elle soit unique (version 1) 
+.SS "void GestionBdd::inscrire (std::stringmonPseudo, std::stringmonMdp, std::stringname, std::stringfirstname, intjourNaiss, intmoisNaiss, intanneeNaiss, std::stringmail, std::stringadr, intcodePostal)"
+
+.PP
+inscrire un nouvel utilisateur et le stocker dans utilisateurs 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fImonPseudo\fP - pseudo de l'utilisateur à inscrire 
+.br
+\fImonMdp\fP - mot de passe de l'utilisateur à inscrire 
+.br
+\fIname\fP - nom de l'utilisateur à inscrire 
+.br
+\fIfirstname\fP - prenom de l'utilisateur à inscrire 
+.br
+\fIjourNaiss\fP - jour de la date de naissance de l'utilisateur à inscrire 
+.br
+\fImoisNaiss\fP - mois de la date de naissance de l'utilisateur à inscrire 
+.br
+\fIanneeNaiss\fP - année de la date de naissance de l'utilisateur à inscrire 
+.br
+\fImail\fP - adresse mail de l'utilisateur à inscrire 
+.br
+\fIadr\fP - adresse de l'utilisateur à inscrire 
+.br
+\fIcodePostal\fP - code postal de l'utilisateur à inscrire 
+.RE
+.PP
+
+.SS "bool GestionBdd::isConnecte ()"
+
+.PP
+retourne true si un utilisateur est connecté, false sinon 
+.PP
+\fBRenvoie:\fP
+.RS 4
+true si un utilisateur est connecté, false sinon 
+.RE
+.PP
+
+.SS "\fBProduit\fP * GestionBdd::rechercherProduit (std::stringref)"
+
+.PP
+recherche le produit avec cette référence 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIref\fP - référence du produit recherché 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+le produit recherché 
+.RE
+.PP
+
+.SS "std::vector< \fBProduit\fP * > GestionBdd::rechercherTags (std::stringt)"
+
+.PP
+recherche un produit par tags (c'est à dire nom, catégorie) 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIt\fP - tags recherchés 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+un vector contenant des pointeurs sur les produits trouvés 
+.RE
+.PP
+
+.SS "\fBUtilisateur\fP * GestionBdd::rechercherUtilisateur (std::stringpseudo)"
+
+.PP
+recherche l'utilisateur avec ce pseudo 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIpseudo\fP - pseudo recherché 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+un pointeur vers l'utilisateur recherché 
+.RE
+.PP
+
+.SS "void GestionBdd::setProduitCourant (\fBProduit\fP *p)"
+
+.PP
+Cette fonction fixe le produit courant lorsque l'on consulte la fiche d'un produit\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIp\fP - \fBProduit\fP consulté 
+.RE
+.PP
+
+.SS "void GestionBdd::setQuantite (intqte)"
+
+.PP
+Cette fonction fixe la quantité du produit que l'on veut acheter\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIqte\fP 
+.RE
+.PP
+
+.SS "void GestionBdd::update ()"
+
+.PP
+provoque la fonction update dans toutes les vues 
+.SS "std::vector< \fBProduit\fP * > GestionBdd::ventesEnCours ()"
+
+.PP
+rtourne les ventes en cours 
+.PP
+\fBRenvoie:\fP
+.RS 4
+un vector contenant des pointeurs vers les produits en vente 
+.RE
+.PP
+
+.SH "Documentation des données membres"
+.PP 
+.SS "\fBProduit\fP* GestionBdd::produitCourant\fC [protected]\fP"
+
+.SS "\fBLesProduits\fP GestionBdd::produits\fC [protected]\fP"
+
+.SS "int GestionBdd::quantite\fC [protected]\fP"
+
+.SS "std::string GestionBdd::ref\fC [protected]\fP"
+
+.SS "\fBUtilisateur\fP* GestionBdd::utilisateurConnecte\fC [protected]\fP"
+
+.SS "\fBLesUtilisateurs\fP GestionBdd::utilisateurs\fC [protected]\fP"
+
+.SS "std::vector<\fBVue\fP*> GestionBdd::vues\fC [protected]\fP"
+
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour EMarche à partir du code source\&.

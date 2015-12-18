@@ -1,0 +1,64 @@
+.TH "DialogConnexion" 3 "Vendredi 18 Décembre 2015" "Version 3" "EMarche" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DialogConnexion \- 
+.PP
+The \fBDialogConnexion\fP class - Boîte de dialogue permettant de se connecter\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DialogConnexion\&.h>\fP
+.PP
+Est dérivée de QDialog\&.
+.SS "Connecteurs publics"
+
+.in +1c
+.ti -1c
+.RI "void \fBouvrir\fP ()"
+.br
+.RI "\fIouvrir - Affiche la boîte de dialogue \fP"
+.in -1c
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBDialogConnexion\fP (\fBGestionBdd\fP *bdd, QWidget *parent=0)"
+.br
+.RI "\fI\fBDialogConnexion\fP - Constructeur\&. \fP"
+.ti -1c
+.RI "\fB~DialogConnexion\fP ()"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+The \fBDialogConnexion\fP class - Boîte de dialogue permettant de se connecter\&. 
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "DialogConnexion::DialogConnexion (\fBGestionBdd\fP *bdd, QWidget *parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+\fBDialogConnexion\fP - Constructeur\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIbdd\fP - Lien vers \fBGestionBdd\fP qui contient toutes les données 
+.br
+\fIparent\fP - Lien vers le widget parent 
+.RE
+.PP
+
+.SS "DialogConnexion::~DialogConnexion ()"
+
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "void DialogConnexion::ouvrir ()\fC [slot]\fP"
+
+.PP
+ouvrir - Affiche la boîte de dialogue 
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour EMarche à partir du code source\&.
