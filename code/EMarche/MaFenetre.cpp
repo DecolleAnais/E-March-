@@ -295,7 +295,7 @@ void MaFenetre::ventes() {
             QObject::connect(boutonAnnulerVente, SIGNAL(clicked()), &mapperAnnulerVente, SLOT( map() ));
             mapperAnnulerVente.setMapping(boutonAnnulerVente, ref);
             connect(&mapperAnnulerVente, SIGNAL( mapped(QString) ), this, SLOT(annulerVente(QString)));
-            grille->addWidget(boutonAnnulerVente, 3, 0);
+            grille->addWidget(boutonAnnulerVente, 3, 4);
 
             box2->setLayout(grille);
             centre->addWidget(box2);
@@ -367,7 +367,7 @@ void MaFenetre::achats() {
             QObject::connect(boutonAnnulerAchat, SIGNAL(clicked()), &mapperAnnulerAchat, SLOT( map() ));
             mapperAnnulerAchat.setMapping(boutonAnnulerAchat, ref);
             connect(&mapperAnnulerAchat, SIGNAL( mapped(QString) ), this, SLOT(annulerAchat(QString)));
-            grille->addWidget(boutonAnnulerAchat, 3, 0);
+            grille->addWidget(boutonAnnulerAchat, 3, 4);
 
             box2->setLayout(grille);
             centre->addWidget(box2);
@@ -377,17 +377,9 @@ void MaFenetre::achats() {
 }
 
 void MaFenetre::annulerVente(QString ref) {
-    Produit * p = gestionBdd->rechercherProduit(ref.toStdString());
-    gestionBdd->annulerVente(p);
-    QMessageBox::information(this, "Annuler une vente", "Vente annulée !");
-    centre->update();
 }
 
 void MaFenetre::annulerAchat(QString ref) {
-    Produit * p = gestionBdd->rechercherProduit(ref.toStdString());
-    gestionBdd->annulerAchat(p);
-    QMessageBox::information(this, "Annuler un achat", "Achat annulé !");
-    centre->update();
 }
 
 /* ajouter une vente */

@@ -124,26 +124,6 @@ void GestionBdd::acheterProduit(Produit* p, int quantite){
     }
 }
 
-void GestionBdd::annulerAchat(Produit * p) {
-    utilisateurConnecte->deleteAchat(p);
-    // Mise à jour de la liste des produits
-    int qte = produits.getProduit(p->getReference())->getQuantite();
-    if(qte == 0) {
-        produits.addProduit(p);
-    }
-    produits.getProduit(p->getReference())->setQuantite(qte+1);
-}
-
-void GestionBdd::annulerVente(Produit * p) {
-    utilisateurConnecte->deleteVente(p);
-    vector<Produit *> listeProduits = produits.getListProduits();
-    // Mise à jour de la liste des produits
-    vector<Produit*>::iterator it;
-    for(it = listeProduits.begin();it != listeProduits.end();it++) {
-        produits.supprimerProduit(*it);
-    }
-}
-
 /* recherche utilisateurs */
 vector<Utilisateur*> GestionBdd::rechercherUtilisateurs(string pseudo) {
     return utilisateurs.getUtilisateurs(pseudo);

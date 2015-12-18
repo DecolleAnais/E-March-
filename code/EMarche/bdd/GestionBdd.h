@@ -171,20 +171,6 @@ public:
     //!
     void acheterProduit(Produit* p, int quantite);
 
-    //!
-    //! \fn void annulerAchat(Produit* p)
-    //! \brief annulerAchat - Annuler l'achat d'un produit
-    //! \param p - Pointeur vers l'achat à annuler
-    //!
-    void annulerAchat(Produit * p);
-
-    //!
-    //! \fn void annulerVente(Produit* p)
-    //! \brief annulerVente - Annuler la mise en vente d'un produit
-    //! \param p - Pointeur vers la vente à annuler
-    //!
-    void annulerVente(Produit * p);
-
     /* recherche utilisateur */
     //!
     //! \fn Utilisateur* rechercherUtilisateur(std::string pseudo)
