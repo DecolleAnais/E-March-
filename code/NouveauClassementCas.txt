@@ -1,0 +1,10 @@
+Classement des cas d'utilisation :
+1. Déposer un article en vente (normale ou enchère)
+   Consulter les produits disponibles
+2. Rechercher un produit par mots-clés ou catégorie ou référence
+3. Acheter un produit
+4. Créer un compte
+   Consulter son compte
+5. Rechercher un profil
+6. Consulter un profil
+
